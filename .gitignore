@@ -1,0 +1,97 @@
+# ============================================================
+# .gitignore — Hinglish Grounded Medical RAG
+# ============================================================
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+*.manifest
+*.spec
+
+# ---------- Virtual Environments ----------
+.venv/
+venv/
+env/
+ENV/
+
+# ---------- Jupyter Notebooks ----------
+.ipynb_checkpoints/
+*.ipynb_meta
+
+# ---------- IDE / Editor ----------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.cursor/
+
+# ---------- OS ----------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---------- Data (large files — do not commit) ----------
+data/raw/
+data/processed/
+data/hmg/
+data/external/
+*.csv
+*.tsv
+*.parquet
+*.json
+!config/*.json
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.npy
+*.npz
+
+# ---------- Model Weights & Checkpoints ----------
+models/
+checkpoints/
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.onnx
+*.gguf
+
+# ---------- Medical Images ----------
+*.dcm
+*.dicom
+*.nii
+*.nii.gz
+
+# ---------- Vector Stores / FAISS Indices ----------
+indices/
+*.index
+*.faiss
+
+# ---------- Logs & Outputs ----------
+logs/
+outputs/
+results/
+wandb/
+mlruns/
+*.log
+
+# ---------- Environment & Secrets ----------
+.env
+.env.*
+*.key
+credentials/
+
+# ---------- Misc ----------
+*.zip
+*.tar.gz
+*.rar
+*.7z
