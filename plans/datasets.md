@@ -30,6 +30,21 @@ No large-scale Hinglish radiology dataset exists. This is the core innovation â€
 
 ## Secondary Datasets (Pre-existing, Public)
 
+### Scope Decision (After Mentor Review)
+
+To keep this project feasible in compute, storage, and timeline, we are narrowing the implementation scope for the current phase.
+
+**Current implementation scope (must-use):**
+- Open-i
+- MMCQSD
+- HMG (constructed by us from Open-i + MMCQSD patterns)
+
+**Deferred to future scope (not used in current build):**
+- PubMedQA
+- MMed-Bench
+
+This reduced scope still fully supports our core objective: evidence-grounded Hinglish clinical explanation generation with optional multimodal support.
+
 ### A. Open-i â€” Indiana University Chest X-Ray Collection
 
 | Property | Detail |
@@ -79,7 +94,9 @@ No large-scale Hinglish radiology dataset exists. This is the core innovation â€
 - Answers are derived from actual PubMed abstracts (real medical reasoning)
 - Useful for evaluating if our model can reason over medical text before we add Hinglish complexity
 
-**Role in pipeline:** Medical logic pre-training and evaluation. Before the model handles Hinglish, it needs to be competent at medical reasoning in English.
+**Role in pipeline (deferred):** Medical logic pre-training and evaluation.
+
+**Decision:** Deferred for now due to high data/compute overhead and lower direct relevance to our first deliverable (radiology-grounded Hinglish RAG).
 
 ---
 
@@ -96,19 +113,35 @@ No large-scale Hinglish radiology dataset exists. This is the core innovation â€
 - Includes "distractor" answers â€” useful for preference alignment
 - Can train our model (via DPO) to strictly rely on retrieved evidence and not hallucinate
 
-**Role in pipeline:** Preference alignment and multimodal grounding evaluation. Distractor answers serve as "dis-preferred" examples for DPO training.
+**Role in pipeline (deferred):** Preference alignment and multimodal grounding evaluation.
+
+**Decision:** Deferred for now due to scale and added complexity. For current work, DPO/preference pairs will be derived from our HMG setup instead.
 
 ---
 
-## Dataset Summary
+## Dataset Summary (Updated Scope)
 
-| Dataset | Size | Open? | Our Role |
-|---|---|---|---|
-| **HMG** (ours) | ~4,000 triplets | We create it | Primary training & evaluation data |
-| **Open-i** | 3,955 reports + 7,470 images | CC-0 | Evidence knowledge base |
-| **MMCQSD** | 3,015 samples | Yes | Hinglish linguistic templates |
-| **PubMedQA** | 273K+ | Yes | Medical reasoning evaluation |
-| **MMed-Bench** | 25,500+ | Yes | Multimodal grounding & DPO alignment |
+| Dataset | Status | Size | Open? | Our Role |
+|---|---|---|---|---|
+| **HMG** (ours) | **Must-use** | ~4,000 triplets | We create it | Primary training & evaluation data |
+| **Open-i** | **Must-use** | 3,955 reports + 7,470 images | CC-0 | Evidence knowledge base |
+| **MMCQSD** | **Must-use** | 3,015 samples | Yes | Hinglish linguistic templates |
+| **PubMedQA** | **Deferred** | 273K+ | Yes | Optional medical reasoning extension |
+| **MMed-Bench** | **Deferred** | 25,500+ | Yes | Optional multimodal benchmarking / DPO extension |
+
+---
+
+## Minimum Viable Dataset Stack (Current Phase)
+
+1. **Open-i** for authoritative report retrieval and optional X-ray grounding  
+2. **MMCQSD** for realistic Hinglish/code-mixing patterns  
+3. **HMG** (custom) as the main experiment dataset
+
+This minimum stack is sufficient to implement and evaluate:
+- Hinglish query encoding
+- Evidence retrieval (FAISS)
+- Grounded generation
+- Factuality and hallucination-focused evaluation
 
 ---
 
