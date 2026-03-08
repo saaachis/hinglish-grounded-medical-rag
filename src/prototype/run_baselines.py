@@ -1,4 +1,4 @@
-"""Run zero-shot and grounded baselines for H1 prototype."""
+"""Run zero-shot and grounded baselines for retrieval experiments."""
 
 from __future__ import annotations
 
@@ -121,36 +121,10 @@ def _rerank_with_concepts(
     return [item[0] for item in combined], [item[1] for item in combined]
 
 
-def _query_condition_hint(query: str) -> str:
-    q = query.lower()
-    if any(token in q for token in ["pani", "effusion", "fluid"]):
-        return "pleural effusion"
-    if any(token in q for token in ["pneumonia", "infection", "consolidation"]):
-        return "pneumonia"
-    if any(token in q for token in ["heart", "cardio", "dil"]):
-        return "cardiomegaly"
-    if any(token in q for token in ["collapse", "atelect"]):
-        return "atelectasis"
-    if any(token in q for token in ["normal", "no acute"]):
-        return "no acute abnormality"
-    return "chest condition"
-
-
-def _query_risk_hint(query: str) -> str:
-    q = query.lower()
-    if any(token in q for token in ["bukhar", "fever", "khansi", "cough"]):
-        return "infection-related symptoms possible"
-    if any(token in q for token in ["saas", "breath"]):
-        return "breathing difficulty needs correlation"
-    return "clinical correlation advised"
-
-
 def generate_zero_shot(query: str) -> str:
-    condition = _query_condition_hint(query)
-    risk = _query_risk_hint(query)
     return (
-        f"Query: {query} Symptoms ke basis par {condition} ka possibility lag sakta hai. "
-        f"{risk}, lekin bina report evidence final confirmation possible nahi hai."
+        f"Query: {query} Without external evidence, only a tentative answer is possible. "
+        "The response should be treated as unverified."
     )
 
 
@@ -210,7 +184,9 @@ def run(
             {
                 "sample_id": sample["sample_id"],
                 "query_hinglish": sample["query_hinglish"],
+                "dataset_profile": sample.get("dataset_profile", ""),
                 "expected_report_id": expected_report_id,
+                "target_text": sample.get("target_text", ""),
                 "retrieved_top1_report_id": top1_report_id,
                 "retrieved_report_ids": "|".join(evidence_ids),
                 "retrieval_top1_hit": top1_hit,
