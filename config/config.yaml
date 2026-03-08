@@ -1,0 +1,103 @@
+# ============================================================
+# Configuration — Hinglish Grounded Medical RAG
+# ============================================================
+
+project:
+  name: "hinglish-grounded-medical-rag"
+  description: "Evidence-first multimodal RAG for grounded clinical decision support under Hinglish queries"
+  version: "0.1.0"
+
+# ---------- Data Paths ----------
+data:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  hmg_dir: "data/hmg"
+
+  datasets:
+    openi:
+      name: "Open-i Indiana University Chest X-Ray Collection"
+      num_reports: 3955
+      num_images: 7470
+      license: "CC-0 (Public Domain)"
+    mmcqsd:
+      name: "Multimodal Medical Code-Mixed Question Summarization Dataset"
+      num_samples: 3015
+      description: "Medical images paired with Hinglish patient queries and English summaries"
+    pubmedqa:
+      name: "PubMedQA"
+      description: "Biomedical QA dataset with answers derived from PubMed abstracts"
+    mmed_bench:
+      name: "MMed-Bench"
+      num_samples: 25500
+      description: "Multimodal medical QA benchmark across specialties"
+
+# ---------- Model Configuration ----------
+models:
+  text_encoder:
+    name: "sentence-transformers/LaBSE"
+    embedding_dim: 768
+    description: "Language-Agnostic BERT Sentence Embedding for Hinglish text encoding"
+
+  image_encoder:
+    name: "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224"
+    embedding_dim: 512
+    description: "BioMedCLIP for medical image encoding"
+
+  generator:
+    name: "llava-hf/llava-1.5-7b-hf"
+    description: "LLaVA-v1.5 for grounded multimodal generation"
+    quantization: "4bit"  # QLoRA
+
+  hinglish_synthesizer:
+    name: "meta-llama/Meta-Llama-3-8B-Instruct"
+    description: "Llama-3-8B for synthetic Hinglish query generation"
+
+# ---------- Retrieval Configuration ----------
+retrieval:
+  index_type: "faiss"
+  similarity_metric: "cosine"
+  top_k: 5
+  adaptive_truncation: true  # similarity-score-based truncation (MMed-RAG style)
+
+# ---------- Fine-Tuning Configuration ----------
+training:
+  method: "qlora"
+  lora_r: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+  learning_rate: 2.0e-4
+  num_epochs: 3
+  batch_size: 4
+  gradient_accumulation_steps: 4
+  warmup_ratio: 0.03
+
+  dpo:
+    enabled: true
+    beta: 0.1
+    description: "Direct Preference Optimization for hallucination control"
+
+# ---------- Evaluation Configuration ----------
+evaluation:
+  metrics:
+    - "mmfcm"              # Multimodal Fact Capturing Metric
+    - "factual_consistency"
+    - "hallucination_rate"
+    - "bleu"
+    - "rouge"
+  
+  hypothesis_testing:
+    significance_level: 0.05
+    tests:
+      h1: "paired_t_test"        # RAG vs Zero-shot (+ Wilcoxon fallback)
+      h2: "two_way_anova"        # Code-mixing level interaction (+ Kruskal-Wallis)
+      h3: "paired_t_test"        # Authoritative vs general evidence
+
+  code_mixing_levels:
+    - "low"
+    - "medium"
+    - "high"
+
+# ---------- Application ----------
+app:
+  framework: "streamlit"
+  port: 8501
