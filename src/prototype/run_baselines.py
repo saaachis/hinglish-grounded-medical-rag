@@ -130,10 +130,10 @@ def generate_zero_shot(query: str) -> str:
 
 def generate_grounded(query: str, evidence_texts: list[str]) -> str:
     top_evidence = _first_sentence(evidence_texts[0]) if evidence_texts else ""
-    return (
-        f"Query: {query} Available report evidence ke hisaab se: {top_evidence} "
-        "Isliye explanation report-grounded hai."
-    ).strip()
+    if not top_evidence:
+        return "No supporting report evidence retrieved."
+    # Keep grounded output evidence-first and concise to reduce unsupported content.
+    return f"Report evidence: {top_evidence}".strip()
 
 
 def run(
