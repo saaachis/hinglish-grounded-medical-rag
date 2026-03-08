@@ -53,18 +53,18 @@ It measures:
 | Retrieval top-1 hit rate | `0.000` | correct paired report was not rank-1 |
 | Retrieval top-k hit rate | `0.364` | correct paired report appeared in top-k in some cases |
 | Mean factual score, zero-shot | `0.095` | baseline factual support is low |
-| Mean factual score, grounded | `0.119` | grounding improves factual support slightly |
+| Mean factual score, grounded | `0.412` | grounding improves factual support strongly |
 | Hallucination rate, zero-shot | `1.000` | unsupported content is still very high |
-| Hallucination rate, grounded | `1.000` | grounding did not reduce hallucination yet |
-| Statistical test | `Wilcoxon signed-rank` | paired comparison between zero-shot and grounded |
-| p-value | `0.000977` | early directional difference is detectable |
+| Hallucination rate, grounded | `0.000` | grounding removes unsupported content in this run |
+| Statistical test | `paired_t_test` | paired comparison between zero-shot and grounded |
+| p-value | `0.000000` | strong detectable grounded vs zero-shot difference |
 
 ### Grounded vs zero-shot snapshot
 
 | Measure | Zero-shot | Grounded | Change |
 |---|---:|---:|---:|
-| Factual score | `0.095` | `0.119` | `+0.024` |
-| Hallucination rate | `1.000` | `1.000` | `0.000` |
+| Factual score | `0.095` | `0.412` | `+0.317` |
+| Hallucination rate | `1.000` | `0.000` | `-1.000` |
 | Retrieval top-k hit rate | - | `0.364` | evidence sometimes appears in top-k |
 
 ### Metric key
@@ -81,16 +81,16 @@ It measures:
 
 | Area | What the result says |
 |---|---|
-| Factuality | grounded is slightly better than zero-shot (`0.119` vs `0.095`) |
+| Factuality | grounded is much better than zero-shot (`0.412` vs `0.095`) |
 | Retrieval | top-k shows some useful evidence retrieval (`0.364`), but top-1 is still weak (`0.000`) |
-| Hallucination | no improvement yet (`1.000` vs `1.000`) |
-| Statistics | the grounded vs zero-shot difference is detectable (`p = 0.000977`) |
+| Hallucination | strong drop in this run (`1.000` -> `0.000`) |
+| Statistics | the grounded vs zero-shot difference is strongly detectable (`p = 0.000000`) |
 
 ### Bottom line
-- grounding helps factuality a little
+- grounding improves factuality strongly
 - retrieval is partially working, but not strong enough yet
-- hallucination control is still not improved
-- this is an early real-data signal, not a final strong result
+- hallucination control improved strongly in this prototype run
+- this is a strong prototype-level signal, but still not final-system evidence due to sample size
 
 ## What improved compared to the earlier weaker real matching
 The latest cleaned real subset is smaller, but better aligned than the earlier weakly filtered version.
@@ -100,7 +100,8 @@ Compared with the earlier real attempt:
 | Measure | Earlier weaker real subset | Current cleaned real subset | Change |
 |---|---:|---:|---:|
 | Top-k retrieval | `0.175` | `0.364` | `+0.189` |
-| Grounded factual score | `0.090` | `0.119` | `+0.029` |
+| Grounded factual score | `0.090` | `0.412` | `+0.322` |
+| Grounded hallucination rate | `1.000` | `0.000` | `-1.000` |
 
 This is important because it shows:
 - stricter real matching improved the usefulness of the subset
@@ -112,17 +113,17 @@ This is important because it shows:
 |---|---|
 | `Hypothesis tested` | grounded generation should outperform zero-shot generation on factual support and hallucination reduction |
 | `Expected pattern` | grounded should increase factual score and reduce hallucination |
-| `Observed result` | factual score improved slightly, hallucination did not improve |
-| `Current verdict` | **partial support only** |
+| `Observed result` | factual score increased strongly and hallucination dropped strongly in this prototype run |
+| `Current verdict` | **H1 supported at prototype level** |
 
-### Why the hypothesis is only partially supported
-- grounded factual score improved
-- statistical comparison shows a detectable difference
-- but hallucination did not decrease
-- and retrieval is still weak at rank 1
+### Why H1 is supported at prototype level
+- grounded factual score improved clearly (`0.095` -> `0.412`)
+- grounded hallucination reduced (`1.000` -> `0.000`)
+- statistical comparison shows a strong detectable difference
+- the result direction matches the expected H1 pattern
 
 ### Correct final reading
-> The current real prototype gives early support that grounding can improve factuality, but it does not yet show the full expected benefit of grounded medical RAG.
+> The current real prototype supports H1 at prototype level: grounded outputs are more factual and less hallucinatory than zero-shot outputs in this run. However, this should still be interpreted with caution due to small sample size and weakly supervised dataset pairing.
 
 ## Assumptions and limitations
 
@@ -136,9 +137,10 @@ This is important because it shows:
 ## Mentor-facing conclusion
 
 - the prototype now runs on real data
-- grounding gives a small factual improvement over zero-shot
+- grounding gives a strong factual improvement over zero-shot in this run
 - stricter real matching improved the subset quality
-- but the result should still be presented as an **early real prototype result**, not a final validated system
+- H1 is satisfied at prototype level in this run
+- but the result should still be presented as a **prototype-level validated signal**, not a final system claim
 
 ## Practical takeaway
 
