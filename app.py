@@ -122,6 +122,11 @@ def render_results(result: dict, show_zero_shot: bool):
         c2.metric("Hallucination", f"{result['grounded_hallucination_score']:.2f}")
 
 
+def _set_example(text: str):
+    """Callback: write the clicked example into session state."""
+    st.session_state["user_query"] = text
+
+
 def main():
     render_header()
     top_k, show_zero_shot = render_sidebar()
@@ -133,19 +138,26 @@ def main():
 
     pipeline = load_pipeline()
 
+    if "user_query" not in st.session_state:
+        st.session_state["user_query"] = ""
+
     st.markdown("#### Try an example query")
     cols = st.columns(3)
-    selected_example = None
     for i, ex in enumerate(EXAMPLE_QUERIES[:6]):
         col = cols[i % 3]
         label = ex[:60] + "..." if len(ex) > 60 else ex
-        if col.button(label, key=f"example_{i}", use_container_width=True):
-            selected_example = ex
+        col.button(
+            label,
+            key=f"example_{i}",
+            use_container_width=True,
+            on_click=_set_example,
+            args=(ex,),
+        )
 
     st.markdown("#### Or type your own")
     user_query = st.text_area(
         "Hinglish query",
-        value=selected_example or "",
+        key="user_query",
         height=80,
         placeholder="Doctor, meri skin pe rash hai aur bahut khujli ho rahi hai ...",
     )
