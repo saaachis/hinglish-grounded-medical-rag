@@ -1,19 +1,19 @@
 """Generate all research poster visualizations.
 
-Theme:
-  - Primary:   #2563EB  (blue)
-  - Secondary: #DC2626  (red)
-  - Accent:    #059669  (green)
-  - Neutral:   #6B7280  (gray)
-  - Background:#F9FAFB  (off-white)
+Poster theme (MS Word "Blue Green" + custom picks):
+  - Primary teal:  #588894  (RGB 88, 136, 148)
+  - Light panel:   #E6EEF0  (RGB 230, 238, 240)
+  - Plus darker / lighter teal-greens from the same family for series contrast.
 
-To adapt to your poster template later, change the THEME dict below.
-All plots are saved as both PNG (300 dpi) and PDF (vector) in this directory.
+Run from repository root:
+  python research-poster-work/generate_plots.py
+
+Outputs high-resolution PNGs (300 dpi) in research-poster-work/.
+H1 violin distributions: 02_h1_distributions.png (stacked) and 02_h1_distributions_horizontal.png (side by side).
 """
 
 from __future__ import annotations
 
-import re
 import sys
 from pathlib import Path
 
@@ -21,38 +21,64 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
-import matplotlib.ticker as mticker
 import numpy as np
 import pandas as pd
 import seaborn as sns
+from scipy import stats
 
 sys.stdout.reconfigure(encoding="utf-8")
 
 # ──────────────────────────────────────────────
-#  THEME — change these to match your poster
+#  PATHS
+# ──────────────────────────────────────────────
+REPO_ROOT = Path(__file__).resolve().parents[1]
+OUT_DIR = Path(__file__).parent
+DPI = 300
+
+# Published totals (project-complete-summary.md) — captions / fallback text only
+PUBLISHED_N = 1165
+
+# ──────────────────────────────────────────────
+#  BLUE-GREEN POSTER THEME
 # ──────────────────────────────────────────────
 THEME = {
-    "primary":    "#2563EB",
-    "secondary":  "#DC2626",
-    "accent":     "#059669",
-    "neutral":    "#6B7280",
-    "bg":         "#F9FAFB",
-    "text":       "#1F2937",
-    "light_primary": "#93C5FD",
-    "light_secondary": "#FCA5A5",
-    "light_accent": "#6EE7B7",
-    "cm_low":     "#3B82F6",
-    "cm_med":     "#F59E0B",
-    "cm_high":    "#EF4444",
+    "teal": "#588894",
+    "teal_dark": "#456F7A",
+    "teal_darker": "#3A5C66",
+    "navy_text": "#2F4858",
+    "slate": "#5C7A82",
+    "seafoam": "#8FB8A8",
+    "mint": "#B8D4CE",
+    "panel": "#E6EEF0",
+    "figure_bg": "#FFFFFF",
+    "grid": "#C5D3D6",
+    # Series (zero-shot vs grounded)
+    "zero_shot": "#8AA7B0",
+    "zero_shot_edge": "#5C7A82",
+    "grounded": "#2C5F6B",
+    "grounded_light": "#588894",
+    # CMI tertiles (teal gradient)
+    "cm_low": "#6B9EAE",
+    "cm_med": "#588894",
+    "cm_high": "#3D5C66",
+    # Aliases for older keys in code
+    "primary": "#588894",
+    "secondary": "#5C7A82",
+    "accent": "#456F7A",
+    "neutral": "#5C7A82",
+    "bg": "#E6EEF0",
+    "text": "#2F4858",
+    "light_primary": "#B8D4CE",
+    "light_secondary": "#D8E4E8",
+    "light_accent": "#C5D9D4",
 }
 
 FONT_FAMILY = "sans-serif"
-TITLE_SIZE = 14
-LABEL_SIZE = 12
-TICK_SIZE = 10
-DPI = 300
-
-OUT_DIR = Path(__file__).parent
+TITLE_SIZE = 10
+LABEL_SIZE = 8.5
+TICK_SIZE = 7.5
+LEGEND_SIZE = 7
+ANNO_SIZE = 6.5
 
 
 def apply_theme():
@@ -61,9 +87,9 @@ def apply_theme():
         "font.size": TICK_SIZE,
         "axes.titlesize": TITLE_SIZE,
         "axes.labelsize": LABEL_SIZE,
-        "axes.facecolor": THEME["bg"],
-        "figure.facecolor": "white",
-        "axes.edgecolor": THEME["neutral"],
+        "axes.facecolor": THEME["panel"],
+        "figure.facecolor": THEME["figure_bg"],
+        "axes.edgecolor": THEME["grid"],
         "axes.labelcolor": THEME["text"],
         "xtick.color": THEME["text"],
         "ytick.color": THEME["text"],
@@ -71,415 +97,549 @@ def apply_theme():
         "axes.spines.top": False,
         "axes.spines.right": False,
         "axes.grid": False,
+        "legend.fontsize": LEGEND_SIZE,
     })
 
 
-def save(fig, name):
-    fig.savefig(OUT_DIR / f"{name}.png", dpi=DPI, bbox_inches="tight", facecolor="white")
+def save(fig, name: str) -> None:
+    fig.savefig(
+        OUT_DIR / f"{name}.png",
+        dpi=DPI,
+        bbox_inches="tight",
+        facecolor=THEME["figure_bg"],
+        pad_inches=0.02,
+    )
     plt.close(fig)
     print(f"  Saved {name}.png")
 
 
-def load_data():
-    df = pd.read_csv("results/combined_h1h2/combined_scored.csv")
-    print(f"Loaded {len(df)} clean pairs")
+def _resolve_csv(rel: str) -> Path:
+    return REPO_ROOT / rel
+
+
+def load_data() -> pd.DataFrame:
+    path = _resolve_csv("results/combined_h1h2/combined_scored.csv")
+    if not path.exists():
+        raise FileNotFoundError(
+            f"Missing {path}. Run evaluation / combine scripts from repo root, then re-run."
+        )
+    df = pd.read_csv(path)
+    print(f"Loaded {len(df)} clean pairs (summary target n={PUBLISHED_N})")
     return df
 
 
+def compute_h1_pvalues(df: pd.DataFrame) -> tuple[float, float]:
+    fg = df["grounded_factual"] - df["zero_factual"]
+    hr = df["zero_hallucination"] - df["grounded_hallucination"]
+    # Wilcoxon on differences; two-sided
+    _, p_f = stats.wilcoxon(fg, zero_method="wilcox", alternative="two-sided")
+    _, p_h = stats.wilcoxon(hr, zero_method="wilcox", alternative="two-sided")
+    return float(p_f), float(p_h)
+
+
+def compute_h2_kruskal(df: pd.DataFrame) -> tuple[float, float]:
+    buckets = ["low_cm", "medium_cm", "high_cm"]
+    groups_fg = [df.loc[df["cmi_bucket"] == b, "factual_gain"].values for b in buckets]
+    groups_hr = [df.loc[df["cmi_bucket"] == b, "halluc_reduction"].values for b in buckets]
+    _, p_fg = stats.kruskal(*groups_fg)
+    _, p_hr = stats.kruskal(*groups_hr)
+    return float(p_fg), float(p_hr)
+
+
 # ──────────────────────────────────────────────
-#  PLOT 1: H1 Bar Chart — Grounded vs Zero-Shot
+#  PLOT 1: H1 Bar Chart
 # ──────────────────────────────────────────────
-def plot_h1_bar(df):
-    metrics = ["Factual Support", "Hallucination Score"]
+def plot_h1_bar(df: pd.DataFrame) -> None:
+    metrics = ["Factual\nSupport", "Hallucination\nScore"]
     zero = [df["zero_factual"].mean(), df["zero_hallucination"].mean()]
     grounded = [df["grounded_factual"].mean(), df["grounded_hallucination"].mean()]
 
     x = np.arange(len(metrics))
-    width = 0.32
+    width = 0.34
+    n = len(df)
 
-    fig, ax = plt.subplots(figsize=(6, 4.5))
-    bars1 = ax.bar(x - width / 2, zero, width, label="Zero-Shot",
-                   color=THEME["secondary"], edgecolor="white", linewidth=0.5)
-    bars2 = ax.bar(x + width / 2, grounded, width, label="Grounded (RAG)",
-                   color=THEME["primary"], edgecolor="white", linewidth=0.5)
+    fig, ax = plt.subplots(figsize=(3.6, 3.4))
+    bars1 = ax.bar(
+        x - width / 2, zero, width, label="Zero-shot",
+        color=THEME["zero_shot"], edgecolor=THEME["zero_shot_edge"], linewidth=0.8,
+    )
+    bars2 = ax.bar(
+        x + width / 2, grounded, width, label="Grounded (RAG)",
+        color=THEME["grounded"], edgecolor=THEME["teal_darker"], linewidth=0.8,
+    )
 
-    for bar in bars1:
-        ax.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 0.015,
-                f"{bar.get_height():.3f}", ha="center", va="bottom", fontsize=9,
-                color=THEME["secondary"], fontweight="bold")
-    for bar in bars2:
-        ax.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 0.015,
-                f"{bar.get_height():.3f}", ha="center", va="bottom", fontsize=9,
-                color=THEME["primary"], fontweight="bold")
+    ymax = max(max(zero), max(grounded)) * 1.42
+    ax.set_ylim(0, ymax)
+    pct_factual = 100.0 * (grounded[0] - zero[0]) / max(zero[0], 1e-9)
+    pct_hall_red = 100.0 * (zero[1] - grounded[1]) / max(zero[1], 1e-9)
+    pct_labels = [f"+{pct_factual:.1f}%", f"−{pct_hall_red:.1f}%"]
+    lab_kw = dict(ha="center", va="bottom", fontsize=7, color=THEME["navy_text"])
 
-    ax.set_ylabel("Score")
-    ax.set_title("H1: Grounded RAG vs Zero-Shot Generation")
+    for bar, val in zip(bars1, zero):
+        ax.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 0.012, f"{val:.3f}", **lab_kw)
+    for bar, val, pl in zip(bars2, grounded, pct_labels):
+        ax.text(
+            bar.get_x() + bar.get_width() / 2, bar.get_height() + 0.012,
+            f"{val:.3f}\n({pl})", **lab_kw,
+        )
+
+    ax.set_facecolor("white")
+    ax.set_ylabel("Mean Score", fontsize=9)
+    ax.set_title(f"H1: Grounded Vs Zero-Shot (N = {n:,})", fontsize=10, fontweight="bold")
     ax.set_xticks(x)
-    ax.set_xticklabels(metrics)
-    ax.set_ylim(0, 0.75)
-    ax.legend(frameon=True, facecolor="white", edgecolor=THEME["neutral"])
+    ax.set_xticklabels(metrics, fontsize=8)
+    ax.tick_params(axis="y", labelsize=8)
+    ax.legend(frameon=True, facecolor="white", edgecolor=THEME["grid"], loc="upper right", fontsize=7)
 
     save(fig, "01_h1_bar_comparison")
 
 
 # ──────────────────────────────────────────────
-#  PLOT 2: H1 Distribution — Violin/Box Plots
+#  PLOT 2: H1 Distributions (stacked + side-by-side variants)
 # ──────────────────────────────────────────────
-def plot_h1_distribution(df):
-    fig, axes = plt.subplots(1, 2, figsize=(10, 4.5))
+_PALETTE_H1_VIOLIN = {"Zero-shot": "#C5D8DE", "Grounded": "#1A4F5C"}
 
-    # Factual support
-    data_factual = pd.DataFrame({
-        "Score": pd.concat([df["zero_factual"], df["grounded_factual"]]),
-        "Mode": ["Zero-Shot"] * len(df) + ["Grounded"] * len(df),
+
+def _h1_violin_panel(
+    ax,
+    score_zero: pd.Series,
+    score_grounded: pd.Series,
+    title: str,
+    *,
+    ylabel: str | None = "Score",
+) -> None:
+    n = len(score_zero)
+    data = pd.DataFrame({
+        "Score": pd.concat([score_zero, score_grounded]),
+        "Mode": ["Zero-shot"] * n + ["Grounded"] * n,
     })
-    palette_f = {"Zero-Shot": THEME["secondary"], "Grounded": THEME["primary"]}
-    sns.violinplot(data=data_factual, x="Mode", y="Score", palette=palette_f,
-                   inner="box", cut=0, ax=axes[0])
-    axes[0].set_title("Factual Support Distribution")
-    axes[0].set_xlabel("")
-    axes[0].set_ylabel("Factual Support Score")
+    sns.violinplot(
+        data=data, x="Mode", y="Score", hue="Mode", palette=_PALETTE_H1_VIOLIN,
+        inner="box", cut=0, ax=ax, legend=False, linewidth=0.7,
+    )
+    ax.set_facecolor("white")
+    ax.set_title(title, fontsize=9, fontweight="bold")
+    ax.set_xlabel("")
+    if ylabel:
+        ax.set_ylabel(ylabel, fontsize=8)
+    else:
+        ax.set_ylabel("")
+    ax.tick_params(labelsize=8)
+    z_mean = float(score_zero.mean())
+    g_mean = float(score_grounded.mean())
+    for i, m in enumerate([z_mean, g_mean]):
+        ax.hlines(m, i - 0.3, i + 0.3, colors="#111", linewidth=1.5, zorder=5)
+        ax.text(
+            i + 0.42, m, f"{m:.3f}", ha="left", va="center", fontsize=6,
+            color=THEME["navy_text"], zorder=6,
+        )
+    ax.set_xlim(-0.55, 1.75)
 
-    # Hallucination
-    data_halluc = pd.DataFrame({
-        "Score": pd.concat([df["zero_hallucination"], df["grounded_hallucination"]]),
-        "Mode": ["Zero-Shot"] * len(df) + ["Grounded"] * len(df),
-    })
-    palette_h = {"Zero-Shot": THEME["secondary"], "Grounded": THEME["primary"]}
-    sns.violinplot(data=data_halluc, x="Mode", y="Score", palette=palette_h,
-                   inner="box", cut=0, ax=axes[1])
-    axes[1].set_title("Hallucination Score Distribution")
-    axes[1].set_xlabel("")
-    axes[1].set_ylabel("Hallucination Score")
 
-    fig.suptitle("H1: Score Distributions (n=447)", fontsize=TITLE_SIZE, y=1.02)
-    fig.tight_layout()
+def plot_h1_distribution(df: pd.DataFrame) -> None:
+    n = len(df)
+    fig, axes = plt.subplots(2, 1, figsize=(3.65, 4.5), sharex=False)
+    fig.subplots_adjust(hspace=0.4, top=0.92, right=0.96)
+    fig.patch.set_facecolor("white")
+
+    _h1_violin_panel(axes[0], df["zero_factual"], df["grounded_factual"], "Factual Support")
+    _h1_violin_panel(axes[1], df["zero_hallucination"], df["grounded_hallucination"], "Hallucination Score")
+
+    fig.suptitle(f"H1: Distributions (N = {n:,})", fontsize=10, fontweight="bold", y=1.0)
     save(fig, "02_h1_distributions")
 
 
-# ──────────────────────────────────────────────
-#  PLOT 3: H1 Factual Gain Distribution
-# ──────────────────────────────────────────────
-def plot_factual_gain_hist(df):
-    fig, ax = plt.subplots(figsize=(6, 4))
+def plot_h1_distribution_horizontal(df: pd.DataFrame) -> None:
+    """Same violins as stacked `02`, arranged in one row for wide layouts."""
+    n = len(df)
+    fig, axes = plt.subplots(1, 2, figsize=(6.4, 2.85), sharey=False)
+    fig.subplots_adjust(wspace=0.38, top=0.86, bottom=0.16, right=0.97)
+    fig.patch.set_facecolor("white")
 
+    _h1_violin_panel(axes[0], df["zero_factual"], df["grounded_factual"], "Factual Support")
+    _h1_violin_panel(axes[1], df["zero_hallucination"], df["grounded_hallucination"], "Hallucination Score")
+    axes[1].set_ylabel("")
+
+    fig.suptitle(f"H1: Distributions (N = {n:,})", fontsize=10, fontweight="bold", y=1.02)
+    save(fig, "02_h1_distributions_horizontal")
+
+
+# ──────────────────────────────────────────────
+#  PLOT 3: Factual gain histogram
+# ──────────────────────────────────────────────
+def plot_factual_gain_hist(df: pd.DataFrame) -> None:
+    fig, ax = plt.subplots(figsize=(3.4, 2.9))
     gains = df["factual_gain"]
-    ax.hist(gains, bins=30, color=THEME["primary"], edgecolor="white",
-            linewidth=0.5, alpha=0.85)
-    ax.axvline(gains.mean(), color=THEME["secondary"], linewidth=2,
-               linestyle="--", label=f"Mean = {gains.mean():+.3f}")
-    ax.axvline(0, color=THEME["neutral"], linewidth=1, linestyle=":")
-
-    ax.set_xlabel("Factual Gain (Grounded - Zero-Shot)")
-    ax.set_ylabel("Number of Pairs")
-    ax.set_title("Distribution of Factual Gain per Pair")
-    ax.legend(frameon=True, facecolor="white", edgecolor=THEME["neutral"])
-
+    ax.hist(gains, bins=26, color=THEME["grounded_light"], edgecolor="white", linewidth=0.35, alpha=0.9)
+    ax.axvline(gains.mean(), color=THEME["teal_darker"], linewidth=1.1, linestyle="--",
+               label=f"Mean {gains.mean():+.3f}")
+    ax.axvline(0, color=THEME["slate"], linewidth=0.7, linestyle=":")
+    ax.set_xlabel("Factual Gain", fontsize=8)
+    ax.set_ylabel("Pairs", fontsize=8)
+    ax.set_title("H1: Per-Pair Factual Gain", fontsize=9, fontweight="bold")
+    ax.set_facecolor("white")
+    ax.tick_params(labelsize=7)
+    ax.legend(frameon=True, facecolor="white", edgecolor=THEME["grid"], loc="upper right", fontsize=7)
     save(fig, "03_factual_gain_distribution")
 
 
 # ──────────────────────────────────────────────
-#  PLOT 4: H2 Grouped Bar — 3 CMI Levels
+#  PLOT 4: H2 CMI levels
 # ──────────────────────────────────────────────
-def plot_h2_grouped(df):
+def plot_h2_grouped(df: pd.DataFrame) -> None:
     buckets = ["low_cm", "medium_cm", "high_cm"]
-    labels = ["Low CM\n(more English)", "Medium CM", "High CM\n(more Hindi)"]
-    colors = [THEME["cm_low"], THEME["cm_med"], THEME["cm_high"]]
-
+    labels = ["Low", "Medium", "High"]
     fg_means = [df[df["cmi_bucket"] == b]["factual_gain"].mean() for b in buckets]
     hr_means = [df[df["cmi_bucket"] == b]["halluc_reduction"].mean() for b in buckets]
     fg_se = [df[df["cmi_bucket"] == b]["factual_gain"].sem() for b in buckets]
     hr_se = [df[df["cmi_bucket"] == b]["halluc_reduction"].sem() for b in buckets]
 
+    p_fg, p_hr = compute_h2_kruskal(df)
+    fg_overall = df["factual_gain"].mean()
+    hr_overall = df["halluc_reduction"].mean()
+
     x = np.arange(len(buckets))
-    width = 0.32
+    w = 0.26
+    offset = 0.3
+    c_fg = THEME["grounded"]
+    c_hr = THEME["teal"]  # same blue-green family as primary #588894
 
-    fig, ax = plt.subplots(figsize=(7, 4.5))
-    bars1 = ax.bar(x - width / 2, fg_means, width, yerr=fg_se,
-                   label="Factual Gain", color=[c for c in colors],
-                   edgecolor="white", linewidth=0.5, capsize=3)
-    bars2 = ax.bar(x + width / 2, hr_means, width, yerr=hr_se,
-                   label="Halluc. Reduction", color=[c for c in colors],
-                   edgecolor="white", linewidth=0.5, capsize=3, alpha=0.55)
+    fig, ax = plt.subplots(figsize=(3.6, 3.45))
+    fig.subplots_adjust(bottom=0.2)
+    ax.set_facecolor(THEME["panel"])
 
-    for bar in bars1:
-        ax.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 0.012,
-                f"{bar.get_height():.3f}", ha="center", va="bottom", fontsize=8)
-    for bar in bars2:
-        ax.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 0.012,
-                f"{bar.get_height():.3f}", ha="center", va="bottom", fontsize=8)
+    ax.bar(
+        x - offset / 2, fg_means, w, yerr=fg_se,
+        label="Factual gain", color=c_fg, edgecolor=THEME["teal_darker"], linewidth=0.65,
+        capsize=2.5, error_kw={"linewidth": 0.7, "color": THEME["navy_text"]},
+    )
+    ax.bar(
+        x + offset / 2, hr_means, w, yerr=hr_se,
+        label="Hallucination reduction", color=c_hr, edgecolor=THEME["teal_darker"], linewidth=0.65,
+        capsize=2.5, error_kw={"linewidth": 0.7, "color": THEME["navy_text"]},
+    )
 
-    ax.set_ylabel("Score Improvement")
-    ax.set_title("H2: RAG Benefit by Code-Mixing Intensity")
+    ymax = max(max(np.array(fg_means) + np.array(fg_se)), max(np.array(hr_means) + np.array(hr_se))) * 1.28
+    ax.set_ylim(0, ymax)
+    ax.axhline(fg_overall, color=c_fg, linestyle="--", linewidth=1.15, alpha=0.95)
+    ax.axhline(hr_overall, color=THEME["teal_darker"], linestyle=":", linewidth=1.15, alpha=0.95)
+
+    for i, xi in enumerate(x):
+        ax.text(xi - offset / 2, fg_means[i] + fg_se[i] + 0.012, f"{fg_means[i]:.2f}",
+                ha="center", va="bottom", fontsize=7, fontweight="bold", color=THEME["navy_text"])
+        ax.text(xi + offset / 2, hr_means[i] + hr_se[i] + 0.012, f"{hr_means[i]:.2f}",
+                ha="center", va="bottom", fontsize=7, fontweight="bold", color=THEME["navy_text"])
+
+    ax.set_ylabel("Mean Improvement", fontsize=8)
+    ax.set_title(f"H2: RAG Benefit By CMI (N = {len(df):,})", fontsize=9, fontweight="bold")
     ax.set_xticks(x)
-    ax.set_xticklabels(labels)
-    ax.set_ylim(0, 0.40)
-    ax.legend(frameon=True, facecolor="white", edgecolor=THEME["neutral"])
+    ax.set_xticklabels(labels, fontsize=8)
+    ax.tick_params(axis="y", labelsize=7)
+    ax.legend(frameon=True, facecolor="white", edgecolor=THEME["grid"], loc="upper right", fontsize=6.5)
 
-    ax.text(0.98, 0.95, "Kruskal-Wallis p = 0.238 (n.s.)\nRAG benefit is robust across CMI levels",
-            transform=ax.transAxes, ha="right", va="top", fontsize=8,
-            color=THEME["neutral"], style="italic")
-
+    fig.text(
+        0.5, 0.04,
+        f"Kruskal–Wallis: factual p = {p_fg:.2f}, hallucination p = {p_hr:.2f} (n.s.); stable across mixing.",
+        ha="center", fontsize=7.5, fontweight="bold", color=THEME["navy_text"],
+    )
     save(fig, "04_h2_cmi_levels")
 
 
 # ──────────────────────────────────────────────
-#  PLOT 5: Per-Condition Factual Gain (Horizontal)
+#  PLOT 5: Per-condition gain
 # ──────────────────────────────────────────────
-def plot_per_condition(df):
-    cond_data = df.groupby("condition").agg(
-        n=("factual_gain", "count"),
-        factual_gain=("factual_gain", "mean"),
-        halluc_reduction=("halluc_reduction", "mean"),
-    ).reset_index()
-    cond_data = cond_data.sort_values("factual_gain", ascending=True)
+def plot_per_condition(df: pd.DataFrame) -> None:
+    all_c = (
+        df.groupby("condition", observed=True)
+        .agg(n=("factual_gain", "count"), factual_gain=("factual_gain", "mean"))
+        .reset_index()
+    )
+    cond_data = all_c.nlargest(10, "factual_gain").sort_values("factual_gain", ascending=True)
 
-    fig, ax = plt.subplots(figsize=(7, 6))
+    fig, ax = plt.subplots(figsize=(3.6, 3.8))
+    ax.set_facecolor("white")
+    y = np.arange(len(cond_data))
+    colors = [THEME["grounded_light"] if g >= 0 else THEME["teal_darker"] for g in cond_data["factual_gain"]]
+    ax.barh(y, cond_data["factual_gain"], color=colors, edgecolor="white", linewidth=0.4, height=0.58)
+    ax.set_yticks(y)
+    labels = [
+        f"{row['condition'].replace('_', ' ').title()} (n={row['n']})"
+        for _, row in cond_data.iterrows()
+    ]
+    ax.set_yticklabels(labels, fontsize=7)
+    for i, t in enumerate(ax.get_yticklabels()):
+        if i >= len(labels) - 4:
+            t.set_fontweight("bold")
 
-    colors = [THEME["primary"] if g >= 0 else THEME["secondary"]
-              for g in cond_data["factual_gain"]]
-    bars = ax.barh(range(len(cond_data)), cond_data["factual_gain"],
-                   color=colors, edgecolor="white", linewidth=0.5, height=0.7)
-
-    ax.set_yticks(range(len(cond_data)))
-    labels = [f"{row['condition'].replace('_', ' ').title()} (n={row['n']})"
-              for _, row in cond_data.iterrows()]
-    ax.set_yticklabels(labels, fontsize=9)
-    ax.axvline(0, color=THEME["neutral"], linewidth=0.8)
-    ax.set_xlabel("Mean Factual Gain (Grounded - Zero-Shot)")
-    ax.set_title("Factual Gain by Medical Condition")
-
+    ax.axvline(0, color=THEME["slate"], linewidth=0.7)
     mean_gain = df["factual_gain"].mean()
-    ax.axvline(mean_gain, color=THEME["accent"], linewidth=1.5, linestyle="--",
-               label=f"Overall mean = {mean_gain:+.3f}")
-    ax.legend(frameon=True, facecolor="white", edgecolor=THEME["neutral"],
-              loc="lower right", fontsize=9)
+    ax.axvline(
+        mean_gain, color=THEME["teal_darker"], linewidth=1.1, linestyle="--",
+        label=f"Mean {mean_gain:+.3f}",
+    )
+    ax.set_xlabel("Mean Factual Gain", fontsize=8)
+    ax.set_title("H1: Top Conditions By Gain", fontsize=9, fontweight="bold")
+    ax.tick_params(axis="x", labelsize=7)
+    ax.legend(loc="lower right", frameon=True, facecolor="white", edgecolor=THEME["grid"], fontsize=6.5)
 
     save(fig, "05_per_condition_gain")
 
 
 # ──────────────────────────────────────────────
-#  PLOT 6: CMI Scatter / Correlation
+#  PLOT 6: CMI scatter
 # ──────────────────────────────────────────────
-def plot_cmi_scatter(df):
-    fig, axes = plt.subplots(1, 2, figsize=(11, 4.5))
+def plot_cmi_scatter(df: pd.DataFrame) -> None:
+    rho_fg, p_fg = stats.spearmanr(df["cmi_score"], df["factual_gain"])
+    rho_hr, p_hr = stats.spearmanr(df["cmi_score"], df["halluc_reduction"])
 
-    # Factual gain vs CMI
-    axes[0].scatter(df["cmi_score"], df["factual_gain"],
-                    alpha=0.25, s=12, color=THEME["primary"], edgecolors="none")
+    fig, axes = plt.subplots(1, 2, figsize=(4.4, 2.65))
+    fig.subplots_adjust(wspace=0.35, top=0.88)
+    x_line = np.linspace(df["cmi_score"].min(), df["cmi_score"].max(), 80)
+
+    axes[0].scatter(df["cmi_score"], df["factual_gain"], alpha=0.18, s=8,
+                    color=THEME["grounded"], edgecolors="none", rasterized=True)
     z = np.polyfit(df["cmi_score"], df["factual_gain"], 1)
-    p = np.poly1d(z)
-    x_line = np.linspace(df["cmi_score"].min(), df["cmi_score"].max(), 100)
-    axes[0].plot(x_line, p(x_line), color=THEME["secondary"], linewidth=2,
-                 label=f"Trend (rho=0.080, p=0.091)")
-    axes[0].set_xlabel("Code-Mixing Index (CMI)")
-    axes[0].set_ylabel("Factual Gain")
-    axes[0].set_title("CMI vs Factual Gain")
-    axes[0].legend(frameon=True, facecolor="white", edgecolor=THEME["neutral"], fontsize=9)
+    axes[0].plot(x_line, np.poly1d(z)(x_line), color=THEME["teal_darker"], linewidth=1.2,
+                 label=f"ρ = {rho_fg:.3f}, p = {p_fg:.3f}")
+    axes[0].set_xlabel("CMI", fontsize=8)
+    axes[0].set_ylabel("Factual Gain", fontsize=8)
+    axes[0].set_title("Factual Gain", fontsize=8, fontweight="bold")
+    axes[0].legend(frameon=True, facecolor="white", edgecolor=THEME["grid"], loc="best", fontsize=6.5)
 
-    # Halluc reduction vs CMI
-    axes[1].scatter(df["cmi_score"], df["halluc_reduction"],
-                    alpha=0.25, s=12, color=THEME["accent"], edgecolors="none")
+    axes[1].scatter(df["cmi_score"], df["halluc_reduction"], alpha=0.18, s=8,
+                    color=THEME["seafoam"], edgecolors="none", rasterized=True)
     z2 = np.polyfit(df["cmi_score"], df["halluc_reduction"], 1)
-    p2 = np.poly1d(z2)
-    axes[1].plot(x_line, p2(x_line), color=THEME["secondary"], linewidth=2,
-                 label=f"Trend (rho=0.017, p=0.725)")
-    axes[1].set_xlabel("Code-Mixing Index (CMI)")
-    axes[1].set_ylabel("Hallucination Reduction")
-    axes[1].set_title("CMI vs Hallucination Reduction")
-    axes[1].legend(frameon=True, facecolor="white", edgecolor=THEME["neutral"], fontsize=9)
+    axes[1].plot(x_line, np.poly1d(z2)(x_line), color=THEME["teal_darker"], linewidth=1.2,
+                 label=f"ρ = {rho_hr:.3f}, p = {p_hr:.3f}")
+    axes[1].set_xlabel("CMI", fontsize=8)
+    axes[1].set_ylabel("Hallucination Reduction", fontsize=8)
+    axes[1].set_title("Hallucination Reduction", fontsize=8, fontweight="bold")
+    axes[1].legend(frameon=True, facecolor="white", edgecolor=THEME["grid"], loc="best", fontsize=6.5)
+    for a in axes:
+        a.set_facecolor("white")
+        a.tick_params(labelsize=7)
 
-    fig.suptitle("H2: Correlation Between Code-Mixing and RAG Performance", fontsize=TITLE_SIZE, y=1.02)
-    fig.tight_layout()
+    fig.suptitle("H2: CMI Vs Benefit (Spearman)", fontsize=9, fontweight="bold", y=1.0)
     save(fig, "06_cmi_scatter")
 
 
 # ──────────────────────────────────────────────
-#  PLOT 7: Limitation Improvement (11 → 3,015)
+#  PLOT 7: 11 → 3,015 (no overlapping pies)
 # ──────────────────────────────────────────────
-def plot_improvement(df):
-    fig, axes = plt.subplots(1, 2, figsize=(10, 4))
+def plot_improvement() -> None:
+    """Two bars only; log Y so Open-i (11) and MultiCaRe (3,015) are both visible."""
+    fig, ax = plt.subplots(figsize=(3.35, 2.55))
+    fig.subplots_adjust(left=0.18, bottom=0.2, right=0.96, top=0.88)
+    ax.set_facecolor("white")
 
-    # Left: pair count comparison
-    categories = ["Open-i\n(Before)", "MultiCaRe\n(After)"]
+    names = ["Open-i", "MultiCaRe"]
     values = [11, 3015]
-    colors = [THEME["secondary"], THEME["primary"]]
-    bars = axes[0].bar(categories, values, color=colors, edgecolor="white",
-                       linewidth=0.5, width=0.5)
-    axes[0].set_ylabel("Number of Usable Pairs")
-    axes[0].set_title("Dataset Pairing Improvement")
-    for bar, val in zip(bars, values):
-        axes[0].text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 50,
-                     f"{val:,}", ha="center", va="bottom", fontsize=12, fontweight="bold")
-    axes[0].text(0.5, 0.85, "274x increase", transform=axes[0].transAxes,
-                 ha="center", fontsize=13, fontweight="bold", color=THEME["accent"])
-    axes[0].set_ylim(0, 3600)
+    x = np.arange(len(names))
+    colors = [THEME["zero_shot"], THEME["grounded"]]
 
-    # Right: condition coverage
-    cov_before = [1, 17]
-    cov_after = [18, 0]
-    labels = ["Covered", "Not Covered"]
-    colors_pie = [THEME["primary"], THEME["light_secondary"]]
+    bars = ax.bar(
+        x, values, width=0.52, color=colors,
+        edgecolor=[THEME["zero_shot_edge"], THEME["teal_darker"]], linewidth=0.75,
+    )
+    ax.set_xticks(x)
+    ax.set_xticklabels(names, fontsize=8)
+    ax.set_ylabel("Usable Pairs (Log Scale)", fontsize=8)
+    ax.set_title("Evidence Scale-Up (MMCQSD)", fontsize=9, fontweight="bold")
+    ax.set_yscale("log")
+    ax.set_ylim(6, 5500)
+    ax.tick_params(axis="y", labelsize=7)
+    ax.yaxis.grid(True, which="major", color=THEME["grid"], linewidth=0.35, alpha=0.7)
+    ax.set_axisbelow(True)
 
-    wedges1, _ = axes[1].pie([1, 17], colors=[THEME["light_secondary"], THEME["secondary"]],
-                              startangle=90, radius=0.65, center=(-0.35, 0),
-                              wedgeprops=dict(linewidth=1, edgecolor="white"))
-    wedges2, _ = axes[1].pie([18, 0], colors=[THEME["primary"], THEME["light_primary"]],
-                              startangle=90, radius=0.65, center=(0.55, 0),
-                              wedgeprops=dict(linewidth=1, edgecolor="white"))
-    axes[1].text(-0.35, -0.9, "Open-i\n1/18 conditions", ha="center", fontsize=9)
-    axes[1].text(0.55, -0.9, "MultiCaRe\n18/18 conditions", ha="center", fontsize=9)
-    axes[1].set_title("Medical Condition Coverage")
-    axes[1].set_aspect("equal")
+    for bar, v in zip(bars, values):
+        top = v * 1.12
+        ax.text(
+            bar.get_x() + bar.get_width() / 2, top, f"{v:,}",
+            ha="center", va="bottom", fontsize=7, color=THEME["navy_text"],
+        )
 
-    fig.suptitle("Overcoming the Dataset Limitation", fontsize=TITLE_SIZE, y=1.02)
-    fig.tight_layout()
     save(fig, "07_limitation_improvement")
 
 
 # ──────────────────────────────────────────────
-#  PLOT 8: Pipeline / Architecture Diagram
+#  PLOT 8: Pipeline diagram (compact, no overlap)
 # ──────────────────────────────────────────────
-def plot_pipeline():
-    fig, ax = plt.subplots(figsize=(12, 3.5))
-    ax.set_xlim(0, 12)
-    ax.set_ylim(0, 3.5)
+def plot_pipeline() -> None:
+    fig, ax = plt.subplots(figsize=(6.2, 2.35))
+    ax.set_xlim(0, 10)
+    ax.set_ylim(0, 2.5)
     ax.axis("off")
 
-    box_style = dict(boxstyle="round,pad=0.4", linewidth=1.5)
-    arrow_props = dict(arrowstyle="-|>", color=THEME["neutral"], linewidth=1.5)
+    box = dict(boxstyle="round,pad=0.28", linewidth=1.0, edgecolor=THEME["teal_dark"])
+    arr = dict(arrowstyle="-|>", color=THEME["teal_darker"], linewidth=1.0,
+               mutation_scale=10, shrinkA=2, shrinkB=2)
 
     stages = [
-        (1.0, 1.75, "MMCQSD\nHinglish Queries\n(3,015)", THEME["cm_med"]),
-        (3.5, 1.75, "LaBSE\nEncoder", THEME["primary"]),
-        (6.0, 1.75, "FAISS\nRetrieval", THEME["accent"]),
-        (8.5, 1.75, "Llama-3.1-8B\nGenerator", THEME["secondary"]),
-        (11.0, 1.75, "Hinglish\nResponse", THEME["cm_high"]),
+        (0.55, 1.15, "Hinglish\nquery\n(MMCQSD)", THEME["cm_low"]),
+        (2.05, 1.15, "LaBSE\nencode", THEME["teal_dark"]),
+        (3.55, 1.15, "FAISS\nretrieve", THEME["grounded"]),
+        (5.05, 1.15, "Adaptive\ncontext", THEME["seafoam"]),
+        (6.55, 1.15, "Llama-3.1-8B\n(Groq)", THEME["teal_darker"]),
+        (8.05, 1.15, "Hinglish\nanswer", THEME["cm_high"]),
     ]
 
-    for x, y, label, color in stages:
-        ax.annotate(label, (x, y), fontsize=9, ha="center", va="center",
-                    fontweight="bold", color="white",
-                    bbox=dict(facecolor=color, **box_style))
+    for i, (x, y, label, color) in enumerate(stages):
+        ax.annotate(
+            label, (x, y), fontsize=6.5, ha="center", va="center", fontweight="bold",
+            color="white", bbox=dict(facecolor=color, **box),
+        )
+        if i < len(stages) - 1:
+            x0, y0 = stages[i][0], stages[i][1]
+            x1, y1 = stages[i + 1][0], stages[i + 1][1]
+            ax.annotate("", xy=(x1 - 0.42, y1), xytext=(x0 + 0.42, y0), arrowprops=arr)
 
-    for i in range(len(stages) - 1):
-        ax.annotate("", xy=(stages[i + 1][0] - 0.8, stages[i + 1][1]),
-                     xytext=(stages[i][0] + 0.8, stages[i][1]),
-                     arrowprops=arrow_props)
+    ax.annotate(
+        "MultiCaRe evidence\n(61,316 filtered;\n10K indexed)", (3.55, 2.15),
+        fontsize=6, ha="center", va="center", fontweight="bold", color="white",
+        bbox=dict(facecolor=THEME["grounded"], boxstyle="round,pad=0.22", linewidth=0.8,
+                  edgecolor=THEME["teal_dark"]),
+    )
+    ax.annotate("", xy=(3.55, 1.48), xytext=(3.55, 1.82),
+                arrowprops=dict(arrowstyle="-|>", color=THEME["teal_darker"], linewidth=1.0,
+                                mutation_scale=9))
 
-    ax.annotate("MultiCaRe\nEvidence Corpus\n(61,316 cases)", (6.0, 3.2),
-                fontsize=9, ha="center", va="center", fontweight="bold",
-                color="white",
-                bbox=dict(facecolor=THEME["primary"], alpha=0.7, **box_style))
-    ax.annotate("", xy=(6.0, 2.2), xytext=(6.0, 2.8),
-                arrowprops=dict(arrowstyle="-|>", color=THEME["primary"], linewidth=1.5))
-
-    label_box = dict(boxstyle="round,pad=0.4", linewidth=1)
-    ax.annotate("Grounded\n(with evidence)", (8.5, 0.4), fontsize=8,
-                ha="center", va="center", color=THEME["primary"],
-                bbox=dict(facecolor=THEME["light_primary"], **label_box))
-    ax.annotate("Zero-Shot\n(no evidence)", (8.5, 3.2), fontsize=8,
-                ha="center", va="center", color=THEME["secondary"],
-                bbox=dict(facecolor=THEME["light_secondary"], **label_box))
-
-    ax.set_title("System Architecture: Grounded Multimodal RAG for Hinglish Clinical Queries",
-                 fontsize=TITLE_SIZE, pad=15)
-
+    leg = dict(boxstyle="round,pad=0.2", linewidth=0.6, edgecolor=THEME["grid"])
+    ax.annotate("Grounded path\n(evidence in prompt)", (6.55, 0.35), fontsize=5.8,
+                ha="center", va="center", color=THEME["navy_text"],
+                bbox=dict(facecolor=THEME["panel"], **leg))
+    ax.set_title("Pipeline Overview", fontsize=9, fontweight="bold", pad=4)
     save(fig, "08_pipeline_architecture")
 
 
 # ──────────────────────────────────────────────
-#  PLOT 9: Match Quality Distribution
+#  PLOT 9: Match quality
 # ──────────────────────────────────────────────
-def plot_match_quality():
-    pairs = pd.read_csv("data/processed/mmcqsd_multicare_paired.csv")
+def plot_match_quality() -> None:
+    path = _resolve_csv("data/processed/mmcqsd_multicare_paired.csv")
+    if not path.exists():
+        print("  Skipping 09_match_quality (mmcqsd_multicare_paired.csv not found)")
+        return
 
-    fig, axes = plt.subplots(1, 2, figsize=(10, 4))
+    pairs = pd.read_csv(path)
+    fig, axes = plt.subplots(1, 2, figsize=(4.2, 2.85))
+    fig.subplots_adjust(wspace=0.4, left=0.12, right=0.98, top=0.82, bottom=0.2)
+    fig.patch.set_facecolor(THEME["figure_bg"])
 
-    # Histogram of similarity scores
-    axes[0].hist(pairs["similarity_score"], bins=40, color=THEME["primary"],
-                 edgecolor="white", linewidth=0.5, alpha=0.85)
-    axes[0].axvline(pairs["similarity_score"].mean(), color=THEME["secondary"],
-                    linewidth=2, linestyle="--",
-                    label=f"Mean = {pairs['similarity_score'].mean():.3f}")
-    axes[0].set_xlabel("Cosine Similarity (LaBSE)")
-    axes[0].set_ylabel("Number of Pairs")
-    axes[0].set_title("Similarity Score Distribution")
-    axes[0].legend(frameon=True, facecolor="white", edgecolor=THEME["neutral"])
+    sim = pairs["similarity_score"]
+    m = float(sim.mean())
+    x_hi = float(sim.max()) + 0.02
 
-    # Match quality pie
+    n_bins = 34
+    axes[0].hist(
+        sim, bins=n_bins, color=THEME["mint"], edgecolor="white", linewidth=0.45, alpha=0.95,
+    )
+    axes[0].axvspan(m, x_hi, alpha=0.32, color=THEME["grounded_light"], zorder=0)
+    axes[0].axvline(m, color=THEME["teal_darker"], linewidth=1.2, linestyle="--", label=f"Mean = {m:.3f}")
+    axes[0].set_xlabel("LaBSE Similarity", fontsize=8)
+    axes[0].set_ylabel("Count", fontsize=8)
+    axes[0].set_title("Similarity Distribution", fontsize=8, fontweight="bold")
+    axes[0].set_facecolor("white")
+    axes[0].tick_params(labelsize=7)
+    axes[0].legend(loc="upper left", frameon=True, fontsize=6.5)
+
     quality_counts = pairs["match_quality"].value_counts()
-    labels = [f"High\n(n={quality_counts.get('high', 0):,})",
-              f"Medium\n(n={quality_counts.get('medium', 0):,})",
-              f"Low\n(n={quality_counts.get('low', 0)})"]
-    sizes = [quality_counts.get("high", 0), quality_counts.get("medium", 0),
-             quality_counts.get("low", 0)]
-    colors = [THEME["accent"], THEME["cm_med"], THEME["secondary"]]
-    wedges, texts = axes[1].pie(sizes, labels=labels, colors=colors,
-                                 startangle=90,
-                                 wedgeprops=dict(linewidth=1.5, edgecolor="white"))
-    for t in texts:
-        t.set_fontsize(10)
-    axes[1].set_title("Match Quality Breakdown (3,015 pairs)")
+    hi = int(quality_counts.get("high", 0))
+    med = int(quality_counts.get("medium", 0))
+    lo = int(quality_counts.get("low", 0))
+    total = hi + med + lo
+    p_hi, p_med, p_lo = 100.0 * hi / total, 100.0 * med / total, 100.0 * lo / total
+    sizes = [hi, med, lo]
+    lbls = [f"High\n{p_hi:.1f}%", f"Medium\n{p_med:.1f}%", f"Low\n{p_lo:.1f}%"]
+    colors_p = [THEME["grounded"], THEME["teal"], THEME["light_secondary"]]
+    axes[1].pie(
+        sizes, labels=lbls, colors=colors_p, startangle=140,
+        textprops={"fontsize": 7, "fontweight": "bold"},
+        wedgeprops=dict(linewidth=0.6, edgecolor="white"),
+    )
+    axes[1].set_title("Quality Tier", fontsize=8, fontweight="bold")
 
-    fig.suptitle("LaBSE + FAISS Matching Results", fontsize=TITLE_SIZE, y=1.02)
-    fig.tight_layout()
+    pct_med_hi = 100.0 * (hi + med) / total
+    fig.suptitle(
+        f"Retrieval Match (N = {total:,}) · {pct_med_hi:.0f}% Medium+High",
+        fontsize=9, fontweight="bold", y=1.0,
+    )
+
     save(fig, "09_match_quality")
 
 
 # ──────────────────────────────────────────────
-#  PLOT 10: Statistical Significance Summary
+#  PLOT 10: Significance summary
 # ──────────────────────────────────────────────
-def plot_significance_summary(df):
-    fig, ax = plt.subplots(figsize=(7, 4))
+def plot_significance_summary(df: pd.DataFrame) -> None:
+    p_f, p_h = compute_h1_pvalues(df)
+    p_kw_fg, p_kw_hr = compute_h2_kruskal(df)
+    rho_fg, p_sp_fg = stats.spearmanr(df["cmi_score"], df["factual_gain"])
 
     tests = [
-        "H1: Factual\nSupport",
-        "H1: Hallucination\nReduction",
-        "H2: CMI Effect\n(Factual Gain)",
-        "H2: CMI Effect\n(Halluc. Red.)",
+        "H1: Wilcoxon Factual Support",
+        "H1: Wilcoxon Hallucination Reduction",
+        "H2: Kruskal–Wallis Factual Gain",
+        "H2: Kruskal–Wallis Hallucination Reduction",
+        "H2: Spearman CMI × Factual Gain",
     ]
-    p_values = [1.21e-24, 1.14e-19, 0.2375, 0.5193]
-    log_p = [-np.log10(max(p, 1e-30)) for p in p_values]
-    colors = [THEME["primary"] if p < 0.05 else THEME["neutral"] for p in p_values]
+    p_values = [p_f, p_h, p_kw_fg, p_kw_hr, p_sp_fg]
+    log_p = [-np.log10(max(p, 1e-300)) for p in p_values]
+    sig_green = "#2D6A4F"
+    ns_grey = "#ADB5BD"
+    colors = [sig_green if p < 0.05 else ns_grey for p in p_values]
 
-    bars = ax.barh(range(len(tests)), log_p, color=colors,
-                   edgecolor="white", linewidth=0.5, height=0.6)
+    fig, ax = plt.subplots(figsize=(3.8, 3.2))
+    ax.set_facecolor("white")
+    y = np.arange(len(tests))
+    ax.barh(y, log_p, color=colors, edgecolor="white", linewidth=0.45, height=0.55)
+    thr = -np.log10(0.05)
+    ax.axvline(thr, color="#333333", linewidth=1.0, linestyle="--", label="α = 0.05")
+    ax.set_yticks(y)
+    short_tests = [
+        "H1 Wilcoxon Factual",
+        "H1 Wilcoxon Hallucination",
+        "H2 K–W Factual",
+        "H2 K–W Hallucination",
+        "H2 Spearman CMI×FG",
+    ]
+    ax.set_yticklabels(short_tests, fontsize=6.5)
+    ax.set_xlabel("−log₁₀(p)", fontsize=8)
+    ax.set_title(f"Tests (N = {len(df):,})", fontsize=9, fontweight="bold")
 
-    threshold = -np.log10(0.05)
-    ax.axvline(threshold, color=THEME["secondary"], linewidth=1.5, linestyle="--",
-               label="p = 0.05 threshold")
+    xmax = max(max(log_p) * 1.08, thr * 1.35)
+    ax.set_xlim(0, xmax)
+    for i, (lp, p) in enumerate(zip(log_p, p_values)):
+        lbl = f"{p:.1e}" if p < 0.001 else f"{p:.3f}"
+        ax.text(
+            min(lp + 0.15, xmax * 0.97), i, lbl,
+            va="center", fontsize=6.5, fontweight="bold",
+            color="#1a1a1a" if p < 0.05 else "#555555",
+        )
 
-    ax.set_yticks(range(len(tests)))
-    ax.set_yticklabels(tests, fontsize=10)
-    ax.set_xlabel("-log10(p-value)")
-    ax.set_title("Statistical Significance of Hypotheses")
-    ax.legend(frameon=True, facecolor="white", edgecolor=THEME["neutral"], loc="lower right")
-
-    for bar, p in zip(bars, p_values):
-        label = f"p={p:.1e}" if p < 0.05 else f"p={p:.3f}"
-        sig = "***" if p < 0.001 else "n.s."
-        ax.text(bar.get_width() + 0.3, bar.get_y() + bar.get_height() / 2,
-                f"{label} {sig}", va="center", fontsize=9,
-                color=THEME["primary"] if p < 0.05 else THEME["neutral"])
+    leg = [
+        mpatches.Patch(facecolor=sig_green, edgecolor="white", label="p < 0.05"),
+        mpatches.Patch(facecolor=ns_grey, edgecolor="white", label="p ≥ 0.05"),
+    ]
+    ax.legend(handles=leg, loc="lower right", frameon=True, fontsize=6, facecolor="white")
 
     save(fig, "10_significance_summary")
 
 
 # ──────────────────────────────────────────────
-def plot_ablation():
-    """Phase 6 ablation: raw vs structured evidence comparison."""
-    ablation_path = Path("results/multicare_h1_ablation/ablation_scored.csv")
+#  PLOT 11: Ablation
+# ──────────────────────────────────────────────
+def plot_ablation() -> None:
+    ablation_path = _resolve_csv("results/multicare_h1_ablation/ablation_scored.csv")
     if not ablation_path.exists():
-        print("  Skipping ablation plot (no data)")
+        print("  Skipping 11_ablation_comparison (no ablation_scored.csv)")
         return
 
     struct = pd.read_csv(ablation_path)
-    raw = pd.read_csv("results/combined_h1h2/combined_scored.csv")
+    raw = pd.read_csv(_resolve_csv("results/combined_h1h2/combined_scored.csv"))
     common_ids = set(struct["pair_id"].tolist())
     raw = raw[raw["pair_id"].isin(common_ids)]
 
-    metrics = ["Factual Support\n(Grounded)", "Hallucination\n(Grounded)", "Factual Gain", "Halluc Reduction"]
+    metrics = ["Factual\n(Grounded)", "Hallucination\n(Grounded)", "Factual\nGain", "Hallucination\nReduction"]
     raw_vals = [
         raw["grounded_factual"].mean(),
         raw["grounded_hallucination"].mean(),
@@ -494,34 +654,104 @@ def plot_ablation():
     ]
 
     x = np.arange(len(metrics))
-    w = 0.35
+    w = 0.34
+    fig, ax = plt.subplots(figsize=(4.0, 2.65))
+    ax.bar(x - w / 2, raw_vals, w, label="Raw evidence", color=THEME["slate"], edgecolor="white", linewidth=0.35)
+    ax.bar(x + w / 2, struct_vals, w, label="Structured evidence", color=THEME["grounded"],
+           edgecolor="white", linewidth=0.35)
 
-    fig, ax = plt.subplots(figsize=(10, 5))
-    bars1 = ax.bar(x - w / 2, raw_vals, w, label="Raw Evidence", color=THEME["neutral"], edgecolor="white")
-    bars2 = ax.bar(x + w / 2, struct_vals, w, label="Structured Evidence", color=THEME["accent"], edgecolor="white")
+    top = max(max(raw_vals), max(struct_vals)) * 1.18
+    ax.set_ylim(0, top)
+    for i in x:
+        ax.text(i - w / 2, raw_vals[i] + 0.012, f"{raw_vals[i]:.3f}", ha="center", fontsize=5.8)
+        ax.text(i + w / 2, struct_vals[i] + 0.012, f"{struct_vals[i]:.3f}", ha="center", fontsize=5.8)
 
-    for bars in [bars1, bars2]:
-        for bar in bars:
-            h = bar.get_height()
-            ax.text(bar.get_x() + bar.get_width() / 2, h + 0.008, f"{h:.3f}",
-                    ha="center", va="bottom", fontsize=9, fontweight="bold")
-
-    ax.set_ylabel("Score")
-    ax.set_title(f"Phase 6 Ablation: Raw vs Structured Evidence (n={len(struct)})")
+    ax.set_ylabel("Mean Score")
+    ax.set_title(f"Ablation: Raw Vs Structured (N = {len(struct):,})", fontsize=9, fontweight="bold")
     ax.set_xticks(x)
-    ax.set_xticklabels(metrics)
-    ax.legend()
-    ax.set_ylim(0, max(max(raw_vals), max(struct_vals)) * 1.15)
-    fig.tight_layout()
+    ax.set_xticklabels(metrics, fontsize=6.5)
+    ax.set_facecolor("white")
+    ax.legend(frameon=True, facecolor="white", edgecolor=THEME["grid"], loc="upper right")
     save(fig, "11_ablation_comparison")
 
 
 # ──────────────────────────────────────────────
-#  MAIN
+#  NEW PLOT 12: Grounded factual by CMI (robustness)
 # ──────────────────────────────────────────────
-def main():
-    apply_theme()
+def plot_h2_grounded_factual_bars(df: pd.DataFrame) -> None:
+    buckets = ["low_cm", "medium_cm", "high_cm"]
+    labels = ["Low", "Medium", "High"]
+    means = [df[df["cmi_bucket"] == b]["grounded_factual"].mean() for b in buckets]
+    se = [df[df["cmi_bucket"] == b]["grounded_factual"].sem() for b in buckets]
+    ns = [len(df[df["cmi_bucket"] == b]) for b in buckets]
 
+    fig, ax = plt.subplots(figsize=(3.4, 2.6))
+    x = np.arange(len(buckets))
+    cols = [THEME["cm_low"], THEME["cm_med"], THEME["cm_high"]]
+    ax.bar(x, means, yerr=se, color=cols, edgecolor="white", linewidth=0.4, capsize=2,
+           error_kw={"linewidth": 0.6, "color": THEME["navy_text"]})
+    ax.set_xticks(x)
+    ax.set_xticklabels(labels, fontsize=6.5)
+    ax.set_ylabel("Mean Grounded Factual", fontsize=8)
+    ax.set_ylim(0, max(np.array(means) + np.array(se)) * 1.25)
+    for xi, m, n in zip(x, means, ns):
+        ax.text(xi, m + 0.02, f"{m:.3f}\n(n={n})", ha="center", va="bottom", fontsize=5.8)
+    ax.set_title(f"H2: Grounded Factual By CMI (N = {len(df):,})", fontsize=9, fontweight="bold")
+    ax.set_facecolor("white")
+    save(fig, "12_h2_grounded_factual_by_cmi")
+
+
+# ──────────────────────────────────────────────
+#  NEW PLOT 13: Cohen's d (paired) for H1
+# ──────────────────────────────────────────────
+def plot_h1_cohens_d(df: pd.DataFrame) -> None:
+    fg = df["grounded_factual"] - df["zero_factual"]
+    hr = df["zero_hallucination"] - df["grounded_hallucination"]
+    # Paired Cohen's d: mean(diff) / std(diff)
+    d_f = fg.mean() / fg.std(ddof=1)
+    d_h = hr.mean() / hr.std(ddof=1)
+    labels = ["Factual Gain\n(Paired)", "Hallucination Reduction\n(Paired)"]
+    vals = [d_f, d_h]
+
+    fig, ax = plt.subplots(figsize=(3.8, 2.6))
+    cols = [THEME["grounded"], THEME["seafoam"]]
+    ax.barh(labels, vals, color=cols, edgecolor="white", linewidth=0.4, height=0.5)
+    ax.axvline(0, color=THEME["slate"], linewidth=0.7)
+    ax.axvline(0.2, color=THEME["mint"], linewidth=0.8, linestyle=":", label="d = 0.2 (small)")
+    ax.axvline(0.5, color=THEME["light_secondary"], linewidth=0.8, linestyle=":", label="d = 0.5 (medium)")
+    ax.set_xlabel("Cohen's D (Paired)", fontsize=9, fontweight="bold")
+    for i, v in enumerate(vals):
+        ax.text(v + 0.02, i, f"{v:.3f}", va="center", fontsize=6.5, fontweight="bold")
+    ax.legend(loc="lower right", frameon=True, facecolor="white", edgecolor=THEME["grid"], fontsize=5.5)
+    ax.set_title(f"H1: Cohen's D (Paired, N = {len(df):,})", fontsize=9, fontweight="bold")
+    ax.set_facecolor("white")
+    save(fig, "13_h1_cohens_d")
+
+
+# ──────────────────────────────────────────────
+#  NEW PLOT 14: Summary “lollipop” — mean deltas
+# ──────────────────────────────────────────────
+def plot_h1_delta_lollipop(df: pd.DataFrame) -> None:
+    fg = df["factual_gain"].mean()
+    hr = df["halluc_reduction"].mean()
+    fig, ax = plt.subplots(figsize=(3.6, 2.4))
+    y = [0, 1]
+    ax.hlines(y, [0, 0], [fg, hr], color=THEME["teal_dark"], linewidth=2)
+    ax.scatter([fg, hr], y, color=THEME["grounded"], s=55, zorder=3, edgecolor="white", linewidth=0.5)
+    ax.axvline(0, color=THEME["slate"], linewidth=0.7)
+    ax.set_yticks(y)
+    ax.set_yticklabels(["Δ Factual Support", "Δ Hallucination Reduction"], fontsize=6.5)
+    ax.set_xlabel("Mean Paired Change (Grounded − Zero / Vice Versa)")
+    ax.set_title(f"H1: Mean Deltas (N = {len(df):,})", fontsize=9, fontweight="bold")
+    ax.set_facecolor("white")
+    for yi, v in zip(y, [fg, hr]):
+        ax.text(v + 0.01, yi, f"{v:+.3f}", va="center", fontsize=6.5, fontweight="bold")
+    save(fig, "14_h1_mean_deltas_lollipop")
+
+
+# ──────────────────────────────────────────────
+def main() -> None:
+    apply_theme()
     print("Loading data...")
     df = load_data()
     print()
@@ -529,22 +759,26 @@ def main():
     print("Generating plots...")
     plot_h1_bar(df)
     plot_h1_distribution(df)
+    plot_h1_distribution_horizontal(df)
     plot_factual_gain_hist(df)
     plot_h2_grouped(df)
     plot_per_condition(df)
     plot_cmi_scatter(df)
-    plot_improvement(df)
+    plot_improvement()
     plot_pipeline()
     plot_match_quality()
     plot_significance_summary(df)
     plot_ablation()
+    plot_h2_grounded_factual_bars(df)
+    plot_h1_cohens_d(df)
+    plot_h1_delta_lollipop(df)
 
     print()
     print(f"All plots saved to {OUT_DIR}")
     print()
-    print("THEME COLORS (for matching your poster template):")
-    for name, color in THEME.items():
-        print(f"  {name:20s} {color}")
+    print("THEME (hex):")
+    for name in ("teal", "teal_dark", "panel", "grounded", "zero_shot"):
+        print(f"  {name:12s} {THEME[name]}")
 
 
 if __name__ == "__main__":
