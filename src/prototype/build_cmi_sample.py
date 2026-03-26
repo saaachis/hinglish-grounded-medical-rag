@@ -42,7 +42,7 @@ def cmi_score(text: str) -> float:
 
 def build_sample(
     pairs_path: Path,
-    evaluated_path: Path | None,
+    evaluated_paths: list[Path] | None,
     n: int,
     seed: int = 42,
     output_path: Path | None = None,
@@ -50,9 +50,13 @@ def build_sample(
     pairs = pd.read_csv(pairs_path)
     print(f"Loaded {len(pairs)} total pairs")
 
-    if evaluated_path and evaluated_path.exists():
-        evaluated = pd.read_csv(evaluated_path)
-        done_ids = set(evaluated["pair_id"].tolist())
+    if evaluated_paths:
+        done_ids: set = set()
+        for ep in evaluated_paths:
+            if ep.exists():
+                ev = pd.read_csv(ep)
+                done_ids.update(ev["pair_id"].tolist())
+                print(f"  Loaded {len(ev)} pair_ids from {ep}")
         pairs = pairs[~pairs["pair_id"].isin(done_ids)].reset_index(drop=True)
         print(f"Excluded {len(done_ids)} already-evaluated -> {len(pairs)} remaining")
 
@@ -98,7 +102,9 @@ def build_sample(
 def main():
     parser = argparse.ArgumentParser(description="Build CMI-stratified sample")
     parser.add_argument("--pairs", type=Path, default=Path("data/processed/mmcqsd_multicare_paired.csv"))
-    parser.add_argument("--evaluated", type=Path, default=Path("results/multicare_h1_llm/h1_llm_scored.csv"))
+    parser.add_argument("--evaluated", type=Path, nargs="+",
+                        default=[Path("results/multicare_h1_llm/h1_llm_scored.csv")],
+                        help="One or more scored CSVs to exclude")
     parser.add_argument("-n", type=int, default=400, help="Total pairs to sample")
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("-o", "--output", type=Path, default=Path("data/processed/cmi_sample_day1.csv"))

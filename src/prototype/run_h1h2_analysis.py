@@ -308,10 +308,16 @@ def generate_report(h1: dict, h2: dict) -> str:
 
 
 def main():
-    scored_paths = [
-        Path("results/multicare_h1_llm/h1_llm_scored.csv"),
-        Path("results/multicare_h1h2_day1/h1_llm_scored.csv"),
-    ]
+    combined_path = Path("results/combined_h1h2/combined_scored.csv")
+    if combined_path.exists():
+        scored_paths = [combined_path]
+    else:
+        scored_paths = [
+            Path("results/multicare_h1_llm/h1_llm_scored.csv"),
+            Path("results/multicare_h1h2_day1/h1_llm_scored.csv"),
+            Path("results/multicare_h1h2_day2/h1_llm_scored.csv"),
+            Path("results/multicare_h1h2_day3/h1_llm_scored.csv"),
+        ]
 
     print("Loading and merging scored results...")
     clean = load_and_merge(scored_paths)

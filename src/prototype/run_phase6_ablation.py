@@ -1,8 +1,8 @@
 """Phase 6: LLM Evidence Extraction + Ablation (raw vs structured).
 
-Step 1: Extract structured evidence from the 242 unique MultiCaRe cases
-        used in the Phase 5b evaluation (via Groq LLM).
-Step 2: Re-run the same 292 evaluated pairs with structured evidence.
+Step 1: Extract structured evidence from all unique MultiCaRe cases
+        used across all evaluation runs (via Groq LLM).
+Step 2: Re-run evaluated pairs with structured evidence.
 Step 3: Compare raw vs structured results (ablation).
 """
 
@@ -29,7 +29,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 PAIRS_PATH = Path("data/processed/mmcqsd_multicare_paired.csv")
-LLM_SCORED_PATH = Path("results/multicare_h1_llm/h1_llm_scored.csv")
+COMBINED_SCORED_PATH = Path("results/combined_h1h2/combined_scored.csv")
 OUTPUT_DIR = Path("results/multicare_h1_ablation")
 EXTRACTION_CACHE = Path("data/processed/extracted_evidence.csv")
 
@@ -165,10 +165,9 @@ def call_groq(client: Groq, system: str, user_msg: str, max_tokens: int = 300) -
 
 # ─── Step 1: Extract structured evidence ───
 
-def run_extraction(client: Groq, pairs_df: pd.DataFrame, llm_scored_df: pd.DataFrame):
+def run_extraction(client: Groq, pairs_df: pd.DataFrame, all_evaluated_ids: set):
     """Extract structured evidence for unique cases in evaluated pairs."""
-    evaluated_ids = set(llm_scored_df["pair_id"].tolist())
-    eval_pairs = pairs_df[pairs_df["pair_id"].isin(evaluated_ids)]
+    eval_pairs = pairs_df[pairs_df["pair_id"].isin(all_evaluated_ids)]
     unique_cases = eval_pairs.drop_duplicates(subset=["multicare_case_id"])
 
     logger.info("Need to extract %d unique cases", len(unique_cases))
@@ -218,15 +217,14 @@ def run_extraction(client: Groq, pairs_df: pd.DataFrame, llm_scored_df: pd.DataF
 def run_structured_prototype(
     client: Groq,
     pairs_df: pd.DataFrame,
-    llm_scored_df: pd.DataFrame,
+    all_evaluated_ids: set,
     extractions: dict[str, str],
 ):
-    """Re-run the same evaluated pairs using structured evidence."""
+    """Re-run evaluated pairs using structured evidence."""
     output_dir = OUTPUT_DIR
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    evaluated_ids = llm_scored_df["pair_id"].tolist()
-    eval_pairs = pairs_df[pairs_df["pair_id"].isin(evaluated_ids)].reset_index(drop=True)
+    eval_pairs = pairs_df[pairs_df["pair_id"].isin(all_evaluated_ids)].reset_index(drop=True)
 
     # Check for resume
     partial_path = output_dir / "ablation_scored_partial.csv"
@@ -334,14 +332,15 @@ def compute_metrics(df: pd.DataFrame) -> dict:
 
 
 def generate_ablation_report(raw_metrics: dict, struct_metrics: dict) -> str:
+    n_pairs = struct_metrics["n"]
     lines = [
         "# Ablation: Raw Evidence vs Structured Evidence",
         "",
         "## Setup",
-        "- Same 292 pairs, same MMCQSD Hinglish queries",
+        f"- {n_pairs} evaluated pairs, same MMCQSD Hinglish queries",
         "- Same LLM generator (Llama-3.1-8B via Groq)",
-        "- **Run 1 (Phase 5b)**: Raw MultiCaRe case narratives as evidence",
-        "- **Run 2 (Phase 6)**: LLM-extracted structured evidence",
+        "- **Raw run**: MultiCaRe case narratives as evidence (unstructured)",
+        "- **Structured run**: LLM-extracted structured evidence (Phase 6)",
         "",
         "## Comparison",
         "",
@@ -383,35 +382,54 @@ def generate_ablation_report(raw_metrics: dict, struct_metrics: dict) -> str:
     return "\n".join(lines) + "\n"
 
 
+def load_all_scored() -> tuple[pd.DataFrame, set]:
+    """Load combined scored CSV, return clean df and all evaluated pair IDs."""
+    df = pd.read_csv(COMBINED_SCORED_PATH)
+    logger.info("Loaded %d rows from %s", len(df), COMBINED_SCORED_PATH)
+    clean = df[
+        (df["zero_shot_output"] != "[API_ERROR]")
+        & (df["grounded_output"] != "[API_ERROR]")
+    ].drop_duplicates(subset=["pair_id"], keep="last")
+    all_ids = set(clean["pair_id"].tolist())
+    logger.info("Total clean pairs: %d", len(all_ids))
+    return clean, all_ids
+
+
 def main():
     parser = argparse.ArgumentParser(description="Phase 6: Ablation study")
     parser.add_argument("--pairs", type=Path, default=PAIRS_PATH)
-    parser.add_argument("--llm-scored", type=Path, default=LLM_SCORED_PATH)
     parser.add_argument("--output-dir", type=Path, default=OUTPUT_DIR)
+    parser.add_argument("--step", choices=["extract", "ablation", "all"], default="all",
+                        help="Run only extraction, only ablation, or all steps")
     args = parser.parse_args()
 
     client = Groq(api_key=os.getenv("GROQ_API_KEY"))
     pairs_df = pd.read_csv(args.pairs)
-    llm_scored_df = pd.read_csv(args.llm_scored)
+    llm_scored_df, all_evaluated_ids = load_all_scored()
 
-    logger.info("=== Phase 6 Step 1: Evidence Extraction ===")
-    extractions = run_extraction(client, pairs_df, llm_scored_df)
+    if args.step in ("extract", "all"):
+        logger.info("=== Phase 6 Step 1: Evidence Extraction ===")
+        extractions = run_extraction(client, pairs_df, all_evaluated_ids)
+    else:
+        cached = pd.read_csv(EXTRACTION_CACHE)
+        extractions = dict(zip(cached["case_id"], cached["structured_evidence"]))
+        logger.info("Loaded %d cached extractions", len(extractions))
 
-    logger.info("=== Phase 6 Step 2: Structured Prototype ===")
-    struct_df = run_structured_prototype(client, pairs_df, llm_scored_df, extractions)
+    if args.step in ("ablation", "all"):
+        logger.info("=== Phase 6 Step 2: Structured Prototype ===")
+        struct_df = run_structured_prototype(client, pairs_df, all_evaluated_ids, extractions)
 
-    logger.info("=== Phase 6 Step 3: Ablation Comparison ===")
-    raw_metrics = compute_metrics(llm_scored_df)
-    struct_metrics = compute_metrics(struct_df)
+        logger.info("=== Phase 6 Step 3: Ablation Comparison ===")
+        raw_metrics = compute_metrics(llm_scored_df)
+        struct_metrics = compute_metrics(struct_df)
 
-    report = generate_ablation_report(raw_metrics, struct_metrics)
-    args.output_dir.mkdir(parents=True, exist_ok=True)
-    report_path = args.output_dir / "ablation_report.md"
-    report_path.write_text(report, encoding="utf-8")
+        report = generate_ablation_report(raw_metrics, struct_metrics)
+        args.output_dir.mkdir(parents=True, exist_ok=True)
+        report_path = args.output_dir / "ablation_report.md"
+        report_path.write_text(report, encoding="utf-8")
 
-    logger.info("Ablation report saved: %s", report_path)
-    # Print without Unicode arrows to avoid Windows encoding issues
-    print(report.replace("\u2192", "->"))
+        logger.info("Ablation report saved: %s", report_path)
+        print(report.replace("\u2192", "->"))
 
 
 if __name__ == "__main__":
