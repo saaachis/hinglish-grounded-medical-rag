@@ -9,7 +9,8 @@ Run from repository root:
   python research-poster-work/generate_plots.py
 
 Outputs high-resolution PNGs (300 dpi) in research-poster-work/.
-H1 violin distributions: 02_h1_distributions.png (stacked) and 02_h1_distributions_horizontal.png (side by side).
+H1 violin distributions: 02_h1_distributions.png (stacked); 02_h1_distributions_horizontal.png (side by side);
+  02_h1_distributions_horizontal_poster_cm.png (6.6 cm × 4.1 cm, tight margins for Word).
 """
 
 from __future__ import annotations
@@ -21,6 +22,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
+from matplotlib.ticker import MaxNLocator
 import numpy as np
 import pandas as pd
 import seaborn as sns
@@ -101,14 +103,15 @@ def apply_theme():
     })
 
 
-def save(fig, name: str) -> None:
-    fig.savefig(
-        OUT_DIR / f"{name}.png",
+def save(fig, name: str, **kwargs) -> None:
+    opts = dict(
         dpi=DPI,
         bbox_inches="tight",
         facecolor=THEME["figure_bg"],
         pad_inches=0.02,
     )
+    opts.update(kwargs)
+    fig.savefig(OUT_DIR / f"{name}.png", **opts)
     plt.close(fig)
     print(f"  Saved {name}.png")
 
@@ -207,33 +210,89 @@ def _h1_violin_panel(
     title: str,
     *,
     ylabel: str | None = "Score",
+    title_fs: float = 9,
+    axis_label_fs: float = 8,
+    tick_fs: float = 8,
+    mean_label_fs: float = 6,
+    mean_lw: float = 1.5,
+    violin_lw: float = 0.7,
+    inner: str = "box",
+    spine_lw: float | None = None,
+    y_max_ticks: int | None = None,
+    mean_fmt: str = ".3f",
+    split_x_labels: bool = False,
+    x_tick_fs: float | None = None,
+    mean_x_pad: float = 0.42,
+    mean_hline_hw: float = 0.28,
+    mean_label_dy: float = 0.0,
+    mean_label_va: str = "center",
+    xlim_right: float = 1.75,
+    title_pad: float | None = None,
+    label_pad: float | None = None,
+    inner_line_lw: float | None = None,
+    saturation: float | None = None,
+    tick_pad_y: float | None = None,
+    tick_pad_x: float | None = None,
 ) -> None:
     n = len(score_zero)
     data = pd.DataFrame({
         "Score": pd.concat([score_zero, score_grounded]),
         "Mode": ["Zero-shot"] * n + ["Grounded"] * n,
     })
-    sns.violinplot(
+    vkw: dict = dict(
         data=data, x="Mode", y="Score", hue="Mode", palette=_PALETTE_H1_VIOLIN,
-        inner="box", cut=0, ax=ax, legend=False, linewidth=0.7,
+        inner=inner, cut=0, ax=ax, legend=False, linewidth=violin_lw,
     )
+    if saturation is not None:
+        vkw["saturation"] = saturation
+    sns.violinplot(**vkw)
     ax.set_facecolor("white")
-    ax.set_title(title, fontsize=9, fontweight="bold")
+    tkw = dict(fontsize=title_fs, fontweight="bold")
+    if title_pad is not None:
+        tkw["pad"] = title_pad
+    ax.set_title(title, **tkw)
     ax.set_xlabel("")
     if ylabel:
-        ax.set_ylabel(ylabel, fontsize=8)
+        lkw = dict(fontsize=axis_label_fs)
+        if label_pad is not None:
+            lkw["labelpad"] = label_pad
+        ax.set_ylabel(ylabel, **lkw)
     else:
         ax.set_ylabel("")
-    ax.tick_params(labelsize=8)
+    ytp = dict(axis="y", labelsize=tick_fs, length=2.5, width=0.45)
+    if tick_pad_y is not None:
+        ytp["pad"] = tick_pad_y
+    ax.tick_params(**ytp)
+    xfs = x_tick_fs if x_tick_fs is not None else tick_fs
+    xtp = dict(axis="x", labelsize=xfs, length=2.5, width=0.45)
+    if tick_pad_x is not None:
+        xtp["pad"] = tick_pad_x
+    ax.tick_params(**xtp)
+    if split_x_labels:
+        ax.set_xticks([0, 1])
+        ax.set_xticklabels(["Zero-\nshot", "Ground-\ned"], fontsize=xfs, linespacing=0.9)
+    if y_max_ticks is not None:
+        ax.yaxis.set_major_locator(MaxNLocator(nbins=y_max_ticks, prune=None))
+    if spine_lw is not None:
+        for s in ax.spines.values():
+            s.set_linewidth(spine_lw)
+    if inner_line_lw is not None:
+        for line in ax.lines:
+            line.set_linewidth(inner_line_lw)
+            line.set_color("#222222")
     z_mean = float(score_zero.mean())
     g_mean = float(score_grounded.mean())
     for i, m in enumerate([z_mean, g_mean]):
-        ax.hlines(m, i - 0.3, i + 0.3, colors="#111", linewidth=1.5, zorder=5)
+        ax.hlines(
+            m, i - mean_hline_hw, i + mean_hline_hw,
+            colors="#1a1a1a", linewidth=mean_lw, zorder=5,
+        )
         ax.text(
-            i + 0.42, m, f"{m:.3f}", ha="left", va="center", fontsize=6,
+            i + mean_x_pad, m + mean_label_dy, format(m, mean_fmt),
+            ha="left", va=mean_label_va, fontsize=mean_label_fs,
             color=THEME["navy_text"], zorder=6,
         )
-    ax.set_xlim(-0.55, 1.75)
+    ax.set_xlim(-0.52, xlim_right)
 
 
 def plot_h1_distribution(df: pd.DataFrame) -> None:
@@ -249,19 +308,102 @@ def plot_h1_distribution(df: pd.DataFrame) -> None:
     save(fig, "02_h1_distributions")
 
 
-def plot_h1_distribution_horizontal(df: pd.DataFrame) -> None:
-    """Same violins as stacked `02`, arranged in one row for wide layouts."""
+def _plot_h1_distribution_horizontal(
+    df: pd.DataFrame,
+    *,
+    figsize_in: tuple[float, float],
+    save_name: str,
+    wspace: float,
+    top: float,
+    bottom: float,
+    right: float,
+    left: float | None = None,
+    suptitle_fs: float,
+    suptitle_y: float,
+    panel_kw: dict,
+    sharey: bool = False,
+    save_kwargs: dict | None = None,
+) -> None:
     n = len(df)
-    fig, axes = plt.subplots(1, 2, figsize=(6.4, 2.85), sharey=False)
-    fig.subplots_adjust(wspace=0.38, top=0.86, bottom=0.16, right=0.97)
+    fig, axes = plt.subplots(1, 2, figsize=figsize_in, sharey=sharey)
+    adj = dict(wspace=wspace, top=top, bottom=bottom, right=right)
+    if left is not None:
+        adj["left"] = left
+    fig.subplots_adjust(**adj)
     fig.patch.set_facecolor("white")
 
-    _h1_violin_panel(axes[0], df["zero_factual"], df["grounded_factual"], "Factual Support")
-    _h1_violin_panel(axes[1], df["zero_hallucination"], df["grounded_hallucination"], "Hallucination Score")
-    axes[1].set_ylabel("")
+    _h1_violin_panel(axes[0], df["zero_factual"], df["grounded_factual"], "Factual Support", **panel_kw)
+    _h1_violin_panel(
+        axes[1], df["zero_hallucination"], df["grounded_hallucination"], "Hallucination Score",
+        ylabel="", **panel_kw,
+    )
 
-    fig.suptitle(f"H1: Distributions (N = {n:,})", fontsize=10, fontweight="bold", y=1.02)
-    save(fig, "02_h1_distributions_horizontal")
+    fig.suptitle(f"H1: Distributions (N = {n:,})", fontsize=suptitle_fs, fontweight="bold", y=suptitle_y)
+    save(fig, save_name, **(save_kwargs or {}))
+
+
+def plot_h1_distribution_horizontal(df: pd.DataFrame) -> None:
+    """Same violins as stacked `02`, arranged in one row for wide layouts."""
+    _plot_h1_distribution_horizontal(
+        df,
+        figsize_in=(6.4, 2.85),
+        save_name="02_h1_distributions_horizontal",
+        wspace=0.38,
+        top=0.86,
+        bottom=0.16,
+        right=0.97,
+        left=None,
+        suptitle_fs=10,
+        suptitle_y=1.02,
+        panel_kw={},
+        sharey=False,
+        save_kwargs=None,
+    )
+
+
+def plot_h1_distribution_horizontal_poster_cm(df: pd.DataFrame) -> None:
+    """Word/poster slot: 6.6 cm × 4.1 cm; margins tuned so violins fill the frame (minimal inner whitespace)."""
+    w_in = 6.6 / 2.54
+    h_in = 4.1 / 2.54
+    _plot_h1_distribution_horizontal(
+        df,
+        figsize_in=(w_in, h_in),
+        save_name="02_h1_distributions_horizontal_poster_cm",
+        wspace=0.20,
+        top=0.868,
+        bottom=0.175,
+        right=0.965,
+        left=0.125,
+        suptitle_fs=6.25,
+        suptitle_y=0.992,
+        panel_kw=dict(
+            title_fs=5.1,
+            title_pad=0.45,
+            axis_label_fs=4.75,
+            label_pad=1.0,
+            tick_fs=4.5,
+            tick_pad_y=2.8,
+            tick_pad_x=2.6,
+            mean_label_fs=3.75,
+            mean_lw=0.55,
+            mean_fmt=".2f",
+            mean_hline_hw=0.22,
+            mean_x_pad=0.33,
+            mean_label_dy=0.014,
+            mean_label_va="bottom",
+            xlim_right=1.70,
+            violin_lw=0.28,
+            inner="quartile",
+            inner_line_lw=0.45,
+            spine_lw=0.35,
+            y_max_ticks=5,
+            split_x_labels=False,
+            x_tick_fs=3.35,
+            saturation=0.88,
+        ),
+        sharey=True,
+        save_kwargs=dict(pad_inches=0.006),
+    )
 
 
 # ──────────────────────────────────────────────
@@ -760,6 +902,7 @@ def main() -> None:
     plot_h1_bar(df)
     plot_h1_distribution(df)
     plot_h1_distribution_horizontal(df)
+    plot_h1_distribution_horizontal_poster_cm(df)
     plot_factual_gain_hist(df)
     plot_h2_grouped(df)
     plot_per_condition(df)
