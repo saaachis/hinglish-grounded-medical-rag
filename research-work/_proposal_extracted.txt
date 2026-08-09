@@ -1,0 +1,518 @@
+num_pages 38
+
+===== PAGE 1 =====
+Grounded Multimodal 
+RAG for Code-Switching 
+(Hinglish) in Clinical 
+Decision Support 
+Systems.
+RESEARCH DISCOURSE - I
+
+===== PAGE 2 =====
+Problem Statement & Relevance.
+01
+
+===== PAGE 3 =====
+Modern clinical AI systems assume that medical reasoning begins with clean, formal language. 
+In reality, patient and doctor interactions often begin with informal and incomplete 
+expressions of symptoms and concerns. This mismatch creates a critical failure point where AI 
+systems lose the ability to reason safely, even when accurate medical data exists.
+In real-world clinical settings, especially in India, patient and doctor interactions often 
+begin with such informal code-switched expressions, commonly referred to as Hinglish, 
+where Hindi and English are interwoven, such that it :
+₋ lacks standardized grammar
+₋ varies by region, education 
+₋ context encodes medical meaning indirectly
+Report: “Right-sided pleural effusion”
+Query:  “Doctor, right side chhati me pani bhar gaya hai kya?”
+Thus, this is not a translation problem. It is a reasoning alignment problem.
+the problem statement…
+
+===== PAGE 4 =====
+the problem statement…
+Clinical information, however, is recorded in formal English medical terminology, 
+creating a semantic disconnect at the point of interpretation when patients communicate in 
+Hinglish. In high-stakes medical contexts, this mismatch turns linguistic fluency without 
+grounding into a safety hazard for existing AI systems.
+For example, a radiology report may state “Right-sided pleural effusion,” 
+while a patient expresses the same condition as “Doctor, right side chhati me pani bhar
+gaya hai kya?” Although both refer to the same clinical reality, current AI systems 
+often fail to recognize this alignment.
+Such Hinglish expressions are not simple translation variants of English medical 
+terms but encode clinical intent in culturally grounded and indirect ways. When processed
+by existing AI models, they are frequently treated as noisy or broken English, leading 
+to incorrect retrieval, loss of semantic intent, or fluent yet clinically unsafe 
+hallucinated explanations. 
+This inability to reason reliably under linguistic uncertainty significantly reduces trust and 
+limits the safe deployment of AI-assisted clinical decision support in Indian healthcare.
+
+===== PAGE 5 =====
+Proposed Scope.
+02
+
+===== PAGE 6 =====
+This research proposes the design and evaluation of a grounded Retrieval-Augmented 
+Generation (RAG) framework for clinical decision support under code-switched 
+Hinglish queries. 
+The system primarily aligns informal Hinglish clinical intent with verified textual 
+clinical evidence, particularly English radiology reports, which serve as the 
+authoritative source of medical information. Multimodal signals, including
+chest X-ray images, are incorporated as complementary evidence to
+strengthen grounding where available.
+Rather than attempting autonomous diagnosis, the system is explicitly 
+positioned as a clinical decision support tool aimed at assisting interpretation 
+while minimizing hallucinations at its crucial objective.
+the proposed scope…
+
+===== PAGE 7 =====
+The scope is intentionally controlled to focus on Hinglish as the linguistic 
+setting, explanation generation as the primary output, and evidence-grounded 
+reasoning as the central research objective. 
+Retrieval-based grounding and cross-modal alignment ensure that generated Hinglish
+explanations remain factually consistent with retrieved clinical reports and supporting 
+visual context, enhancing safety and reliability in real-world healthcare settings.
+Within this defined scope, the research aims to contribute a structured Hinglish–medical 
+grounding dataset, a cross-modal alignment strategy that maps informal language to 
+medical evidences in reports and radiological visual features, and an evaluation 
+framework centered on clinical factuality rather than surface-level linguistic fluency. 
+By focusing on grounded reasoning under code-switching, the proposed work seeks to 
+advance both the safety and inclusivity of clinical AI systems.
+.
+the proposed scope…
+
+===== PAGE 8 =====
+Literature Review.
+03
+
+===== PAGE 9 =====
+the literature review…
+1) Thakur, R., Sharma, S., & Chopra, G. (2025). HiFACTMix: A Code-Mixed Benchmark and Graph-Aware Model for 
+EvidenceBased Political Claim Verification in Hinglish. arXiv preprint arXiv:2508.10001.
+2) Ghosh, A., Acharya, A., Saha, S., Pandey, G., Raghu, D., & Sinha, S. (2024, November). Healthalignsumm: Utilizing 
+alignment for multimodal summarization of code-mixed healthcare dialogues. In Findings of the Association for 
+Computational Linguistics: EMNLP 2024 (pp. 11546-11560).
+3) Ghosh, A., Acharya, A., Jha, P., Gaudgaul, A., Majumdar, R., Saha, S., ... & Agarwal, S. (2024). MedSumm: A 
+Multimodal Approach to Summarizing Code-Mixed Hindi-English Clinical Queries. arXiv preprint arXiv:2401.01596.
+4) Xia, P., Zhu, K., Li, H., Wang, T., Shi, W., Wang, S., ... & Yao, H. (2024). Mmed-rag: Versatile multimodal rag system 
+for medical vision language models. arXiv preprint arXiv:2410.13085.
+5) Gumma, V., Raghunath, A., Jain, M., & Sitaram, S. (2024). Health-pariksha: Assessing rag models for health chatbots 
+in real-world multilingual settings. arXiv preprint arXiv:2410.13671.
+6) Ke, Y. H., Jin, L., Elangovan, K., Abdullah, H. R., Liu, N., Sia, A. T. H., ... & Ting, D. S. W. (2025). Retrieval augmented 
+generation for 10 large language models and its generalizability in assessing medical fitness. npj Digital 
+Medicine, 8(1), 187.
+
+===== PAGE 10 =====
+Research Gap.
+04
+
+===== PAGE 11 =====
+paper 1] HiFACTMix introduces HiFACT, a benchmark of approximately 1,500 real-world Hinglish claims annotated 
+with textual evidence and veracity labels, and proposes a retrieval-augmented, graph-aware framework for evidence-
+linked explanation generation under code-mixing. The work shows that explicitly grounding explanations in retrieved 
+evidence significantly improves performance over multilingual and code-mixed baselines .
+However, the study is centered on political claim verification and textual evidence sources, leaving open the question 
+of how similar evidence-anchored reasoning can be adapted to high-stakes clinical decision support grounded in 
+authoritative medical reports (and optionally imaging evidence) with clinical factuality evaluation.
+paper 2] HealthAlignSumm addresses summarization of code-mixed (Hinglish) healthcare 
+dialogues by introducing the MCDH dataset and an alignment-based multimodal summarization approach that 
+integrates conversational text with supporting visual context. The study shows that alignment-aware 
+multimodal modeling improves summary quality over standard baselines.
+However, the work focuses on dialogue summarization rather than evidence-grounded clinical 
+decision support, and does not explore retrieval-based grounding from authoritative clinical reports or 
+evaluate hallucination control using clinical factuality metrics, leaving open how code-mixed clinical intent 
+can be reliably grounded in verified medical evidence.
+the research gap…
+
+===== PAGE 12 =====
+the research gap…
+paper 3] MedSumm: A Multimodal Approach to Summarizing Code-Mixed Hindi-English Clinical Queries
+This paper highlights that existing research in medical question summarization has primarily concentrated on text-
+based methods, overlooking the critical integration of visual cues (such as symptom photos) that patients often provide. 
+Additionally, most prior work is limited to the English language, creating a significant gap in addressing the needs of 
+multilingual populations who use code-mixed languages (e.g., Hindi-English) in low-resource settings. Finally, the 
+authors note a dearth of specialized datasets that combine multimodal inputs with code-mixed clinical queries, 
+hindering the development of personalized and responsive diagnostic tools.
+paper 4] MMed-RAG: Versatile Multimodal RAG System for Medical Vision Language Models
+The authors identify that current Retrieval-Augmented Generation (RAG) implementations for medical models 
+are often dataset-specific, limiting their generalizability across diverse medical domains like radiology, 
+pathology, and ophthalmology.
+A critical gap is the presence of misalignment issues, where introducing retrieved contexts can cause the 
+model to ignore visual evidence (cross-modality misalignment) or fail to align with the ground truth.
+Furthermore, existing methods typically rely on a fixed number of retrieved contexts, which lacks the adaptability 
+to filter out low-quality or irrelevant information that can lead to factual hallucinations.
+
+===== PAGE 13 =====
+the research gap…
+paper 5] Although HEALTH-PARIKSHA provides a structured evaluation of RAG models for multilingual 
+health chatbots, it does not fully capture real-world linguistic and cultural diversity. The framework inadequately 
+examines the effects of code-mixed languages, regional dialects, and culturally rooted health expressions, which 
+can influence medical interpretation and response reliability. 
+Furthermore, its focus on linguistic and retrieval accuracy overlooks user-centric factors such as health literacy, 
+contextual ambiguity, and adaptive personalization, potentially overestimating system safety and effectiveness in 
+diverse, real-world healthcare settings.
+paper 6] While the paper compares RAG performance across multiple large language models for assessing 
+medical fitness, it does not sufficiently address long-term reasoning consistency and robustness as patient histories, 
+clinical guidelines, or underlying medical knowledge evolve over time. In real-world healthcare settings, 
+frequent updates to clinical evidence and patient data can introduce inconsistencies that require continual 
+reasoning alignment and temporal awareness, which are not evaluated in the current framework.
+Furthermore, the study lacks sufficient analysis of explainability, conflict handling, and clinical risk awareness, 
+particularly in how evidence is prioritized and uncertainty is communicated, which limits the reliability 
+and safety of RAG-based medical fitness evaluations in real-world settings.
+
+===== PAGE 14 =====
+Hypotheses / Conjectures. 
+05
+
+===== PAGE 15 =====
+hypotheses formulation…
+Based on the literature review and observed limitations of existing clinical AI systems under 
+code-switched inputs, we hypothesize that evidence-grounded generation is essential for safe and 
+reliable clinical decision support in Hinglish settings. 
+In particular, retrieval-augmented generation (RAG), anchored in authoritative medical text evidence, 
+is expected to mitigate hallucinations and preserve factual consistency even when linguistic input is 
+informal or code-switched.
+Statistical Hypotheses:
+H₀₁ (Grounding Effect): There is no significant difference in factual consistency or hallucination rate 
+between Hinglish explanations generated by zero-shot LLMs & evidence-grounded RAG systems.
+H₀₂ (Code-Mixing Robustness): Increasing the level of Hindi–English code-mixing does not 
+significantly affect the performance difference between grounded and non-grounded models.
+H₀₃ (Evidence Type): Using authoritative medical text evidence does not significantly improve the 
+factual correctness of Hinglish explanations compared to general biomedical text.
+
+===== PAGE 16 =====
+We will test each hypothesis using paired comparisons across the same set of Hinglish queries, so 
+results are directly comparable and statistically valid. For every query, we will generate outputs from 
+(i) Zero-shot LLM and (ii) Text-grounded RAG and for H3, RAG with different evidence sources. 
+We will compute per-sample scores for Factual Consistency (evidence-supported entities/relations) 
+and Hallucination Rate (unsupported/contradicted claims).
+Statistical Testing Plan:
+For H1 (RAG vs Zero-shot): we will compare mean scores using a paired t-test (or Wilcoxon 
+signed-rank if scores are non-normal).
+For H2 (effect of code-mixing): we will group samples by Code-Mixing Index (low/medium/high) and 
+test interaction using two-way ANOVA (or Kruskal–Wallis as a non-parametric alternative).
+For H3 (authoritative vs general evidence): we will compare RAG conditions using paired t-test 
+(or Wilcoxon), and report effect sizes with confidence intervals.
+For each, we will report p-values, effect sizes, and confidence intervals to quantify both statistical 
+significance and practical impact.
+testing of the hypotheses…
+
+===== PAGE 17 =====
+Research Design.
+06
+
+===== PAGE 18 =====
+the research design…
+The study is designed around an evidence-first RAG pipeline for producing grounded Hinglish
+clinical explanations. The system consists of four stages: Hinglish query encoding, evidence 
+retrieval, grounded generation, and optional multimodal enrichment. Code-switched queries are 
+encoded using multilingual representations to preserve mixed-language semantics.
+The RAG module forms the core of the system. Given a Hinglish query, the retriever identifies 
+relevant medical evidence from curated corpora, prioritizing authoritative clinical text 
+(e.g., radiology-style reports and validated biomedical passages). Retrieved evidence is explicitly 
+injected into the generation stage to constrain outputs and reduce reliance on model-internal 
+knowledge. The generator produces Hinglish explanations conditioned on this evidence, 
+ensuring factual grounding.
+To support this pipeline, a synthetic-to-real Hinglish clinical dataset will be constructed by 
+transforming verified English medical evidence into realistic Hinglish queries using controlled 
+prompting and real-world code-mixing patterns. Where aligned image–text pairs are available, 
+visual inputs such as X-ray images are incorporated as optional supporting context without 
+altering the core text-grounded reasoning flow.
+
+===== PAGE 19 =====
+the research design…
+ELEMENT DESCRIPTION / OUR APPROACH
+Type of Research Applied and analytical: focused on evaluating evidence-grounded Hinglish
+clinical decision support.
+Research Approach Quantitative and empirical: based on controlled comparisons between 
+grounded and non-grounded systems.
+Design Strategy Comparative experimental design (zero-shot LLM vs text-grounded RAG; 
+optional multimodal support).
+Unit of Analysis Single Hinglish query and generated explanation, evaluated against retrieved evidence.
+Data Sources Secondary public datasets (Open-i, PubMedQA, MMCQSD, MedSumm-ECIR2024).
+Validation Method Paired evaluation across grounding strategies and code-mixing levels.
+Tools & Frameworks Python, HuggingFace, Vector Databases (FAISS), Retrieval Pipelines (RAG), 
+Large Language Models (LLMs), Streamlit (interface) and few more.
+
+===== PAGE 20 =====
+
+
+===== PAGE 21 =====
+Data – Primary / Secondary.
+07
+
+===== PAGE 22 =====
+potential datasets to use...
+Description: A public domain (CC-0 license) 
+database of 7,470 Chest X-ray images and 3,955 
+structured radiology reports. 
+It requires no ethics training or CITI certificates 
+to download.
+Relevance: This is our primary clinical source. 
+Since it is public domain, we can use the reports 
+as the "knowledge base" for our RAG system. 
+It serves as the formal English counterpart to 
+our informal Hinglish queries.
+Description: This dataset contains 3,015 samples 
+consisting of medical images (Skin, ENT, Eye, 
+etc.) paired with patient queries written in 
+Hinglish (Hindi-English code-mixed) and their 
+corresponding English summaries.
+Relevance: This is the heart of our linguistic 
+innovation. It is the only open dataset that 
+captures the "messy" way Indian patients 
+describe symptoms. We can use it to teach our 
+model how to interpret informal Hinglish and 
+map it to clinical terms.
+A.    MMCQSD (Multimodal Medical
+Code-mixed Question Summarization)
+B.    Open-i (Indiana University Chest 
+X-Ray Collection)
+
+===== PAGE 23 =====
+Description: A large-scale biomedical QA 
+dataset where answers are derived from 
+actual PubMed abstracts.
+Relevance: We can use this for Medical Logic 
+Pre-training. Before the model sees "Hinglish,"
+it needs to be an expert in medical reasoning. 
+PubMedQA is the industry standard for 
+testing if an LLM actually understands 
+clinical evidence.
+Description: A massive, free multimodal 
+benchmark containing over 25,500 medical QA 
+pairs across various specialties (Pathology, 
+Radiology, etc.).
+Relevance: We could use this for Preference 
+Alignment. The dataset includes "distractor" 
+answers. We can use this to train our model (via 
+DPO or simple filtering) to ensure that it doesn't 
+"hallucinate" and instead relies strictly on the 
+retrieved medical image/text.
+C. MMed-Bench D. PubMedQA
+potential datasets to use...
+
+===== PAGE 24 =====
+1. Primary Data (The Innovation: "Synthetic-to-Real" Pipeline)
+Dataset Name: HMG (Hinglish-Medical-Grounding) Dataset.
+Description: A custom-built dataset of ~4,000 triplets: {Open-i X-ray, English Report, Synthetic Hinglish Query}.
+Rationale: No large-scale Hinglish radiology dataset exists. We will use a local, free LLM (Llama-3-8B) to transform 
+formal English findings from Open-i into informal Hinglish "Doctor-Patient" queries, using MMCQSD as a linguistic 
+template to ensure realistic code-switching and "linguistic noise" (e.g., using "chest pain" vs "chhati mein dard").
+2. Secondary Data (Foundational Clinical Knowledge)
+Source 1: Open-i Indiana University Collection
+Rationale: Provides a legally open, public-domain corpus of medical images and clinical reports. This acts as 
+the "Source of Truth" for our retrieval engine.
+Source 2: MMCQSD (MedSumm Dataset)
+Rationale: Essential for grounding our project in the Indian context. It provides the ground-truth patterns for
+how visible medical disorders are described in code-mixed language.
+Source 3: MMed-Bench
+Rationale: Provides the framework for "Multimodal Grounding." We use their evaluation pairs to ensure our 
+AI "looks" at the X-ray pixels before "speaking" the diagnostic response, directly reducing medical hallucinations.
+data – primary & secondary…
+
+===== PAGE 25 =====
+Data Science Techniques.
+08
+
+===== PAGE 26 =====
+The scope is intentionally controlled to focus on Hinglish as the linguistic setting, explanation general output, and evidence-
+grounded reasoning as the central research objective. 
+1. Cross-Lingual Code-Switched Synthesis
+Technique: Linguistic Noise Injection & Conversion.
+Application: Using the pattern of the MMCQSD dataset, we will transform formal English reports from Open-i into informal 
+Hinglish queries. This involves injecting "Linguistic Noise" (mixing Hindi syntax with English medical terms like 
+'dyspnea' vs 'saas lene me problem') to simulate real-world Indian patient queries.
+2. Domain-Aware Multimodal Retrieval
+Technique: Adaptive Context Selection.
+Application: Following the MMed-RAG framework, our retriever won't just pull a fixed number of results. It will use a 
+similarity-score-based truncation (calculating the sharp decline in CLIP scores) to select the optimal number of retrieved 
+contexts, filtering out "noisy" or irrelevant medical reports that lead to hallucinations.
+3. Cross-Modal Encoding
+Technique: Contrastive Alignment via BioMedCLIP & LaBSE.
+Application: We will use BioMedCLIP for visual features and LaBSE (Language-Agnostic BERT Sentence Embedding) for text. 
+These models are specifically chosen because they are pre-trained to align medical images with multilingual text, allowing 
+a Hinglish query to successfully "find" an English radiology report in the vector space.
+the data science techniques…
+
+===== PAGE 27 =====
+4. RAG-Based Preference Fine-Tuning (RAG-PT)
+Technique: Direct Preference Optimization (DPO).
+Application: To solve the "Hallucination" problem, we will use Preference Pairs. We will train the model to prefer 
+responses that are grounded in the retrieved X-ray/Report (Preferred) over responses where the model ignores the image 
+and relies on its own internal "memory" (Dis-preferred).
+5. Parameter-Efficient Fine-Tuning (PEFT)
+Technique: QLoRA (4-bit Quantized Low-Rank Adaptation).
+Application: To keep the project resource-free, we will use QLoRA to fine-tune our Vision-Language Model 
+(LLaVA-v1.5). This allows us to train a 7B+ parameter model on a single consumer GPU, adapting it specifically to 
+the medical "Hinglish" nuances of our custom HMG dataset.
+6. Advanced Evaluation Metrics
+Technique: MMFCM (Multimodal Fact Capturing Metric).
+Application: Beyond standard BLEU scores, we will use MMFCM (from the MedSumm paper) to calculate how 
+many actual medical facts/disorders were captured in the generated Hinglish summary compared to the original 
+English clinical report.
+the data science techniques…
+
+===== PAGE 28 =====
+Data Analysis.
+09
+
+===== PAGE 29 =====
+the data analysis…
+Our Data analysis will examine how different system configurations behave across linguistic
+and evidence-related conditions, beyond aggregate performance scores.
+The goal is to understand how grounding strategies influence reliability, robustness, and 
+stability of Hinglish clinical explanations under varying degrees of linguistic complexity.
+ANALYSIS DIMENSION COMPARISON PURPOSE
+Generation Strategy Zero-shot LLM vs Text-grounded RAG Analyze impact of grounding
+Evidence Source Medical reports vs general
+biomedical text Assess evidence authority
+Code-Mixing Level Low / Medium / High (CMI) Measure robustness to linguistic noise
+Retrieval Depth Top-1 vs Top-k evidence Study sensitivity to retrieval quality
+Modality Support Text-only vs text + image (optional) Evaluate added contextual support
+
+===== PAGE 30 =====
+the data analysis…
+To interpret robustness under linguistic uncertainty, our analysis will examine how factual 
+consistency changes as the level of Hindi–English code-mixing increases. Trends across 
+grounded and non-grounded systems will be analyzed to identify stability, degradation 
+patterns, and sensitivity to noisy inputs.
+
+===== PAGE 31 =====
+Conclusion.
+10
+
+===== PAGE 32 =====
+the conclusion…
+This study demonstrates that clinical reasoning under code-switched Hinglish inputs is 
+fundamentally a grounding and alignment problem, not a translation problem. 
+By adopting an evidence-first Retrieval-Augmented Generation (RAG) framework, the 
+proposed system successfully aligns informal Hinglish clinical intent with authoritative 
+medical evidence, significantly improving factual consistency and reducing hallucinations 
+compared to zero-shot LLMs.
+Experimental results show that grounded RAG explanations remain robust under 
+increasing levels of Hindi–English code-mixing, while non-grounded models degrade 
+rapidly as linguistic noise increases. Incorporating authoritative clinical reports as primary 
+evidence, with optional multimodal support from X-ray images, further strengthens 
+reliability without shifting toward autonomous diagnosis. 
+Overall, the work establishes that evidence-grounded reasoning is essential for safe, 
+reliable, and inclusive clinical decision support in multilingual real-world healthcare 
+settings, particularly in the Indian context.
+
+===== PAGE 33 =====
+Limitations and Future Scope.
+11
+
+===== PAGE 34 =====
+the limitations…
+Language Scope Limitation:
+The study is intentionally limited to Hinglish (Hindi–English) code-switching, and the findings may not 
+directly generalize to other Indian code-mixed languages or regional dialects.
+Domain & Modality Constraint:
+The system primarily relies on radiology-style clinical reports and chest X-ray images, which restricts 
+applicability to other medical domains such as pathology, cardiology, or longitudinal patient monitoring.
+Synthetic Data Dependency:
+A significant portion of the dataset is generated using a synthetic-to-real Hinglish pipeline, which, 
+despite controlled realism, may not capture the full variability of spontaneous patient language.
+Offline Evaluation Setting:
+The evaluation is conducted in an offline experimental setup, without real-time deployment or 
+clinician-in-the-loop validation in live clinical environments.
+Decision Support Only:
+The framework is designed strictly for clinical decision support, and does not perform diagnosis or 
+treatment recommendation, limiting its immediate clinical autonomy.
+
+===== PAGE 35 =====
+the limitations…
+Retrieval Sensitivity:
+Minor changes in Hinglish phrasing or code-mixing patterns can significantly affect retrieval results, 
+leading to variability in the supporting evidence.
+Limited Evaluation Metrics:
+The study primarily focuses on factuality and hallucination metrics, without fully capturing clinical 
+usefulness, interpretability, or user trust.
+Absence of Personal Health Context:
+The system does not incorporate patient-specific history, comorbidities, or demographics, which limits 
+personalization and clinical depth.
+Explainability Granularity:
+While grounded, explanations do not explicitly expose step-by-step clinical reasoning paths, which may 
+reduce transparency for clinicians.
+Scalability Constraints:
+RAG pipelines introduce latency and computational overhead, which may limit real-time deployment in 
+low-resource healthcare settings.
+
+===== PAGE 36 =====
+the future scope…
+01
+Extension to Other 
+Code-Mixed Languages: 
+The framework can be 
+extended to support
+other such Indian 
+code-mixed languages 
+(e.g., Tamil–English, 
+Bengali–English), enabling 
+broader multilingual 
+clinical decision support.
+0302
+Expansion Across Medical 
+Domains:
+Future work can incorporate 
+additional medical specialties 
+such as pathology, cardiology, 
+and laboratory-based 
+diagnostics by grounding 
+explanations in 
+diverse clinical reports
+and structured data.
+Richer Multimodal 
+Integration:
+Beyond chest X-rays, the 
+system can be enhanced 
+with lab reports, vitals, 
+ECGs, and longitudinal 
+patient records to 
+strengthen reasoning 
+under complex clinical 
+contexts.
+
+===== PAGE 37 =====
+the future scope…
+04
+Human-in-the-Loop 
+Clinical Validation: 
+Deploying the system 
+in real clinical workflows 
+with doctors and 
+healthcare professionals 
+will allow evaluation of 
+usability, trust, and
+real-world safety.
+0605
+Adaptive and Personalized 
+Grounding:
+Future models can 
+dynamically adapt 
+explanations based on 
+patient health literacy, 
+linguistic preference, 
+and regional expressions, 
+improving inclusivity 
+and interpretability.
+Regulatory and
+Safety-Aware Evaluation:
+Future work can incorporate 
+regulatory guidelines, 
+clinical risk scoring, and 
+audit trails into the RAG 
+framework to support 
+compliance, explainability, 
+and safer adoption 
+in real-world 
+healthcare systems.
+
+===== PAGE 38 =====
+research proposal of group 5 :
+devika jonjale,  B045
+saachi shinde,  B048
+manjiri apshinge,  B061
+the end, 
+thank you! :)
+

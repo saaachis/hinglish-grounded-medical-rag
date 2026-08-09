@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>saachi_presentation_script.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="saachi--presentation-script-%E2%89%A4-330">Saachi — presentation script (≤ 3:30)</h1>
+<p><strong>Your sections:</strong> Abstract → Research gap → System architecture (with example)<br>
+<strong>Pace:</strong> ~130 words/min ≈ <strong>under 460 spoken words</strong> total. Practice with a phone timer.</p>
+<hr>
+<h2 id="flow-one-glance">Flow (one glance)</h2>
+<ol>
+<li><strong>Intro</strong> — who you are, what you’ll cover, why it matters</li>
+<li><strong>Abstract</strong> — problem + what you built + how you evaluate</li>
+<li><strong>Research gap</strong> — why LLMs alone aren’t enough + why Hinglish needs this stack</li>
+<li><strong>Architecture + example</strong> — walk the poster pipeline once with one query</li>
+<li><strong>Outro</strong> — clean handoff to Devika</li>
+</ol>
+<hr>
+<h2 id="intro--how-you-start-020">Intro — how you start (~0:20)</h2>
+<p><strong>[Optional opening line — say while facing the audience]</strong><br>
+“Good morning / afternoon — I’m Saachi, from Group 5. Our project is the <strong>Grounded RAG Pipeline for Code Switching in Clinical System</strong>. I’ll frame the problem and walk you through that pipeline once, using the example on the poster.”</p>
+<p><strong>Main talking points</strong></p>
+<ul>
+<li>Three speakers; you’re <strong>first</strong>: context + <strong>system story</strong>.</li>
+<li>Full project name: <strong>Grounded RAG Pipeline for Code Switching in Clinical System</strong> (Hinglish clinical queries).</li>
+<li>Promise: <strong>short</strong> — abstract and gap first, then <strong>one</strong> end-to-end walkthrough.</li>
+</ul>
+<p><strong>[~0:20 → transition]</strong><br>
+“First, what we’re trying to solve, in one slide.”</p>
+<h3 id="say-this--intro-full-script">Say this — intro (full script)</h3>
+<p>Good morning — I’m Saachi, from Group 5. Our project is the <strong>Grounded RAG Pipeline for Code Switching in Clinical System</strong> — we focus on Hinglish clinical queries and evidence-grounded answers. I’m going to start by framing our problem, then I’ll walk you once through that pipeline using the example on the poster.</p>
+<hr>
+<h2 id="abstract-050%E2%80%93100">Abstract (~0:50–1:00)</h2>
+<p><strong>Main talking points (order matters: plain → technical)</strong></p>
+<ul>
+<li><strong>Title in plain words:</strong> <strong>Code-switching</strong> = people mix languages (here, <strong>Hinglish</strong>). <strong>Grounded</strong> = the system should answer using <strong>real clinical text it looked up</strong>, not only whatever the model “remembers.”</li>
+<li><strong>Context:</strong> <strong>Indian AI healthcare</strong> has to work for how patients and frontline staff <strong>actually</strong> talk — not only formal English.</li>
+<li><strong>Mismatch:</strong> Everyday questions in <strong>Hinglish</strong>; trustworthy write-ups often in <strong>English</strong> — so we need a bridge.</li>
+<li><strong>What we built (simple):</strong> <strong>Look up</strong> similar cases first → <strong>then</strong> generate the answer; also compare to <strong>skipping</strong> that lookup (same model).</li>
+<li><strong>Evaluation (simple):</strong> Is the answer <strong>supported</strong>? Does it <strong>drift</strong> or <strong>hallucinate</strong>? Does it still work when people <strong>mix languages</strong> more or less? — Devika gives the <strong>numbers and tests</strong>.</li>
+<li><strong>End with:</strong> “So the gap we’re filling is this.” (~<strong>1:10</strong> cumulative after abstract — adjust if you’re over time.)</li>
+</ul>
+<h3 id="say-this--abstract-full-script">Say this — abstract (full script)</h3>
+<p>Very briefly, what our <strong>title</strong> means in simple terms. <strong>Code-switching</strong> is when someone blends languages — in our setting, <strong>Hinglish</strong>, Hindi and English together. <strong>Grounded</strong> means we don’t want the system to only improvise from its training; we want it to <strong>tie its answer to real clinical text</strong> — passages it <strong>looked up</strong> from a case library — so there is something concrete behind what it says.</p>
+<p>That matters especially for <strong>Indian AI healthcare</strong>, because in real life people don’t always speak textbook English. They describe symptoms the way they talk. Meanwhile, the evidence we trust — case notes, descriptions — is often still in <strong>English</strong>. So our problem is: how do you help someone in <strong>Hinglish</strong> while still <strong>anchoring</strong> the reply to that English evidence?</p>
+<p>What we built, in one line: <strong>search first, then answer</strong>. We take the Hinglish question, find the closest relevant English passages in our index, put those in front of the language model, and generate from there. We also run the <strong>same</strong> model on the <strong>same</strong> question <strong>without</strong> that lookup, so we can compare “with evidence” versus “without.”</p>
+<p>We then check whether answers are <strong>factually supported</strong>, whether they <strong>drift or hallucinate</strong> away from what we retrieved, and whether things stay stable when people <strong>code-mix</strong> more heavily or more lightly — Devika will walk you through the <strong>exact metrics and statistical tests</strong>. So the gap we’re filling is this.</p>
+<hr>
+<h2 id="research-gap-045">Research gap (~0:45)</h2>
+<p><strong>Main talking points</strong></p>
+<ul>
+<li><strong>LLMs alone:</strong> Strong language, but <strong>not inherently tied</strong> to a specific case or citation-like evidence → <strong>hallucination</strong> and <strong>overconfidence</strong> risk in medicine.</li>
+<li><strong>Monolingual / English-only tools:</strong> Miss <strong>code-mixed</strong> input; users won’t always switch to formal English.</li>
+<li><strong>What’s needed:</strong> <strong>Retrieve</strong> relevant evidence, <strong>condition</strong> generation on it, and <strong>measure</strong> whether the answer actually <strong>uses</strong> that evidence — that’s the <strong>grounding</strong> idea.</li>
+<li><strong>Your angle:</strong> <strong>LaBSE</strong>-style cross-lingual alignment + <strong>FAISS</strong> retrieval + <strong>grounded prompting</strong> — the poster’s <strong>center column</strong> is that story.</li>
+</ul>
+<p><strong>[~2:05 cumulative]</strong><br>
+“I’ll show how that flows on the poster, with one example.”</p>
+<h3 id="say-this--research-gap-full-script">Say this — research gap (full script)</h3>
+<p>Large language models are strong at fluent text, but they are not automatically anchored to a specific patient case or a concrete piece of evidence.</p>
+<p>In medicine, that gap matters: you can get confident-sounding answers that aren’t really supported by anything you can point to. At the same time, English-only tools often fail when the user stays in Hinglish — and we shouldn’t force people to switch languages just to get help.</p>
+<p>What we need is to retrieve the right evidence first, build the prompt around it, and then check whether the answer actually follows from that evidence — that’s what we mean by grounding.</p>
+<p>On the poster, the middle column is that story: cross-lingual encoding with LaBSE, fast similarity search with FAISS plus conditioning so retrieval stays on-domain, and then grounded prompting. I’ll show how that flows in one example.</p>
+<hr>
+<h2 id="system-architecture--example-120%E2%80%93135">System architecture + example (~1:20–1:35)</h2>
+<p><strong>Flow to follow (point at poster / slide as you go)</strong></p>
+<ol>
+<li><strong>Hinglish query</strong> — patient symptom description (use <strong>one</strong> short line from the poster; don’t read the whole box).</li>
+<li><strong>Encoding + retrieval</strong> — query → <strong>vector</strong>; <strong>similarity search</strong> in the index; mention <strong>conditioning / filtering</strong> in <strong>one phrase</strong> (domain alignment).</li>
+<li><strong>Retrieved evidence</strong> — <strong>English</strong> snippet (one sentence: e.g. rash / eruption wording).</li>
+<li><strong>Grounded prompt</strong> — query + evidence → <strong>Llama</strong> (e.g. via <strong>Groq</strong>); <strong>zero-shot</strong> is same model <strong>without</strong> that evidence.</li>
+<li><strong>Outputs</strong> — <strong>Grounded:</strong> uses evidence-consistent terms; <strong>Zero-shot:</strong> more generic — <strong>scoring</strong> checks factual alignment (Devika will detail tests).</li>
+</ol>
+<p><strong>Main talking points</strong></p>
+<ul>
+<li><strong>One path, left to right</strong> — no second example.</li>
+<li>Emphasize <strong>evidence-first</strong>, not “the model guessed.”</li>
+<li><strong>Hand wave</strong> scoring: “We automatically score how well the answer is supported — details next.”</li>
+</ul>
+<p><strong>[If over time — cut to ~0:55]</strong><br>
+Skip repeating “zero-shot” in full; say: “Same model without evidence — we compare.”</p>
+<h3 id="say-this--architecture--example-full-script">Say this — architecture + example (full script)</h3>
+<p>If you look at the center of the poster, we start from a Hinglish query — the patient describes what’s going on, for example a rash that’s spreading.</p>
+<p>We don’t jump straight to the LLM. We first encode that query into a vector using LaBSE, so we’re in a shared semantic space with the English cases. Then we search our FAISS index for the closest clinical passages, with conditioning so we stay aligned with the clinical domain we care about.</p>
+<p>What comes back is English evidence — for example a description that matches the kind of eruption we’re seeing. We fold that evidence into the prompt together with the user’s question, and we call Llama through the Groq API.</p>
+<p>For comparison, we also run the same model with the same question but without that retrieved block — that’s our zero-shot path.</p>
+<p>You can see the difference on the poster: the grounded answer picks up language that’s consistent with the evidence, while the zero-shot answer stays more generic.</p>
+<p>We then score how well each path is supported by the evidence we actually retrieved. I won’t go into the metrics here — Devika will cover the statistical side next.</p>
+<hr>
+<h2 id="outro--how-you-pass-to-devika-015">Outro — how you pass to Devika (~0:15)</h2>
+<p><strong>Closing line (memorize this)</strong><br>
+“That’s the pipeline and the running example on the poster. Next, Devika will walk through our <strong>methodology</strong>, our <strong>two hypotheses</strong>, and the <strong>statistical results</strong>.”</p>
+<p><strong>[Stop. Step back / gesture to Devika.]</strong></p>
+<hr>
+<h2 id="time-checkpoints-practice">Time checkpoints (practice)</h2>
+<table>
+<thead>
+<tr>
+<th>Cumulative time</th>
+<th>You should be at…</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>~0:20</td>
+<td>End intro</td>
+</tr>
+<tr>
+<td>~1:10</td>
+<td>End abstract</td>
+</tr>
+<tr>
+<td>~2:05</td>
+<td>End research gap</td>
+</tr>
+<tr>
+<td>~3:20–3:30</td>
+<td>End architecture + example</td>
+</tr>
+<tr>
+<td>≤3:30</td>
+<td>Handoff done</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="if-youre-running-long-save-30%E2%80%9340-s">If you’re running long (save ~30–40 s)</h2>
+<ul>
+<li>Shorten <strong>abstract</strong>: keep <strong>one</strong> plain sentence on the title (code-switching + grounded), then <strong>one</strong> sentence on search-then-answer vs without lookup, skip the middle paragraph if needed.</li>
+<li><strong>Gap:</strong> Only two bullets — LLM limits + need for cross-lingual retrieval + grounding.</li>
+<li><strong>Architecture:</strong> Name <strong>four</strong> stops only: query → retrieve evidence → grounded prompt → grounded vs zero-shot output.</li>
+</ul>
+<hr>
+<p><em>Rehearse out loud 3× with a timer; adjust wording to sound natural in your voice.</em></p>
+<hr>
+<h2 id="note-on-length">Note on length</h2>
+<p>The <strong>“Say this”</strong> paragraphs are the full spoken script in order. If you run over <strong>3:30</strong>, shorten the <strong>architecture</strong> block first (say LaBSE → FAISS → evidence → Llama → grounded vs zero-shot in one breath, skip one comparison sentence), then trim one sentence from the <strong>gap</strong> block.</p>
+
+</body>
+</html>

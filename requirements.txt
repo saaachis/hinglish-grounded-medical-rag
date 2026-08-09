@@ -32,6 +32,8 @@ Pillow>=10.3.0
 
 # ---------- Medical Data ----------
 pydicom>=2.4.0
+multiversity                # MultiCaRe dataset access and filtering
+ollama                      # Local LLM inference (Llama 3.1 8B)
 
 # ---------- NLP & Evaluation ----------
 nltk>=3.8.0
