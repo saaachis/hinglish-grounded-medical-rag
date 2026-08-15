@@ -79,10 +79,21 @@ indices/
 # ---------- Logs & Outputs ----------
 logs/
 outputs/
-results/
 wandb/
 mlruns/
 *.log
+
+# ---------- Results ----------
+# Ignore working artifacts, but VERSION the scored CSVs and reports.
+# These are small (~16 MB total) and are the evidence behind every number in
+# the paper. Keeping them untracked previously meant no reported result could
+# be reproduced from a clone -- see plans/next-phase/unified-research-plan.md S3.
+# NOTE: "results/**" (not "results/") is required -- git cannot re-include a
+# file whose parent DIRECTORY is excluded.
+results/**
+!results/**/
+!results/**/*.csv
+!results/**/*.md
 
 # ---------- Environment & Secrets ----------
 .env
