@@ -34,7 +34,10 @@ Writes: results/h4_retrieval/h4_metrics.csv
 
 from __future__ import annotations
 
+import argparse
+import hashlib
 import logging
+import os
 import re
 from pathlib import Path
 
@@ -57,6 +60,19 @@ TOP_K = 10
 K_VALUES = (1, 3, 5, 10)
 N_BOOTSTRAP = 10_000
 SEED = 42
+
+# MUST match how the index was built (`build_index.py` sets
+# `encoder.model.max_seq_length = 128`). Queries and documents have to be encoded
+# under the same truncation or the vectors are not comparable and every
+# similarity is subtly wrong. It is also ~2-4x faster, since attention cost grows
+# quadratically in sequence length.
+MAX_SEQ_LENGTH = 128
+# Benchmarked on the target laptop (4 cores / 12 GB): 16 is fastest. Larger
+# batches are slower here because the machine is memory-bound, not compute-bound
+# (0.46 texts/s at bs=16 vs 0.38 at bs=64).
+ENCODE_BATCH = 16
+
+EMB_CACHE_DIR = Path("data/embeddings/h4")
 
 # Everything from "The image ..." onward is the caption.
 CAPTION_RE = re.compile(r"\s*The image\b.*$", re.IGNORECASE | re.DOTALL)
@@ -94,14 +110,36 @@ def assert_no_leakage(q2: pd.Series, conditions: pd.Series) -> None:
     logger.info("Leakage gate PASSED (no captions, no group labels, no empties)")
 
 
-def retrieve(texts: list[str], encoder: TextEncoder, indexer: FAISSIndexer) -> np.ndarray:
+def encode_cached(texts: list[str], tag: str, encoder: TextEncoder) -> np.ndarray:
+    """Encode with an on-disk cache.
+
+    Encoding is the dominant cost on CPU (~0.4 texts/s on the target laptop), so
+    a partial or interrupted run must never have to redo finished work. The cache
+    key includes the text content and max_seq_length, so changing either
+    correctly invalidates it.
+    """
+    key = hashlib.sha1(
+        ("\x00".join(texts) + f"|msl={MAX_SEQ_LENGTH}").encode("utf-8")
+    ).hexdigest()[:16]
+    EMB_CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    cache = EMB_CACHE_DIR / f"{tag}_{key}.npy"
+    if cache.exists():
+        logger.info("Using cached embeddings for %s (%s)", tag, cache.name)
+        return np.load(cache)
+
+    emb = encoder.encode(texts, batch_size=ENCODE_BATCH, show_progress=True, normalize=True)
+    np.save(cache, emb)
+    logger.info("Cached embeddings for %s -> %s", tag, cache.name)
+    return emb
+
+
+def retrieve(texts: list[str], tag: str, encoder: TextEncoder, indexer: FAISSIndexer) -> np.ndarray:
     """Return the top-k index ids for each text, shape (n, TOP_K).
 
     Uses the underlying FAISS index directly for a batched search:
-    `FAISSIndexer.search` is single-query by contract (it returns `scores[0]`),
-    and looping it 9,045 times would be needlessly slow.
+    `FAISSIndexer.search` is single-query by contract (it returns `scores[0]`).
     """
-    emb = encoder.encode(texts, batch_size=32, show_progress=True, normalize=True)
+    emb = encode_cached(texts, tag, encoder)
     _, idx = indexer.index.search(emb.astype(np.float32), TOP_K)
     return idx
 
@@ -156,7 +194,32 @@ def random_floor(query_conditions: pd.Series, meta: pd.DataFrame) -> dict[str, f
     return {f"recall@{k}": float((1.0 - (1.0 - p) ** k).mean()) for k in K_VALUES}
 
 
+def stratified_sample(pairs: pd.DataFrame, n: int, seed: int = SEED) -> pd.DataFrame:
+    """Condition-stratified subsample, proportional, with every group represented."""
+    if n >= len(pairs):
+        return pairs
+    frac = n / len(pairs)
+    parts = []
+    for _, grp in pairs.groupby("condition_query"):
+        take = max(1, int(round(len(grp) * frac)))
+        parts.append(grp.sample(n=min(take, len(grp)), random_state=seed))
+    out = pd.concat(parts).sample(frac=1.0, random_state=seed).reset_index(drop=True)
+    logger.info("Stratified subsample: %d of %d pairs (seed=%d)", len(out), len(pairs), seed)
+    return out
+
+
 def main() -> None:
+    ap = argparse.ArgumentParser(description="H04 retrieval-stage code-mixing penalty")
+    ap.add_argument(
+        "--limit",
+        type=int,
+        default=0,
+        help="Condition-stratified subsample size (0 = all 3,015). CPU encoding runs "
+             "at ~0.4 texts/s, so the full run is ~6 h on a 4-core laptop; use a GPU "
+             "session for the definitive numbers.",
+    )
+    args = ap.parse_args()
+
     for pth in (PAIRS_PATH, INDEX_PATH, META_PATH):
         if not pth.exists():
             raise SystemExit(f"Missing {pth} -- extract handoff-tier1-essential.zip first.")
@@ -164,14 +227,25 @@ def main() -> None:
     pairs = pd.read_csv(PAIRS_PATH)
     meta = pd.read_csv(META_PATH)
     logger.info("Loaded %d pairs, %d indexed cases", len(pairs), len(meta))
+    if args.limit:
+        pairs = stratified_sample(pairs, args.limit)
 
     q1 = pairs["hinglish_query"].astype(str)
     q3 = pairs["english_summary"].astype(str)
     q2 = q3.apply(strip_caption)
     assert_no_leakage(q2, pairs["condition_query"])
 
+    try:
+        import torch
+
+        torch.set_num_threads(max(1, (os.cpu_count() or 2)))
+    except Exception:  # threading is an optimisation, never a hard requirement
+        logger.warning("Could not set torch thread count; continuing at the default")
+
     encoder = TextEncoder(device="cpu")
     encoder.load_model()
+    encoder.model.max_seq_length = MAX_SEQ_LENGTH
+    logger.info("max_seq_length pinned to %d to match build_index.py", MAX_SEQ_LENGTH)
     indexer = FAISSIndexer()
     indexer.load_index(INDEX_PATH)
     if indexer.index.ntotal != len(meta):
@@ -188,7 +262,7 @@ def main() -> None:
     rows = []
     for name, texts in variants.items():
         logger.info("Encoding + retrieving: %s", name)
-        idx = retrieve(texts.tolist(), encoder, indexer)
+        idx = retrieve(texts.tolist(), name, encoder, indexer)
         h = meta_cond[idx] == gold[:, None]
         hits[name] = h
         rows.append({"variant": name, **rank_metrics(h)})
@@ -239,7 +313,8 @@ def main() -> None:
     L = [
         "# H04 - Retrieval-Stage Code-Mixing Penalty",
         "",
-        f"n = {len(pairs)} pairs, index = {len(meta)} MultiCaRe cases, encoder = LaBSE, top-k = {TOP_K}.",
+        f"n = {len(pairs)} pairs (of 3,015 available), index = {len(meta)} MultiCaRe cases, "
+        f"encoder = LaBSE (max_seq_length={MAX_SEQ_LENGTH}), top-k = {TOP_K}.",
         "Relevance: retrieved case `condition_group` == query `condition_query`.",
         "No API calls.",
         "",
