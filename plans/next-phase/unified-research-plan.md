@@ -99,8 +99,17 @@ Expect real-retrieval grounded factuality to fall meaningfully below `0.554`. Sa
 | `data/processed/multicare_filtered.csv` | ✅ (61,316 rows) | ✅ | Already regenerated |
 | `data/processed/mmcqsd_queries.csv` (3,015 rows) | ✅ | ✅ | Present |
 
+> ### ✅ RESOLVED — the handoff already existed
+> Saachi had already produced `plans/next-phase/handoff-tier1-essential.zip` and
+> `handoff-tier2-corpora.zip`; they were sitting in the repo **unextracted**. All
+> artifacts are now in place and the Tier 0 gate passes: 3,015 pairs at
+> similarity **0.49966**, and 1,165 cached generations. Her regenerated corpus
+> also matches Devika's **exactly** (61,316 / 39,652 / 18, byte-identical
+> per-condition breakdown), which closes the cross-machine mismatch risk (§10.6).
+> The remaining lesson stands: this was invisible because nothing was tracked.
+
 ### Action — do this before anything else
-1. **Saachi zips and uploads `results/` + `mmcqsd_multicare_paired.csv` + `data/faiss_index/`** to Drive or a private HF dataset. ~400 MB. This is a 15-minute task that unblocks days of work.
+1. ~~**Saachi zips and uploads `results/` + `mmcqsd_multicare_paired.csv` + `data/faiss_index/`**~~ — done; extract the zips at the repo root.
 2. **Both parties then rebuild from the same pairs file**, so the two machines agree.
 3. **Fix the root cause immediately:** add `!results/**/*.csv` negation patterns to `.gitignore`, or better, commit result CSVs to a `results-archive/` path that is explicitly *not* ignored. Losing an experiment to a `.gitignore` rule twice would be unforgivable.
 
@@ -185,7 +194,9 @@ Split the summary on the caption boundary (handling both phrasings) and treat th
 
 **Tests:** McNemar on Recall@1 hit/miss (paired binary), Wilcoxon signed-rank on reciprocal rank, bootstrap 95% CI on ΔRecall@k, per-condition-group breakdown. Run on all 3,015 pairs, not a subset — it costs nothing.
 
-**Validation gate:** after stripping, assert no Q2 string contains any `condition_group` token or the substring `"The image"`. If the assertion fails, the strip is incomplete and the result is invalid.
+**Validation gate:** after stripping, assert no Q2 string contains the substring `"The image"` or an **underscore-joined group label** (`swollen_tonsils`). If the assertion fails, the strip is incomplete and the result is invalid.
+
+> ⚠️ **Correction to an earlier draft of this gate.** It originally said "no Q2 string contains any `condition_group` token." That is wrong and would false-fail on **79.6%** of rows: a patient question legitimately describes its own symptom ("a lump in my neck"), and those words *are* the query, not leakage. Only the templated machine-readable label is the leak. Implemented in `src/analysis/h4_retrieval.py::assert_no_leakage`.
 
 ---
 
