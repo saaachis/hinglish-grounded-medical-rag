@@ -110,3 +110,4 @@ credentials/
 *.tar.gz
 *.rar
 *.7z
+results/**/*_partial.csv
