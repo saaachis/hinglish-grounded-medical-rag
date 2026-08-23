@@ -94,6 +94,10 @@ results/**
 !results/**/
 !results/**/*.csv
 !results/**/*.md
+# Paper figures: small, and they ARE the deliverable. Versioned so a
+# clone can check a figure against the CSV that produced it.
+!results/**/*.png
+!results/**/*.pdf
 
 # ---------- Environment & Secrets ----------
 .env

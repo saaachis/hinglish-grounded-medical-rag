@@ -40,17 +40,32 @@ class EvidenceRetriever:
         Maximum number of candidates to retrieve before truncation.
     """
 
+    #: Default gap threshold as a fraction of the top score.
+    #:
+    #: This was 0.5, which made adaptive truncation UNREACHABLE. With
+    #: L2-normalised LaBSE vectors the top score averages 0.492, so the rule
+    #: waited for a 0.246 similarity drop between adjacent neighbours. Measured
+    #: over 299 queries x 10 ranks, the largest adjacent gap that occurs at all
+    #: is 0.088 -- about a third of the threshold. It fired on 0/299 queries.
+    #:
+    #: Calibrated against the real gap distribution: 0.05 fires on ~18% of
+    #: queries, 0.02 on ~70%, 0.01 on ~96%. See src/analysis/truncation_sweep.py.
+    DEFAULT_THRESHOLD_RATIO = 0.05
+
     def __init__(
         self,
         indexer: FAISSIndexer,
         text_encoder: TextEncoder,
         evidence_metadata: pd.DataFrame,
         max_k: int = 10,
+        threshold_ratio: float | None = None,
     ):
         self.indexer = indexer
         self.text_encoder = text_encoder
         self.evidence_metadata = evidence_metadata.reset_index(drop=True)
         self.max_k = max_k
+        self.threshold_ratio = (self.DEFAULT_THRESHOLD_RATIO
+                                if threshold_ratio is None else threshold_ratio)
 
     def retrieve(
         self,
@@ -100,7 +115,7 @@ class EvidenceRetriever:
         return results
 
     def adaptive_truncation(
-        self, scores: np.ndarray, threshold_ratio: float = 0.5
+        self, scores: np.ndarray, threshold_ratio: float | None = None
     ) -> int:
         """Determine optimal number of results via score-based truncation.
 
@@ -123,6 +138,9 @@ class EvidenceRetriever:
         """
         if len(scores) <= 1:
             return len(scores)
+
+        if threshold_ratio is None:
+            threshold_ratio = self.threshold_ratio
 
         top_score = float(scores[0])
         if top_score <= 0:
