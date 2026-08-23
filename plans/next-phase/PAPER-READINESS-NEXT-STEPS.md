@@ -89,11 +89,53 @@ statement, so they will — finds an architecture diagram that does not match th
 | # | Item | Cost | Why |
 |---|---|---|---|
 | 4 | **H₀₃ provenance** | ~1,800 calls | The proposal commits to three hypotheses; delivering two invites "why not H₃?". Use matched-topic, equal-size (~1,800 doc) indexes — PubMedQA is only 2.1% on-topic and MMedBench is 57.6% Chinese |
-| 5 | **Swap LaBSE → multilingual-e5-base** | Free (CPU) | e5 beats LaBSE on every query condition, +53% R@1 on English. Either adopt it, or report honestly that the deployed encoder is not the best available |
+| 5 | **Swap LaBSE → multilingual-e5-base** | Free (CPU) | See §3.1 — LaBSE ranks 4th of 5. Either adopt e5, or report honestly that the deployed encoder is not the best available |
 | 6 | **Finish H1 to n≈400** | Resumes on quota | 268 is ample (p<10⁻⁸); this only narrows CIs |
 | 7 | **Figures for R1–R6** | Free | Only the H2 figures are regenerated. Need: H₀₄ recall bars, baseline table, metric-shrinkage comparison, refusal rates, truncation sweep. Reuse `h2_figures.py` conventions (300 DPI + vector PDF) |
 | 8 | **Re-run the Phase-6 ablation** under the unified lexicon | Free | The +0.069 structured-vs-raw result is currently partly a lexicon artefact |
 | 9 | **Zenodo deposit + DOI** | Free | SN Computer Science **requires** a Data Availability statement in Declarations. ~380 MB |
+
+---
+
+### 3.1 The completed baseline table (Table 1) — read this before writing §5
+
+All 3,015 queries, same index, same relevance criterion. Only the retrieval system changes.
+
+**Recall@1**
+
+| System | Q1 Hinglish (deployed) | Q2 English | Q3 +caption |
+|---|---:|---:|---:|
+| BM25 (lexical) | **0.1343** | 0.1867 | 0.2862 |
+| multilingual-e5-base | 0.1303 | **0.2454** | 0.2806 |
+| TF-IDF (lexical) | 0.1167 | 0.1393 | 0.2063 |
+| **LaBSE (deployed)** | **0.1144** | 0.1602 | 0.2143 |
+| MuRIL | 0.0640 | 0.1821 | 0.2305 |
+| *random floor* | *0.0626* | *0.0626* | *0.0626* |
+
+**MRR@10**
+
+| System | Q1 Hinglish | Q2 English | Q3 +caption |
+|---|---:|---:|---:|
+| multilingual-e5-base | **0.2794** | **0.4138** | 0.4547 |
+| BM25 | 0.2717 | 0.3346 | 0.4440 |
+| TF-IDF | 0.2613 | 0.2659 | 0.3571 |
+| **LaBSE (deployed)** | 0.2432 | 0.2985 | 0.3592 |
+| MuRIL | 0.1704 | 0.3224 | 0.3818 |
+
+Three findings, all of them awkward and all of them worth reporting:
+
+1. **LaBSE ranks 4th of 5** on the deployed path, on both metrics. The architecture's
+   central choice is not justified by its own evaluation.
+2. **BM25 — pure lexical matching — beats it.** Hinglish queries carry English clinical
+   terms (*rash*, *tonsils*, *swelling*) that match the English corpus directly; the
+   cross-lingual embedding appears to *dilute* that signal rather than add to it. The
+   paper's motivating premise ("this is not a translation problem") needs restating in
+   light of this.
+3. ⭐ **MuRIL sits at the random floor on Hinglish — 0.0640 vs 0.0626.** The
+   Indian-language-specialised encoder fails completely, because it is trained on
+   *Devanagari* Hindi and MMCQSD is *romanised*. Yet it recovers to 0.1821 on the English
+   text. **Script mismatch, not language mismatch, is what breaks it.** That is a clean,
+   quotable finding and a genuine contribution to the code-mixed IR literature.
 
 ---
 
