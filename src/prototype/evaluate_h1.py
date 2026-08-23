@@ -15,6 +15,20 @@ DEFAULT_INPUT = "results/h1_outputs.csv"
 DEFAULT_SCORED = "results/h1_scored.csv"
 DEFAULT_SUMMARY = "results/h1_mvp_summary.md"
 
+# ---------------------------------------------------------------------------
+# SUPERSEDED LEXICON -- do not copy, do not extend, do not use in new analysis.
+#
+# This is one of five divergent concept lexicons that coexisted in this repo
+# (7 positive concepts here). Because H1 and the Phase-6 ablation were scored
+# with DIFFERENT copies, the +0.069 structured-vs-raw result is partly a lexicon
+# artefact rather than an effect.
+#
+# It is kept verbatim so the published numbers remain reproducible. It uses
+# naive substring matching ("red" fires inside "required") and the hard-coded
+# 0.25 default that set the zero-shot baseline on 27.5% of rows.
+#
+# ALL NEW SCORING GOES THROUGH:  src/evaluation/concept_lexicon.py
+# ---------------------------------------------------------------------------
 CONCEPT_PATTERNS = {
     "pleural_effusion": ["pleural effusion", "effusion", "fluid"],
     "pneumonia": ["pneumonia", "infect", "infection"],

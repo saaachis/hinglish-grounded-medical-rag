@@ -51,6 +51,20 @@ Respond in Hinglish (mix of Hindi and English) since the patient communicates in
 Keep the response concise (3-5 sentences).
 You do NOT have access to any clinical reports or test results."""
 
+# ---------------------------------------------------------------------------
+# SUPERSEDED LEXICON -- do not copy, do not extend, do not use in new analysis.
+#
+# This is one of five divergent concept lexicons that coexisted in this repo
+# (24 positive concepts here). Because H1 and the Phase-6 ablation were scored
+# with DIFFERENT copies, the +0.069 structured-vs-raw result is partly a lexicon
+# artefact rather than an effect.
+#
+# It is kept verbatim so the published numbers remain reproducible. It uses
+# naive substring matching ("red" fires inside "required") and the hard-coded
+# 0.25 default that set the zero-shot baseline on 27.5% of rows.
+#
+# ALL NEW SCORING GOES THROUGH:  src/evaluation/concept_lexicon.py
+# ---------------------------------------------------------------------------
 MEDICAL_CONCEPT_PATTERNS: dict[str, list[str]] = {
     "rash": ["rash", "rashes", "eruption", "exanthem", "maculopapular"],
     "dermatitis": ["dermatitis", "eczema", "dermatologic"],
