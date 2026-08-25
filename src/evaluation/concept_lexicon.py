@@ -25,8 +25,13 @@ Three defects are fixed here:
     *set the baseline*. Scores are now ``nan`` and the caller reports
     concept-coverage as a separate diagnostic.
 
-3.  **Thin negation.** Only ``no`` / ``without`` / ``not`` / ``nahi`` were
-    handled. Extended with the Hinglish negators that actually occur in MMCQSD.
+3.  **Negation scope.** The original code handled only forward-scoping English
+    negators, so every POST-posed Hinglish denial was scored as an assertion:
+    ``extract_concepts("rash nahi hai")`` returned ``{"rash"}``. Negators are now
+    split three ways -- pre-posed (scope forward), post-posed (scope backward) and
+    epistemic hedges like "confirm nahi kar sakta" (scope forward over the
+    complement clause). Grounded outputs are overwhelmingly hedges, so this was
+    inflating factuality directly.
 
 The chest-X-ray concepts from ``evaluate_h1.py`` (cardiomegaly, atelectasis,
 consolidation, opacity, pneumonia) are deliberately EXCLUDED: they belong to the
@@ -89,15 +94,43 @@ NON_FINDING_CONCEPTS: frozenset[str] = frozenset({
 
 POSITIVE_CONCEPTS: frozenset[str] = frozenset(CONCEPT_PATTERNS)
 
-#: English + romanised-Hindi negators observed in MMCQSD.
-NEGATORS: tuple[str, ...] = (
+#: English negators are PRE-posed ("no rash", "without swelling") so they scope
+#: FORWARD. Hindi/Hinglish negators are POST-posed -- the verb-final negator follows
+#: what it negates ("rash nahi hai" = "rash not is") -- so they must scope BACKWARD.
+#: Scoping only forward silently counted every Hinglish denial as an assertion:
+#: `extract_concepts("rash nahi hai")` returned {"rash"}. That mattered a great deal,
+#: because grounded outputs are largely hedges of exactly this shape.
+PREPOSED_NEGATORS: tuple[str, ...] = (
     "no", "not", "without", "denies", "denied", "negative for", "absent",
-    "free of", "ruled out", "nahi", "na", "nai", "bilkul nahi", "koi nahi",
-    "kabhi nahi", "bina",
+    "free of", "ruled out", "bina",
+)
+POSTPOSED_NEGATORS: tuple[str, ...] = (
+    "nahi", "nahin", "nai", "na", "bilkul nahi", "koi nahi", "kabhi nahi",
+    "nahi hai", "nahi tha", "nahi kar", "nahi de",
 )
 
-#: A negator scopes forward this many characters.
+#: Epistemic HEDGES negate the speaker's commitment, not the predicate, so they
+#: scope FORWARD over their complement clause even though the negator is Hindi:
+#: "main confirm nahi kar sakta ki ulcer hai" = "I cannot confirm that there is an
+#: ulcer" -- the ulcer is not asserted. Kept separate from POSTPOSED_NEGATORS
+#: because those scope backward; applying one rule to both either misses hedges or
+#: swallows genuine later assertions.
+#: This distinction is not cosmetic: grounded outputs are overwhelmingly hedges of
+#: exactly this shape, so mis-scoping them inflates factuality directly.
+HEDGE_NEGATORS: tuple[str, ...] = (
+    "confirm nahi", "nahi kar sakta", "nahi kar sakti", "nahi de sakta",
+    "nahi de sakti", "nahi bata sakta", "pata nahi", "maloom nahi",
+    "cannot confirm", "can not confirm", "unable to confirm", "not able to confirm",
+)
+
+#: All negators, for callers that just want the vocabulary.
+NEGATORS: tuple[str, ...] = PREPOSED_NEGATORS + POSTPOSED_NEGATORS + HEDGE_NEGATORS
+
+#: How far a negator scopes, in characters.
 NEGATION_WINDOW = 40
+
+#: Hedges scope over a whole complement clause, so they need a wider window.
+HEDGE_WINDOW = 80
 
 
 @lru_cache(maxsize=1)
@@ -112,14 +145,30 @@ def _compiled() -> dict[str, list[re.Pattern[str]]]:
     return out
 
 
-@lru_cache(maxsize=1)
-def _negation_rx() -> re.Pattern[str]:
-    alt = "|".join(re.escape(n) for n in sorted(NEGATORS, key=len, reverse=True))
+@lru_cache(maxsize=3)
+def _negation_rx(kind: str) -> re.Pattern[str]:
+    words = {"pre": PREPOSED_NEGATORS, "post": POSTPOSED_NEGATORS,
+             "hedge": HEDGE_NEGATORS}[kind]
+    alt = "|".join(re.escape(n) for n in sorted(words, key=len, reverse=True))
     return re.compile(rf"\b({alt})\b", re.I)
 
 
 def _negated_spans(text: str) -> list[tuple[int, int]]:
-    return [(m.start(), m.end() + NEGATION_WINDOW) for m in _negation_rx().finditer(text)]
+    """Character ranges under the scope of a negator.
+
+    Pre-posed negators scope forward from themselves; post-posed negators scope
+    backward. A concept mention is suppressed if it falls inside any such range.
+    """
+    spans: list[tuple[int, int]] = []
+    for m in _negation_rx("pre").finditer(text):
+        spans.append((m.start(), m.end() + NEGATION_WINDOW))
+    for m in _negation_rx("post").finditer(text):
+        spans.append((max(0, m.start() - NEGATION_WINDOW), m.end()))
+    # Hedges scope forward over the complement clause, and further than a plain
+    # negator because the complement is a whole clause ("...ki X hai").
+    for m in _negation_rx("hedge").finditer(text):
+        spans.append((m.start(), m.end() + HEDGE_WINDOW))
+    return spans
 
 
 def extract_concepts(text: str) -> set[str]:
@@ -155,7 +204,7 @@ def score(output: str, reference: str) -> dict[str, float]:
     hit = len(o & r)
 
     if n_o == 0:
-        factual = halluc = precision = f1 = np.nan
+        factual = halluc = precision = recall = f1 = np.nan
     else:
         factual = precision = hit / n_o
         halluc = (n_o - hit) / n_o
@@ -165,7 +214,20 @@ def score(output: str, reference: str) -> dict[str, float]:
               (np.nan if not n_r else 0.0))
 
     return {
+        # `factual_support` is PRECISION and nothing else: hit / |output concepts|.
+        # It has no recall term, so its degenerate optimum is a one-word answer --
+        # measured, the constant answer "swelling" scores 0.719 against the caption
+        # reference while the real grounded system scores 0.153. NEVER report
+        # factual_support as an absolute quality score, and always ship a
+        # constant-answer baseline row beside it (see src/evaluation/baselines.py).
+        # Paired deltas remain valid; absolute levels do not.
         "factual_support": factual,
+        "precision": precision,
+        "recall": recall,
+        # `hallucination` is EXACTLY 1 - factual_support (verified: min = max = 1.0
+        # for every arm). It is a sign-flipped duplicate, not independent evidence.
+        # Reporting both as separate findings double-counts one result -- which is
+        # what the published "+73.5% factuality AND -44% hallucination" pair did.
         "hallucination": halluc,
         "concept_f1": f1,
         "n_output_concepts": n_o,

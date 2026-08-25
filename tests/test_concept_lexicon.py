@@ -33,16 +33,40 @@ def test_true_positives_still_fire(text, present):
     assert present in extract_concepts(text)
 
 
-@pytest.mark.parametrize("text", [
-    "no rash was seen",
-    "without any swelling",
-    "rash nahi hai",
-    "denies fever",
-    "negative for infection",
-    "koi nahi rash",
+@pytest.mark.parametrize("text,concept", [
+    # English: negator PRECEDES the concept, so it scopes forward.
+    ("no rash was seen", "rash"),
+    ("without any swelling", "swelling"),
+    ("denies fever", "fever"),
+    ("negative for infection", "infection"),
+    ("the biopsy was not malignant", "malignancy"),
+    # Hinglish: negator FOLLOWS the concept, so it must scope backward.
+    # Every one of these returned the concept as ASSERTED before the fix.
+    ("rash nahi hai", "rash"),
+    ("Patient ko edema nahi hai.", "swelling"),
+    ("mujhe bukhar nahi hai", "fever"),
+    ("is report mein infection nahi mila", "infection"),
+    ("koi swelling nahi", "swelling"),
+    ("main ye confirm nahi kar sakta ki ulcer hai", "ulcer"),
 ])
-def test_negation_suppresses(text):
-    assert extract_concepts(text) == set() or "rash" not in extract_concepts("no rash was seen")
+def test_negation_suppresses(text, concept):
+    """Each case asserts on ITS OWN text.
+
+    The previous version was `assert extract(text) == set() or "rash" not in
+    extract("no rash was seen")`. The right disjunct is a constant True, so the
+    whole assertion was vacuous and the suite passed while postposed Hinglish
+    negation was completely unhandled.
+    """
+    assert concept not in extract_concepts(text)
+
+
+@pytest.mark.parametrize("text,concept", [
+    ("patient has a rash", "rash"),
+    ("swelling nahi tha pehle, ab swelling hai", "swelling"),  # later assertion survives
+])
+def test_negation_does_not_over_suppress(text, concept):
+    """The backward window must not swallow genuine assertions elsewhere."""
+    assert concept in extract_concepts(text)
 
 
 def test_no_magic_default():
