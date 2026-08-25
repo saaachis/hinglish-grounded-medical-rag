@@ -45,7 +45,17 @@ OUT = Path("results/retrieval_v2")
 CACHE = Path("data/passage_index")
 
 TOP_K = 10
-PASSAGE_POOL = 60   # passages fetched before pooling to TOP_K cases
+
+#: Depth of the CANDIDATE lists fed to fusion, before truncating to TOP_K.
+#: This is not a tuning knob -- it is a correctness requirement. Reciprocal-rank
+#: fusion can only ever surface a document that appears in at least one input
+#: list, so fusing two depth-10 lists cannot promote anything outside a union of
+#: 20 documents and the "hybrid" degenerates into a re-ordering of what the
+#: components already agreed on. Fusion has to see deep candidate lists and be
+#: truncated to TOP_K afterwards.
+FUSION_DEPTH = 100
+
+PASSAGE_POOL = 400  # passages fetched before pooling to FUSION_DEPTH cases
 K_VALUES = (1, 3, 5, 10)
 RRF_K = 60
 SEED = 42
@@ -151,16 +161,20 @@ def main() -> None:
             qemb = enc.encode(texts, batch_size=32, show_progress=False)
             np.save(qcache, qemb)
         s, p = pix.search(qemb.astype(np.float32), PASSAGE_POOL)
-        dense = pool_passages_to_cases(s, p, case_row, TOP_K)
-
-        lex = np.vstack([np.argsort(bm25.get_scores(tk(t)))[::-1][:TOP_K] for t in texts])
+        # Deep candidate lists for fusion; each system is TRUNCATED to TOP_K
+        # only when it is scored on its own.
+        dense_deep = pool_passages_to_cases(s, p, case_row, FUSION_DEPTH)
+        lex_deep = np.vstack([np.argsort(bm25.get_scores(tk(t)))[::-1][:FUSION_DEPTH]
+                              for t in texts])
         S = linear_kernel(vec.transform(texts), D)
-        tfidf = np.argsort(-S, axis=1)[:, :TOP_K]
+        tfidf_deep = np.argsort(-S, axis=1)[:, :FUSION_DEPTH]
 
-        hybrid = rrf(dense, lex)
+        hybrid = rrf(dense_deep, lex_deep, top_k=TOP_K)
 
-        for sysname, ranking in [("LaBSE-passages", dense), ("BM25-full", lex),
-                                 ("TFIDF-full", tfidf), ("Hybrid-RRF", hybrid)]:
+        for sysname, ranking in [("LaBSE-passages", dense_deep[:, :TOP_K]),
+                                 ("BM25-full", lex_deep[:, :TOP_K]),
+                                 ("TFIDF-full", tfidf_deep[:, :TOP_K]),
+                                 ("Hybrid-RRF", hybrid)]:
             h = np.where(ranking >= 0, cond[np.clip(ranking, 0, len(cond) - 1)] == gold[:, None], False)
             hit_store[(sysname, name)] = h
             rows.append({"system": sysname, "variant": name, **rank_metrics(h)})
