@@ -199,12 +199,24 @@ def build_prompt(query: str, evidence: str) -> str:
 
 
 def main() -> None:
+    global MODEL, OUT_DIR
     ap = argparse.ArgumentParser(description="H1 under real (unfiltered) retrieval")
     ap.add_argument("--top-k", type=int, default=1,
                     help="Evidence cases to retrieve. 1 matches the oracle's single "
                          "case, isolating the condition filter as the only difference.")
     ap.add_argument("--limit", type=int, default=0, help="0 = all cached rows")
+    ap.add_argument("--model", type=str, default=MODEL,
+                    help="Groq model id. Refusal rate is strongly model-dependent: "
+                         "gpt-oss-20b refuses ~75-83%% on this prompt while gpt-oss-120b "
+                         "refuses ~25%%, closest to the decommissioned llama's 18.1%%. "
+                         "A high-refusal generator makes the factuality means describe "
+                         "refusal text rather than answers.")
+    ap.add_argument("--out-dir", type=Path, default=OUT_DIR)
     args = ap.parse_args()
+
+    MODEL = args.model
+    OUT_DIR = args.out_dir
+    logger.info("Generator: %s -> %s", MODEL, OUT_DIR)
 
     for p in (CACHED, PAIRS, INDEX, META):
         if not p.exists():

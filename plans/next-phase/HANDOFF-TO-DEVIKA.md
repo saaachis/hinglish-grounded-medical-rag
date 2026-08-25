@@ -148,26 +148,64 @@ Two notes you'll care about:
 **Oracle − real = +0.0755, p = 0.106 — not significant.** The oracle problem, which we both
 called the top structural threat, costs almost nothing.
 
-But five results now converge on a different explanation:
+### ⚠️ CORRECTION — I initially over-read this. Please read this part carefully.
 
-| Evidence | Result |
-|---|---|
-| Oracle vs real | p = 0.106 |
-| Retrieval correctness → factuality | **p = 0.53** |
-| Circular vs unbiased metric | **6× shrinkage** |
-| BM25 vs LaBSE | lexical wins |
-| Refusal rate oracle vs real | p = 0.79 |
+I first concluded from five converging results that the grounding benefit is an "echo
+effect" (the model restating whatever evidence it was handed, scored against that same
+text). **I ran the decisive control and it does NOT support that conclusion.** Here is the
+corrected position.
 
-**The measured grounding benefit is largely an *echo* effect.** Told "base your response
-strictly on the evidence," the model either declines or restates concepts from whatever
-text it was handed — and the evidence-based metric scores the answer against that same
-text, so restating anything scores well whether or not it was relevant.
+**The random-evidence control (n=268)** grounded the model on a uniformly random case and
+scored it two ways. It came back reading "confirmed" — random 0.3917 vs real 0.4548,
+p = 0.14, indistinguishable. But the comparison is hollow:
 
-**Also a genuine positive result:** the grounded arm **refuses 84%** of the time (vs 0%
-zero-shot) rather than confabulating. That's correct safety behaviour — and it's invisible
-to the concept metric, because refusals score `nan`. A naive mean makes the system look
-healthiest exactly where it fails, so refusal rate is now reported alongside every
-factuality number.
+- random-arm refusal rate: **89.9%**
+- refusals that **still carry clinical concepts: 68%** — the model declines *while quoting
+  the evidence back* ("evidence mein sirf X ka zikr hai"), and the metric scores that
+  quoting as factual support
+- rows where **both** arms genuinely answered: **n = 1**
+
+So those means describe refusal text, not answers. **The control is INCONCLUSIVE.**
+
+**The root cause is the generator swap.** Measured refusal rates on the grounded arm:
+
+| Generator | Grounded refusal |
+|---|---:|
+| `llama-3.1-8b-instant` (published, n=1,165) | **18.1%** |
+| `openai/gpt-oss-20b` (my re-run, n=268) | **82.8%** |
+| `openai/gpt-oss-120b` (same prompt) | **~26%** |
+
+gpt-oss-20b follows the prompt's "say you cannot confirm it" clause far more literally than
+llama did. So **three of my five pillars were gpt-oss artefacts**, not findings about
+grounding:
+
+| Pillar | Source | Verdict |
+|---|---|---|
+| Oracle vs real, p = 0.106 | gpt-oss-20b | ❌ compares refusal texts |
+| Retrieval correctness → factuality, p = 0.53 | gpt-oss-20b | ❌ same |
+| Refusal identical oracle vs real, p = 0.79 | gpt-oss-20b | ❌ describes that model only |
+| **M4′ 6× shrinkage** | **llama data (18% refusal)** | ✅ **stands** |
+| **BM25 beats LaBSE** | **retrieval only, no generation** | ✅ **stands** |
+
+**What still stands:** the circularity finding (M4′) and every retrieval result — H₀₄, the
+baselines, MuRIL-at-the-floor, the truncation negative result. None of those involve
+gpt-oss generation.
+
+**What is withdrawn:** "the grounding benefit is an echo effect." Not currently supported.
+It may still be true — but it needs testing on a generator that answers.
+
+**The fix, already running:** `gpt-oss-120b` refuses ~26% on the *unchanged* prompt, close
+to llama's 18.1%, so only the model changes. Saachi has generated additional Groq keys, so
+the full **1,165 rows × 3 arms** are being re-run on 120b — which also **dissolves the
+two-generator problem in §6**: we get one reproducible dataset on one current model, and
+the "which is primary?" decision disappears. The random-evidence control will then be
+repeated on 120b.
+
+**One genuine positive result survives regardless:** the grounded arm refuses substantially
+(vs 0% zero-shot) rather than confabulating, and refusals are invisible to the concept
+metric because they score `nan`. A naive mean makes the system look healthiest exactly
+where it fails. **Refusal rate must be reported alongside every factuality number** — that
+holds on every generator we have tested.
 
 ---
 
@@ -228,6 +266,9 @@ has no write access and 403s on push. `gh auth switch --user saaachis` before pu
 ---
 
 **Short version:** your two corrections were both right and I've retracted mine. H₀₄ is done
-on the full corpus. All five hardening items are closed. The oracle problem turned out to be
-a false alarm — but chasing it surfaced something better, and the paper is now a stronger
-one than we started with. The next move is the random-evidence control.
+on the full corpus and all five hardening items are closed. I then over-read a set of
+gpt-oss-20b results as proving an "echo effect" and have **withdrawn that** — see the
+correction in §5. The circularity finding (M4′, 6× shrinkage) and every retrieval result
+still stand; the generation-side nulls were artefacts of a generator that refuses 83% of
+the time. The full 1,165 rows are being re-run on gpt-oss-120b, which fixes it and also
+dissolves the two-generator problem. Nothing that involves retrieval is affected.
