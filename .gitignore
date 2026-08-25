@@ -110,4 +110,5 @@ credentials/
 *.tar.gz
 *.rar
 *.7z
-results/**/*_partial.csv
+# checkpoints ARE tracked: a crash otherwise loses thousands of paid API calls
+!results/**/*_partial.csv
