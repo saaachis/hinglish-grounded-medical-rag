@@ -190,7 +190,7 @@ def main() -> None:
         a = hit_store[(sysname, "Q1_hinglish")][:, 0]
         b = hit_store[(sysname, "Q2_english_question")][:, 0]
         n01, n10, p = mcnemar(a, b)
-        d, lo, hi = bootstrap_delta(a.astype(float), b.astype(float))
+        lo, hi = bootstrap_delta(b.astype(float), a.astype(float))  # CI on Q2 - Q1
         tests.append({"system": sysname, "Q1_R@1": a.mean(), "Q2_R@1": b.mean(),
                       "delta": b.mean() - a.mean(), "ci_lo": lo, "ci_hi": hi,
                       "mcnemar_p": p, "n": len(pairs)})
