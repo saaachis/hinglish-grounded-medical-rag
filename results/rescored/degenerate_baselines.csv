@@ -1,7 +1,7 @@
 system,answer,factual_support,n
-copy:reference,<the reference verbatim>,1.0,1586
-const:swelling,swelling,0.7144495412844036,1744
-const:swelling+erythema,swelling and erythema,0.6611238532110092,1744
-const:erythema,erythema,0.6077981651376146,1744
-const:six-common,rash swelling pain erythema infection lesion,0.2351873088685015,1744
-const:pain,pain,0.0028669724770642203,1744
+copy:reference,<the reference verbatim>,1.0,1705
+const:swelling,swelling,0.7132196162046909,1876
+const:swelling+erythema,swelling and erythema,0.6585820895522388,1876
+const:erythema,erythema,0.6039445628997868,1876
+const:six-common,rash swelling pain erythema infection lesion,0.2338308457711443,1876
+const:pain,pain,0.0031982942430703624,1876
