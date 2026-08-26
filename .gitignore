@@ -114,3 +114,12 @@ credentials/
 *.7z
 # checkpoints ARE tracked: a crash otherwise loses thousands of paid API calls
 !results/**/*_partial.csv
+
+# ---------- LaTeX build artifacts ----------
+research-paper/draft/*.aux
+research-paper/draft/*.log
+research-paper/draft/*.out
+research-paper/draft/*.bbl
+research-paper/draft/*.blg
+research-paper/draft/*.spl
+research-paper/draft/*.toc
