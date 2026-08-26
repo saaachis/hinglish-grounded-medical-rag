@@ -9,8 +9,8 @@ import pytest
 
 from src.evaluation.hypothesis import (
     check_normality,
-    test_h1_grounding_effect,
-    test_h3_evidence_type,
+    evaluate_h1_grounding_effect,
+    evaluate_h3_evidence_type,
 )
 
 
@@ -49,7 +49,7 @@ class TestH1GroundingEffect:
         rag_scores = rng.normal(rag_mean, 0.05, 50)
         zeroshot_scores = rng.normal(zeroshot_mean, 0.05, 50)
 
-        result = test_h1_grounding_effect(rag_scores, zeroshot_scores)
+        result = evaluate_h1_grounding_effect(rag_scores, zeroshot_scores)
 
         assert "p_value" in result
         assert "effect_size_cohens_d" in result
@@ -74,7 +74,7 @@ class TestH3EvidenceType:
         auth_scores = rng.normal(auth_mean, 0.05, 50)
         gen_scores = rng.normal(gen_mean, 0.05, 50)
 
-        result = test_h3_evidence_type(auth_scores, gen_scores)
+        result = evaluate_h3_evidence_type(auth_scores, gen_scores)
 
         assert "p_value" in result
         assert "effect_size_cohens_d" in result

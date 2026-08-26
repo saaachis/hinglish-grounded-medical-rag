@@ -1,228 +1,129 @@
-# Grounded Multimodal RAG for Code-Switching (Hinglish) in Clinical Decision Support Systems
+# Grounded RAG for Hinglish Clinical Queries
 
-> Evidence-first multimodal RAG framework for grounded clinical decision support under Hinglish (Hindi–English) code-switched queries, aligned with authoritative medical reports and optional radiological evidence.
+Evidence-grounded retrieval-augmented generation for **Hinglish** (Hindi–English
+code-switched) patient questions, evaluated against English clinical case reports.
 
-**Research Discourse - I | Group 5**
+**Research Discourse I · Group 5**
 
 ---
 
-## Problem Statement
+## What this repository contains
 
-Modern clinical AI systems assume medical reasoning begins with clean, formal language. In reality — especially in India — patient-doctor interactions occur in **Hinglish** (Hindi–English code-switching), which:
+A retrieve-then-generate pipeline and — more importantly — **a careful measurement
+study of it**. Several results here are negative or corrective, and they are
+reported as such.
 
-- Lacks standardized grammar
-- Varies by region, education, and context
-- Encodes medical meaning indirectly
-
-| **Formal Report** | **Hinglish Patient Query** |
+| Stage | Implementation |
 |---|---|
-| *"Right-sided pleural effusion"* | *"Doctor, right side chhati me pani bhar gaya hai kya?"* |
+| Query encoding | `sentence-transformers/LaBSE`, 768-d, CPU, `max_seq_length=256` |
+| Index | FAISS `IndexFlatIP` over 10,000 MultiCaRe cases, passage-chunked (41,746 passages) |
+| Retrieval | Dense, BM25, TF-IDF, and hybrid reciprocal-rank fusion |
+| Generation | Groq `openai/gpt-oss-120b`, grounded vs zero-shot prompts |
+| Scoring | Concept precision / recall / F1 against two references, with degenerate baselines |
+| Statistics | Wilcoxon, McNemar, bootstrap CIs, Benjamini–Hochberg across the test family |
 
-**This is not a translation problem — it is a reasoning alignment problem.**
-
-When processed by existing AI models, Hinglish expressions are frequently treated as noisy or broken English, leading to incorrect retrieval, loss of semantic intent, or fluent yet **clinically unsafe hallucinated explanations**.
-
----
-
-## Proposed Approach
-
-This research designs and evaluates an **evidence-first Retrieval-Augmented Generation (RAG) framework** that:
-
-1. **Encodes** Hinglish clinical queries using multilingual representations (LaBSE)
-2. **Retrieves** relevant evidence from curated clinical corpora (FAISS + adaptive context selection)
-3. **Generates** grounded Hinglish explanations conditioned on retrieved evidence
-4. **Optionally enriches** with multimodal signals (chest X-rays via BioMedCLIP)
-
-The system is explicitly positioned as a **clinical decision support tool** — it assists interpretation while minimizing hallucinations, without attempting autonomous diagnosis.
+> **This is a text-only system.** It does not use LLaVA, BioMedCLIP, QLoRA or DPO.
+> Earlier versions of this README advertised those; they were never implemented and
+> the claims have been removed.
 
 ---
 
-## Architecture
+## Headline results
 
-```
-┌──────────────────────────────────────────────────────────────────┐
-│                    HINGLISH PATIENT QUERY                        │
-│  "Doctor, right side chhati me pani bhar gaya hai kya?"         │
-└──────────────────────┬───────────────────────────────────────────┘
-                       │
-                       ▼
-         ┌─────────────────────────┐
-         │   TEXT ENCODER (LaBSE)  │  ← Multilingual embedding
-         │   Hinglish → Vector     │
-         └────────────┬────────────┘
-                      │
-          ┌───────────▼───────────┐
-          │   FAISS RETRIEVER     │  ← Adaptive context selection
-          │   + Score Truncation  │    (MMed-RAG style)
-          └───────────┬───────────┘
-                      │
-     ┌────────────────▼────────────────┐
-     │   RETRIEVED CLINICAL EVIDENCE   │
-     │   • English radiology reports   │
-     │   • (Optional) X-ray images     │
-     └────────────────┬────────────────┘
-                      │
-         ┌────────────▼────────────┐
-         │  GROUNDED GENERATOR     │  ← LLaVA-v1.5 + QLoRA
-         │  Evidence → Hinglish    │    + DPO (anti-hallucination)
-         │  Explanation            │
-         └────────────┬────────────┘
-                      │
-                      ▼
-┌──────────────────────────────────────────────────────────────────┐
-│              GROUNDED HINGLISH EXPLANATION                       │
-│  (factually consistent with retrieved medical evidence)          │
-└──────────────────────────────────────────────────────────────────┘
-```
+**Retrieval — code-mixing damages lexical retrieval far more than dense retrieval.**
+Recall@1 over 3,015 queries, every system reading the same full case text:
+
+| System | Hinglish query | English question | Penalty | McNemar *p* |
+|---|---:|---:|---:|---:|
+| Hybrid (RRF) | **0.1751** | 0.1973 | +0.0222 | 0.018 |
+| LaBSE (passages) | 0.1280 | 0.1486 | +0.0206 | 0.017 |
+| BM25 | 0.0935 | 0.1847 | **+0.0912** | 9.9e-26 |
+| TF-IDF | 0.0842 | 0.1529 | — | — |
+| *random floor* | *0.0626* | *0.0626* | — | — |
+
+BM25 wins on English and collapses on Hinglish; dense retrieval barely moves. The
+penalty is **4.4× larger for lexical retrieval**, which is the empirical argument
+for cross-lingual embedding in this setting.
+
+**MuRIL sits at the random floor on Hinglish** (0.0640 vs 0.0626) yet recovers to
+0.1821 on the same content in English. It is trained on *Devanagari* Hindi while
+MMCQSD is *romanised*: **script mismatch, not language mismatch**, is what breaks it.
+
+**Generation — the apparent grounding benefit depends on what you score against.**
+The same generations, scored twice (concept F1, grounded − zero-shot):
+
+| Source / arm | Circular reference | Unbiased reference |
+|---|---:|---:|
+| llama-3.1-8b, oracle evidence | +0.203 | +0.062 |
+| gpt-oss-120b, oracle evidence | +0.093 | −0.021 (n.s.) |
+| gpt-oss-120b, real retrieval | −0.032 (n.s.) | **−0.047** |
+
+The *circular* reference is the evidence the grounded arm was conditioned on and the
+zero-shot arm never saw. The *unbiased* one is the MMCQSD image description, which
+neither arm saw. Grounding trades recall for precision, and that trade is only
+sometimes profitable.
 
 ---
 
-## Project Structure
-
-```
-hinglish-grounded-medical-rag/
-│
-├── config/
-│   └── config.yaml              # Project configuration
-│
-├── src/
-│   ├── data/
-│   │   ├── download.py          # Dataset download utilities
-│   │   ├── preprocess.py        # Data cleaning & CMI computation
-│   │   └── hmg_builder.py       # HMG dataset construction (synthetic-to-real)
-│   │
-│   ├── encoding/
-│   │   ├── text_encoder.py      # LaBSE — multilingual text encoding
-│   │   └── image_encoder.py     # BioMedCLIP — medical image encoding
-│   │
-│   ├── retrieval/
-│   │   ├── indexer.py           # FAISS index builder
-│   │   └── retriever.py         # Adaptive context selection retriever
-│   │
-│   ├── generation/
-│   │   ├── generator.py         # Evidence-grounded Hinglish generation
-│   │   └── trainer.py           # QLoRA fine-tuning & DPO training
-│   │
-│   ├── evaluation/
-│   │   ├── metrics.py           # MMFCM, factual consistency, hallucination rate
-│   │   └── hypothesis.py        # Statistical testing (H1, H2, H3)
-│   │
-│   └── utils/
-│       └── helpers.py           # Logging, seeding, device detection
-│
-├── notebooks/
-│   ├── 01_eda_openi.ipynb       # EDA — Open-i Chest X-Ray Collection
-│   ├── 02_eda_mmcqsd.ipynb      # EDA — MMCQSD Hinglish medical queries
-│   ├── 03_eda_pubmedqa.ipynb    # EDA — PubMedQA biomedical QA
-│   └── 04_hmg_dataset_construction.ipynb  # HMG dataset pipeline
-│
-├── app/
-│   └── streamlit_app.py         # Demo interface
-│
-├── tests/
-│   ├── conftest.py              # Shared fixtures
-│   ├── test_hypothesis.py       # Hypothesis testing tests
-│   └── test_preprocess.py       # Preprocessing tests
-│
-├── research-work/               # Research proposal & documents
-├── requirements.txt             # Python dependencies
-├── .gitignore
-└── README.md
-```
-
----
-
-## Datasets
-
-### Primary — HMG (Hinglish-Medical-Grounding)
-Custom-built dataset of **~4,000 triplets**: `{Open-i X-ray, English Report, Synthetic Hinglish Query}`.  
-Generated using **Llama-3-8B-Instruct** with **MMCQSD** as a linguistic template for realistic code-switching.
-
-### Secondary
-
-| Dataset | Size | Role |
-|---|---|---|
-| **Open-i** (Indiana Univ.) | 7,470 images + 3,955 reports | Clinical evidence source (CC-0) |
-| **MMCQSD** | 3,015 samples | Hinglish linguistic templates |
-| **PubMedQA** | Large-scale | Medical reasoning pre-training |
-| **MMed-Bench** | 25,500+ QA pairs | Multimodal grounding & evaluation |
-
----
-
-## Key Techniques
-
-| Technique | Purpose |
-|---|---|
-| **LaBSE** | Cross-lingual encoding (Hinglish ↔ English) |
-| **BioMedCLIP** | Medical image encoding for cross-modal alignment |
-| **FAISS + Adaptive Truncation** | Evidence retrieval with quality filtering |
-| **QLoRA (4-bit)** | Parameter-efficient fine-tuning on consumer GPU |
-| **DPO** | Direct Preference Optimization for hallucination control |
-| **MMFCM** | Multimodal Fact Capturing Metric for clinical evaluation |
-
----
-
-## Hypotheses
-
-| ID | Hypothesis | Test |
-|---|---|---|
-| **H1** | Evidence-grounded RAG significantly outperforms zero-shot LLMs in factual consistency | Paired t-test / Wilcoxon |
-| **H2** | Increasing code-mixing level does not significantly degrade grounded model performance | Two-way ANOVA / Kruskal-Wallis |
-| **H3** | Authoritative medical evidence significantly improves factual correctness over general biomedical text | Paired t-test / Wilcoxon |
-
----
-
-## Setup
-
-### Prerequisites
-- Python 3.10+
-- CUDA-capable GPU (recommended for model training/inference)
-
-### Installation
+## Quick start
 
 ```bash
-# Clone the repository
-git clone https://github.com/saaachis/hinglish-grounded-medical-rag.git
-cd hinglish-grounded-medical-rag
-
-# Create virtual environment
-python -m venv .venv
-source .venv/bin/activate  # Linux/Mac
-# .venv\Scripts\activate   # Windows
-
-# Install dependencies
 pip install -r requirements.txt
+cp .env.example .env          # add GROQ_API_KEY=gsk_...
+
+python build_index.py         # build the FAISS index
+streamlit run app.py          # demo
+pytest -q                     # 44 tests
 ```
 
-### Running the Demo
+Reproduce every reported number from cached artifacts:
 
 ```bash
-streamlit run app/streamlit_app.py
+python -m src.analysis.reproduce_all
 ```
 
 ---
 
-## Research Team
+## Layout
 
-| Name | Roll No. |
-|---|---|
-| Devika Jonjale | B045 |
-| Saachi Shinde | B048 |
-| Manjiri Apshinge | B061 |
-
-**Course:** Research Discourse - I
+```
+src/
+  encoding/text_encoder.py       LaBSE wrapper
+  retrieval/
+    indexer.py                   FAISS wrapper
+    retriever.py                 top-k + (disabled) adaptive truncation
+    passage_index.py             passage chunking, max-pool to cases
+    passage_retriever.py         case retrieval over the passage index
+  generation/generator.py        Groq grounded / zero-shot generation
+  evaluation/
+    concept_lexicon.py           canonical lexicon (replaced 5 divergent copies)
+    caption_reference.py         M4' unbiased reference + cluster statistics
+    baselines.py                 degenerate baselines every table must carry
+    relevance.py                 multi-label relevance criterion
+    hypothesis.py                statistical test helpers
+  analysis/                      every experiment and figure script
+results/                         all outputs, version-controlled
+plans/next-phase/                audits, handoffs, and the execution plan
+```
 
 ---
 
-## License
+## Known limitations
 
-This project is for academic research purposes.
+- **The original generator no longer exists.** `llama-3.1-8b-instant` produced the
+  n=1,165 results and was decommissioned by Groq mid-project; it now returns 404.
+  Results are replicated on `openai/gpt-oss-120b`.
+- **Relevance labels are coarse** — 18 condition groups, so a same-group case can
+  still be clinically irrelevant.
+- **The concept lexicon is not clinician-validated**, and covers 26 concepts.
+- **`precision` (formerly `factual_support`) has no recall term**, so its optimum is
+  a one-word answer. Report paired deltas and F1, never an absolute level.
+- **Adaptive truncation does not work** in this setting and is disabled; see
+  `results/truncation_sweep/`.
+- **H₀₃ (evidence provenance) is not implemented.** PubMedQA is only 2.1% on-topic
+  for these conditions and MMedBench is 57.6% Chinese.
 
----
+## Data availability
 
-## Acknowledgements
-
-- [Open-i / Indiana University](https://openi.nlm.nih.gov/) — Chest X-Ray Collection (CC-0)
-- [MMCQSD / MedSumm](https://arxiv.org/abs/2401.01596) — Code-mixed medical query dataset
-- [PubMedQA](https://pubmedqa.github.io/) — Biomedical question answering
-- [MMed-RAG](https://arxiv.org/abs/2410.13085) — Multimodal medical RAG framework
+Corpora are public: MMCQSD, MultiCaRe. Derived artifacts (paired file, FAISS index,
+passage index) are gitignored for size; all `results/` CSVs and figures are tracked.

@@ -42,7 +42,7 @@ def check_normality(data: np.ndarray, alpha: float = 0.05) -> bool:
     return p_value > alpha
 
 
-def test_h1_grounding_effect(
+def evaluate_h1_grounding_effect(
     rag_scores: np.ndarray,
     zeroshot_scores: np.ndarray,
     alpha: float = 0.05,
@@ -99,7 +99,7 @@ def test_h1_grounding_effect(
     }
 
 
-def test_h2_code_mixing_robustness(
+def evaluate_h2_code_mixing_robustness(
     scores_by_cmi: dict[str, dict[str, np.ndarray]],
     alpha: float = 0.05,
 ) -> dict:
@@ -154,7 +154,7 @@ def test_h2_code_mixing_robustness(
     }
 
 
-def test_h3_evidence_type(
+def evaluate_h3_evidence_type(
     authoritative_scores: np.ndarray,
     general_scores: np.ndarray,
     alpha: float = 0.05,
@@ -206,3 +206,16 @@ def test_h3_evidence_type(
         "confidence_interval": ci,
         "reject_null": p_value < alpha,
     }
+
+
+# ---------------------------------------------------------------------------
+# Backwards-compatible aliases.
+#
+# These were originally named `test_*`, which made pytest COLLECT them as test
+# functions and then fail with "fixture 'rag_scores' not found" -- it treated
+# each parameter as a fixture request. Two tests errored on every run because of
+# it. Public API keeps the old names; the canonical ones are `evaluate_*`.
+# ---------------------------------------------------------------------------
+h1_grounding_effect = evaluate_h1_grounding_effect
+h2_code_mixing_robustness = evaluate_h2_code_mixing_robustness
+h3_evidence_type = evaluate_h3_evidence_type

@@ -102,6 +102,8 @@ results/**
 # ---------- Environment & Secrets ----------
 .env
 .env.*
+# ...but the template carries no secrets and the README tells people to copy it
+!.env.example
 *.key
 credentials/
 

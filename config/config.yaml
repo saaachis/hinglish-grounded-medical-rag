@@ -1,103 +1,133 @@
 # ============================================================
 # Configuration — Hinglish Grounded Medical RAG
+#
+# This file describes the system that EXISTS. It previously specified
+# LLaVA-1.5, BioMedCLIP, QLoRA and DPO, none of which were implemented, and
+# listed evaluation metrics (mmfcm, BLEU, ROUGE) that nothing computed.
+# Deferred work is listed under `future_work` so the distinction is explicit.
 # ============================================================
 
 project:
   name: "hinglish-grounded-medical-rag"
-  description: "Evidence-first multimodal RAG for grounded clinical decision support under Hinglish queries"
-  version: "0.1.0"
+  description: "Evidence-grounded RAG for Hinglish (code-switched) clinical queries"
+  version: "2.0.0"
 
-# ---------- Data Paths ----------
+# ---------- Data ----------
 data:
   raw_dir: "data/raw"
   processed_dir: "data/processed"
-  hmg_dir: "data/hmg"
 
   datasets:
-    openi:
-      name: "Open-i Indiana University Chest X-Ray Collection"
-      num_reports: 3955
-      num_images: 7470
-      license: "CC-0 (Public Domain)"
     mmcqsd:
       name: "Multimodal Medical Code-Mixed Question Summarization Dataset"
-      num_samples: 3015
-      description: "Medical images paired with Hinglish patient queries and English summaries"
-    pubmedqa:
-      name: "PubMedQA"
-      description: "Biomedical QA dataset with answers derived from PubMed abstracts"
-    mmed_bench:
-      name: "MMed-Bench"
-      num_samples: 25500
-      description: "Multimodal medical QA benchmark across specialties"
+      role: "Hinglish patient queries + English question summaries + image captions"
+      num_pairs_used: 3015
+      note: >
+        The `summary` field is a restated QUESTION plus an image caption, not a
+        reference answer. The caption's condition label leaks the relevance key in
+        96.2% of rows, so retrieval evaluation must strip it (see leakage gate in
+        src/analysis/h4_retrieval.py).
+    multicare:
+      name: "MultiCaRe clinical case reports"
+      role: "English evidence corpus"
+      cases_filtered: 61316
+      cases_indexed: 10000
+      condition_groups: 18
 
-# ---------- Model Configuration ----------
-models:
-  text_encoder:
-    name: "sentence-transformers/LaBSE"
-    embedding_dim: 768
-    description: "Language-Agnostic BERT Sentence Embedding for Hinglish text encoding"
-
-  image_encoder:
-    name: "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224"
-    embedding_dim: 512
-    description: "BioMedCLIP for medical image encoding"
-
-  generator:
-    name: "llava-hf/llava-1.5-7b-hf"
-    description: "LLaVA-v1.5 for grounded multimodal generation"
-    quantization: "4bit"  # QLoRA
-
-  hinglish_synthesizer:
-    name: "meta-llama/Meta-Llama-3-8B-Instruct"
-    description: "Llama-3-8B for synthetic Hinglish query generation"
-
-# ---------- Retrieval Configuration ----------
+# ---------- Retrieval ----------
 retrieval:
-  index_type: "faiss"
-  similarity_metric: "cosine"
+  encoder: "sentence-transformers/LaBSE"
+  embedding_dim: 768
+  device: "cpu"
+
+  # LaBSE's real limit. This was 128, which truncated 100% of indexed case
+  # narratives (median 307 tokens) and 52.5% of queries.
+  max_seq_length: 256
+
+  index_type: "faiss.IndexFlatIP"   # cosine over L2-normalised vectors
   top_k: 5
-  adaptive_truncation: true  # similarity-score-based truncation (MMed-RAG style)
 
-# ---------- Fine-Tuning Configuration ----------
-training:
-  method: "qlora"
-  lora_r: 16
-  lora_alpha: 32
-  lora_dropout: 0.05
-  learning_rate: 2.0e-4
-  num_epochs: 3
-  batch_size: 4
-  gradient_accumulation_steps: 4
-  warmup_ratio: 0.03
-
-  dpo:
+  # Passage chunking: one vector per case encoded only ~15% of a 554-word case.
+  passages:
     enabled: true
-    beta: 0.1
-    description: "Direct Preference Optimization for hallucination control"
+    chunk_tokens: 256
+    chunk_overlap: 32
+    max_chunks_per_case: 6
 
-# ---------- Evaluation Configuration ----------
+  # Reciprocal-rank fusion of dense + BM25. Candidate depth is a CORRECTNESS
+  # requirement, not a tuning knob: fusing two top-10 lists cannot promote
+  # anything outside a union of 20 documents.
+  hybrid:
+    enabled: true
+    fusion_depth: 100
+    rrf_k: 60
+
+  # Adaptive truncation is DISABLED. At the shipped threshold_ratio of 0.5 it
+  # fired on 0 of 3,015 queries — it required a 0.248 similarity gap between
+  # adjacent neighbours and the largest gap in the data is 0.109. Swept properly
+  # it wins 0 of 6 settings against a fixed k at matched budget, because the
+  # similarity gap carries no relevance information. See
+  # results/truncation_sweep/ and report it as a negative result.
+  adaptive_truncation:
+    enabled: false
+    threshold_ratio: 0.05
+
+# ---------- Generation ----------
+generation:
+  provider: "groq"
+  model: "openai/gpt-oss-120b"
+  temperature: 0.3
+  max_tokens: 300
+  max_evidence_words: 400
+
+  # llama-3.1-8b-instant produced the n=1,165 results and was DECOMMISSIONED by
+  # Groq mid-project; it now 404s. Kept here for provenance only.
+  decommissioned_model: "llama-3.1-8b-instant"
+
+# ---------- Evaluation ----------
 evaluation:
-  metrics:
-    - "mmfcm"              # Multimodal Fact Capturing Metric
-    - "factual_consistency"
-    - "hallucination_rate"
-    - "bleu"
-    - "rouge"
-  
-  hypothesis_testing:
-    significance_level: 0.05
-    tests:
-      h1: "paired_t_test"        # RAG vs Zero-shot (+ Wilcoxon fallback)
-      h2: "two_way_anova"        # Code-mixing level interaction (+ Kruskal-Wallis)
-      h3: "paired_t_test"        # Authoritative vs general evidence
+  lexicon: "src/evaluation/concept_lexicon.py"   # canonical; replaced 5 divergent copies
 
-  code_mixing_levels:
-    - "low"
-    - "medium"
-    - "high"
+  metrics:
+    - "precision"        # = the old `factual_support`
+    - "recall"
+    - "concept_f1"       # report this, not precision alone
+  # `hallucination` is EXACTLY 1 - precision (verified min=max=1.0). Reporting it
+  # separately double-counts one result, so it is deliberately not listed.
+
+  references:
+    evidence: "retrieved case text — CIRCULAR: the grounded arm was conditioned on it"
+    caption: "MMCQSD image description — UNBIASED: neither arm saw it"
+
+  # precision has no recall term, so its optimum is a one-word answer: the
+  # constant answer "swelling" scores 0.719 against the caption reference while
+  # the real system scores 0.153. Every results table ships these rows.
+  degenerate_baselines: "src/evaluation/baselines.py"
+
+  relevance:
+    criterion: "retrieved case's condition_group set contains the query's condition"
+    note: >
+      871 of 9,048 cases carry multiple condition labels, so a single-label
+      comparison scores a correct retrieval as wrong. Impact measured at +0.0026
+      R@1 — fixed for correctness, not to move a number.
+
+  statistics:
+    significance_level: 0.05
+    correction: "benjamini-hochberg"     # across the whole test family
+    bootstrap_resamples: 10000
+    clustering: >
+      M4' caption references repeat (412 unique over 2,988 rows, one covering
+      22%), so CIs resample CLUSTERS, not rows.
 
 # ---------- Application ----------
 app:
+  entrypoint: "app.py"
   framework: "streamlit"
   port: 8501
+
+# ---------- Explicitly NOT implemented ----------
+future_work:
+  - "QLoRA / DPO fine-tuning of the generator"
+  - "Multimodal retrieval (BioMedCLIP over MMCQSD images)"
+  - "H03 evidence provenance — PubMedQA is only 2.1% on-topic for these conditions"
+  - "Clinician validation of the concept lexicon"
