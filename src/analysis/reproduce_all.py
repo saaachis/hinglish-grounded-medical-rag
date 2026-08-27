@@ -75,6 +75,36 @@ STAGES: list[tuple[str, str, list[str], str]] = [
     ("h1-oracle-vs-real", "src.analysis.h1_oracle_vs_real",
      ["results/h1_real_retrieval/h1_real_scored.csv"],
      "results/h1_real_retrieval/ — oracle vs real, refusal rates"),
+
+    ("h2-per-arm-cmi", "src.analysis.h2_per_arm",
+     ["results/combined_h1h2/combined_scored.csv"],
+     "results/h2_per_arm/ — H02 per-arm with bootstrap CIs and BH correction"),
+
+    ("h4-baselines", "src.analysis.h4_baselines",
+     ["data/faiss_index/evidence.index", "data/faiss_index/evidence_metadata.csv"],
+     "results/h4_retrieval/h4_baselines.csv — BM25/TF-IDF/e5/MuRIL on the flat index"),
+
+    ("h3-corpora", "src.analysis.h3_build_corpora",
+     ["data/processed/multicare_filtered.csv", "data/processed/pubmedqa_records.csv",
+      "data/processed/mmedbench_questions.csv"],
+     "data/h3_corpora/ — matched-topic, equal-sized evidence corpora for H03"),
+]
+
+#: Stages that CANNOT be reproduced from cached artifacts, and why. Listed
+#: explicitly so the claim "this regenerates every number" stays honest -- an
+#: entrypoint that silently omits the expensive half is worse than none.
+NOT_REPRODUCIBLE: list[tuple[str, str]] = [
+    ("llama n=1,165 generations",
+     "the model (llama-3.1-8b-instant) was decommissioned by Groq and returns 404. "
+     "Outputs are committed under results/combined_h1h2/ and can be re-scored, "
+     "but never regenerated. This is a stated limitation of the paper."),
+    ("h1_real_retrieval / h1_random_control / h3_provenance",
+     "each issues thousands of live API calls (~1,200 tokens apiece) and is "
+     "rate-limited to ~27/min across four keys. Run them directly; they "
+     "checkpoint every 10 rows and resume."),
+    ("passage embeddings + rebuild_index_full",
+     "~3h of CPU encoding for 41,746 passages. Cached under data/passage_index/; "
+     "rebuild with `python -m src.analysis.retrieval_v2` if the cache is absent."),
 ]
 
 
@@ -93,6 +123,10 @@ def main() -> None:
             gap = missing(inputs)
             print(f"\n{name}\n  module   {mod}\n  produces {produces}")
             print(f"  inputs   {'OK' if not gap else 'MISSING: ' + ', '.join(gap)}")
+        print("\n" + "=" * 66)
+        print("NOT reproducible from cache (run directly, or accept as a limitation):")
+        for what, why in NOT_REPRODUCIBLE:
+            print(f"\n  {what}\n    {why}")
         return
 
     ran, skipped, failed = [], [], []

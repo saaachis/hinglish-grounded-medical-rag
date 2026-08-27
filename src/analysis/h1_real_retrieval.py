@@ -56,16 +56,54 @@ OUT_DIR = Path("results/h1_real_retrieval")
 
 MODEL = "openai/gpt-oss-20b"
 MAX_EVIDENCE_WORDS = 400
-DELAY = 0.4  # SDK backs off on 429 itself; keys are round-robined
+#: Measured from the live API response headers, not guessed:
+#:     x-ratelimit-limit-tokens    8000    per MINUTE, per key
+#:     x-ratelimit-limit-requests  1000    per DAY, per key
+TOKENS_PER_MIN_PER_KEY = 8000
+
+#: Observed cost of one grounded call (evidence + query in, ~300 out).
+TOKENS_PER_CALL = 1200
+
+
+def pace_seconds(n_keys: int) -> float:
+    """Seconds to wait between calls so the token bucket is never blown.
+
+    Derived from the budget rather than hard-coded, so ADDING A KEY automatically
+    speeds the run up instead of needing the constant re-tuned. Bursting is not a
+    shortcut: at a fixed 0.4s the runner fired four back-to-back calls per row,
+    exhausted the bucket in under two seconds and then sat in cooldown, netting
+    1.6 calls/min. Pacing to the budget sustains ~20-27.
+    """
+    calls_per_min = max(1.0, n_keys * TOKENS_PER_MIN_PER_KEY / TOKENS_PER_CALL)
+    return max(0.5, 60.0 / calls_per_min)
+
+
+#: Fallback for callers that do not know the key count yet; overridden at runtime.
+DELAY = 3.0
 MAX_RETRIES = 3
 
-#: How long a rate-limited key is rested before reuse. Groq's limits are per
-#: minute, so a rate error means "wait", not "this key is finished".
-COOLDOWN_S = 65
+#: How long a rate-limited key is rested before reuse.
+#:
+#: Read off the live API rather than guessed. The response headers say:
+#:     x-ratelimit-limit-tokens    8000    (per MINUTE, per key)
+#:     x-ratelimit-reset-tokens    ~9.5s   (the bucket refills continuously)
+#:     x-ratelimit-limit-requests  1000    (per DAY, per key)
+#:
+#: The binding constraint is 8,000 tokens/minute/key. At ~1,200 tokens per call
+#: that is ~6.6 calls/min/key, or ~20/min across three keys. An earlier value of
+#: 65s was ~6x longer than the actual refill window and throttled throughput to
+#: 1.6 calls/min -- the cooldown was doing more damage than the rate limit itself.
+COOLDOWN_S = 12
 
-#: Consecutive full-sleep cycles with no successful call before concluding the
-#: daily token quota really is gone.
-MAX_CYCLES = 8
+#: How long to keep trying, in SECONDS of continuous failure, before concluding
+#: the daily request quota really is gone.
+#:
+#: This was a COUNT of sleep cycles (8), which is the wrong unit: the sleeps are
+#: as short as 1s when a key is nearly recovered, so eight of them elapsed in
+#: under a minute and the run gave up at query 0 having made 5 successful calls.
+#: Wall-clock is the right measure -- a genuine daily exhaustion does not clear
+#: for hours, whereas a per-minute limit clears in seconds.
+MAX_STALL_S = 900
 
 SYSTEM_ZERO_SHOT = (
     "You are a medical assistant helping patients understand their symptoms.\n"
@@ -157,8 +195,11 @@ class RotatingGroq:
         self.i = 0
         self.client = Groq(api_key=live[0])
         self.cooldown: dict[int, float] = {}
-        self.wait_cycles = 0
-        logger.info("Using %d live Groq key(s) of %d found", len(live), len(keys))
+        self.last_success: float | None = None
+        global DELAY
+        DELAY = pace_seconds(len(live))
+        logger.info("Using %d live Groq key(s) of %d found -- pacing %.2fs/call "
+                    "(~%.0f calls/min)", len(live), len(keys), DELAY, 60 / DELAY)
 
     def _rotate(self) -> bool:
         """Put the current key on COOLDOWN and move to an available one.
@@ -185,15 +226,17 @@ class RotatingGroq:
 
         # Every key is cooling: wait for the earliest to come back rather than
         # treating a rate limit as the end of the run.
-        self.wait_cycles += 1
-        if self.wait_cycles > MAX_CYCLES:
-            logger.error("All keys still limited after %d cooldown cycles -- "
-                         "this looks like genuine daily exhaustion.", MAX_CYCLES)
+        if self.last_success is None:
+            self.last_success = now
+        stalled = now - self.last_success
+        if stalled > MAX_STALL_S:
+            logger.error("No successful call for %.0fs -- this looks like genuine "
+                         "daily exhaustion, stopping.", stalled)
             return False
         wake = min(self.cooldown.values())
         nap = max(1.0, wake - now)
-        logger.warning("All %d keys rate-limited; sleeping %.0fs (cycle %d/%d)",
-                       len(self.keys), nap, self.wait_cycles, MAX_CYCLES)
+        logger.warning("All %d keys rate-limited; sleeping %.0fs (stalled %.0fs/%ds)",
+                       len(self.keys), nap, stalled, MAX_STALL_S)
         time.sleep(nap)
         self.i = min(self.cooldown, key=self.cooldown.get)
         self.client = self._Groq(api_key=self.keys[self.i])
@@ -222,7 +265,7 @@ class RotatingGroq:
                               {"role": "user", "content": user}],
                     max_tokens=300, temperature=0.3,
                 )
-                self.wait_cycles = 0
+                self.last_success = time.time()
                 return r.choices[0].message.content.strip()
             except Exception as e:
                 msg = str(e).lower()
