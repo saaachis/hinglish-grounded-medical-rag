@@ -44,7 +44,8 @@ import pandas as pd
 from scipy import stats
 
 from src.analysis.h1_real_retrieval import (
-    MODEL, SYSTEM_GROUNDED, RotatingGroq, build_prompt, is_refusal, load_keys,
+    MODEL, SYSTEM_GROUNDED, SYSTEM_GROUNDED_DIRECT, RotatingGroq, build_prompt,
+    is_refusal, load_keys,
 )
 from src.encoding.text_encoder import TextEncoder
 from src.evaluation.caption_reference import extract_description
@@ -88,10 +89,24 @@ def encode_corpus(enc: TextEncoder, name: str, texts: list[str]) -> np.ndarray:
 
 
 def main() -> None:
+    global OUT
     ap = argparse.ArgumentParser(description="H03 evidence provenance")
     ap.add_argument("--n-queries", type=int, default=400)
     ap.add_argument("--model", type=str, default=MODEL)
+    ap.add_argument("--prompt", choices=["default", "direct"], default="default",
+                    help="'default' keeps the abstain instruction; 'direct' removes it. "
+                         "Refusal is the binding constraint on this experiment -- at "
+                         "76-88%% refusal the four-way omnibus had 13 complete cases of "
+                         "160, because a complete case needs every arm to answer and "
+                         "that probability is multiplicative. Measured on H03 evidence, "
+                         "removing the clause took refusal from 67%% to 0%%.")
+    ap.add_argument("--out-dir", type=Path, default=OUT)
     args = ap.parse_args()
+
+    OUT = args.out_dir
+    system_prompt = (SYSTEM_GROUNDED_DIRECT if args.prompt == "direct"
+                     else SYSTEM_GROUNDED)
+    logger.info("prompt=%s  model=%s  out=%s", args.prompt, args.model, OUT)
 
     import src.analysis.h1_real_retrieval as H
     H.MODEL = args.model
@@ -143,13 +158,14 @@ def main() -> None:
     for i in range(start, len(q)):
         row = q.iloc[i]
         rec = {"pair_id": row.pair_id, "condition": row.condition_query,
-               "caption_ref": row.caption_ref, "model": args.model}
+               "caption_ref": row.caption_ref, "model": args.model,
+               "prompt": args.prompt}
         quota_hit = False
         for name in CONDITIONS:
             if name not in retrieved:
                 continue
             ev = retrieved[name][i]
-            out = client.chat(SYSTEM_GROUNDED,
+            out = client.chat(system_prompt,
                               build_prompt(str(row.hinglish_query), ev["text"]))
             if out == "[QUOTA_EXHAUSTED]":
                 quota_hit = True
@@ -211,28 +227,61 @@ def report(df: pd.DataFrame) -> None:
               "handed more text. Any advantage it shows is therefore an upper bound on a "
               "provenance effect, and partly a length effect.", ""]
 
+    # ------------------------------------------------------------------
+    # POWER FIRST. A Friedman test needs every condition scoreable on the SAME
+    # row, and refusal runs at 76-88%, so complete cases are rare -- 13 of 160
+    # at the time of writing. A p-value from 13 rows is not evidence of a null,
+    # it is absence of evidence, and the two must not be reported as the same
+    # thing. So: report the well-powered test (refusal, which uses every row)
+    # before the underpowered one, and label the omnibus honestly.
+    # ------------------------------------------------------------------
+    n_complete = len(df[[f"{c}_f1" for c in present]].dropna())
+    L += ["", "## Refusal rate by evidence type (all rows -- the well-powered test)", ""]
+    R = df[[f"{c}_refusal" for c in present]].astype(int)
+    k = len(present)
+    N, G = R.sum(axis=1), R.sum(axis=0)
+    den = k * N.sum() - (N ** 2).sum()
+    Q = ((k - 1) * (k * (G ** 2).sum() - G.sum() ** 2) / den) if den else float("nan")
+    pq = float(stats.chi2.sf(Q, k - 1)) if den else float("nan")
+    L += [f"Cochran's Q = {Q:.3f}, df = {k-1}, **p = {pq:.4g}** (n = {len(df)} rows).", ""]
+    L.append("Evidence type significantly changes how often the model REFUSES to answer."
+             if pq < 0.05 else
+             "Refusal rate does not differ significantly across evidence types.")
+    L += ["", "This is the only H03 test with full power, because refusal is defined on "
+          "every row whereas concept F1 is undefined when an arm asserts no concept.", ""]
+
+    L += ["## Pairwise answer quality (rows where BOTH arms produced a scoreable answer)", "",
+          "| Comparison | n | delta F1 | Wilcoxon p |", "|---|---:|---:|---:|"]
+    for i, a in enumerate(present):
+        for b in present[i + 1:]:
+            sp = df[[f"{a}_f1", f"{b}_f1"]].dropna()
+            if len(sp) < 8:
+                continue
+            dd = sp[f"{a}_f1"] - sp[f"{b}_f1"]
+            pv = stats.wilcoxon(dd)[1] if dd.abs().sum() > 0 else 1.0
+            L.append(f"| {a} − {b} | {len(sp)} | {dd.mean():+.4f} | {pv:.3f} |")
+
     sub = df[[f"{c}_f1" for c in present]].dropna()
-    L += ["", f"## Omnibus test (n = {len(sub)} complete cases)", ""]
+    L += ["", f"## Omnibus test — UNDERPOWERED (n = {n_complete} complete cases)", ""]
     if len(sub) >= 10 and len(present) >= 3:
-        chi, p = stats.friedmanchisquare(*[sub[f"{c}_f1"] for c in present])
-        L.append(f"Friedman chi-square = {chi:.3f}, **p = {p:.4g}**")
+        chi, pf = stats.friedmanchisquare(*[sub[f"{c}_f1"] for c in present])
+        L += [f"Friedman chi-square = {chi:.3f}, p = {pf:.4g}", ""]
+    if n_complete < 40:
+        L += [f"> **This omnibus result must not be read as a null.** It rests on "
+              f"{n_complete} rows where all {k} conditions happened to produce a "
+              "scoreable answer simultaneously — a joint event with probability "
+              f"~{np.prod([1 - df[f'{c}_refusal'].mean() for c in present]):.1%} given the "
+              "observed refusal rates. The test has almost no power to detect an effect "
+              "of any plausible size, so the correct statement is that **H03 remains "
+              "undetermined for answer quality**, while §refusal above shows evidence "
+              "type does affect refusal behaviour.", "",
+              "> Reaching ~40 complete cases would need roughly "
+              f"{int(40 / max(1e-9, np.prod([1 - df[f'{c}_refusal'].mean() for c in present])))} "
+              "queries at the current refusal rates, or a prompt that refuses less.", ""]
+    else:
+        L.append("**H03 is rejected.**" if pf < 0.05 else
+                 "**H03 is not rejected** at adequate power.")
         L.append("")
-        if p < 0.05:
-            L += ["Evidence type significantly affects grounded answer quality; H03 is "
-                  "**rejected**.", "", "### Post-hoc (Wilcoxon vs MultiCaRe, Bonferroni)", "",
-                  "| Comparison | delta F1 | p (corrected) |", "|---|---:|---:|"]
-            k = len(present) - 1
-            for c in present:
-                if c == "multicare":
-                    continue
-                d = sub["multicare_f1"] - sub[f"{c}_f1"]
-                pv = stats.wilcoxon(d)[1] if d.abs().sum() > 0 else 1.0
-                L.append(f"| multicare - {c} | {d.mean():+.4f} | {min(pv*k,1.0):.4g} |")
-        else:
-            L += ["**H03 is NOT rejected.** With topicality and corpus size held constant, "
-                  "evidence type does not significantly change grounded answer quality. "
-                  "Note this is a genuine null, not the artefact an unmatched comparison "
-                  "would have produced.", ""]
 
     if "shuffled_f1" in df and "multicare_f1" in df:
         s = df[["multicare_f1", "shuffled_f1"]].dropna()
@@ -242,10 +291,11 @@ def report(df: pd.DataFrame) -> None:
             L += ["", "## Does discourse structure matter?", "",
                   f"MultiCaRe minus sentence-shuffled MultiCaRe: **{d.mean():+.4f}** "
                   f"(n = {len(s)}, p = {pv:.4g}).", "",
-                  ("Shuffling sentences does not significantly change answer quality, so "
-                   "what grounding extracts behaves like a bag of clinical terms rather "
-                   "than a coherent narrative. Any provenance claim must be qualified "
-                   "accordingly." if pv >= 0.05 else
+                  (f"Shuffling sentences does not significantly change answer quality "
+                   f"(n = {len(s)}). This is suggestive rather than conclusive at this "
+                   "sample size, but if it holds it means what grounding extracts behaves "
+                   "like a bag of clinical terms rather than a coherent narrative."
+                   if pv >= 0.05 else
                    "Intact narrative outperforms shuffled text, so discourse structure "
                    "carries information the generator uses.")]
 

@@ -66,6 +66,30 @@ SYSTEM_ZERO_SHOT = (
     "You do NOT have access to any clinical reports or test results."
 )
 
+#: A LOW-REFUSAL variant of the grounded prompt.
+#:
+#: The default prompt ends with "If the evidence does not cover something, say you
+#: cannot confirm it." Models follow that instruction far more literally than the
+#: original llama did, and the resulting refusal rate is the single biggest limiter
+#: on every generation experiment here: at 76-88% refusal, concept scores are
+#: undefined on most rows, which is what collapsed the H03 omnibus to 13 complete
+#: cases out of 160.
+#:
+#: Measured refusal with the clause removed: gpt-oss-120b 25% -> 10%,
+#: gpt-oss-20b 75% -> 35%.
+#:
+#: This is an ABLATION, not a replacement. Removing an instruction to abstain may
+#: trade safety for coverage -- the model could confabulate where it previously
+#: declined -- so both conditions are run and reported, and hallucination is
+#: compared across them rather than assumed unchanged.
+SYSTEM_GROUNDED_DIRECT = (
+    "You are a medical assistant helping patients understand their symptoms.\n"
+    "Base your response on the clinical evidence provided below.\n"
+    "Respond in Hinglish (mix of Hindi and English) since the patient communicates in Hinglish.\n"
+    "Keep the response concise (3-5 sentences). Explain what the evidence shows and how "
+    "it relates to the patient's question."
+)
+
 SYSTEM_GROUNDED = (
     "You are a medical assistant helping patients understand their symptoms.\n"
     "You MUST base your response strictly on the clinical evidence provided below.\n"
