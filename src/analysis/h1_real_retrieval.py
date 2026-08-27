@@ -59,6 +59,14 @@ MAX_EVIDENCE_WORDS = 400
 DELAY = 0.4  # SDK backs off on 429 itself; keys are round-robined
 MAX_RETRIES = 3
 
+#: How long a rate-limited key is rested before reuse. Groq's limits are per
+#: minute, so a rate error means "wait", not "this key is finished".
+COOLDOWN_S = 65
+
+#: Consecutive full-sleep cycles with no successful call before concluding the
+#: daily token quota really is gone.
+MAX_CYCLES = 8
+
 SYSTEM_ZERO_SHOT = (
     "You are a medical assistant helping patients understand their symptoms.\n"
     "Respond in Hinglish (mix of Hindi and English) since the patient communicates in Hinglish.\n"
@@ -148,17 +156,47 @@ class RotatingGroq:
         self.keys = live
         self.i = 0
         self.client = Groq(api_key=live[0])
-        self.exhausted: set[int] = set()
+        self.cooldown: dict[int, float] = {}
+        self.wait_cycles = 0
         logger.info("Using %d live Groq key(s) of %d found", len(live), len(keys))
 
     def _rotate(self) -> bool:
-        self.exhausted.add(self.i)
-        if len(self.exhausted) >= len(self.keys):
+        """Put the current key on COOLDOWN and move to an available one.
+
+        This used to add the key to a permanent `exhausted` set that was never
+        cleared, so a burst of per-minute 429s -- which every key hits routinely --
+        blacklisted all of them and ended the run. Measured: three keys went from
+        healthy to "All keys exhausted" in 32 seconds, and the same keys served
+        full-size requests immediately afterwards. Runs were stopping at 70, 160,
+        328 and 461 rows for this reason and reporting it as daily quota.
+
+        Rate limits are TRANSIENT. Keys are now cooled for COOLDOWN_S and reused;
+        the run only gives up after MAX_CYCLES consecutive full sleeps that yield
+        no successful call, which is what genuine daily exhaustion looks like.
+        """
+        now = time.time()
+        self.cooldown[self.i] = now + COOLDOWN_S
+
+        ready = [j for j in range(len(self.keys)) if self.cooldown.get(j, 0) <= now]
+        if ready:
+            self.i = ready[0]
+            self.client = self._Groq(api_key=self.keys[self.i])
+            return True
+
+        # Every key is cooling: wait for the earliest to come back rather than
+        # treating a rate limit as the end of the run.
+        self.wait_cycles += 1
+        if self.wait_cycles > MAX_CYCLES:
+            logger.error("All keys still limited after %d cooldown cycles -- "
+                         "this looks like genuine daily exhaustion.", MAX_CYCLES)
             return False
-        while self.i in self.exhausted:
-            self.i = (self.i + 1) % len(self.keys)
+        wake = min(self.cooldown.values())
+        nap = max(1.0, wake - now)
+        logger.warning("All %d keys rate-limited; sleeping %.0fs (cycle %d/%d)",
+                       len(self.keys), nap, self.wait_cycles, MAX_CYCLES)
+        time.sleep(nap)
+        self.i = min(self.cooldown, key=self.cooldown.get)
         self.client = self._Groq(api_key=self.keys[self.i])
-        logger.warning("Rotated to key #%d", self.i + 1)
         return True
 
     def _advance(self) -> None:
@@ -184,6 +222,7 @@ class RotatingGroq:
                               {"role": "user", "content": user}],
                     max_tokens=300, temperature=0.3,
                 )
+                self.wait_cycles = 0
                 return r.choices[0].message.content.strip()
             except Exception as e:
                 msg = str(e).lower()
