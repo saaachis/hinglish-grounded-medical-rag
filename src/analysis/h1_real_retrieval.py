@@ -65,6 +65,16 @@ TOKENS_PER_MIN_PER_KEY = 8000
 TOKENS_PER_CALL = 1200
 
 
+#: Typical wall-clock latency of one grounded call, measured on this workload.
+#: The pacing delay ADDS to this rather than overlapping it, so the achievable
+#: rate is 1 / (LATENCY_S + delay) -- not 1 / delay.
+LATENCY_S = 4.0
+
+#: Fraction of the token budget to actually use. Held below 1.0 so a burst of
+#: longer-than-typical evidence cannot tip the bucket into a 429 cascade.
+BUDGET_UTILISATION = 0.75
+
+
 def pace_seconds(n_keys: int) -> float:
     """Seconds to wait between calls so the token bucket is never blown.
 
@@ -72,7 +82,18 @@ def pace_seconds(n_keys: int) -> float:
     speeds the run up instead of needing the constant re-tuned. Bursting is not a
     shortcut: at a fixed 0.4s the runner fired four back-to-back calls per row,
     exhausted the bucket in under two seconds and then sat in cooldown, netting
-    1.6 calls/min. Pacing to the budget sustains ~20-27.
+    1.6 calls/min.
+
+    DO NOT subtract API latency from this interval. I tried it -- reasoning that
+    each call already occupies ~4s on the wire, so the sleep was double-counting
+    the spacing and running at only 36% of the token budget. Measured result:
+    38 cooldowns against 7 successful calls, versus 0 cooldowns and steady
+    progress at the un-subtracted interval. The headroom is not spare capacity;
+    it is what keeps four concurrent-ish calls per row from bursting the bucket.
+
+    Empirically 2.25s/call on four keys sustains ~9.5 calls/min with zero rate
+    limiting, and that is faster in wall-clock than any configuration that
+    thrashes. Reliability beats nominal throughput on an unattended run.
     """
     calls_per_min = max(1.0, n_keys * TOKENS_PER_MIN_PER_KEY / TOKENS_PER_CALL)
     return max(0.5, 60.0 / calls_per_min)
@@ -198,8 +219,16 @@ class RotatingGroq:
         self.last_success: float | None = None
         global DELAY
         DELAY = pace_seconds(len(live))
-        logger.info("Using %d live Groq key(s) of %d found -- pacing %.2fs/call "
-                    "(~%.0f calls/min)", len(live), len(keys), DELAY, 60 / DELAY)
+        # Effective rate is 1/(latency + sleep). Dividing by DELAY alone was both
+        # wrong and a crash: once latency exceeds the target interval the sleep is
+        # legitimately 0, and 60/0 killed the run at startup.
+        eff = 60.0 / max(1e-6, LATENCY_S + DELAY)
+        logger.info("Using %d live Groq key(s) of %d found -- sleep %.2fs/call, "
+                    "~%.0f calls/min effective (latency-bound)"
+                    if DELAY == 0 else
+                    "Using %d live Groq key(s) of %d found -- sleep %.2fs/call, "
+                    "~%.0f calls/min effective",
+                    len(live), len(keys), DELAY, eff)
 
     def _rotate(self) -> bool:
         """Put the current key on COOLDOWN and move to an available one.
