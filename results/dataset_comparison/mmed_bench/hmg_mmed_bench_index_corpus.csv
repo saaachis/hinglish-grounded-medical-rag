@@ -1,0 +1,819 @@
+sample_id,query_hinglish,report_id,report_text,cmi_bucket
+MMED_BENCH_0001,Please explain: Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0002,"Please explain: Given multimodal context, likely finding kyaa hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0003,"Please explain: Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0004,Please explain: Image + text se infection ke signs confirm hote hai kyaa? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0005,"kya ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0006,"Given multimodal context, likely finding kya hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0007,Multimodal context ke hisaab se effusion ka evidence hai kyaa? jaldi batao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,high
+MMED_BENCH_0008,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0009,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0010,Image + text se infection ke signs confirm hote hai kya?,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,low
+MMED_BENCH_0011,"Please explain: Kya ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0012,"Given multimodal context, likely finding kya hai?",B006,Cardiac silhouette mildly enlarged with vascular prominence.,low
+MMED_BENCH_0013,Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0014,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0015,"Given multimodal context, likely finding kya hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0016,Please explain: Image + text se infection ke signs confirm hote hai ky? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0017,"Please explain: Kya ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0018,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0019,Multimodal context ke hisaab se effusion ka evidence hai kya? jaldi batao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,high
+MMED_BENCH_0020,"Given multimodal context, likely finding kya hai?",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,low
+MMED_BENCH_0021,"Given multimodal context, likely finding kya hai? jaldi batao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,high
+MMED_BENCH_0022,Image + text se infection ke signs confirm hote hai kyaa? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0023,"Kya ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0024,"Given multimodal context, likely finding kyaa hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0025,Multimodal context ke hisaab se effusion ka evidence hai kya? jaldi batao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,high
+MMED_BENCH_0026,"Given multimodal context, likely finding ky hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0027,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0028,Image + text se infxn ke signs confirm hote hai ky? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0029,"Kya ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0030,"Given multimodal context, likely finding kya hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0031,Please explain: Multimodal context ke hisaab se effusion ka evidence hai ky?,B001,Chest image shows right pleural effusion with basal atelectatic change.,low
+MMED_BENCH_0032,"Please explain: Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0033,"Please explain: Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0034,Image + text se infxn ke signs confirm hote hai kya?,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,low
+MMED_BENCH_0035,"Kya ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0036,"Please explain: Given multimodal context, likely finding kya hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0037,Please explain: Multimodal context ke hisaab se effusion ka evidence hai ky? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0038,"Given multimodal context, likely finding kyaa hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0039,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0040,Please explain: Image + text se infection ke signs confirm hote hai kya?,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,low
+MMED_BENCH_0041,"kyaa ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0042,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0043,Multimodal context ke hisaab se effusion ka evidence hai kyaa?,B001,Chest image shows right pleural effusion with basal atelectatic change.,low
+MMED_BENCH_0044,"Given multimodal context, likely finding kyaa hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0045,"Given multimodal context, likely finding kya hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0046,Image + text se infection ke signs confirm hote hai kya?,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,low
+MMED_BENCH_0047,"kya ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0048,"Please explain: Given multimodal context, likely finding kya hai?",B006,Cardiac silhouette mildly enlarged with vascular prominence.,low
+MMED_BENCH_0049,Please explain: Multimodal context ke hisaab se effusion ka evidence hai kya?,B001,Chest image shows right pleural effusion with basal atelectatic change.,low
+MMED_BENCH_0050,"Please explain: Given multimodal context, likely finding kya hai?",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,low
+MMED_BENCH_0051,"Given multimodal context, likely finding kyaa hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0052,Please explain: Image + text se infection ke signs confirm hote hai ky? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0053,"Please explain: Kya ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0054,"Given multimodal context, likely finding ky hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0055,Multimodal context ke hisaab se effusion ka evidence hai ky? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0056,"Given multimodal context, likely finding kya hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0057,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0058,Please explain: Image + text se infection ke signs confirm hote hai kyaa? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0059,"Please explain: Kya ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0060,"Please explain: Given multimodal context, likely finding kya hai?",B006,Cardiac silhouette mildly enlarged with vascular prominence.,low
+MMED_BENCH_0061,Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0062,"Given multimodal context, likely finding ky hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0063,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0064,Image + text se infection ke signs confirm hote hai kya? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0065,"kya ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0066,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0067,Multimodal context ke hisaab se effusion ka evidence hai ky? jaldi batao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,high
+MMED_BENCH_0068,"Given multimodal context, likely finding ky hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0069,"Please explain: Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0070,Please explain: Image + text se infec ke signs confirm hote hai kya? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0071,"ky ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0072,"Given multimodal context, likely finding kya hai?",B006,Cardiac silhouette mildly enlarged with vascular prominence.,low
+MMED_BENCH_0073,Please explain: Multimodal context ke hisaab se effusion ka evidence hai kya?,B001,Chest image shows right pleural effusion with basal atelectatic change.,low
+MMED_BENCH_0074,"Please explain: Given multimodal context, likely finding kya hai?",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,low
+MMED_BENCH_0075,"Given multimodal context, likely finding ky hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0076,Image + text se infection ke signs confirm hote hai kyaa? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0077,"Kya ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0078,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0079,Multimodal context ke hisaab se effusion ka evidence hai kya? jaldi batao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,high
+MMED_BENCH_0080,"Given multimodal context, likely finding kyaa hai?",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,low
+MMED_BENCH_0081,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0082,Please explain: Image + text se infection ke signs confirm hote hai kya? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0083,"kyaa ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0084,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0085,Please explain: Multimodal context ke hisaab se effusion ka evidence hai kya?,B001,Chest image shows right pleural effusion with basal atelectatic change.,low
+MMED_BENCH_0086,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0087,"Please explain: Given multimodal context, likely finding kyaa hai? jaldi batao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,high
+MMED_BENCH_0088,Please explain: Image + text se infection ke signs confirm hote hai kya?,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,low
+MMED_BENCH_0089,"Kya ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0090,"Please explain: Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0091,Multimodal context ke hisaab se effusion ka evidence hai ky? jaldi batao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,high
+MMED_BENCH_0092,"Given multimodal context, likely finding ky hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0093,"Given multimodal context, likely finding kya hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0094,Image + text se infection ke signs confirm hote hai kyaa? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0095,"Please explain: Kya ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0096,"Please explain: Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0097,Multimodal context ke hisaab se effusion ka evidence hai kya?,B001,Chest image shows right pleural effusion with basal atelectatic change.,low
+MMED_BENCH_0098,"Please explain: Given multimodal context, likely finding ky hai?",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,low
+MMED_BENCH_0099,"Given multimodal context, likely finding kya hai? jaldi batao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,high
+MMED_BENCH_0100,Image + text se infection ke signs confirm hote hai kya? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0101,"ky ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0102,"Given multimodal context, likely finding kyaa hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0103,Multimodal context ke hisaab se effusion ka evidence hai kya?,B001,Chest image shows right pleural effusion with basal atelectatic change.,low
+MMED_BENCH_0104,"Given multimodal context, likely finding ky hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0105,"Please explain: Given multimodal context, likely finding ky hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0106,Please explain: Image + text se infec ke signs confirm hote hai kya? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0107,"Kya ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0108,"Given multimodal context, likely finding kya hai?",B006,Cardiac silhouette mildly enlarged with vascular prominence.,low
+MMED_BENCH_0109,Multimodal context ke hisaab se effusion ka evidence hai kya? jaldi batao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,high
+MMED_BENCH_0110,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0111,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0112,Please explain: Image + text se infection ke signs confirm hote hai kya? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0113,"Kya ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0114,"Please explain: Given multimodal context, likely finding ky hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0115,Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0116,"Given multimodal context, likely finding kya hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0117,"Given multimodal context, likely finding kyaa hai? jaldi batao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,high
+MMED_BENCH_0118,Image + text se infxn ke signs confirm hote hai kya?,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,low
+MMED_BENCH_0119,"Please explain: Kya ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0120,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0121,Please explain: Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0122,"Please explain: Given multimodal context, likely finding ky hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0123,"Given multimodal context, likely finding ky hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0124,Image + text se infxn ke signs confirm hote hai kyaa? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0125,"kya ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0126,"Please explain: Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0127,Multimodal context ke hisaab se effusion ka evidence hai ky? jaldi batao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,high
+MMED_BENCH_0128,"Please explain: Given multimodal context, likely finding kyaa hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0129,"Please explain: Given multimodal context, likely finding ky hai? jaldi batao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,high
+MMED_BENCH_0130,Image + text se infection ke signs confirm hote hai kya? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0131,"Kya ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0132,"Please explain: Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0133,Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0134,"Please explain: Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0135,"Please explain: Given multimodal context, likely finding ky hai? jaldi batao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,high
+MMED_BENCH_0136,Image + text se infection ke signs confirm hote hai kya? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0137,"Please explain: Kya ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0138,"Given multimodal context, likely finding kya hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0139,Please explain: Multimodal context ke hisaab se effusion ka evidence hai kya? jaldi batao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,high
+MMED_BENCH_0140,"Given multimodal context, likely finding kya hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0141,"Given multimodal context, likely finding kya hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0142,Image + text se infection ke signs confirm hote hai ky? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0143,"Please explain: kyaa ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0144,"Given multimodal context, likely finding ky hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0145,Please explain: Multimodal context ke hisaab se effusion ka evidence hai kyaa? jaldi batao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,high
+MMED_BENCH_0146,"Given multimodal context, likely finding kya hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0147,"Please explain: Given multimodal context, likely finding kya hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0148,Please explain: Image + text se infxn ke signs confirm hote hai kya? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0149,"kyaa ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0150,"Given multimodal context, likely finding kya hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0151,Multimodal context ke hisaab se effusion ka evidence hai kya?,B001,Chest image shows right pleural effusion with basal atelectatic change.,low
+MMED_BENCH_0152,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0153,"Given multimodal context, likely finding kya hai? jaldi batao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,high
+MMED_BENCH_0154,Image + text se infxn ke signs confirm hote hai ky? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0155,"Kya ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0156,"Given multimodal context, likely finding kyaa hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0157,Multimodal context ke hisaab se effusion ka evidence hai ky? jaldi batao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,high
+MMED_BENCH_0158,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0159,"Given multimodal context, likely finding ky hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0160,Image + text se infection ke signs confirm hote hai kya? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0161,"Kya ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0162,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0163,Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0164,"Given multimodal context, likely finding ky hai?",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,low
+MMED_BENCH_0165,"Given multimodal context, likely finding kya hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0166,Image + text se infection ke signs confirm hote hai ky? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0167,"Kya ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0168,"Given multimodal context, likely finding kya hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0169,Please explain: Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0170,"Given multimodal context, likely finding ky hai?",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,low
+MMED_BENCH_0171,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0172,Image + text se infection ke signs confirm hote hai kya? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0173,"Kya ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0174,"Given multimodal context, likely finding kya hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0175,Please explain: Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0176,"Given multimodal context, likely finding kya hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0177,"Please explain: Given multimodal context, likely finding ky hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0178,Image + text se infection ke signs confirm hote hai kya? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0179,"kya ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0180,"Given multimodal context, likely finding kyaa hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0181,Please explain: Multimodal context ke hisaab se effusion ka evidence hai kyaa?,B001,Chest image shows right pleural effusion with basal atelectatic change.,low
+MMED_BENCH_0182,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0183,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0184,Image + text se infection ke signs confirm hote hai kya?,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,low
+MMED_BENCH_0185,"ky ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0186,"Given multimodal context, likely finding kyaa hai?",B006,Cardiac silhouette mildly enlarged with vascular prominence.,low
+MMED_BENCH_0187,Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0188,"Please explain: Given multimodal context, likely finding kya hai?",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,low
+MMED_BENCH_0189,"Please explain: Given multimodal context, likely finding kya hai? jaldi batao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,high
+MMED_BENCH_0190,Please explain: Image + text se infection ke signs confirm hote hai ky? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0191,"Kya ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0192,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0193,Multimodal context ke hisaab se effusion ka evidence hai ky? jaldi batao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,high
+MMED_BENCH_0194,"Given multimodal context, likely finding ky hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0195,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0196,Image + text se infection ke signs confirm hote hai kya?,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,low
+MMED_BENCH_0197,"Kya ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0198,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0199,Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0200,"Given multimodal context, likely finding ky hai?",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,low
+MMED_BENCH_0201,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0202,Image + text se infection ke signs confirm hote hai kya? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0203,"Please explain: kya ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0204,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0205,Multimodal context ke hisaab se effusion ka evidence hai kyaa? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0206,"Please explain: Given multimodal context, likely finding kya hai?",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,low
+MMED_BENCH_0207,"Given multimodal context, likely finding kya hai? jaldi batao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,high
+MMED_BENCH_0208,Image + text se infection ke signs confirm hote hai kyaa?,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,low
+MMED_BENCH_0209,"Kya ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0210,"Please explain: Given multimodal context, likely finding kyaa hai?",B006,Cardiac silhouette mildly enlarged with vascular prominence.,low
+MMED_BENCH_0211,Multimodal context ke hisaab se effusion ka evidence hai kya? jaldi batao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,high
+MMED_BENCH_0212,"Given multimodal context, likely finding kya hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0213,"Given multimodal context, likely finding kya hai? jaldi batao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,high
+MMED_BENCH_0214,Image + text se infection ke signs confirm hote hai ky? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0215,"Kya ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0216,"Given multimodal context, likely finding kya hai?",B006,Cardiac silhouette mildly enlarged with vascular prominence.,low
+MMED_BENCH_0217,Multimodal context ke hisaab se effusion ka evidence hai kyaa? jaldi batao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,high
+MMED_BENCH_0218,"Given multimodal context, likely finding kya hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0219,"Given multimodal context, likely finding kya hai? jaldi batao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,high
+MMED_BENCH_0220,Please explain: Image + text se infec ke signs confirm hote hai kya? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0221,"kya ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0222,"Given multimodal context, likely finding ky hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0223,Multimodal context ke hisaab se effusion ka evidence hai kya?,B001,Chest image shows right pleural effusion with basal atelectatic change.,low
+MMED_BENCH_0224,"Given multimodal context, likely finding kyaa hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0225,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0226,Please explain: Image + text se infxn ke signs confirm hote hai kya? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0227,"ky ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0228,"Given multimodal context, likely finding kya hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0229,Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0230,"Given multimodal context, likely finding ky hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0231,"Please explain: Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0232,Image + text se infxn ke signs confirm hote hai kya? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0233,"Kya ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0234,"Given multimodal context, likely finding kyaa hai?",B006,Cardiac silhouette mildly enlarged with vascular prominence.,low
+MMED_BENCH_0235,Please explain: Multimodal context ke hisaab se effusion ka evidence hai ky?,B001,Chest image shows right pleural effusion with basal atelectatic change.,low
+MMED_BENCH_0236,"Given multimodal context, likely finding kya hai?",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,low
+MMED_BENCH_0237,"Given multimodal context, likely finding ky hai? jaldi batao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,high
+MMED_BENCH_0238,Please explain: Image + text se infection ke signs confirm hote hai kya? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0239,"Kya ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0240,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0241,Multimodal context ke hisaab se effusion ka evidence hai kya? jaldi batao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,high
+MMED_BENCH_0242,"Please explain: Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0243,"Given multimodal context, likely finding ky hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0244,Please explain: Image + text se infection ke signs confirm hote hai kya? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0245,"Please explain: Kya ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0246,"Given multimodal context, likely finding kya hai?",B006,Cardiac silhouette mildly enlarged with vascular prominence.,low
+MMED_BENCH_0247,Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0248,"Please explain: Given multimodal context, likely finding kya hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0249,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0250,Image + text se infxn ke signs confirm hote hai kya? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0251,"Kya ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0252,"Given multimodal context, likely finding kya hai?",B006,Cardiac silhouette mildly enlarged with vascular prominence.,low
+MMED_BENCH_0253,Multimodal context ke hisaab se effusion ka evidence hai kyaa? jaldi batao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,high
+MMED_BENCH_0254,"Given multimodal context, likely finding kyaa hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0255,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0256,Please explain: Image + text se infection ke signs confirm hote hai kya?,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,low
+MMED_BENCH_0257,"kyaa ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0258,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0259,Multimodal context ke hisaab se effusion ka evidence hai kya?,B001,Chest image shows right pleural effusion with basal atelectatic change.,low
+MMED_BENCH_0260,"Given multimodal context, likely finding kyaa hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0261,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0262,Image + text se infection ke signs confirm hote hai ky? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0263,"Please explain: Kya ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0264,"Given multimodal context, likely finding kya hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0265,Multimodal context ke hisaab se effusion ka evidence hai kya?,B001,Chest image shows right pleural effusion with basal atelectatic change.,low
+MMED_BENCH_0266,"Given multimodal context, likely finding kya hai?",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,low
+MMED_BENCH_0267,"Given multimodal context, likely finding ky hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0268,Image + text se infection ke signs confirm hote hai ky?,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,low
+MMED_BENCH_0269,"kyaa ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0270,"Given multimodal context, likely finding kya hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0271,Multimodal context ke hisaab se effusion ka evidence hai kya? jaldi batao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,high
+MMED_BENCH_0272,"Given multimodal context, likely finding kya hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0273,"Given multimodal context, likely finding kya hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0274,Image + text se infection ke signs confirm hote hai kya? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0275,"Kya ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0276,"Given multimodal context, likely finding kyaa hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0277,Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0278,"Please explain: Given multimodal context, likely finding ky hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0279,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0280,Image + text se infection ke signs confirm hote hai kya?,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,low
+MMED_BENCH_0281,"Please explain: kya ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0282,"Please explain: Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0283,Multimodal context ke hisaab se effusion ka evidence hai kya? jaldi batao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,high
+MMED_BENCH_0284,"Please explain: Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0285,"Given multimodal context, likely finding kyaa hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0286,Image + text se infection ke signs confirm hote hai kya? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0287,"kyaa ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0288,"Given multimodal context, likely finding kya hai?",B006,Cardiac silhouette mildly enlarged with vascular prominence.,low
+MMED_BENCH_0289,Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0290,"Given multimodal context, likely finding kya hai?",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,low
+MMED_BENCH_0291,"Given multimodal context, likely finding kya hai? jaldi batao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,high
+MMED_BENCH_0292,Image + text se infec ke signs confirm hote hai kya? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0293,"kya ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0294,"Given multimodal context, likely finding kya hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0295,Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0296,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0297,"Given multimodal context, likely finding kya hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0298,Image + text se infection ke signs confirm hote hai kya?,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,low
+MMED_BENCH_0299,"Kya ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0300,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0301,Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0302,"Given multimodal context, likely finding ky hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0303,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0304,Image + text se infxn ke signs confirm hote hai kya? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0305,"Kya ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0306,"Given multimodal context, likely finding kya hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0307,Multimodal context ke hisaab se effusion ka evidence hai kya?,B001,Chest image shows right pleural effusion with basal atelectatic change.,low
+MMED_BENCH_0308,"Given multimodal context, likely finding kya hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0309,"Given multimodal context, likely finding ky hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0310,Please explain: Image + text se infxn ke signs confirm hote hai kya? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0311,"ky ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0312,"Please explain: Given multimodal context, likely finding kya hai?",B006,Cardiac silhouette mildly enlarged with vascular prominence.,low
+MMED_BENCH_0313,Multimodal context ke hisaab se effusion ka evidence hai kya? jaldi batao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,high
+MMED_BENCH_0314,"Given multimodal context, likely finding ky hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0315,"Please explain: Given multimodal context, likely finding kya hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0316,Image + text se infection ke signs confirm hote hai kya? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0317,"kya ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0318,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0319,Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0320,"Please explain: Given multimodal context, likely finding ky hai?",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,low
+MMED_BENCH_0321,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0322,Image + text se infection ke signs confirm hote hai kya?,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,low
+MMED_BENCH_0323,"Kya ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0324,"Given multimodal context, likely finding kya hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0325,Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0326,"Please explain: Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0327,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0328,Image + text se infxn ke signs confirm hote hai kya? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0329,"Please explain: Kya ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0330,"Given multimodal context, likely finding kya hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0331,Please explain: Multimodal context ke hisaab se effusion ka evidence hai kya?,B001,Chest image shows right pleural effusion with basal atelectatic change.,low
+MMED_BENCH_0332,"Given multimodal context, likely finding ky hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0333,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0334,Please explain: Image + text se infxn ke signs confirm hote hai kya? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0335,"ky ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0336,"Given multimodal context, likely finding kya hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0337,Please explain: Multimodal context ke hisaab se effusion ka evidence hai kyaa? jaldi batao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,high
+MMED_BENCH_0338,"Please explain: Given multimodal context, likely finding kya hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0339,"Please explain: Given multimodal context, likely finding ky hai? jaldi batao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,high
+MMED_BENCH_0340,Image + text se infection ke signs confirm hote hai kya? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0341,"kyaa ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0342,"Given multimodal context, likely finding ky hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0343,Multimodal context ke hisaab se effusion ka evidence hai kya?,B001,Chest image shows right pleural effusion with basal atelectatic change.,low
+MMED_BENCH_0344,"Given multimodal context, likely finding kyaa hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0345,"Given multimodal context, likely finding kyaa hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0346,Image + text se infxn ke signs confirm hote hai kya?,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,low
+MMED_BENCH_0347,"Kya ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0348,"Please explain: Given multimodal context, likely finding kyaa hai?",B006,Cardiac silhouette mildly enlarged with vascular prominence.,low
+MMED_BENCH_0349,Multimodal context ke hisaab se effusion ka evidence hai ky? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0350,"Please explain: Given multimodal context, likely finding ky hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0351,"Given multimodal context, likely finding ky hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0352,Image + text se infxn ke signs confirm hote hai kya? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0353,"ky ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0354,"Given multimodal context, likely finding kyaa hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0355,Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0356,"Please explain: Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0357,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0358,Please explain: Image + text se infection ke signs confirm hote hai kya?,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,low
+MMED_BENCH_0359,"Kya ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0360,"Please explain: Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0361,Multimodal context ke hisaab se effusion ka evidence hai ky? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0362,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0363,"Given multimodal context, likely finding kya hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0364,Image + text se infection ke signs confirm hote hai kya? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0365,"Please explain: Kya ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0366,"Given multimodal context, likely finding kya hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0367,Please explain: Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0368,"Please explain: Given multimodal context, likely finding kya hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0369,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0370,Image + text se infection ke signs confirm hote hai kya? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0371,"Kya ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0372,"Given multimodal context, likely finding kya hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0373,Multimodal context ke hisaab se effusion ka evidence hai kyaa? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0374,"Given multimodal context, likely finding kya hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0375,"Given multimodal context, likely finding kya hai? jaldi batao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,high
+MMED_BENCH_0376,Image + text se infec ke signs confirm hote hai kya?,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,low
+MMED_BENCH_0377,"ky ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0378,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0379,Please explain: Multimodal context ke hisaab se effusion ka evidence hai kya?,B001,Chest image shows right pleural effusion with basal atelectatic change.,low
+MMED_BENCH_0380,"Please explain: Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0381,"Please explain: Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0382,Image + text se infec ke signs confirm hote hai kyaa? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0383,"kya ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0384,"Please explain: Given multimodal context, likely finding kyaa hai?",B006,Cardiac silhouette mildly enlarged with vascular prominence.,low
+MMED_BENCH_0385,Multimodal context ke hisaab se effusion ka evidence hai ky?,B001,Chest image shows right pleural effusion with basal atelectatic change.,low
+MMED_BENCH_0386,"Please explain: Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0387,"Given multimodal context, likely finding kya hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0388,Image + text se infec ke signs confirm hote hai kya? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0389,"kya ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0390,"Given multimodal context, likely finding kya hai?",B006,Cardiac silhouette mildly enlarged with vascular prominence.,low
+MMED_BENCH_0391,Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0392,"Please explain: Given multimodal context, likely finding kyaa hai?",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,low
+MMED_BENCH_0393,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0394,Please explain: Image + text se infection ke signs confirm hote hai kya? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0395,"Kya ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0396,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0397,Multimodal context ke hisaab se effusion ka evidence hai ky? jaldi batao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,high
+MMED_BENCH_0398,"Please explain: Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0399,"Please explain: Given multimodal context, likely finding ky hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0400,Image + text se infection ke signs confirm hote hai ky? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0401,"kyaa ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0402,"Given multimodal context, likely finding kya hai?",B006,Cardiac silhouette mildly enlarged with vascular prominence.,low
+MMED_BENCH_0403,Multimodal context ke hisaab se effusion ka evidence hai kya?,B001,Chest image shows right pleural effusion with basal atelectatic change.,low
+MMED_BENCH_0404,"Given multimodal context, likely finding kya hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0405,"Given multimodal context, likely finding kya hai? jaldi batao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,high
+MMED_BENCH_0406,Image + text se infection ke signs confirm hote hai kya? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0407,"Please explain: ky ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0408,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0409,Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0410,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0411,"Please explain: Given multimodal context, likely finding kyaa hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0412,Image + text se infec ke signs confirm hote hai kya?,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,low
+MMED_BENCH_0413,"Kya ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0414,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0415,Please explain: Multimodal context ke hisaab se effusion ka evidence hai kyaa? jaldi batao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,high
+MMED_BENCH_0416,"Given multimodal context, likely finding kya hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0417,"Given multimodal context, likely finding kya hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0418,Please explain: Image + text se infection ke signs confirm hote hai kya? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0419,"Kya ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0420,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0421,Please explain: Multimodal context ke hisaab se effusion ka evidence hai kyaa? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0422,"Given multimodal context, likely finding kya hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0423,"Given multimodal context, likely finding kya hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0424,Image + text se infection ke signs confirm hote hai kya? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0425,"Kya ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0426,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0427,Multimodal context ke hisaab se effusion ka evidence hai kya? jaldi batao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,high
+MMED_BENCH_0428,"Given multimodal context, likely finding kya hai?",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,low
+MMED_BENCH_0429,"Given multimodal context, likely finding kyaa hai? jaldi batao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,high
+MMED_BENCH_0430,Image + text se infection ke signs confirm hote hai kya? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0431,"ky ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0432,"Given multimodal context, likely finding ky hai?",B006,Cardiac silhouette mildly enlarged with vascular prominence.,low
+MMED_BENCH_0433,Multimodal context ke hisaab se effusion ka evidence hai kya? jaldi batao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,high
+MMED_BENCH_0434,"Given multimodal context, likely finding kya hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0435,"Given multimodal context, likely finding kya hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0436,Image + text se infxn ke signs confirm hote hai kya? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0437,"Please explain: kya ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0438,"Given multimodal context, likely finding kyaa hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0439,Multimodal context ke hisaab se effusion ka evidence hai ky? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0440,"Given multimodal context, likely finding kyaa hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0441,"Please explain: Given multimodal context, likely finding kya hai? jaldi batao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,high
+MMED_BENCH_0442,Image + text se infec ke signs confirm hote hai kyaa? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0443,"Kya ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0444,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0445,Please explain: Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0446,"Given multimodal context, likely finding ky hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0447,"Please explain: Given multimodal context, likely finding kya hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0448,Image + text se infection ke signs confirm hote hai kya? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0449,"Kya ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0450,"Given multimodal context, likely finding kya hai?",B006,Cardiac silhouette mildly enlarged with vascular prominence.,low
+MMED_BENCH_0451,Please explain: Multimodal context ke hisaab se effusion ka evidence hai kya?,B001,Chest image shows right pleural effusion with basal atelectatic change.,low
+MMED_BENCH_0452,"Given multimodal context, likely finding kya hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0453,"Given multimodal context, likely finding ky hai? jaldi batao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,high
+MMED_BENCH_0454,Please explain: Image + text se infection ke signs confirm hote hai kya? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0455,"Kya ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0456,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0457,Please explain: Multimodal context ke hisaab se effusion ka evidence hai kyaa? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0458,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0459,"Given multimodal context, likely finding ky hai? jaldi batao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,high
+MMED_BENCH_0460,Please explain: Image + text se infection ke signs confirm hote hai kya?,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,low
+MMED_BENCH_0461,"ky ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0462,"Given multimodal context, likely finding kya hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0463,Multimodal context ke hisaab se effusion ka evidence hai kya?,B001,Chest image shows right pleural effusion with basal atelectatic change.,low
+MMED_BENCH_0464,"Given multimodal context, likely finding kyaa hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0465,"Given multimodal context, likely finding kyaa hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0466,Image + text se infection ke signs confirm hote hai kyaa? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0467,"kyaa ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0468,"Please explain: Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0469,Please explain: Multimodal context ke hisaab se effusion ka evidence hai kya? jaldi batao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,high
+MMED_BENCH_0470,"Given multimodal context, likely finding kya hai?",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,low
+MMED_BENCH_0471,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0472,Image + text se infec ke signs confirm hote hai kya? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0473,"kya ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0474,"Please explain: Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0475,Multimodal context ke hisaab se effusion ka evidence hai kya?,B001,Chest image shows right pleural effusion with basal atelectatic change.,low
+MMED_BENCH_0476,"Given multimodal context, likely finding kya hai?",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,low
+MMED_BENCH_0477,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0478,Image + text se infection ke signs confirm hote hai kyaa? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0479,"Kya ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0480,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0481,Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0482,"Given multimodal context, likely finding ky hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0483,"Given multimodal context, likely finding ky hai? jaldi batao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,high
+MMED_BENCH_0484,Image + text se infection ke signs confirm hote hai kya?,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,low
+MMED_BENCH_0485,"Kya ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0486,"Given multimodal context, likely finding kya hai?",B006,Cardiac silhouette mildly enlarged with vascular prominence.,low
+MMED_BENCH_0487,Multimodal context ke hisaab se effusion ka evidence hai ky?,B001,Chest image shows right pleural effusion with basal atelectatic change.,low
+MMED_BENCH_0488,"Given multimodal context, likely finding kya hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0489,"Please explain: Given multimodal context, likely finding kya hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0490,Image + text se infection ke signs confirm hote hai kya? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0491,"Kya ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0492,"Please explain: Given multimodal context, likely finding kyaa hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0493,Please explain: Multimodal context ke hisaab se effusion ka evidence hai kya?,B001,Chest image shows right pleural effusion with basal atelectatic change.,low
+MMED_BENCH_0494,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0495,"Please explain: Given multimodal context, likely finding kya hai? jaldi batao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,high
+MMED_BENCH_0496,Image + text se infxn ke signs confirm hote hai kya? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0497,"Please explain: ky ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0498,"Please explain: Given multimodal context, likely finding kya hai?",B006,Cardiac silhouette mildly enlarged with vascular prominence.,low
+MMED_BENCH_0499,Multimodal context ke hisaab se effusion ka evidence hai kya?,B001,Chest image shows right pleural effusion with basal atelectatic change.,low
+MMED_BENCH_0500,"Please explain: Given multimodal context, likely finding kya hai?",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,low
+MMED_BENCH_0501,"Given multimodal context, likely finding ky hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0502,Image + text se infection ke signs confirm hote hai ky?,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,low
+MMED_BENCH_0503,"Please explain: Kya ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0504,"Given multimodal context, likely finding kya hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0505,Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0506,"Given multimodal context, likely finding ky hai?",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,low
+MMED_BENCH_0507,"Given multimodal context, likely finding kya hai? jaldi batao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,high
+MMED_BENCH_0508,Image + text se infection ke signs confirm hote hai ky? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0509,"Please explain: Kya ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0510,"Please explain: Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0511,Please explain: Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0512,"Given multimodal context, likely finding kya hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0513,"Given multimodal context, likely finding kyaa hai? jaldi batao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,high
+MMED_BENCH_0514,Please explain: Image + text se infection ke signs confirm hote hai kya? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0515,"Kya ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0516,"Given multimodal context, likely finding kya hai?",B006,Cardiac silhouette mildly enlarged with vascular prominence.,low
+MMED_BENCH_0517,Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0518,"Given multimodal context, likely finding kya hai?",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,low
+MMED_BENCH_0519,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0520,Image + text se infection ke signs confirm hote hai ky? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0521,"ky ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0522,"Please explain: Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0523,Multimodal context ke hisaab se effusion ka evidence hai kya?,B001,Chest image shows right pleural effusion with basal atelectatic change.,low
+MMED_BENCH_0524,"Please explain: Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0525,"Given multimodal context, likely finding kyaa hai? jaldi batao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,high
+MMED_BENCH_0526,Please explain: Image + text se infection ke signs confirm hote hai kya? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0527,"kyaa ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0528,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0529,Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0530,"Please explain: Given multimodal context, likely finding kya hai?",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,low
+MMED_BENCH_0531,"Given multimodal context, likely finding kya hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0532,Image + text se infection ke signs confirm hote hai kya? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0533,"Kya ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0534,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0535,Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0536,"Given multimodal context, likely finding ky hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0537,"Given multimodal context, likely finding kya hai? jaldi batao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,high
+MMED_BENCH_0538,Please explain: Image + text se infection ke signs confirm hote hai ky? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0539,"Please explain: Kya ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0540,"Please explain: Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0541,Please explain: Multimodal context ke hisaab se effusion ka evidence hai kyaa? jaldi batao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,high
+MMED_BENCH_0542,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0543,"Please explain: Given multimodal context, likely finding kya hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0544,Please explain: Image + text se infec ke signs confirm hote hai kya? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0545,"Kya ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0546,"Given multimodal context, likely finding kya hai?",B006,Cardiac silhouette mildly enlarged with vascular prominence.,low
+MMED_BENCH_0547,Please explain: Multimodal context ke hisaab se effusion ka evidence hai kyaa? jaldi batao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,high
+MMED_BENCH_0548,"Given multimodal context, likely finding kya hai?",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,low
+MMED_BENCH_0549,"Given multimodal context, likely finding kyaa hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0550,Image + text se infec ke signs confirm hote hai kya? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0551,"Please explain: Kya ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0552,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0553,Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0554,"Given multimodal context, likely finding kya hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0555,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0556,Image + text se infxn ke signs confirm hote hai kya? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0557,"Kya ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0558,"Given multimodal context, likely finding kya hai?",B006,Cardiac silhouette mildly enlarged with vascular prominence.,low
+MMED_BENCH_0559,Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0560,"Given multimodal context, likely finding kya hai?",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,low
+MMED_BENCH_0561,"Please explain: Given multimodal context, likely finding ky hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0562,Image + text se infection ke signs confirm hote hai kya? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0563,"ky ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0564,"Please explain: Given multimodal context, likely finding kya hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0565,Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0566,"Given multimodal context, likely finding kyaa hai?",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,low
+MMED_BENCH_0567,"Given multimodal context, likely finding kya hai? jaldi batao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,high
+MMED_BENCH_0568,Please explain: Image + text se infection ke signs confirm hote hai ky?,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,low
+MMED_BENCH_0569,"Please explain: Kya ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0570,"Given multimodal context, likely finding kya hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0571,Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0572,"Given multimodal context, likely finding ky hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0573,"Given multimodal context, likely finding kya hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0574,Image + text se infec ke signs confirm hote hai ky?,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,low
+MMED_BENCH_0575,"kya ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0576,"Given multimodal context, likely finding kya hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0577,Multimodal context ke hisaab se effusion ka evidence hai kya?,B001,Chest image shows right pleural effusion with basal atelectatic change.,low
+MMED_BENCH_0578,"Given multimodal context, likely finding kya hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0579,"Given multimodal context, likely finding ky hai? jaldi batao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,high
+MMED_BENCH_0580,Image + text se infection ke signs confirm hote hai kyaa? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0581,"Please explain: Kya ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0582,"Given multimodal context, likely finding kyaa hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0583,Please explain: Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0584,"Given multimodal context, likely finding ky hai?",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,low
+MMED_BENCH_0585,"Given multimodal context, likely finding ky hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0586,Please explain: Image + text se infection ke signs confirm hote hai kya? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0587,"Kya ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0588,"Please explain: Given multimodal context, likely finding kya hai?",B006,Cardiac silhouette mildly enlarged with vascular prominence.,low
+MMED_BENCH_0589,Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0590,"Given multimodal context, likely finding ky hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0591,"Given multimodal context, likely finding kya hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0592,Image + text se infection ke signs confirm hote hai kya? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0593,"Kya ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0594,"Given multimodal context, likely finding kya hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0595,Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0596,"Please explain: Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0597,"Given multimodal context, likely finding kya hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0598,Image + text se infection ke signs confirm hote hai kya? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0599,"Kya ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0600,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0601,Multimodal context ke hisaab se effusion ka evidence hai kya?,B001,Chest image shows right pleural effusion with basal atelectatic change.,low
+MMED_BENCH_0602,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0603,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0604,Image + text se infection ke signs confirm hote hai kya?,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,low
+MMED_BENCH_0605,"Please explain: kya ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0606,"Given multimodal context, likely finding kya hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0607,Please explain: Multimodal context ke hisaab se effusion ka evidence hai kya? jaldi batao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,high
+MMED_BENCH_0608,"Please explain: Given multimodal context, likely finding kya hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0609,"Please explain: Given multimodal context, likely finding kya hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0610,Please explain: Image + text se infxn ke signs confirm hote hai kya? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0611,"Please explain: Kya ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0612,"Given multimodal context, likely finding ky hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0613,Multimodal context ke hisaab se effusion ka evidence hai ky? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0614,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0615,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0616,Image + text se infection ke signs confirm hote hai kya? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0617,"kya ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0618,"Please explain: Given multimodal context, likely finding kyaa hai?",B006,Cardiac silhouette mildly enlarged with vascular prominence.,low
+MMED_BENCH_0619,Multimodal context ke hisaab se effusion ka evidence hai kya? jaldi batao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,high
+MMED_BENCH_0620,"Please explain: Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0621,"Please explain: Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0622,Please explain: Image + text se infxn ke signs confirm hote hai kya?,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,low
+MMED_BENCH_0623,"kyaa ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0624,"Given multimodal context, likely finding kya hai?",B006,Cardiac silhouette mildly enlarged with vascular prominence.,low
+MMED_BENCH_0625,Please explain: Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0626,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0627,"Given multimodal context, likely finding kyaa hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0628,Please explain: Image + text se infection ke signs confirm hote hai kyaa? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0629,"Kya ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0630,"Given multimodal context, likely finding kya hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0631,Multimodal context ke hisaab se effusion ka evidence hai kya? jaldi batao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,high
+MMED_BENCH_0632,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0633,"Please explain: Given multimodal context, likely finding kya hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0634,Image + text se infection ke signs confirm hote hai kya?,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,low
+MMED_BENCH_0635,"Please explain: ky ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0636,"Given multimodal context, likely finding kya hai?",B006,Cardiac silhouette mildly enlarged with vascular prominence.,low
+MMED_BENCH_0637,Multimodal context ke hisaab se effusion ka evidence hai ky? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0638,"Given multimodal context, likely finding kya hai?",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,low
+MMED_BENCH_0639,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0640,Image + text se infection ke signs confirm hote hai kya?,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,low
+MMED_BENCH_0641,"Kya ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0642,"Please explain: Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0643,Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0644,"Given multimodal context, likely finding kya hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0645,"Given multimodal context, likely finding kya hai? jaldi batao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,high
+MMED_BENCH_0646,Image + text se infection ke signs confirm hote hai kya?,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,low
+MMED_BENCH_0647,"Please explain: Kya ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0648,"Given multimodal context, likely finding kya hai?",B006,Cardiac silhouette mildly enlarged with vascular prominence.,low
+MMED_BENCH_0649,Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0650,"Please explain: Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0651,"Given multimodal context, likely finding kya hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0652,Image + text se infection ke signs confirm hote hai kyaa? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0653,"kya ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0654,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0655,Please explain: Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0656,"Given multimodal context, likely finding kyaa hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0657,"Please explain: Given multimodal context, likely finding kya hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0658,Image + text se infection ke signs confirm hote hai kya? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0659,"ky ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0660,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0661,Multimodal context ke hisaab se effusion ka evidence hai ky?,B001,Chest image shows right pleural effusion with basal atelectatic change.,low
+MMED_BENCH_0662,"Please explain: Given multimodal context, likely finding kya hai?",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,low
+MMED_BENCH_0663,"Please explain: Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0664,Image + text se infection ke signs confirm hote hai ky? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0665,"kya ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0666,"Given multimodal context, likely finding kya hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0667,Please explain: Multimodal context ke hisaab se effusion ka evidence hai kya?,B001,Chest image shows right pleural effusion with basal atelectatic change.,low
+MMED_BENCH_0668,"Please explain: Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0669,"Given multimodal context, likely finding kya hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0670,Image + text se infection ke signs confirm hote hai kya?,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,low
+MMED_BENCH_0671,"Please explain: kyaa ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0672,"Please explain: Given multimodal context, likely finding ky hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0673,Please explain: Multimodal context ke hisaab se effusion ka evidence hai kya?,B001,Chest image shows right pleural effusion with basal atelectatic change.,low
+MMED_BENCH_0674,"Given multimodal context, likely finding kyaa hai?",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,low
+MMED_BENCH_0675,"Please explain: Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0676,Image + text se infection ke signs confirm hote hai kyaa? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0677,"Kya ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0678,"Given multimodal context, likely finding kya hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0679,Please explain: Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0680,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0681,"Given multimodal context, likely finding kya hai? jaldi batao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,high
+MMED_BENCH_0682,Image + text se infection ke signs confirm hote hai kya? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0683,"ky ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0684,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0685,Multimodal context ke hisaab se effusion ka evidence hai kyaa? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0686,"Given multimodal context, likely finding ky hai?",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,low
+MMED_BENCH_0687,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0688,Please explain: Image + text se infection ke signs confirm hote hai kyaa? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0689,"Please explain: kyaa ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0690,"Please explain: Given multimodal context, likely finding kya hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0691,Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0692,"Given multimodal context, likely finding kya hai?",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,low
+MMED_BENCH_0693,"Given multimodal context, likely finding kyaa hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0694,Image + text se infection ke signs confirm hote hai kya? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0695,"Please explain: Kya ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0696,"Given multimodal context, likely finding ky hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0697,Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0698,"Given multimodal context, likely finding kya hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0699,"Please explain: Given multimodal context, likely finding ky hai? jaldi batao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,high
+MMED_BENCH_0700,Image + text se infection ke signs confirm hote hai kya?,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,low
+MMED_BENCH_0701,"kya ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0702,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0703,Multimodal context ke hisaab se effusion ka evidence hai kya? jaldi batao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,high
+MMED_BENCH_0704,"Please explain: Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0705,"Please explain: Given multimodal context, likely finding kya hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0706,Please explain: Image + text se infxn ke signs confirm hote hai ky? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0707,"ky ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0708,"Given multimodal context, likely finding kya hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0709,Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0710,"Given multimodal context, likely finding ky hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0711,"Given multimodal context, likely finding kya hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0712,Image + text se infection ke signs confirm hote hai kya?,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,low
+MMED_BENCH_0713,"kya ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0714,"Please explain: Given multimodal context, likely finding ky hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0715,Multimodal context ke hisaab se effusion ka evidence hai kya? jaldi batao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,high
+MMED_BENCH_0716,"Please explain: Given multimodal context, likely finding kya hai?",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,low
+MMED_BENCH_0717,"Please explain: Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0718,Image + text se infec ke signs confirm hote hai kya? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0719,"Kya ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0720,"Please explain: Given multimodal context, likely finding kyaa hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0721,Multimodal context ke hisaab se effusion ka evidence hai kyaa?,B001,Chest image shows right pleural effusion with basal atelectatic change.,low
+MMED_BENCH_0722,"Given multimodal context, likely finding kyaa hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0723,"Given multimodal context, likely finding kyaa hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0724,Image + text se infxn ke signs confirm hote hai ky? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0725,"Kya ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0726,"Given multimodal context, likely finding kyaa hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0727,Multimodal context ke hisaab se effusion ka evidence hai kya?,B001,Chest image shows right pleural effusion with basal atelectatic change.,low
+MMED_BENCH_0728,"Please explain: Given multimodal context, likely finding kya hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0729,"Please explain: Given multimodal context, likely finding kya hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0730,Image + text se infec ke signs confirm hote hai kya?,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,low
+MMED_BENCH_0731,"Kya ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0732,"Given multimodal context, likely finding kya hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0733,Multimodal context ke hisaab se effusion ka evidence hai kyaa? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0734,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0735,"Given multimodal context, likely finding kyaa hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0736,Please explain: Image + text se infection ke signs confirm hote hai kya? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0737,"Kya ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0738,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0739,Please explain: Multimodal context ke hisaab se effusion ka evidence hai kyaa? jaldi batao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,high
+MMED_BENCH_0740,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0741,"Given multimodal context, likely finding kya hai? jaldi batao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,high
+MMED_BENCH_0742,Image + text se infection ke signs confirm hote hai ky?,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,low
+MMED_BENCH_0743,"Kya ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0744,"Given multimodal context, likely finding ky hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0745,Multimodal context ke hisaab se effusion ka evidence hai kya?,B001,Chest image shows right pleural effusion with basal atelectatic change.,low
+MMED_BENCH_0746,"Please explain: Given multimodal context, likely finding kyaa hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0747,"Please explain: Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0748,Image + text se infection ke signs confirm hote hai kya? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0749,"ky ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0750,"Given multimodal context, likely finding kya hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0751,Multimodal context ke hisaab se effusion ka evidence hai kya?,B001,Chest image shows right pleural effusion with basal atelectatic change.,low
+MMED_BENCH_0752,"Given multimodal context, likely finding ky hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0753,"Given multimodal context, likely finding kya hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0754,Please explain: Image + text se infec ke signs confirm hote hai kyaa?,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,low
+MMED_BENCH_0755,"Kya ye sirf normal variant hai, acute issue nahi? jaldi batao.",B005,Distractor context: normal variant anatomy without acute pathology.,high
+MMED_BENCH_0756,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0757,Multimodal context ke hisaab se effusion ka evidence hai kya? jaldi batao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,high
+MMED_BENCH_0758,"Given multimodal context, likely finding kyaa hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0759,"Given multimodal context, likely finding kya hai? jaldi batao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,high
+MMED_BENCH_0760,Image + text se infection ke signs confirm hote hai kyaa? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0761,"kya ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0762,"Please explain: Given multimodal context, likely finding ky hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0763,Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0764,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0765,"Given multimodal context, likely finding kya hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0766,Image + text se infection ke signs confirm hote hai kya?,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,low
+MMED_BENCH_0767,"kyaa ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0768,"Given multimodal context, likely finding kya hai?",B006,Cardiac silhouette mildly enlarged with vascular prominence.,low
+MMED_BENCH_0769,Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0770,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0771,"Given multimodal context, likely finding kyaa hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0772,Please explain: Image + text se infec ke signs confirm hote hai ky? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0773,"Please explain: Kya ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0774,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0775,Please explain: Multimodal context ke hisaab se effusion ka evidence hai ky? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0776,"Please explain: Given multimodal context, likely finding ky hai? Thoda simple samjhao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,medium
+MMED_BENCH_0777,"Given multimodal context, likely finding kya hai? jaldi batao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,high
+MMED_BENCH_0778,Image + text se infec ke signs confirm hote hai kya? jaldi batao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,high
+MMED_BENCH_0779,"Please explain: Kya ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0780,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0781,Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0782,"Given multimodal context, likely finding kya hai?",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,low
+MMED_BENCH_0783,"Please explain: Given multimodal context, likely finding kyaa hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0784,Image + text se infection ke signs confirm hote hai ky?,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,low
+MMED_BENCH_0785,"Kya ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0786,"Given multimodal context, likely finding kya hai? jaldi batao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,high
+MMED_BENCH_0787,Please explain: Multimodal context ke hisaab se effusion ka evidence hai kya?,B001,Chest image shows right pleural effusion with basal atelectatic change.,low
+MMED_BENCH_0788,"Given multimodal context, likely finding kya hai? jaldi batao.",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,high
+MMED_BENCH_0789,"Given multimodal context, likely finding kya hai? Thoda simple samjhao.",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,medium
+MMED_BENCH_0790,Please explain: Image + text se infection ke signs confirm hote hai kya?,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,low
+MMED_BENCH_0791,"Kya ye sirf normal variant hai, acute issue nahi? Thoda simple samjhao.",B005,Distractor context: normal variant anatomy without acute pathology.,medium
+MMED_BENCH_0792,"Given multimodal context, likely finding kyaa hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0793,Please explain: Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0794,"Given multimodal context, likely finding kya hai?",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,low
+MMED_BENCH_0795,"Given multimodal context, likely finding kya hai?",B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+MMED_BENCH_0796,Image + text se infxn ke signs confirm hote hai kya? Thoda simple samjhao.,B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,medium
+MMED_BENCH_0797,"kyaa ye sirf normal variant hai, acute issue nahi?",B005,Distractor context: normal variant anatomy without acute pathology.,low
+MMED_BENCH_0798,"Given multimodal context, likely finding ky hai? Thoda simple samjhao.",B006,Cardiac silhouette mildly enlarged with vascular prominence.,medium
+MMED_BENCH_0799,Multimodal context ke hisaab se effusion ka evidence hai kya? Thoda simple samjhao.,B001,Chest image shows right pleural effusion with basal atelectatic change.,medium
+MMED_BENCH_0800,"Please explain: Given multimodal context, likely finding kya hai?",B002,Pathology-like description notes inflammatory infiltrate without malignancy.,low
+D_openi_000,distractor,D_O001,Right-sided pleural effusion is present. Heart size is within normal limits.,low
+D_openi_001,distractor,D_O006,Dense right lower lobe consolidation with air bronchograms.,low
+D_openi_002,distractor,D_O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+D_openi_003,distractor,D_O004,No acute cardiopulmonary abnormality detected.,low
+D_openi_004,distractor,D_O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",low
+D_openi_005,distractor,D_O005,Moderate right pleural effusion with compressive atelectasis.,low
+D_mmcqsd_000,distractor,D_M001,Skin erythema over forearm with mild edema; no abscess formation.,low
+D_mmcqsd_001,distractor,D_M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+D_mmcqsd_002,distractor,D_M004,Mild sinus mucosal thickening without fluid level.,low
+D_mmcqsd_003,distractor,D_M003,Conjunctival congestion with watery discharge; no corneal ulcer.,low
+D_mmcqsd_004,distractor,D_M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+D_mmcqsd_005,distractor,D_M006,No acute abnormality detected in provided clinical image summary.,low
+D_pubmedqa_000,distractor,D_P003,Study reports improved symptom control with combination therapy.,low
+D_pubmedqa_001,distractor,D_P002,Meta-analysis indicates no significant mortality benefit in this cohort.,low
+D_pubmedqa_002,distractor,D_P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+D_pubmedqa_003,distractor,D_P005,No clear association was observed between intervention and primary endpoint.,low
+D_pubmedqa_004,distractor,D_P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,low
+D_pubmedqa_005,distractor,D_P006,Moderate evidence quality supports short-term efficacy.,low

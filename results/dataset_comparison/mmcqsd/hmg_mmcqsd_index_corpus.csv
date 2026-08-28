@@ -1,0 +1,819 @@
+sample_id,query_hinglish,report_id,report_text,cmi_bucket
+MMCQSD_0001,Skin pe laalpan aur sujan hai kya image report me? Thoda simple samjhao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0002,"Doctor, Kaan ke infection ka sign mil raha hai ky? jaldi batao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0003,"Please explain: Doctor, Aankh me redness aur pani aa raha hai, repot kya bolti hai?",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,low
+MMCQSD_0004,Is clinical query ka simple Hinglish summary do. jaldi batao.,M004,Mild sinus mucosal thickening without fluid level.,high
+MMCQSD_0005,Please explain: Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0006,"Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M006,No acute abnormality detected in provided clinical image summary.,high
+MMCQSD_0007,"Please explain: Doctor, Skin pe laalpan aur sujan hai kya image repot me? Thoda simple samjhao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0008,"Doctor, Kaan ke infxn ka sign mil raha hai kya?",M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+MMCQSD_0009,"Please explain: Doctor, Aankh me redness aur pani aa raha hai, rprt kyaa bolti hai? jaldi batao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,high
+MMCQSD_0010,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do.",M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0011,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0012,Is clinical query ka simple Hinglish summary do.,M006,No acute abnormality detected in provided clinical image summary.,low
+MMCQSD_0013,"Doctor, Skin pe laalpan aur sujan hai kya image report me? Thoda simple samjhao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0014,"Doctor, Kaan ke infection ka sign mil raha hai kya? Thoda simple samjhao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0015,"Doctor, Aankh me redness aur pani aa raha hai, report kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0016,Is clinical query ka simple Hinglish summary do.,M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0017,"Doctor, Is clinical query ka simple Hinglish summary do.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0018,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0019,Skin pe laalpan aur sujan hai kyaa image repot me? jaldi batao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0020,Please explain: Kaan ke infection ka sign mil raha hai kya? Thoda simple samjhao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0021,"Aankh me redness aur pani aa raha hai, report kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0022,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0023,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0024,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0025,"Doctor, Skin pe laalpan aur sujan hai kya image rprt me?",M001,Skin erythema over forearm with mild edema; no abscess formation.,low
+MMCQSD_0026,"Doctor, Kaan ke infxn ka sign mil raha hai kya? jaldi batao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0027,"Doctor, Aankh me redness aur pani aa raha hai, report kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0028,Please explain: Is clinical query ka simple Hinglish summary do.,M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0029,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0030,Please explain: Is clinical query ka simple Hinglish summary do.,M006,No acute abnormality detected in provided clinical image summary.,low
+MMCQSD_0031,Skin pe laalpan aur sujan hai kya image report me? Thoda simple samjhao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0032,Please explain: Kaan ke infection ka sign mil raha hai kya? jaldi batao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0033,"Please explain: Doctor, Aankh me redness aur pani aa raha hai, report kyaa bolti hai?",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,low
+MMCQSD_0034,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0035,Please explain: Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0036,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0037,"Doctor, Skin pe laalpan aur sujan hai kya image report me?",M001,Skin erythema over forearm with mild edema; no abscess formation.,low
+MMCQSD_0038,"Doctor, Kaan ke infec ka sign mil raha hai kyaa?",M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+MMCQSD_0039,"Doctor, Aankh me redness aur pani aa raha hai, report kya bolti hai?",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,low
+MMCQSD_0040,Please explain: Is clinical query ka simple Hinglish summary do.,M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0041,Please explain: Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0042,"Doctor, Is clinical query ka simple Hinglish summary do.",M006,No acute abnormality detected in provided clinical image summary.,low
+MMCQSD_0043,Skin pe laalpan aur sujan hai kya image report me? jaldi batao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0044,"Doctor, Kaan ke infection ka sign mil raha hai kyaa? jaldi batao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0045,"Please explain: Doctor, Aankh me redness aur pani aa raha hai, report kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0046,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0047,Is clinical query ka simple Hinglish summary do.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0048,Is clinical query ka simple Hinglish summary do. jaldi batao.,M006,No acute abnormality detected in provided clinical image summary.,high
+MMCQSD_0049,"Doctor, Skin pe laalpan aur sujan hai kya image report me?",M001,Skin erythema over forearm with mild edema; no abscess formation.,low
+MMCQSD_0050,"Doctor, Kaan ke infxn ka sign mil raha hai kyaa? Thoda simple samjhao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0051,"Aankh me redness aur pani aa raha hai, repot kya bolti hai?",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,low
+MMCQSD_0052,"Doctor, Is clinical query ka simple Hinglish summary do.",M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0053,Is clinical query ka simple Hinglish summary do.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0054,Please explain: Is clinical query ka simple Hinglish summary do. jaldi batao.,M006,No acute abnormality detected in provided clinical image summary.,high
+MMCQSD_0055,Skin pe laalpan aur sujan hai ky image repot me? Thoda simple samjhao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0056,"Doctor, Kaan ke infection ka sign mil raha hai kya?",M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+MMCQSD_0057,"Doctor, Aankh me redness aur pani aa raha hai, report kya bolti hai?",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,low
+MMCQSD_0058,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0059,Please explain: Is clinical query ka simple Hinglish summary do. jaldi batao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",high
+MMCQSD_0060,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0061,Skin pe laalpan aur sujan hai kyaa image report me? jaldi batao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0062,Kaan ke infection ka sign mil raha hai kya? jaldi batao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0063,"Aankh me redness aur pani aa raha hai, report kya bolti hai?",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,low
+MMCQSD_0064,Is clinical query ka simple Hinglish summary do.,M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0065,Is clinical query ka simple Hinglish summary do.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0066,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0067,"Please explain: Doctor, Skin pe laalpan aur sujan hai ky image report me?",M001,Skin erythema over forearm with mild edema; no abscess formation.,low
+MMCQSD_0068,"Doctor, Kaan ke infection ka sign mil raha hai kyaa? jaldi batao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0069,"Doctor, Aankh me redness aur pani aa raha hai, report kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0070,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0071,"Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",high
+MMCQSD_0072,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0073,Skin pe laalpan aur sujan hai kya image rprt me?,M001,Skin erythema over forearm with mild edema; no abscess formation.,low
+MMCQSD_0074,Please explain: Kaan ke infection ka sign mil raha hai kya? jaldi batao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0075,"Doctor, Aankh me redness aur pani aa raha hai, report kyaa bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0076,"Doctor, Is clinical query ka simple Hinglish summary do.",M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0077,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0078,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do.",M006,No acute abnormality detected in provided clinical image summary.,low
+MMCQSD_0079,"Doctor, Skin pe laalpan aur sujan hai kya image report me? Thoda simple samjhao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0080,Please explain: Kaan ke infxn ka sign mil raha hai kyaa?,M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+MMCQSD_0081,"Aankh me redness aur pani aa raha hai, rprt kya bolti hai? jaldi batao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,high
+MMCQSD_0082,"Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M004,Mild sinus mucosal thickening without fluid level.,high
+MMCQSD_0083,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0084,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0085,"Doctor, Skin pe laalpan aur sujan hai ky image report me? jaldi batao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0086,"Doctor, Kaan ke infec ka sign mil raha hai ky? Thoda simple samjhao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0087,"Aankh me redness aur pani aa raha hai, report kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0088,"Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M004,Mild sinus mucosal thickening without fluid level.,high
+MMCQSD_0089,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0090,Is clinical query ka simple Hinglish summary do. jaldi batao.,M006,No acute abnormality detected in provided clinical image summary.,high
+MMCQSD_0091,Skin pe laalpan aur sujan hai kya image report me?,M001,Skin erythema over forearm with mild edema; no abscess formation.,low
+MMCQSD_0092,"Doctor, Kaan ke infection ka sign mil raha hai ky?",M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+MMCQSD_0093,"Doctor, Aankh me redness aur pani aa raha hai, report kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0094,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0095,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0096,"Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M006,No acute abnormality detected in provided clinical image summary.,high
+MMCQSD_0097,"Doctor, Skin pe laalpan aur sujan hai kyaa image report me? Thoda simple samjhao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0098,Please explain: Kaan ke infxn ka sign mil raha hai ky?,M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+MMCQSD_0099,"Doctor, Aankh me redness aur pani aa raha hai, report ky bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0100,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0101,Is clinical query ka simple Hinglish summary do. jaldi batao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",high
+MMCQSD_0102,"Doctor, Is clinical query ka simple Hinglish summary do.",M006,No acute abnormality detected in provided clinical image summary.,low
+MMCQSD_0103,Skin pe laalpan aur sujan hai kya image report me? jaldi batao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0104,"Doctor, Kaan ke infxn ka sign mil raha hai kya? Thoda simple samjhao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0105,"Please explain: Aankh me redness aur pani aa raha hai, report kya bolti hai? jaldi batao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,high
+MMCQSD_0106,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0107,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0108,Is clinical query ka simple Hinglish summary do. jaldi batao.,M006,No acute abnormality detected in provided clinical image summary.,high
+MMCQSD_0109,Skin pe laalpan aur sujan hai kyaa image report me? jaldi batao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0110,Kaan ke infxn ka sign mil raha hai kyaa?,M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+MMCQSD_0111,"Please explain: Doctor, Aankh me redness aur pani aa raha hai, report kyaa bolti hai? jaldi batao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,high
+MMCQSD_0112,"Doctor, Is clinical query ka simple Hinglish summary do.",M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0113,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0114,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0115,"Please explain: Doctor, Skin pe laalpan aur sujan hai kya image report me? Thoda simple samjhao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0116,Kaan ke infection ka sign mil raha hai kya?,M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+MMCQSD_0117,"Please explain: Doctor, Aankh me redness aur pani aa raha hai, report kya bolti hai?",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,low
+MMCQSD_0118,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0119,Please explain: Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0120,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0121,"Doctor, Skin pe laalpan aur sujan hai kyaa image repot me? Thoda simple samjhao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0122,"Doctor, Kaan ke infec ka sign mil raha hai ky? Thoda simple samjhao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0123,"Please explain: Doctor, Aankh me redness aur pani aa raha hai, report ky bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0124,Is clinical query ka simple Hinglish summary do.,M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0125,Is clinical query ka simple Hinglish summary do. jaldi batao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",high
+MMCQSD_0126,Please explain: Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0127,"Doctor, Skin pe laalpan aur sujan hai kya image repot me? Thoda simple samjhao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0128,"Doctor, Kaan ke infection ka sign mil raha hai kya? Thoda simple samjhao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0129,"Doctor, Aankh me redness aur pani aa raha hai, report kya bolti hai?",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,low
+MMCQSD_0130,"Doctor, Is clinical query ka simple Hinglish summary do.",M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0131,Is clinical query ka simple Hinglish summary do.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0132,Please explain: Is clinical query ka simple Hinglish summary do.,M006,No acute abnormality detected in provided clinical image summary.,low
+MMCQSD_0133,Please explain: Skin pe laalpan aur sujan hai kya image report me? jaldi batao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0134,"Doctor, Kaan ke infxn ka sign mil raha hai ky? jaldi batao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0135,"Please explain: Aankh me redness aur pani aa raha hai, report kyaa bolti hai? jaldi batao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,high
+MMCQSD_0136,"Doctor, Is clinical query ka simple Hinglish summary do.",M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0137,"Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",high
+MMCQSD_0138,Is clinical query ka simple Hinglish summary do. jaldi batao.,M006,No acute abnormality detected in provided clinical image summary.,high
+MMCQSD_0139,Skin pe laalpan aur sujan hai kya image report me? jaldi batao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0140,Please explain: Kaan ke infection ka sign mil raha hai kya? Thoda simple samjhao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0141,"Please explain: Aankh me redness aur pani aa raha hai, report kya bolti hai?",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,low
+MMCQSD_0142,Is clinical query ka simple Hinglish summary do. jaldi batao.,M004,Mild sinus mucosal thickening without fluid level.,high
+MMCQSD_0143,Please explain: Is clinical query ka simple Hinglish summary do.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0144,"Doctor, Is clinical query ka simple Hinglish summary do.",M006,No acute abnormality detected in provided clinical image summary.,low
+MMCQSD_0145,"Please explain: Doctor, Skin pe laalpan aur sujan hai kyaa image repot me? Thoda simple samjhao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0146,Please explain: Kaan ke infection ka sign mil raha hai kya? jaldi batao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0147,"Please explain: Doctor, Aankh me redness aur pani aa raha hai, report kya bolti hai?",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,low
+MMCQSD_0148,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0149,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0150,"Doctor, Is clinical query ka simple Hinglish summary do.",M006,No acute abnormality detected in provided clinical image summary.,low
+MMCQSD_0151,Skin pe laalpan aur sujan hai kya image report me?,M001,Skin erythema over forearm with mild edema; no abscess formation.,low
+MMCQSD_0152,"Doctor, Kaan ke infec ka sign mil raha hai kya? jaldi batao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0153,"Doctor, Aankh me redness aur pani aa raha hai, rprt kya bolti hai? jaldi batao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,high
+MMCQSD_0154,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M004,Mild sinus mucosal thickening without fluid level.,high
+MMCQSD_0155,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0156,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0157,"Doctor, Skin pe laalpan aur sujan hai kya image report me?",M001,Skin erythema over forearm with mild edema; no abscess formation.,low
+MMCQSD_0158,Kaan ke infxn ka sign mil raha hai kya? jaldi batao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0159,"Aankh me redness aur pani aa raha hai, report kya bolti hai?",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,low
+MMCQSD_0160,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0161,Please explain: Is clinical query ka simple Hinglish summary do. jaldi batao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",high
+MMCQSD_0162,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0163,Skin pe laalpan aur sujan hai kya image report me?,M001,Skin erythema over forearm with mild edema; no abscess formation.,low
+MMCQSD_0164,"Doctor, Kaan ke infection ka sign mil raha hai kya? jaldi batao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0165,"Aankh me redness aur pani aa raha hai, report kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0166,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0167,"Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",high
+MMCQSD_0168,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0169,"Doctor, Skin pe laalpan aur sujan hai kya image report me? jaldi batao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0170,"Please explain: Doctor, Kaan ke infec ka sign mil raha hai kya?",M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+MMCQSD_0171,"Aankh me redness aur pani aa raha hai, repot kya bolti hai? jaldi batao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,high
+MMCQSD_0172,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0173,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0174,Is clinical query ka simple Hinglish summary do.,M006,No acute abnormality detected in provided clinical image summary.,low
+MMCQSD_0175,"Doctor, Skin pe laalpan aur sujan hai kya image report me?",M001,Skin erythema over forearm with mild edema; no abscess formation.,low
+MMCQSD_0176,"Please explain: Doctor, Kaan ke infxn ka sign mil raha hai kya? jaldi batao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0177,"Aankh me redness aur pani aa raha hai, repot kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0178,Is clinical query ka simple Hinglish summary do.,M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0179,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",high
+MMCQSD_0180,Please explain: Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0181,"Please explain: Doctor, Skin pe laalpan aur sujan hai kya image report me? Thoda simple samjhao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0182,Kaan ke infection ka sign mil raha hai kya? jaldi batao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0183,"Doctor, Aankh me redness aur pani aa raha hai, report kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0184,Please explain: Is clinical query ka simple Hinglish summary do. jaldi batao.,M004,Mild sinus mucosal thickening without fluid level.,high
+MMCQSD_0185,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0186,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0187,Please explain: Skin pe laalpan aur sujan hai kyaa image report me? jaldi batao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0188,"Please explain: Doctor, Kaan ke infection ka sign mil raha hai kya?",M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+MMCQSD_0189,"Aankh me redness aur pani aa raha hai, report kya bolti hai? jaldi batao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,high
+MMCQSD_0190,Is clinical query ka simple Hinglish summary do. jaldi batao.,M004,Mild sinus mucosal thickening without fluid level.,high
+MMCQSD_0191,Is clinical query ka simple Hinglish summary do.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0192,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0193,Skin pe laalpan aur sujan hai ky image report me? jaldi batao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0194,Please explain: Kaan ke infxn ka sign mil raha hai kya? jaldi batao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0195,"Doctor, Aankh me redness aur pani aa raha hai, report ky bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0196,Please explain: Is clinical query ka simple Hinglish summary do.,M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0197,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0198,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0199,"Doctor, Skin pe laalpan aur sujan hai kya image report me? jaldi batao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0200,Kaan ke infec ka sign mil raha hai kya? Thoda simple samjhao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0201,"Please explain: Aankh me redness aur pani aa raha hai, report kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0202,Is clinical query ka simple Hinglish summary do. jaldi batao.,M004,Mild sinus mucosal thickening without fluid level.,high
+MMCQSD_0203,"Doctor, Is clinical query ka simple Hinglish summary do.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0204,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0205,Please explain: Skin pe laalpan aur sujan hai kya image report me?,M001,Skin erythema over forearm with mild edema; no abscess formation.,low
+MMCQSD_0206,Kaan ke infection ka sign mil raha hai kya? jaldi batao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0207,"Aankh me redness aur pani aa raha hai, report kya bolti hai?",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,low
+MMCQSD_0208,"Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M004,Mild sinus mucosal thickening without fluid level.,high
+MMCQSD_0209,"Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",high
+MMCQSD_0210,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0211,Skin pe laalpan aur sujan hai kya image report me? jaldi batao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0212,Kaan ke infection ka sign mil raha hai ky?,M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+MMCQSD_0213,"Doctor, Aankh me redness aur pani aa raha hai, report kya bolti hai?",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,low
+MMCQSD_0214,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0215,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0216,Is clinical query ka simple Hinglish summary do.,M006,No acute abnormality detected in provided clinical image summary.,low
+MMCQSD_0217,"Doctor, Skin pe laalpan aur sujan hai kya image report me? Thoda simple samjhao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0218,"Doctor, Kaan ke infection ka sign mil raha hai kya? jaldi batao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0219,"Doctor, Aankh me redness aur pani aa raha hai, report kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0220,Please explain: Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0221,Please explain: Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0222,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0223,"Doctor, Skin pe laalpan aur sujan hai ky image report me? Thoda simple samjhao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0224,Kaan ke infec ka sign mil raha hai kya?,M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+MMCQSD_0225,"Aankh me redness aur pani aa raha hai, report kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0226,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do.",M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0227,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0228,"Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M006,No acute abnormality detected in provided clinical image summary.,high
+MMCQSD_0229,Skin pe laalpan aur sujan hai kya image report me? jaldi batao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0230,"Doctor, Kaan ke infxn ka sign mil raha hai kya? jaldi batao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0231,"Doctor, Aankh me redness aur pani aa raha hai, report kya bolti hai?",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,low
+MMCQSD_0232,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M004,Mild sinus mucosal thickening without fluid level.,high
+MMCQSD_0233,Please explain: Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0234,"Doctor, Is clinical query ka simple Hinglish summary do.",M006,No acute abnormality detected in provided clinical image summary.,low
+MMCQSD_0235,Skin pe laalpan aur sujan hai ky image report me? jaldi batao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0236,"Please explain: Doctor, Kaan ke infection ka sign mil raha hai kya? Thoda simple samjhao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0237,"Aankh me redness aur pani aa raha hai, rprt ky bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0238,Is clinical query ka simple Hinglish summary do.,M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0239,Please explain: Is clinical query ka simple Hinglish summary do. jaldi batao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",high
+MMCQSD_0240,"Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M006,No acute abnormality detected in provided clinical image summary.,high
+MMCQSD_0241,Skin pe laalpan aur sujan hai ky image report me?,M001,Skin erythema over forearm with mild edema; no abscess formation.,low
+MMCQSD_0242,"Please explain: Doctor, Kaan ke infection ka sign mil raha hai kya?",M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+MMCQSD_0243,"Doctor, Aankh me redness aur pani aa raha hai, report kya bolti hai? jaldi batao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,high
+MMCQSD_0244,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0245,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0246,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0247,Skin pe laalpan aur sujan hai kyaa image report me? jaldi batao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0248,"Doctor, Kaan ke infection ka sign mil raha hai kya? jaldi batao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0249,"Aankh me redness aur pani aa raha hai, rprt kya bolti hai?",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,low
+MMCQSD_0250,Is clinical query ka simple Hinglish summary do. jaldi batao.,M004,Mild sinus mucosal thickening without fluid level.,high
+MMCQSD_0251,"Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",high
+MMCQSD_0252,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0253,"Doctor, Skin pe laalpan aur sujan hai kya image repot me?",M001,Skin erythema over forearm with mild edema; no abscess formation.,low
+MMCQSD_0254,"Please explain: Doctor, Kaan ke infection ka sign mil raha hai ky?",M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+MMCQSD_0255,"Aankh me redness aur pani aa raha hai, report kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0256,"Doctor, Is clinical query ka simple Hinglish summary do.",M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0257,Please explain: Is clinical query ka simple Hinglish summary do. jaldi batao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",high
+MMCQSD_0258,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0259,"Doctor, Skin pe laalpan aur sujan hai kya image report me? Thoda simple samjhao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0260,Please explain: Kaan ke infection ka sign mil raha hai kya? Thoda simple samjhao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0261,"Aankh me redness aur pani aa raha hai, report ky bolti hai?",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,low
+MMCQSD_0262,"Doctor, Is clinical query ka simple Hinglish summary do.",M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0263,"Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",high
+MMCQSD_0264,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do.",M006,No acute abnormality detected in provided clinical image summary.,low
+MMCQSD_0265,"Doctor, Skin pe laalpan aur sujan hai ky image report me?",M001,Skin erythema over forearm with mild edema; no abscess formation.,low
+MMCQSD_0266,"Please explain: Doctor, Kaan ke infection ka sign mil raha hai kya? Thoda simple samjhao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0267,"Please explain: Aankh me redness aur pani aa raha hai, rprt kya bolti hai?",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,low
+MMCQSD_0268,"Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M004,Mild sinus mucosal thickening without fluid level.,high
+MMCQSD_0269,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0270,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0271,"Doctor, Skin pe laalpan aur sujan hai kya image report me? jaldi batao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0272,"Doctor, Kaan ke infxn ka sign mil raha hai kya?",M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+MMCQSD_0273,"Doctor, Aankh me redness aur pani aa raha hai, rprt ky bolti hai? jaldi batao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,high
+MMCQSD_0274,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0275,"Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",high
+MMCQSD_0276,Please explain: Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0277,"Doctor, Skin pe laalpan aur sujan hai kya image report me? Thoda simple samjhao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0278,"Doctor, Kaan ke infection ka sign mil raha hai kya? jaldi batao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0279,"Aankh me redness aur pani aa raha hai, report kya bolti hai? jaldi batao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,high
+MMCQSD_0280,Please explain: Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0281,Is clinical query ka simple Hinglish summary do.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0282,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0283,Skin pe laalpan aur sujan hai kya image repot me? jaldi batao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0284,Kaan ke infxn ka sign mil raha hai kya?,M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+MMCQSD_0285,"Please explain: Doctor, Aankh me redness aur pani aa raha hai, rprt kya bolti hai?",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,low
+MMCQSD_0286,Please explain: Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0287,Please explain: Is clinical query ka simple Hinglish summary do. jaldi batao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",high
+MMCQSD_0288,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0289,Please explain: Skin pe laalpan aur sujan hai kya image report me? jaldi batao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0290,"Doctor, Kaan ke infec ka sign mil raha hai kya? Thoda simple samjhao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0291,"Doctor, Aankh me redness aur pani aa raha hai, rprt kya bolti hai?",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,low
+MMCQSD_0292,"Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M004,Mild sinus mucosal thickening without fluid level.,high
+MMCQSD_0293,"Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",high
+MMCQSD_0294,Is clinical query ka simple Hinglish summary do. jaldi batao.,M006,No acute abnormality detected in provided clinical image summary.,high
+MMCQSD_0295,"Doctor, Skin pe laalpan aur sujan hai kya image report me?",M001,Skin erythema over forearm with mild edema; no abscess formation.,low
+MMCQSD_0296,Kaan ke infection ka sign mil raha hai ky? jaldi batao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0297,"Doctor, Aankh me redness aur pani aa raha hai, report kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0298,Please explain: Is clinical query ka simple Hinglish summary do.,M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0299,Is clinical query ka simple Hinglish summary do. jaldi batao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",high
+MMCQSD_0300,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0301,Skin pe laalpan aur sujan hai kya image report me? Thoda simple samjhao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0302,Kaan ke infection ka sign mil raha hai kya? Thoda simple samjhao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0303,"Aankh me redness aur pani aa raha hai, report ky bolti hai? jaldi batao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,high
+MMCQSD_0304,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0305,"Doctor, Is clinical query ka simple Hinglish summary do.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0306,Is clinical query ka simple Hinglish summary do.,M006,No acute abnormality detected in provided clinical image summary.,low
+MMCQSD_0307,"Doctor, Skin pe laalpan aur sujan hai kya image rprt me?",M001,Skin erythema over forearm with mild edema; no abscess formation.,low
+MMCQSD_0308,Kaan ke infec ka sign mil raha hai kya?,M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+MMCQSD_0309,"Aankh me redness aur pani aa raha hai, report kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0310,Is clinical query ka simple Hinglish summary do. jaldi batao.,M004,Mild sinus mucosal thickening without fluid level.,high
+MMCQSD_0311,Is clinical query ka simple Hinglish summary do.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0312,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0313,Skin pe laalpan aur sujan hai kya image report me? Thoda simple samjhao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0314,Kaan ke infection ka sign mil raha hai kya? jaldi batao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0315,"Please explain: Aankh me redness aur pani aa raha hai, report kyaa bolti hai? jaldi batao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,high
+MMCQSD_0316,"Doctor, Is clinical query ka simple Hinglish summary do.",M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0317,"Doctor, Is clinical query ka simple Hinglish summary do.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0318,Is clinical query ka simple Hinglish summary do. jaldi batao.,M006,No acute abnormality detected in provided clinical image summary.,high
+MMCQSD_0319,"Doctor, Skin pe laalpan aur sujan hai ky image report me? jaldi batao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0320,Kaan ke infxn ka sign mil raha hai ky?,M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+MMCQSD_0321,"Doctor, Aankh me redness aur pani aa raha hai, rprt kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0322,Please explain: Is clinical query ka simple Hinglish summary do. jaldi batao.,M004,Mild sinus mucosal thickening without fluid level.,high
+MMCQSD_0323,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0324,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0325,"Doctor, Skin pe laalpan aur sujan hai kya image report me? Thoda simple samjhao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0326,"Doctor, Kaan ke infection ka sign mil raha hai kya? jaldi batao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0327,"Aankh me redness aur pani aa raha hai, report kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0328,Please explain: Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0329,"Doctor, Is clinical query ka simple Hinglish summary do.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0330,Is clinical query ka simple Hinglish summary do. jaldi batao.,M006,No acute abnormality detected in provided clinical image summary.,high
+MMCQSD_0331,"Please explain: Doctor, Skin pe laalpan aur sujan hai kya image report me? jaldi batao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0332,Kaan ke infxn ka sign mil raha hai kya? Thoda simple samjhao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0333,"Aankh me redness aur pani aa raha hai, rprt kya bolti hai?",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,low
+MMCQSD_0334,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0335,Is clinical query ka simple Hinglish summary do.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0336,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0337,"Doctor, Skin pe laalpan aur sujan hai kya image rprt me? jaldi batao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0338,"Doctor, Kaan ke infec ka sign mil raha hai kya? jaldi batao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0339,"Doctor, Aankh me redness aur pani aa raha hai, report kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0340,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0341,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0342,"Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M006,No acute abnormality detected in provided clinical image summary.,high
+MMCQSD_0343,"Doctor, Skin pe laalpan aur sujan hai kya image report me? Thoda simple samjhao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0344,"Doctor, Kaan ke infection ka sign mil raha hai kya? jaldi batao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0345,"Aankh me redness aur pani aa raha hai, report kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0346,Is clinical query ka simple Hinglish summary do.,M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0347,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0348,Please explain: Is clinical query ka simple Hinglish summary do.,M006,No acute abnormality detected in provided clinical image summary.,low
+MMCQSD_0349,"Please explain: Doctor, Skin pe laalpan aur sujan hai kya image report me?",M001,Skin erythema over forearm with mild edema; no abscess formation.,low
+MMCQSD_0350,Please explain: Kaan ke infection ka sign mil raha hai kya? jaldi batao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0351,"Doctor, Aankh me redness aur pani aa raha hai, report kya bolti hai? jaldi batao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,high
+MMCQSD_0352,"Doctor, Is clinical query ka simple Hinglish summary do.",M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0353,Is clinical query ka simple Hinglish summary do.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0354,Is clinical query ka simple Hinglish summary do. jaldi batao.,M006,No acute abnormality detected in provided clinical image summary.,high
+MMCQSD_0355,"Doctor, Skin pe laalpan aur sujan hai kya image report me? Thoda simple samjhao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0356,"Please explain: Doctor, Kaan ke infection ka sign mil raha hai kya?",M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+MMCQSD_0357,"Aankh me redness aur pani aa raha hai, report kya bolti hai? jaldi batao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,high
+MMCQSD_0358,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0359,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0360,Is clinical query ka simple Hinglish summary do. jaldi batao.,M006,No acute abnormality detected in provided clinical image summary.,high
+MMCQSD_0361,Please explain: Skin pe laalpan aur sujan hai kya image report me? jaldi batao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0362,Please explain: Kaan ke infec ka sign mil raha hai kya?,M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+MMCQSD_0363,"Please explain: Aankh me redness aur pani aa raha hai, report kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0364,Please explain: Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0365,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0366,Please explain: Is clinical query ka simple Hinglish summary do. jaldi batao.,M006,No acute abnormality detected in provided clinical image summary.,high
+MMCQSD_0367,Skin pe laalpan aur sujan hai kya image report me? jaldi batao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0368,"Doctor, Kaan ke infection ka sign mil raha hai kya? Thoda simple samjhao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0369,"Aankh me redness aur pani aa raha hai, report kya bolti hai? jaldi batao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,high
+MMCQSD_0370,Please explain: Is clinical query ka simple Hinglish summary do.,M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0371,"Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",high
+MMCQSD_0372,"Doctor, Is clinical query ka simple Hinglish summary do.",M006,No acute abnormality detected in provided clinical image summary.,low
+MMCQSD_0373,"Doctor, Skin pe laalpan aur sujan hai kya image report me? jaldi batao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0374,Kaan ke infxn ka sign mil raha hai kya?,M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+MMCQSD_0375,"Aankh me redness aur pani aa raha hai, report kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0376,"Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M004,Mild sinus mucosal thickening without fluid level.,high
+MMCQSD_0377,"Doctor, Is clinical query ka simple Hinglish summary do.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0378,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0379,"Doctor, Skin pe laalpan aur sujan hai kyaa image report me? Thoda simple samjhao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0380,Please explain: Kaan ke infec ka sign mil raha hai kyaa? Thoda simple samjhao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0381,"Doctor, Aankh me redness aur pani aa raha hai, rprt kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0382,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0383,Please explain: Is clinical query ka simple Hinglish summary do.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0384,Is clinical query ka simple Hinglish summary do. jaldi batao.,M006,No acute abnormality detected in provided clinical image summary.,high
+MMCQSD_0385,"Doctor, Skin pe laalpan aur sujan hai ky image report me?",M001,Skin erythema over forearm with mild edema; no abscess formation.,low
+MMCQSD_0386,Kaan ke infxn ka sign mil raha hai kya? Thoda simple samjhao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0387,"Aankh me redness aur pani aa raha hai, repot ky bolti hai?",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,low
+MMCQSD_0388,Is clinical query ka simple Hinglish summary do. jaldi batao.,M004,Mild sinus mucosal thickening without fluid level.,high
+MMCQSD_0389,Please explain: Is clinical query ka simple Hinglish summary do.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0390,"Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M006,No acute abnormality detected in provided clinical image summary.,high
+MMCQSD_0391,"Please explain: Doctor, Skin pe laalpan aur sujan hai kya image report me?",M001,Skin erythema over forearm with mild edema; no abscess formation.,low
+MMCQSD_0392,"Please explain: Doctor, Kaan ke infection ka sign mil raha hai kya? jaldi batao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0393,"Doctor, Aankh me redness aur pani aa raha hai, rprt kya bolti hai?",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,low
+MMCQSD_0394,Is clinical query ka simple Hinglish summary do.,M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0395,"Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",high
+MMCQSD_0396,Is clinical query ka simple Hinglish summary do.,M006,No acute abnormality detected in provided clinical image summary.,low
+MMCQSD_0397,Please explain: Skin pe laalpan aur sujan hai kya image report me? Thoda simple samjhao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0398,Please explain: Kaan ke infection ka sign mil raha hai kya? jaldi batao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0399,"Aankh me redness aur pani aa raha hai, report kya bolti hai? jaldi batao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,high
+MMCQSD_0400,Is clinical query ka simple Hinglish summary do.,M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0401,"Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",high
+MMCQSD_0402,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0403,"Doctor, Skin pe laalpan aur sujan hai kya image report me? Thoda simple samjhao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0404,Kaan ke infec ka sign mil raha hai kya? jaldi batao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0405,"Aankh me redness aur pani aa raha hai, rprt kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0406,"Doctor, Is clinical query ka simple Hinglish summary do.",M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0407,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",high
+MMCQSD_0408,Is clinical query ka simple Hinglish summary do. jaldi batao.,M006,No acute abnormality detected in provided clinical image summary.,high
+MMCQSD_0409,"Doctor, Skin pe laalpan aur sujan hai kya image report me? Thoda simple samjhao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0410,"Please explain: Doctor, Kaan ke infec ka sign mil raha hai kya? jaldi batao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0411,"Doctor, Aankh me redness aur pani aa raha hai, repot kyaa bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0412,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M004,Mild sinus mucosal thickening without fluid level.,high
+MMCQSD_0413,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0414,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0415,"Doctor, Skin pe laalpan aur sujan hai kyaa image repot me? Thoda simple samjhao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0416,Please explain: Kaan ke infection ka sign mil raha hai kya? Thoda simple samjhao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0417,"Doctor, Aankh me redness aur pani aa raha hai, report kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0418,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0419,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0420,Is clinical query ka simple Hinglish summary do.,M006,No acute abnormality detected in provided clinical image summary.,low
+MMCQSD_0421,Skin pe laalpan aur sujan hai ky image report me? Thoda simple samjhao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0422,"Doctor, Kaan ke infxn ka sign mil raha hai kya? Thoda simple samjhao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0423,"Please explain: Doctor, Aankh me redness aur pani aa raha hai, rprt kya bolti hai?",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,low
+MMCQSD_0424,"Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M004,Mild sinus mucosal thickening without fluid level.,high
+MMCQSD_0425,"Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",high
+MMCQSD_0426,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0427,Skin pe laalpan aur sujan hai kya image report me? Thoda simple samjhao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0428,"Doctor, Kaan ke infec ka sign mil raha hai ky? Thoda simple samjhao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0429,"Doctor, Aankh me redness aur pani aa raha hai, report ky bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0430,Please explain: Is clinical query ka simple Hinglish summary do. jaldi batao.,M004,Mild sinus mucosal thickening without fluid level.,high
+MMCQSD_0431,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0432,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M006,No acute abnormality detected in provided clinical image summary.,high
+MMCQSD_0433,"Doctor, Skin pe laalpan aur sujan hai kya image report me? Thoda simple samjhao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0434,Please explain: Kaan ke infxn ka sign mil raha hai kyaa? Thoda simple samjhao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0435,"Aankh me redness aur pani aa raha hai, rprt kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0436,Is clinical query ka simple Hinglish summary do.,M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0437,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0438,Is clinical query ka simple Hinglish summary do. jaldi batao.,M006,No acute abnormality detected in provided clinical image summary.,high
+MMCQSD_0439,"Doctor, Skin pe laalpan aur sujan hai kya image rprt me? jaldi batao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0440,Kaan ke infection ka sign mil raha hai kya? jaldi batao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0441,"Aankh me redness aur pani aa raha hai, report ky bolti hai? jaldi batao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,high
+MMCQSD_0442,Is clinical query ka simple Hinglish summary do. jaldi batao.,M004,Mild sinus mucosal thickening without fluid level.,high
+MMCQSD_0443,"Doctor, Is clinical query ka simple Hinglish summary do.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0444,"Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M006,No acute abnormality detected in provided clinical image summary.,high
+MMCQSD_0445,Skin pe laalpan aur sujan hai kya image report me? jaldi batao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0446,"Doctor, Kaan ke infxn ka sign mil raha hai kya?",M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+MMCQSD_0447,"Aankh me redness aur pani aa raha hai, repot kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0448,Please explain: Is clinical query ka simple Hinglish summary do.,M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0449,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0450,Is clinical query ka simple Hinglish summary do. jaldi batao.,M006,No acute abnormality detected in provided clinical image summary.,high
+MMCQSD_0451,Skin pe laalpan aur sujan hai ky image report me? Thoda simple samjhao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0452,"Doctor, Kaan ke infxn ka sign mil raha hai kya?",M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+MMCQSD_0453,"Aankh me redness aur pani aa raha hai, rprt ky bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0454,Is clinical query ka simple Hinglish summary do. jaldi batao.,M004,Mild sinus mucosal thickening without fluid level.,high
+MMCQSD_0455,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0456,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0457,Skin pe laalpan aur sujan hai kya image report me?,M001,Skin erythema over forearm with mild edema; no abscess formation.,low
+MMCQSD_0458,"Doctor, Kaan ke infxn ka sign mil raha hai kya? Thoda simple samjhao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0459,"Doctor, Aankh me redness aur pani aa raha hai, repot kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0460,"Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M004,Mild sinus mucosal thickening without fluid level.,high
+MMCQSD_0461,Please explain: Is clinical query ka simple Hinglish summary do.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0462,"Doctor, Is clinical query ka simple Hinglish summary do.",M006,No acute abnormality detected in provided clinical image summary.,low
+MMCQSD_0463,Skin pe laalpan aur sujan hai ky image report me?,M001,Skin erythema over forearm with mild edema; no abscess formation.,low
+MMCQSD_0464,"Doctor, Kaan ke infxn ka sign mil raha hai kyaa? Thoda simple samjhao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0465,"Aankh me redness aur pani aa raha hai, report kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0466,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0467,Is clinical query ka simple Hinglish summary do.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0468,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0469,"Please explain: Doctor, Skin pe laalpan aur sujan hai kya image report me?",M001,Skin erythema over forearm with mild edema; no abscess formation.,low
+MMCQSD_0470,Kaan ke infxn ka sign mil raha hai kya? Thoda simple samjhao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0471,"Doctor, Aankh me redness aur pani aa raha hai, rprt kyaa bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0472,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0473,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0474,Is clinical query ka simple Hinglish summary do. jaldi batao.,M006,No acute abnormality detected in provided clinical image summary.,high
+MMCQSD_0475,"Please explain: Doctor, Skin pe laalpan aur sujan hai kya image rprt me?",M001,Skin erythema over forearm with mild edema; no abscess formation.,low
+MMCQSD_0476,"Doctor, Kaan ke infection ka sign mil raha hai kya? jaldi batao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0477,"Aankh me redness aur pani aa raha hai, rprt kyaa bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0478,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0479,"Doctor, Is clinical query ka simple Hinglish summary do.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0480,"Doctor, Is clinical query ka simple Hinglish summary do.",M006,No acute abnormality detected in provided clinical image summary.,low
+MMCQSD_0481,"Doctor, Skin pe laalpan aur sujan hai kya image report me? Thoda simple samjhao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0482,"Doctor, Kaan ke infection ka sign mil raha hai kya?",M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+MMCQSD_0483,"Aankh me redness aur pani aa raha hai, report kya bolti hai?",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,low
+MMCQSD_0484,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do.",M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0485,Is clinical query ka simple Hinglish summary do.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0486,Is clinical query ka simple Hinglish summary do. jaldi batao.,M006,No acute abnormality detected in provided clinical image summary.,high
+MMCQSD_0487,Skin pe laalpan aur sujan hai kya image report me? jaldi batao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0488,"Doctor, Kaan ke infection ka sign mil raha hai kya? Thoda simple samjhao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0489,"Please explain: Aankh me redness aur pani aa raha hai, report kya bolti hai?",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,low
+MMCQSD_0490,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0491,Please explain: Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0492,"Doctor, Is clinical query ka simple Hinglish summary do.",M006,No acute abnormality detected in provided clinical image summary.,low
+MMCQSD_0493,Skin pe laalpan aur sujan hai kya image rprt me? jaldi batao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0494,Kaan ke infection ka sign mil raha hai ky? Thoda simple samjhao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0495,"Aankh me redness aur pani aa raha hai, report kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0496,Is clinical query ka simple Hinglish summary do.,M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0497,Is clinical query ka simple Hinglish summary do. jaldi batao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",high
+MMCQSD_0498,Is clinical query ka simple Hinglish summary do.,M006,No acute abnormality detected in provided clinical image summary.,low
+MMCQSD_0499,"Please explain: Doctor, Skin pe laalpan aur sujan hai ky image report me?",M001,Skin erythema over forearm with mild edema; no abscess formation.,low
+MMCQSD_0500,Please explain: Kaan ke infxn ka sign mil raha hai kyaa? Thoda simple samjhao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0501,"Please explain: Doctor, Aankh me redness aur pani aa raha hai, repot kya bolti hai? jaldi batao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,high
+MMCQSD_0502,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0503,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0504,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0505,Skin pe laalpan aur sujan hai kyaa image report me?,M001,Skin erythema over forearm with mild edema; no abscess formation.,low
+MMCQSD_0506,"Doctor, Kaan ke infection ka sign mil raha hai kya?",M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+MMCQSD_0507,"Doctor, Aankh me redness aur pani aa raha hai, report kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0508,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0509,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0510,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0511,"Doctor, Skin pe laalpan aur sujan hai kya image report me?",M001,Skin erythema over forearm with mild edema; no abscess formation.,low
+MMCQSD_0512,"Doctor, Kaan ke infxn ka sign mil raha hai kya? Thoda simple samjhao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0513,"Doctor, Aankh me redness aur pani aa raha hai, repot kyaa bolti hai? jaldi batao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,high
+MMCQSD_0514,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0515,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0516,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0517,Skin pe laalpan aur sujan hai kya image report me?,M001,Skin erythema over forearm with mild edema; no abscess formation.,low
+MMCQSD_0518,Kaan ke infection ka sign mil raha hai kya? jaldi batao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0519,"Doctor, Aankh me redness aur pani aa raha hai, report kya bolti hai? jaldi batao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,high
+MMCQSD_0520,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0521,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0522,Please explain: Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0523,Please explain: Skin pe laalpan aur sujan hai kya image rprt me? jaldi batao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0524,Kaan ke infec ka sign mil raha hai kyaa? Thoda simple samjhao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0525,"Doctor, Aankh me redness aur pani aa raha hai, report kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0526,Please explain: Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0527,"Doctor, Is clinical query ka simple Hinglish summary do.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0528,"Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M006,No acute abnormality detected in provided clinical image summary.,high
+MMCQSD_0529,Skin pe laalpan aur sujan hai kya image report me?,M001,Skin erythema over forearm with mild edema; no abscess formation.,low
+MMCQSD_0530,"Please explain: Doctor, Kaan ke infection ka sign mil raha hai kya?",M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+MMCQSD_0531,"Aankh me redness aur pani aa raha hai, report kya bolti hai? jaldi batao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,high
+MMCQSD_0532,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0533,Is clinical query ka simple Hinglish summary do. jaldi batao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",high
+MMCQSD_0534,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M006,No acute abnormality detected in provided clinical image summary.,high
+MMCQSD_0535,"Doctor, Skin pe laalpan aur sujan hai kya image report me? jaldi batao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0536,Kaan ke infec ka sign mil raha hai ky?,M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+MMCQSD_0537,"Please explain: Aankh me redness aur pani aa raha hai, report ky bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0538,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M004,Mild sinus mucosal thickening without fluid level.,high
+MMCQSD_0539,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",high
+MMCQSD_0540,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0541,Skin pe laalpan aur sujan hai kya image report me?,M001,Skin erythema over forearm with mild edema; no abscess formation.,low
+MMCQSD_0542,"Please explain: Doctor, Kaan ke infection ka sign mil raha hai kya?",M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+MMCQSD_0543,"Please explain: Aankh me redness aur pani aa raha hai, report ky bolti hai? jaldi batao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,high
+MMCQSD_0544,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0545,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0546,Please explain: Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0547,Skin pe laalpan aur sujan hai kya image report me? Thoda simple samjhao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0548,Kaan ke infection ka sign mil raha hai kya? Thoda simple samjhao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0549,"Aankh me redness aur pani aa raha hai, report kya bolti hai? jaldi batao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,high
+MMCQSD_0550,"Doctor, Is clinical query ka simple Hinglish summary do.",M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0551,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0552,Is clinical query ka simple Hinglish summary do.,M006,No acute abnormality detected in provided clinical image summary.,low
+MMCQSD_0553,Skin pe laalpan aur sujan hai kyaa image report me? jaldi batao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0554,"Doctor, Kaan ke infection ka sign mil raha hai kya? jaldi batao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0555,"Aankh me redness aur pani aa raha hai, rprt kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0556,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0557,"Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",high
+MMCQSD_0558,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0559,Please explain: Skin pe laalpan aur sujan hai kya image rprt me? Thoda simple samjhao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0560,Kaan ke infxn ka sign mil raha hai kyaa? Thoda simple samjhao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0561,"Doctor, Aankh me redness aur pani aa raha hai, report ky bolti hai? jaldi batao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,high
+MMCQSD_0562,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0563,"Doctor, Is clinical query ka simple Hinglish summary do.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0564,"Doctor, Is clinical query ka simple Hinglish summary do.",M006,No acute abnormality detected in provided clinical image summary.,low
+MMCQSD_0565,"Doctor, Skin pe laalpan aur sujan hai kya image rprt me? jaldi batao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0566,Kaan ke infection ka sign mil raha hai ky? jaldi batao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0567,"Aankh me redness aur pani aa raha hai, report kya bolti hai? jaldi batao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,high
+MMCQSD_0568,Is clinical query ka simple Hinglish summary do.,M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0569,Please explain: Is clinical query ka simple Hinglish summary do.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0570,Is clinical query ka simple Hinglish summary do. jaldi batao.,M006,No acute abnormality detected in provided clinical image summary.,high
+MMCQSD_0571,"Please explain: Doctor, Skin pe laalpan aur sujan hai kya image report me? Thoda simple samjhao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0572,Kaan ke infection ka sign mil raha hai kyaa? jaldi batao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0573,"Aankh me redness aur pani aa raha hai, report kya bolti hai? jaldi batao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,high
+MMCQSD_0574,Please explain: Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0575,"Doctor, Is clinical query ka simple Hinglish summary do.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0576,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0577,Skin pe laalpan aur sujan hai kya image rprt me? Thoda simple samjhao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0578,"Doctor, Kaan ke infec ka sign mil raha hai kya?",M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+MMCQSD_0579,"Please explain: Doctor, Aankh me redness aur pani aa raha hai, report kya bolti hai? jaldi batao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,high
+MMCQSD_0580,Is clinical query ka simple Hinglish summary do. jaldi batao.,M004,Mild sinus mucosal thickening without fluid level.,high
+MMCQSD_0581,Is clinical query ka simple Hinglish summary do. jaldi batao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",high
+MMCQSD_0582,Please explain: Is clinical query ka simple Hinglish summary do. jaldi batao.,M006,No acute abnormality detected in provided clinical image summary.,high
+MMCQSD_0583,Skin pe laalpan aur sujan hai kyaa image rprt me? jaldi batao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0584,Kaan ke infxn ka sign mil raha hai kya? Thoda simple samjhao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0585,"Please explain: Aankh me redness aur pani aa raha hai, report kya bolti hai? jaldi batao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,high
+MMCQSD_0586,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0587,Is clinical query ka simple Hinglish summary do.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0588,Please explain: Is clinical query ka simple Hinglish summary do. jaldi batao.,M006,No acute abnormality detected in provided clinical image summary.,high
+MMCQSD_0589,Skin pe laalpan aur sujan hai kyaa image rprt me?,M001,Skin erythema over forearm with mild edema; no abscess formation.,low
+MMCQSD_0590,Please explain: Kaan ke infection ka sign mil raha hai kya?,M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+MMCQSD_0591,"Please explain: Doctor, Aankh me redness aur pani aa raha hai, report kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0592,"Doctor, Is clinical query ka simple Hinglish summary do.",M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0593,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0594,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0595,"Doctor, Skin pe laalpan aur sujan hai kya image rprt me? jaldi batao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0596,Kaan ke infection ka sign mil raha hai kya? jaldi batao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0597,"Doctor, Aankh me redness aur pani aa raha hai, report kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0598,"Doctor, Is clinical query ka simple Hinglish summary do.",M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0599,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0600,Is clinical query ka simple Hinglish summary do. jaldi batao.,M006,No acute abnormality detected in provided clinical image summary.,high
+MMCQSD_0601,"Doctor, Skin pe laalpan aur sujan hai kya image rprt me? jaldi batao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0602,"Doctor, Kaan ke infection ka sign mil raha hai ky? Thoda simple samjhao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0603,"Doctor, Aankh me redness aur pani aa raha hai, report ky bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0604,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0605,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0606,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0607,Skin pe laalpan aur sujan hai ky image report me? Thoda simple samjhao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0608,"Please explain: Doctor, Kaan ke infection ka sign mil raha hai kya? Thoda simple samjhao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0609,"Doctor, Aankh me redness aur pani aa raha hai, report kyaa bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0610,"Doctor, Is clinical query ka simple Hinglish summary do.",M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0611,Is clinical query ka simple Hinglish summary do. jaldi batao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",high
+MMCQSD_0612,"Doctor, Is clinical query ka simple Hinglish summary do.",M006,No acute abnormality detected in provided clinical image summary.,low
+MMCQSD_0613,"Please explain: Doctor, Skin pe laalpan aur sujan hai kyaa image report me?",M001,Skin erythema over forearm with mild edema; no abscess formation.,low
+MMCQSD_0614,"Doctor, Kaan ke infection ka sign mil raha hai kya? Thoda simple samjhao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0615,"Doctor, Aankh me redness aur pani aa raha hai, rprt kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0616,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0617,"Doctor, Is clinical query ka simple Hinglish summary do.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0618,"Doctor, Is clinical query ka simple Hinglish summary do.",M006,No acute abnormality detected in provided clinical image summary.,low
+MMCQSD_0619,Skin pe laalpan aur sujan hai ky image report me? jaldi batao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0620,"Doctor, Kaan ke infec ka sign mil raha hai kya? jaldi batao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0621,"Aankh me redness aur pani aa raha hai, report kyaa bolti hai? jaldi batao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,high
+MMCQSD_0622,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0623,"Doctor, Is clinical query ka simple Hinglish summary do.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0624,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0625,"Doctor, Skin pe laalpan aur sujan hai kyaa image report me? Thoda simple samjhao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0626,Kaan ke infection ka sign mil raha hai kyaa? Thoda simple samjhao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0627,"Doctor, Aankh me redness aur pani aa raha hai, report kya bolti hai? jaldi batao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,high
+MMCQSD_0628,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0629,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0630,Is clinical query ka simple Hinglish summary do. jaldi batao.,M006,No acute abnormality detected in provided clinical image summary.,high
+MMCQSD_0631,Skin pe laalpan aur sujan hai kya image repot me?,M001,Skin erythema over forearm with mild edema; no abscess formation.,low
+MMCQSD_0632,"Doctor, Kaan ke infection ka sign mil raha hai kya?",M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+MMCQSD_0633,"Doctor, Aankh me redness aur pani aa raha hai, report kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0634,"Doctor, Is clinical query ka simple Hinglish summary do.",M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0635,Is clinical query ka simple Hinglish summary do. jaldi batao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",high
+MMCQSD_0636,"Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M006,No acute abnormality detected in provided clinical image summary.,high
+MMCQSD_0637,"Doctor, Skin pe laalpan aur sujan hai kyaa image report me? Thoda simple samjhao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0638,"Doctor, Kaan ke infection ka sign mil raha hai ky? Thoda simple samjhao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0639,"Doctor, Aankh me redness aur pani aa raha hai, report kya bolti hai?",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,low
+MMCQSD_0640,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0641,Is clinical query ka simple Hinglish summary do. jaldi batao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",high
+MMCQSD_0642,Is clinical query ka simple Hinglish summary do.,M006,No acute abnormality detected in provided clinical image summary.,low
+MMCQSD_0643,Skin pe laalpan aur sujan hai ky image report me? jaldi batao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0644,"Doctor, Kaan ke infection ka sign mil raha hai ky? jaldi batao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0645,"Aankh me redness aur pani aa raha hai, report kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0646,"Doctor, Is clinical query ka simple Hinglish summary do.",M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0647,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0648,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0649,Skin pe laalpan aur sujan hai kya image report me? jaldi batao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0650,"Doctor, Kaan ke infxn ka sign mil raha hai ky? Thoda simple samjhao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0651,"Please explain: Doctor, Aankh me redness aur pani aa raha hai, report ky bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0652,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0653,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0654,Is clinical query ka simple Hinglish summary do.,M006,No acute abnormality detected in provided clinical image summary.,low
+MMCQSD_0655,Skin pe laalpan aur sujan hai ky image repot me? Thoda simple samjhao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0656,"Please explain: Doctor, Kaan ke infection ka sign mil raha hai kyaa?",M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+MMCQSD_0657,"Please explain: Aankh me redness aur pani aa raha hai, report kyaa bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0658,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M004,Mild sinus mucosal thickening without fluid level.,high
+MMCQSD_0659,Please explain: Is clinical query ka simple Hinglish summary do.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0660,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0661,Please explain: Skin pe laalpan aur sujan hai kya image report me? Thoda simple samjhao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0662,Please explain: Kaan ke infection ka sign mil raha hai kya? Thoda simple samjhao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0663,"Please explain: Doctor, Aankh me redness aur pani aa raha hai, report kya bolti hai?",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,low
+MMCQSD_0664,"Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M004,Mild sinus mucosal thickening without fluid level.,high
+MMCQSD_0665,"Doctor, Is clinical query ka simple Hinglish summary do.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0666,Is clinical query ka simple Hinglish summary do.,M006,No acute abnormality detected in provided clinical image summary.,low
+MMCQSD_0667,Skin pe laalpan aur sujan hai kya image report me? jaldi batao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0668,"Please explain: Doctor, Kaan ke infection ka sign mil raha hai kya? jaldi batao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0669,"Aankh me redness aur pani aa raha hai, report kya bolti hai?",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,low
+MMCQSD_0670,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0671,Is clinical query ka simple Hinglish summary do. jaldi batao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",high
+MMCQSD_0672,"Doctor, Is clinical query ka simple Hinglish summary do.",M006,No acute abnormality detected in provided clinical image summary.,low
+MMCQSD_0673,Please explain: Skin pe laalpan aur sujan hai kyaa image report me? Thoda simple samjhao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0674,Please explain: Kaan ke infection ka sign mil raha hai kya? Thoda simple samjhao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0675,"Doctor, Aankh me redness aur pani aa raha hai, rprt kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0676,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0677,"Doctor, Is clinical query ka simple Hinglish summary do.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0678,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0679,Skin pe laalpan aur sujan hai kya image report me? Thoda simple samjhao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0680,Kaan ke infection ka sign mil raha hai kya? jaldi batao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0681,"Aankh me redness aur pani aa raha hai, report kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0682,Is clinical query ka simple Hinglish summary do.,M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0683,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0684,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0685,Please explain: Skin pe laalpan aur sujan hai kya image report me? jaldi batao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0686,Please explain: Kaan ke infection ka sign mil raha hai kya?,M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+MMCQSD_0687,"Doctor, Aankh me redness aur pani aa raha hai, report ky bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0688,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0689,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0690,Is clinical query ka simple Hinglish summary do. jaldi batao.,M006,No acute abnormality detected in provided clinical image summary.,high
+MMCQSD_0691,"Doctor, Skin pe laalpan aur sujan hai kyaa image report me?",M001,Skin erythema over forearm with mild edema; no abscess formation.,low
+MMCQSD_0692,Please explain: Kaan ke infxn ka sign mil raha hai kya?,M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+MMCQSD_0693,"Please explain: Aankh me redness aur pani aa raha hai, repot ky bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0694,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do.",M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0695,Please explain: Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0696,Please explain: Is clinical query ka simple Hinglish summary do.,M006,No acute abnormality detected in provided clinical image summary.,low
+MMCQSD_0697,Please explain: Skin pe laalpan aur sujan hai kya image repot me? jaldi batao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0698,"Please explain: Doctor, Kaan ke infxn ka sign mil raha hai kya? jaldi batao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0699,"Aankh me redness aur pani aa raha hai, report kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0700,"Doctor, Is clinical query ka simple Hinglish summary do.",M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0701,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",high
+MMCQSD_0702,Is clinical query ka simple Hinglish summary do.,M006,No acute abnormality detected in provided clinical image summary.,low
+MMCQSD_0703,Skin pe laalpan aur sujan hai ky image report me? jaldi batao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0704,Kaan ke infec ka sign mil raha hai ky? Thoda simple samjhao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0705,"Please explain: Aankh me redness aur pani aa raha hai, report kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0706,Please explain: Is clinical query ka simple Hinglish summary do. jaldi batao.,M004,Mild sinus mucosal thickening without fluid level.,high
+MMCQSD_0707,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0708,Is clinical query ka simple Hinglish summary do.,M006,No acute abnormality detected in provided clinical image summary.,low
+MMCQSD_0709,Skin pe laalpan aur sujan hai kya image repot me? jaldi batao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0710,"Doctor, Kaan ke infection ka sign mil raha hai kyaa? Thoda simple samjhao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0711,"Please explain: Doctor, Aankh me redness aur pani aa raha hai, report kya bolti hai?",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,low
+MMCQSD_0712,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0713,Is clinical query ka simple Hinglish summary do.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0714,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M006,No acute abnormality detected in provided clinical image summary.,high
+MMCQSD_0715,"Doctor, Skin pe laalpan aur sujan hai kya image report me? Thoda simple samjhao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0716,"Doctor, Kaan ke infxn ka sign mil raha hai kya? Thoda simple samjhao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0717,"Please explain: Doctor, Aankh me redness aur pani aa raha hai, report kya bolti hai?",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,low
+MMCQSD_0718,Is clinical query ka simple Hinglish summary do.,M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0719,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0720,"Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M006,No acute abnormality detected in provided clinical image summary.,high
+MMCQSD_0721,Skin pe laalpan aur sujan hai kyaa image report me?,M001,Skin erythema over forearm with mild edema; no abscess formation.,low
+MMCQSD_0722,Kaan ke infxn ka sign mil raha hai kya?,M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+MMCQSD_0723,"Doctor, Aankh me redness aur pani aa raha hai, report kyaa bolti hai? jaldi batao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,high
+MMCQSD_0724,"Doctor, Is clinical query ka simple Hinglish summary do.",M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0725,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0726,Is clinical query ka simple Hinglish summary do. jaldi batao.,M006,No acute abnormality detected in provided clinical image summary.,high
+MMCQSD_0727,"Doctor, Skin pe laalpan aur sujan hai ky image report me? jaldi batao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0728,Kaan ke infection ka sign mil raha hai kya? jaldi batao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0729,"Please explain: Aankh me redness aur pani aa raha hai, rprt kya bolti hai? jaldi batao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,high
+MMCQSD_0730,Please explain: Is clinical query ka simple Hinglish summary do. jaldi batao.,M004,Mild sinus mucosal thickening without fluid level.,high
+MMCQSD_0731,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0732,"Doctor, Is clinical query ka simple Hinglish summary do.",M006,No acute abnormality detected in provided clinical image summary.,low
+MMCQSD_0733,Skin pe laalpan aur sujan hai ky image repot me? jaldi batao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0734,Kaan ke infection ka sign mil raha hai kya?,M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+MMCQSD_0735,"Aankh me redness aur pani aa raha hai, report kya bolti hai? jaldi batao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,high
+MMCQSD_0736,Please explain: Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0737,"Doctor, Is clinical query ka simple Hinglish summary do.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0738,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0739,Skin pe laalpan aur sujan hai kya image report me? jaldi batao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0740,Kaan ke infection ka sign mil raha hai kya? Thoda simple samjhao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0741,"Doctor, Aankh me redness aur pani aa raha hai, report kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0742,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0743,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0744,Please explain: Is clinical query ka simple Hinglish summary do.,M006,No acute abnormality detected in provided clinical image summary.,low
+MMCQSD_0745,"Please explain: Doctor, Skin pe laalpan aur sujan hai kya image report me? jaldi batao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0746,"Doctor, Kaan ke infection ka sign mil raha hai kya? Thoda simple samjhao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0747,"Doctor, Aankh me redness aur pani aa raha hai, rprt kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0748,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0749,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0750,Is clinical query ka simple Hinglish summary do. jaldi batao.,M006,No acute abnormality detected in provided clinical image summary.,high
+MMCQSD_0751,Skin pe laalpan aur sujan hai ky image report me? Thoda simple samjhao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0752,"Doctor, Kaan ke infection ka sign mil raha hai ky? Thoda simple samjhao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0753,"Doctor, Aankh me redness aur pani aa raha hai, report kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0754,Please explain: Is clinical query ka simple Hinglish summary do. jaldi batao.,M004,Mild sinus mucosal thickening without fluid level.,high
+MMCQSD_0755,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0756,Is clinical query ka simple Hinglish summary do. jaldi batao.,M006,No acute abnormality detected in provided clinical image summary.,high
+MMCQSD_0757,Skin pe laalpan aur sujan hai kya image report me? Thoda simple samjhao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0758,Please explain: Kaan ke infection ka sign mil raha hai kyaa? jaldi batao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0759,"Doctor, Aankh me redness aur pani aa raha hai, report kya bolti hai?",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,low
+MMCQSD_0760,Please explain: Is clinical query ka simple Hinglish summary do.,M004,Mild sinus mucosal thickening without fluid level.,low
+MMCQSD_0761,"Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",high
+MMCQSD_0762,"Doctor, Is clinical query ka simple Hinglish summary do.",M006,No acute abnormality detected in provided clinical image summary.,low
+MMCQSD_0763,Please explain: Skin pe laalpan aur sujan hai kya image report me? Thoda simple samjhao.,M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0764,Kaan ke infxn ka sign mil raha hai kya?,M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+MMCQSD_0765,"Aankh me redness aur pani aa raha hai, report kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0766,Please explain: Is clinical query ka simple Hinglish summary do. jaldi batao.,M004,Mild sinus mucosal thickening without fluid level.,high
+MMCQSD_0767,Is clinical query ka simple Hinglish summary do.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0768,"Doctor, Is clinical query ka simple Hinglish summary do.",M006,No acute abnormality detected in provided clinical image summary.,low
+MMCQSD_0769,Please explain: Skin pe laalpan aur sujan hai ky image report me?,M001,Skin erythema over forearm with mild edema; no abscess formation.,low
+MMCQSD_0770,"Doctor, Kaan ke infection ka sign mil raha hai kya? jaldi batao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0771,"Doctor, Aankh me redness aur pani aa raha hai, report ky bolti hai? jaldi batao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,high
+MMCQSD_0772,Please explain: Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0773,"Doctor, Is clinical query ka simple Hinglish summary do.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0774,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0775,"Doctor, Skin pe laalpan aur sujan hai kya image report me? Thoda simple samjhao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0776,Kaan ke infection ka sign mil raha hai kya? jaldi batao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,high
+MMCQSD_0777,"Aankh me redness aur pani aa raha hai, report kya bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0778,Please explain: Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0779,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0780,Please explain: Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0781,"Doctor, Skin pe laalpan aur sujan hai ky image report me? Thoda simple samjhao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0782,Kaan ke infection ka sign mil raha hai kya?,M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+MMCQSD_0783,"Please explain: Aankh me redness aur pani aa raha hai, report kyaa bolti hai?",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,low
+MMCQSD_0784,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0785,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0786,Please explain: Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0787,"Doctor, Skin pe laalpan aur sujan hai kya image report me? jaldi batao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,high
+MMCQSD_0788,"Doctor, Kaan ke infection ka sign mil raha hai kya?",M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+MMCQSD_0789,"Aankh me redness aur pani aa raha hai, report kya bolti hai?",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,low
+MMCQSD_0790,"Please explain: Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M004,Mild sinus mucosal thickening without fluid level.,high
+MMCQSD_0791,Is clinical query ka simple Hinglish summary do.,M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+MMCQSD_0792,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M006,No acute abnormality detected in provided clinical image summary.,medium
+MMCQSD_0793,"Please explain: Doctor, Skin pe laalpan aur sujan hai kya image report me? Thoda simple samjhao.",M001,Skin erythema over forearm with mild edema; no abscess formation.,medium
+MMCQSD_0794,"Doctor, Kaan ke infection ka sign mil raha hai kya? Thoda simple samjhao.",M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+MMCQSD_0795,"Aankh me redness aur pani aa raha hai, repot ky bolti hai? Thoda simple samjhao.",M003,Conjunctival congestion with watery discharge; no corneal ulcer.,medium
+MMCQSD_0796,Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.,M004,Mild sinus mucosal thickening without fluid level.,medium
+MMCQSD_0797,"Doctor, Is clinical query ka simple Hinglish summary do. Thoda simple samjhao.",M005,"Localized soft tissue swelling around ankle, no fracture line seen.",medium
+MMCQSD_0798,"Doctor, Is clinical query ka simple Hinglish summary do. jaldi batao.",M006,No acute abnormality detected in provided clinical image summary.,high
+MMCQSD_0799,"Doctor, Skin pe laalpan aur sujan hai kya image report me?",M001,Skin erythema over forearm with mild edema; no abscess formation.,low
+MMCQSD_0800,Please explain: Kaan ke infxn ka sign mil raha hai kya? Thoda simple samjhao.,M002,Otitis externa signs with canal edema; tympanic membrane intact.,medium
+D_openi_000,distractor,D_O001,Right-sided pleural effusion is present. Heart size is within normal limits.,low
+D_openi_001,distractor,D_O006,Dense right lower lobe consolidation with air bronchograms.,low
+D_openi_002,distractor,D_O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+D_openi_003,distractor,D_O004,No acute cardiopulmonary abnormality detected.,low
+D_openi_004,distractor,D_O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",low
+D_openi_005,distractor,D_O005,Moderate right pleural effusion with compressive atelectasis.,low
+D_pubmedqa_000,distractor,D_P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,low
+D_pubmedqa_001,distractor,D_P002,Meta-analysis indicates no significant mortality benefit in this cohort.,low
+D_pubmedqa_002,distractor,D_P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+D_pubmedqa_003,distractor,D_P003,Study reports improved symptom control with combination therapy.,low
+D_pubmedqa_004,distractor,D_P005,No clear association was observed between intervention and primary endpoint.,low
+D_pubmedqa_005,distractor,D_P006,Moderate evidence quality supports short-term efficacy.,low
+D_mmed_bench_000,distractor,D_B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+D_mmed_bench_001,distractor,D_B002,Pathology-like description notes inflammatory infiltrate without malignancy.,low
+D_mmed_bench_002,distractor,D_B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,low
+D_mmed_bench_003,distractor,D_B005,Distractor context: normal variant anatomy without acute pathology.,low
+D_mmed_bench_004,distractor,D_B001,Chest image shows right pleural effusion with basal atelectatic change.,low
+D_mmed_bench_005,distractor,D_B006,Cardiac silhouette mildly enlarged with vascular prominence.,low

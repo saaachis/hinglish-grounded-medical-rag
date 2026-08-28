@@ -1,0 +1,801 @@
+sample_id,query_hinglish,report_id,report_text,cmi_bucket
+OPENI_0001,"Please explain: Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0002,Kya report me pneumonia ya infection ka sign hai? jaldi batao.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",high
+OPENI_0003,"Doctor, Dil ka size bada dikh raha hai kya? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0004,"Please explain: Doctor, report me koi acute issue nahi hai kya? jaldi batao.",O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0005,"Doctor, right/left chest side me pani ya fluid hai kyaa? Mujhe khansi aur bukhar bhi hai. Dil se related issue ka doubt bhi hai. Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0006,Kya report me pneumonia ya infection ka sign hai? Thoda simple samjhao.,O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0007,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya?",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,low
+OPENI_0008,"Kya rprt me pneumonia ya infection ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0009,"Please explain: Doctor, Dil ka size bada dikh raha hai kya? Cough fever ke symptoms bhi chal rahe hai.",O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0010,"Please explain: Doctor, Report me koi acute issue nahi hai kya? Cough fever ke symptoms bhi chal rahe hai. jaldi batao.",O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0011,"Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai.",O005,Moderate right pleural effusion with compressive atelectasis.,low
+OPENI_0012,Kya rprt me pneumonia ya infection ka sign hai? Thoda simple samjhao.,O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0013,"Doctor, right/left chest side me pani ya fluid hai kyaa? jaldi batao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,high
+OPENI_0014,"Doctor, Kya report me pneumonia ya infection ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0015,"Doctor, Dil ka size bada dikh raha hai kya? Thoda simple samjhao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0016,Please explain: repot me koi acute issue nahi hai kya? Cough fever ke symptoms bhi chal rahe hai. jaldi batao.,O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0017,"Doctor, Doctor, right/left chest side me pani ya fluid hai ky? Cough fever ke symptoms bhi chal rahe hai.",O005,Moderate right pleural effusion with compressive atelectasis.,low
+OPENI_0018,"Doctor, kya report me pneumonia ya infec ka sign hai? Dil se related issue ka doubt bhi hai. Thoda simple samjhao.",O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0019,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya?",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,low
+OPENI_0020,"Please explain: ky rprt me pneumonia ya infection ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0021,"Doctor, Dil ka size bada dikh raha hai kya? Thoda simple samjhao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0022,"Doctor, Report me koi acute issue nahi hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0023,"Please explain: Doctor, Doctor, right/left chest side me pani ya fluid hai ky?",O005,Moderate right pleural effusion with compressive atelectasis.,low
+OPENI_0024,"Doctor, Kya report me pneumonia ya infxn ka sign hai? jaldi batao.",O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0025,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. jaldi batao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,high
+OPENI_0026,"Please explain: Doctor, Kya report me pneumonia ya infxn ka sign hai? Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0027,Dil ka size bada dikh raha hai kya? Mujhe khansi aur bukhar bhi hai. jaldi batao.,O003,Mild cardiomegaly with pulmonary vascular congestion.,high
+OPENI_0028,Report me koi acute issue nahi hai kyaa? Cough fever ke symptoms bhi chal rahe hai. jaldi batao.,O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0029,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai. jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0030,"Doctor, Kya report me pneumonia ya infection ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai.",O006,Dense right lower lobe consolidation with air bronchograms.,low
+OPENI_0031,"Please explain: Doctor, right/left chest side me pani ya fluid hai kyaa? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0032,"Doctor, kyaa report me pneumonia ya infxn ka sign hai? Dil se related issue ka doubt bhi hai.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",low
+OPENI_0033,"Doctor, Dil ka size bada dikh raha hai kya?",O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0034,Report me koi acute issue nahi hai ky? Cough fever ke symptoms bhi chal rahe hai. jaldi batao.,O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0035,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai. Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0036,"Kya repot me pneumonia ya infection ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0037,"Please explain: Doctor, right/left chest side me pani ya fluid hai kya? jaldi batao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,high
+OPENI_0038,kya report me pneumonia ya infection ka sign hai?,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",low
+OPENI_0039,"Doctor, Dil ka size bada dikh raha hai kya? jaldi batao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,high
+OPENI_0040,"Doctor, rprt me koi acute issue nahi hai kya? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.",O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0041,"Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai.",O005,Moderate right pleural effusion with compressive atelectasis.,low
+OPENI_0042,"Please explain: Doctor, Kya rprt me pneumonia ya infection ka sign hai?",O006,Dense right lower lobe consolidation with air bronchograms.,low
+OPENI_0043,"Doctor, Doctor, right/left chest side me pani ya fluid hai ky? Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0044,"Doctor, Kya rprt me pneumonia ya infec ka sign hai? Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0045,"Please explain: Doctor, Dil ka size bada dikh raha hai kyaa? Mujhe khansi aur bukhar bhi hai. jaldi batao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,high
+OPENI_0046,Report me koi acute issue nahi hai kyaa? jaldi batao.,O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0047,"Doctor, right/left chest side me pani ya fluid hai kyaa? Dil se related issue ka doubt bhi hai.",O005,Moderate right pleural effusion with compressive atelectasis.,low
+OPENI_0048,kya report me pneumonia ya infec ka sign hai? Dil se related issue ka doubt bhi hai. Thoda simple samjhao.,O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0049,"Doctor, right/left chest side me pani ya fluid hai ky? Mujhe khansi aur bukhar bhi hai.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,low
+OPENI_0050,kya rprt me pneumonia ya infection ka sign hai? jaldi batao.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",high
+OPENI_0051,"Doctor, Dil ka size bada dikh raha hai kya? Cough fever ke symptoms bhi chal rahe hai.",O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0052,Please explain: rprt me koi acute issue nahi hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.,O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0053,"Doctor, Doctor, right/left chest side me pani ya fluid hai ky? Mujhe khansi aur bukhar bhi hai. Dil se related issue ka doubt bhi hai. jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0054,"Doctor, Kya rprt me pneumonia ya infxn ka sign hai? Thoda simple samjhao.",O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0055,"Please explain: Doctor, right/left chest side me pani ya fluid hai kya? Dil se related issue ka doubt bhi hai.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,low
+OPENI_0056,kyaa rprt me pneumonia ya infection ka sign hai? jaldi batao.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",high
+OPENI_0057,Dil ka size bada dikh raha hai ky? Mujhe khansi aur bukhar bhi hai.,O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0058,"report me koi acute issue nahi hai kya? Cough fever ke symptoms bhi chal rahe hai. Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0059,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai. Heart beat fast lag rahi hai, chest pressure bhi hai. jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0060,"Please explain: Doctor, kyaa report me pneumonia ya infec ka sign hai? Dil se related issue ka doubt bhi hai. jaldi batao.",O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0061,"Please explain: Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. Dil se related issue ka doubt bhi hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0062,"Doctor, Kya report me pneumonia ya infec ka sign hai? Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0063,Please explain: Dil ka size bada dikh raha hai kya? jaldi batao.,O003,Mild cardiomegaly with pulmonary vascular congestion.,high
+OPENI_0064,Report me koi acute issue nahi hai kya? Thoda simple samjhao.,O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0065,"Doctor, right/left chest side me pani ya fluid hai kya? Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0066,Kya report me pneumonia ya infxn ka sign hai? jaldi batao.,O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0067,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Dil se related issue ka doubt bhi hai. jaldi batao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,high
+OPENI_0068,"Doctor, Kya report me pneumonia ya infection ka sign hai? jaldi batao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",high
+OPENI_0069,"Doctor, Dil ka size bada dikh raha hai ky? Thoda simple samjhao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0070,report me koi acute issue nahi hai kya?,O004,No acute cardiopulmonary abnormality detected.,low
+OPENI_0071,"Doctor, right/left chest side me pani ya fluid hai kya? Dil se related issue ka doubt bhi hai.",O005,Moderate right pleural effusion with compressive atelectasis.,low
+OPENI_0072,"Kya report me pneumonia ya infection ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0073,"Please explain: Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0074,"Doctor, Kya report me pneumonia ya infection ka sign hai? jaldi batao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",high
+OPENI_0075,"Doctor, Dil ka size bada dikh raha hai kya?",O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0076,"Doctor, repot me koi acute issue nahi hai kya? Dil se related issue ka doubt bhi hai.",O004,No acute cardiopulmonary abnormality detected.,low
+OPENI_0077,"Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai.",O005,Moderate right pleural effusion with compressive atelectasis.,low
+OPENI_0078,Kya report me pneumonia ya infection ka sign hai?,O006,Dense right lower lobe consolidation with air bronchograms.,low
+OPENI_0079,"Doctor, right/left chest side me pani ya fluid hai kya? jaldi batao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,high
+OPENI_0080,"Doctor, kya report me pneumonia ya infection ka sign hai?",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",low
+OPENI_0081,Please explain: Dil ka size bada dikh raha hai kya?,O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0082,report me koi acute issue nahi hai kyaa? Cough fever ke symptoms bhi chal rahe hai. jaldi batao.,O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0083,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0084,Please explain: kyaa report me pneumonia ya infxn ka sign hai?,O006,Dense right lower lobe consolidation with air bronchograms.,low
+OPENI_0085,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0086,"Kya report me pneumonia ya infection ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai. jaldi batao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",high
+OPENI_0087,"Doctor, Dil ka size bada dikh raha hai kya? Thoda simple samjhao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0088,repot me koi acute issue nahi hai kya? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.,O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0089,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. Dil se related issue ka doubt bhi hai. Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0090,"Please explain: kya report me pneumonia ya infection ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0091,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,low
+OPENI_0092,"Please explain: Doctor, Kya repot me pneumonia ya infection ka sign hai? Dil se related issue ka doubt bhi hai. Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0093,Dil ka size bada dikh raha hai kya? Thoda simple samjhao.,O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0094,"Doctor, Report me koi acute issue nahi hai kya? Dil se related issue ka doubt bhi hai. Thoda simple samjhao.",O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0095,"Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0096,"Doctor, Kya report me pneumonia ya infection ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0097,"Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. jaldi batao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,high
+OPENI_0098,"Doctor, Kya report me pneumonia ya infection ka sign hai?",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",low
+OPENI_0099,"Doctor, Dil ka size bada dikh raha hai kyaa?",O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0100,Report me koi acute issue nahi hai kya? Dil se related issue ka doubt bhi hai. Thoda simple samjhao.,O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0101,"Doctor, right/left chest side me pani ya fluid hai ky? Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0102,"Please explain: Doctor, Kya report me pneumonia ya infection ka sign hai?",O006,Dense right lower lobe consolidation with air bronchograms.,low
+OPENI_0103,"Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,low
+OPENI_0104,Please explain: Kya repot me pneumonia ya infection ka sign hai? Dil se related issue ka doubt bhi hai.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",low
+OPENI_0105,"Doctor, Dil ka size bada dikh raha hai kya? Mujhe khansi aur bukhar bhi hai.",O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0106,"Doctor, Report me koi acute issue nahi hai ky? Dil se related issue ka doubt bhi hai. Thoda simple samjhao.",O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0107,"Please explain: Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0108,"Doctor, ky rprt me pneumonia ya infec ka sign hai? Thoda simple samjhao.",O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0109,"Please explain: Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0110,"Please explain: Kya report me pneumonia ya infection ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai. jaldi batao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",high
+OPENI_0111,Dil ka size bada dikh raha hai kya?,O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0112,"Please explain: Doctor, report me koi acute issue nahi hai kya? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.",O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0113,"Doctor, right/left chest side me pani ya fluid hai ky? Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0114,kya report me pneumonia ya infxn ka sign hai? jaldi batao.,O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0115,"Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai. Dil se related issue ka doubt bhi hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0116,Please explain: kyaa report me pneumonia ya infxn ka sign hai?,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",low
+OPENI_0117,Dil ka size bada dikh raha hai kya?,O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0118,Please explain: rprt me koi acute issue nahi hai kya? Dil se related issue ka doubt bhi hai.,O004,No acute cardiopulmonary abnormality detected.,low
+OPENI_0119,"Please explain: Doctor, Doctor, right/left chest side me pani ya fluid hai kya? jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0120,Please explain: ky report me pneumonia ya infection ka sign hai? Thoda simple samjhao.,O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0121,"Doctor, right/left chest side me pani ya fluid hai kya? Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0122,"Kya report me pneumonia ya infec ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",low
+OPENI_0123,Dil ka size bada dikh raha hai kya? Mujhe khansi aur bukhar bhi hai. jaldi batao.,O003,Mild cardiomegaly with pulmonary vascular congestion.,high
+OPENI_0124,"Doctor, Report me koi acute issue nahi hai kya? Mujhe khansi aur bukhar bhi hai. jaldi batao.",O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0125,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai.",O005,Moderate right pleural effusion with compressive atelectasis.,low
+OPENI_0126,"Doctor, kyaa rprt me pneumonia ya infection ka sign hai? Thoda simple samjhao.",O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0127,"Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,low
+OPENI_0128,"Doctor, kyaa report me pneumonia ya infection ka sign hai?",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",low
+OPENI_0129,Please explain: Dil ka size bada dikh raha hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.,O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0130,Please explain: Report me koi acute issue nahi hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.,O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0131,"Please explain: Doctor, Doctor, right/left chest side me pani ya fluid hai kyaa?",O005,Moderate right pleural effusion with compressive atelectasis.,low
+OPENI_0132,ky report me pneumonia ya infxn ka sign hai?,O006,Dense right lower lobe consolidation with air bronchograms.,low
+OPENI_0133,"Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,low
+OPENI_0134,"Doctor, Kya report me pneumonia ya infection ka sign hai? jaldi batao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",high
+OPENI_0135,Dil ka size bada dikh raha hai kyaa?,O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0136,"Doctor, rprt me koi acute issue nahi hai kya? Thoda simple samjhao.",O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0137,"Please explain: Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0138,"Doctor, kya repot me pneumonia ya infection ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai. jaldi batao.",O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0139,"Doctor, Doctor, right/left chest side me pani ya fluid hai ky? Cough fever ke symptoms bhi chal rahe hai.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,low
+OPENI_0140,"Doctor, Kya rprt me pneumonia ya infxn ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0141,Dil ka size bada dikh raha hai kya? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.,O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0142,Report me koi acute issue nahi hai kya? Thoda simple samjhao.,O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0143,"Doctor, Doctor, right/left chest side me pani ya fluid hai ky? Mujhe khansi aur bukhar bhi hai. jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0144,"Doctor, Kya report me pneumonia ya infection ka sign hai? Thoda simple samjhao.",O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0145,"Doctor, right/left chest side me pani ya fluid hai kya? Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0146,Kya report me pneumonia ya infxn ka sign hai?,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",low
+OPENI_0147,Dil ka size bada dikh raha hai kya? Mujhe khansi aur bukhar bhi hai. jaldi batao.,O003,Mild cardiomegaly with pulmonary vascular congestion.,high
+OPENI_0148,"Please explain: Doctor, Report me koi acute issue nahi hai ky? Heart beat fast lag rahi hai, chest pressure bhi hai.",O004,No acute cardiopulmonary abnormality detected.,low
+OPENI_0149,"Doctor, right/left chest side me pani ya fluid hai kya? jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0150,"Please explain: Kya report me pneumonia ya infection ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0151,"Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. Dil se related issue ka doubt bhi hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0152,"Please explain: Doctor, Kya rprt me pneumonia ya infection ka sign hai? Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0153,Dil ka size bada dikh raha hai kya? Thoda simple samjhao.,O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0154,"Please explain: Doctor, repot me koi acute issue nahi hai kya? Dil se related issue ka doubt bhi hai.",O004,No acute cardiopulmonary abnormality detected.,low
+OPENI_0155,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0156,Kya report me pneumonia ya infxn ka sign hai? Thoda simple samjhao.,O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0157,"Doctor, right/left chest side me pani ya fluid hai kya? Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0158,kyaa report me pneumonia ya infection ka sign hai? Dil se related issue ka doubt bhi hai. Thoda simple samjhao.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0159,"Please explain: Doctor, Dil ka size bada dikh raha hai ky?",O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0160,Report me koi acute issue nahi hai kya? jaldi batao.,O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0161,"Doctor, Doctor, right/left chest side me pani ya fluid hai ky? Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0162,kya report me pneumonia ya infec ka sign hai? Dil se related issue ka doubt bhi hai. Thoda simple samjhao.,O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0163,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0164,"kyaa report me pneumonia ya infec ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0165,Dil ka size bada dikh raha hai kya? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.,O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0166,"Doctor, Report me koi acute issue nahi hai kya? Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0167,"Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. Dil se related issue ka doubt bhi hai. Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0168,"Doctor, Kya report me pneumonia ya infection ka sign hai?",O006,Dense right lower lobe consolidation with air bronchograms.,low
+OPENI_0169,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,low
+OPENI_0170,"Please explain: Doctor, Kya report me pneumonia ya infection ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0171,"Doctor, Dil ka size bada dikh raha hai kya? Mujhe khansi aur bukhar bhi hai.",O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0172,"Doctor, Report me koi acute issue nahi hai kya? Thoda simple samjhao.",O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0173,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0174,"Please explain: Doctor, Kya report me pneumonia ya infection ka sign hai? Dil se related issue ka doubt bhi hai. jaldi batao.",O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0175,"Doctor, right/left chest side me pani ya fluid hai ky? Dil se related issue ka doubt bhi hai. jaldi batao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,high
+OPENI_0176,kyaa report me pneumonia ya infection ka sign hai? Thoda simple samjhao.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0177,"Please explain: Doctor, Dil ka size bada dikh raha hai kya? Thoda simple samjhao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0178,"Please explain: Doctor, report me koi acute issue nahi hai kya? Mujhe khansi aur bukhar bhi hai. jaldi batao.",O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0179,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0180,"Doctor, Kya report me pneumonia ya infection ka sign hai? Thoda simple samjhao.",O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0181,"Please explain: Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai. jaldi batao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,high
+OPENI_0182,"Doctor, kyaa report me pneumonia ya infec ka sign hai? jaldi batao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",high
+OPENI_0183,"Please explain: Doctor, Dil ka size bada dikh raha hai ky? jaldi batao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,high
+OPENI_0184,"Doctor, Report me koi acute issue nahi hai kya? jaldi batao.",O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0185,"Please explain: Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0186,"Doctor, kyaa report me pneumonia ya infection ka sign hai? jaldi batao.",O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0187,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0188,"Doctor, Kya report me pneumonia ya infection ka sign hai? Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0189,Dil ka size bada dikh raha hai kyaa? Thoda simple samjhao.,O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0190,"Doctor, rprt me koi acute issue nahi hai kyaa? jaldi batao.",O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0191,"Doctor, right/left chest side me pani ya fluid hai kya?",O005,Moderate right pleural effusion with compressive atelectasis.,low
+OPENI_0192,Kya report me pneumonia ya infection ka sign hai? Thoda simple samjhao.,O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0193,"Doctor, Doctor, right/left chest side me pani ya fluid hai kyaa? Cough fever ke symptoms bhi chal rahe hai. Heart beat fast lag rahi hai, chest pressure bhi hai.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,low
+OPENI_0194,Kya repot me pneumonia ya infection ka sign hai? Thoda simple samjhao.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0195,"Doctor, Dil ka size bada dikh raha hai kya? Thoda simple samjhao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0196,"Doctor, Report me koi acute issue nahi hai ky? Dil se related issue ka doubt bhi hai. jaldi batao.",O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0197,"Doctor, right/left chest side me pani ya fluid hai kya?",O005,Moderate right pleural effusion with compressive atelectasis.,low
+OPENI_0198,"Doctor, Kya report me pneumonia ya infec ka sign hai?",O006,Dense right lower lobe consolidation with air bronchograms.,low
+OPENI_0199,"Please explain: Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai. Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0200,kyaa report me pneumonia ya infection ka sign hai? Thoda simple samjhao.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0201,"Doctor, Dil ka size bada dikh raha hai kya? jaldi batao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,high
+OPENI_0202,"Please explain: Doctor, Report me koi acute issue nahi hai ky? Cough fever ke symptoms bhi chal rahe hai.",O004,No acute cardiopulmonary abnormality detected.,low
+OPENI_0203,"Please explain: Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0204,ky report me pneumonia ya infection ka sign hai? Thoda simple samjhao.,O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0205,"Please explain: Doctor, Doctor, right/left chest side me pani ya fluid hai kyaa? Mujhe khansi aur bukhar bhi hai.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,low
+OPENI_0206,"Doctor, kyaa report me pneumonia ya infection ka sign hai? Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0207,"Please explain: Doctor, Dil ka size bada dikh raha hai kya? Thoda simple samjhao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0208,Please explain: Report me koi acute issue nahi hai kya? Thoda simple samjhao.,O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0209,"Please explain: Doctor, right/left chest side me pani ya fluid hai kya? Heart beat fast lag rahi hai, chest pressure bhi hai.",O005,Moderate right pleural effusion with compressive atelectasis.,low
+OPENI_0210,ky report me pneumonia ya infection ka sign hai? Thoda simple samjhao.,O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0211,"Doctor, right/left chest side me pani ya fluid hai kya? Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0212,"Kya report me pneumonia ya infection ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai. jaldi batao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",high
+OPENI_0213,"Doctor, Dil ka size bada dikh raha hai kyaa? Thoda simple samjhao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0214,Report me koi acute issue nahi hai kya? Thoda simple samjhao.,O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0215,"Doctor, Doctor, right/left chest side me pani ya fluid hai ky? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0216,ky report me pneumonia ya infec ka sign hai? Thoda simple samjhao.,O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0217,"Doctor, Doctor, right/left chest side me pani ya fluid hai kyaa? Cough fever ke symptoms bhi chal rahe hai. Heart beat fast lag rahi hai, chest pressure bhi hai.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,low
+OPENI_0218,kyaa report me pneumonia ya infection ka sign hai?,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",low
+OPENI_0219,"Doctor, Dil ka size bada dikh raha hai kyaa?",O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0220,"Report me koi acute issue nahi hai kya? Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0221,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0222,ky report me pneumonia ya infection ka sign hai?,O006,Dense right lower lobe consolidation with air bronchograms.,low
+OPENI_0223,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0224,"Please explain: ky report me pneumonia ya infection ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0225,"Doctor, Dil ka size bada dikh raha hai kya? Cough fever ke symptoms bhi chal rahe hai. jaldi batao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,high
+OPENI_0226,repot me koi acute issue nahi hai kya?,O004,No acute cardiopulmonary abnormality detected.,low
+OPENI_0227,"Doctor, right/left chest side me pani ya fluid hai kyaa? Heart beat fast lag rahi hai, chest pressure bhi hai.",O005,Moderate right pleural effusion with compressive atelectasis.,low
+OPENI_0228,"Doctor, Kya report me pneumonia ya infection ka sign hai? Thoda simple samjhao.",O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0229,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? jaldi batao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,high
+OPENI_0230,Kya report me pneumonia ya infxn ka sign hai? jaldi batao.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",high
+OPENI_0231,"Doctor, Dil ka size bada dikh raha hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0232,"Doctor, Report me koi acute issue nahi hai kya? Mujhe khansi aur bukhar bhi hai. Dil se related issue ka doubt bhi hai.",O004,No acute cardiopulmonary abnormality detected.,low
+OPENI_0233,"Please explain: Doctor, Doctor, right/left chest side me pani ya fluid hai kya? jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0234,"Doctor, Kya report me pneumonia ya infection ka sign hai? Thoda simple samjhao.",O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0235,"Doctor, right/left chest side me pani ya fluid hai kya? Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0236,"Doctor, Kya report me pneumonia ya infection ka sign hai? Dil se related issue ka doubt bhi hai. Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0237,Dil ka size bada dikh raha hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.,O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0238,"Doctor, Report me koi acute issue nahi hai kya? Mujhe khansi aur bukhar bhi hai. jaldi batao.",O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0239,"Doctor, right/left chest side me pani ya fluid hai kyaa? Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0240,Kya report me pneumonia ya infection ka sign hai? jaldi batao.,O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0241,"Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,low
+OPENI_0242,Kya rprt me pneumonia ya infection ka sign hai? Dil se related issue ka doubt bhi hai. Thoda simple samjhao.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0243,"Doctor, Dil ka size bada dikh raha hai kya? Mujhe khansi aur bukhar bhi hai. jaldi batao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,high
+OPENI_0244,"Doctor, rprt me koi acute issue nahi hai ky? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.",O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0245,"Doctor, Doctor, right/left chest side me pani ya fluid hai ky? jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0246,ky repot me pneumonia ya infection ka sign hai? Thoda simple samjhao.,O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0247,"Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0248,"Doctor, Kya report me pneumonia ya infection ka sign hai? Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0249,"Please explain: Doctor, Dil ka size bada dikh raha hai ky? Thoda simple samjhao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0250,"Doctor, rprt me koi acute issue nahi hai kyaa? jaldi batao.",O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0251,"Doctor, Doctor, right/left chest side me pani ya fluid hai ky? Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0252,Kya report me pneumonia ya infection ka sign hai? Thoda simple samjhao.,O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0253,"Please explain: Doctor, right/left chest side me pani ya fluid hai kya? Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0254,"Please explain: Doctor, Kya repot me pneumonia ya infection ka sign hai? Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0255,"Doctor, Dil ka size bada dikh raha hai ky? Mujhe khansi aur bukhar bhi hai.",O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0256,Report me koi acute issue nahi hai ky? Thoda simple samjhao.,O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0257,"Doctor, Doctor, right/left chest side me pani ya fluid hai kyaa? Cough fever ke symptoms bhi chal rahe hai.",O005,Moderate right pleural effusion with compressive atelectasis.,low
+OPENI_0258,"Please explain: Doctor, Kya report me pneumonia ya infection ka sign hai?",O006,Dense right lower lobe consolidation with air bronchograms.,low
+OPENI_0259,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0260,"Please explain: Doctor, Kya report me pneumonia ya infection ka sign hai? Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0261,"Doctor, Dil ka size bada dikh raha hai kya?",O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0262,"Doctor, rprt me koi acute issue nahi hai kya?",O004,No acute cardiopulmonary abnormality detected.,low
+OPENI_0263,"Please explain: Doctor, right/left chest side me pani ya fluid hai kyaa? Cough fever ke symptoms bhi chal rahe hai.",O005,Moderate right pleural effusion with compressive atelectasis.,low
+OPENI_0264,"Doctor, Kya report me pneumonia ya infection ka sign hai?",O006,Dense right lower lobe consolidation with air bronchograms.,low
+OPENI_0265,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Dil se related issue ka doubt bhi hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0266,kya report me pneumonia ya infection ka sign hai? Thoda simple samjhao.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0267,"Doctor, Dil ka size bada dikh raha hai ky? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0268,"Doctor, repot me koi acute issue nahi hai kyaa? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.",O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0269,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Dil se related issue ka doubt bhi hai. Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0270,"Please explain: Doctor, Kya report me pneumonia ya infection ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0271,"Doctor, right/left chest side me pani ya fluid hai kya? Dil se related issue ka doubt bhi hai. jaldi batao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,high
+OPENI_0272,"Kya report me pneumonia ya infection ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0273,Dil ka size bada dikh raha hai kya? Mujhe khansi aur bukhar bhi hai.,O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0274,Report me koi acute issue nahi hai kya? jaldi batao.,O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0275,"Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. Heart beat fast lag rahi hai, chest pressure bhi hai.",O005,Moderate right pleural effusion with compressive atelectasis.,low
+OPENI_0276,Kya report me pneumonia ya infxn ka sign hai? Thoda simple samjhao.,O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0277,"Doctor, right/left chest side me pani ya fluid hai kya? Dil se related issue ka doubt bhi hai.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,low
+OPENI_0278,Kya report me pneumonia ya infection ka sign hai?,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",low
+OPENI_0279,"Please explain: Doctor, Dil ka size bada dikh raha hai kyaa? Thoda simple samjhao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0280,rprt me koi acute issue nahi hai kya? Mujhe khansi aur bukhar bhi hai. Dil se related issue ka doubt bhi hai.,O004,No acute cardiopulmonary abnormality detected.,low
+OPENI_0281,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya?",O005,Moderate right pleural effusion with compressive atelectasis.,low
+OPENI_0282,kyaa rprt me pneumonia ya infection ka sign hai? Dil se related issue ka doubt bhi hai. Thoda simple samjhao.,O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0283,"Please explain: Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0284,"Doctor, Kya report me pneumonia ya infection ka sign hai? Dil se related issue ka doubt bhi hai. Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0285,Dil ka size bada dikh raha hai kya? Cough fever ke symptoms bhi chal rahe hai.,O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0286,"Please explain: Doctor, Report me koi acute issue nahi hai ky? Thoda simple samjhao.",O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0287,"Please explain: Doctor, right/left chest side me pani ya fluid hai ky? Heart beat fast lag rahi hai, chest pressure bhi hai. jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0288,"Doctor, Kya report me pneumonia ya infection ka sign hai? jaldi batao.",O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0289,"Doctor, right/left chest side me pani ya fluid hai kyaa? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0290,kyaa report me pneumonia ya infxn ka sign hai? Thoda simple samjhao.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0291,"Doctor, Dil ka size bada dikh raha hai kya? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0292,"Please explain: Doctor, report me koi acute issue nahi hai kyaa? Cough fever ke symptoms bhi chal rahe hai. jaldi batao.",O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0293,"Doctor, Doctor, right/left chest side me pani ya fluid hai ky? Mujhe khansi aur bukhar bhi hai. jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0294,Please explain: kya report me pneumonia ya infection ka sign hai? Thoda simple samjhao.,O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0295,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya?",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,low
+OPENI_0296,"Doctor, Kya repot me pneumonia ya infection ka sign hai?",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",low
+OPENI_0297,"Doctor, Dil ka size bada dikh raha hai kya? Mujhe khansi aur bukhar bhi hai. jaldi batao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,high
+OPENI_0298,"Doctor, Report me koi acute issue nahi hai kya? jaldi batao.",O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0299,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. Heart beat fast lag rahi hai, chest pressure bhi hai.",O005,Moderate right pleural effusion with compressive atelectasis.,low
+OPENI_0300,Kya report me pneumonia ya infection ka sign hai? Thoda simple samjhao.,O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0301,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya?",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,low
+OPENI_0302,Kya report me pneumonia ya infection ka sign hai? jaldi batao.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",high
+OPENI_0303,"Doctor, Dil ka size bada dikh raha hai kya? Mujhe khansi aur bukhar bhi hai. jaldi batao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,high
+OPENI_0304,repot me koi acute issue nahi hai kya? Cough fever ke symptoms bhi chal rahe hai.,O004,No acute cardiopulmonary abnormality detected.,low
+OPENI_0305,"Doctor, Doctor, right/left chest side me pani ya fluid hai kyaa? Mujhe khansi aur bukhar bhi hai. Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0306,Kya report me pneumonia ya infec ka sign hai? jaldi batao.,O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0307,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai. Dil se related issue ka doubt bhi hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0308,"Doctor, Kya report me pneumonia ya infec ka sign hai? Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0309,Dil ka size bada dikh raha hai kya? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.,O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0310,Report me koi acute issue nahi hai ky? Mujhe khansi aur bukhar bhi hai. jaldi batao.,O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0311,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0312,Kya repot me pneumonia ya infection ka sign hai? Thoda simple samjhao.,O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0313,"Please explain: Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0314,Please explain: Kya rprt me pneumonia ya infection ka sign hai? Thoda simple samjhao.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0315,Please explain: Dil ka size bada dikh raha hai kya? Cough fever ke symptoms bhi chal rahe hai. jaldi batao.,O003,Mild cardiomegaly with pulmonary vascular congestion.,high
+OPENI_0316,"Doctor, report me koi acute issue nahi hai kya? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.",O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0317,"Doctor, right/left chest side me pani ya fluid hai ky? Cough fever ke symptoms bhi chal rahe hai. Dil se related issue ka doubt bhi hai.",O005,Moderate right pleural effusion with compressive atelectasis.,low
+OPENI_0318,"Please explain: Doctor, Kya rprt me pneumonia ya infxn ka sign hai? Dil se related issue ka doubt bhi hai.",O006,Dense right lower lobe consolidation with air bronchograms.,low
+OPENI_0319,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Dil se related issue ka doubt bhi hai. jaldi batao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,high
+OPENI_0320,"Please explain: Doctor, Kya report me pneumonia ya infection ka sign hai? Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0321,Dil ka size bada dikh raha hai kyaa? Mujhe khansi aur bukhar bhi hai. jaldi batao.,O003,Mild cardiomegaly with pulmonary vascular congestion.,high
+OPENI_0322,"Please explain: Doctor, report me koi acute issue nahi hai kya? Mujhe khansi aur bukhar bhi hai. jaldi batao.",O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0323,"Please explain: Doctor, right/left chest side me pani ya fluid hai ky? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0324,Kya report me pneumonia ya infection ka sign hai? Dil se related issue ka doubt bhi hai. Thoda simple samjhao.,O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0325,"Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai. Dil se related issue ka doubt bhi hai. jaldi batao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,high
+OPENI_0326,"Doctor, Kya repot me pneumonia ya infxn ka sign hai? Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0327,"Doctor, Dil ka size bada dikh raha hai kya? Cough fever ke symptoms bhi chal rahe hai.",O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0328,"Doctor, rprt me koi acute issue nahi hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0329,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0330,"Doctor, Kya repot me pneumonia ya infxn ka sign hai? Thoda simple samjhao.",O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0331,"Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0332,Kya report me pneumonia ya infection ka sign hai? jaldi batao.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",high
+OPENI_0333,Dil ka size bada dikh raha hai kya? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.,O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0334,"Doctor, Report me koi acute issue nahi hai kyaa? Thoda simple samjhao.",O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0335,"Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0336,"Kya report me pneumonia ya infection ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai.",O006,Dense right lower lobe consolidation with air bronchograms.,low
+OPENI_0337,"Please explain: Doctor, right/left chest side me pani ya fluid hai kya? jaldi batao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,high
+OPENI_0338,"Kya report me pneumonia ya infection ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0339,"Doctor, Dil ka size bada dikh raha hai kyaa? Cough fever ke symptoms bhi chal rahe hai. jaldi batao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,high
+OPENI_0340,"Please explain: Doctor, Report me koi acute issue nahi hai kya? Mujhe khansi aur bukhar bhi hai.",O004,No acute cardiopulmonary abnormality detected.,low
+OPENI_0341,"Doctor, right/left chest side me pani ya fluid hai kya?",O005,Moderate right pleural effusion with compressive atelectasis.,low
+OPENI_0342,ky report me pneumonia ya infection ka sign hai? jaldi batao.,O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0343,"Please explain: Doctor, right/left chest side me pani ya fluid hai kya? Dil se related issue ka doubt bhi hai. jaldi batao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,high
+OPENI_0344,"Kya report me pneumonia ya infection ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai. jaldi batao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",high
+OPENI_0345,"Doctor, Dil ka size bada dikh raha hai kya? Mujhe khansi aur bukhar bhi hai.",O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0346,"Please explain: Doctor, Report me koi acute issue nahi hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0347,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0348,"Doctor, Kya rprt me pneumonia ya infection ka sign hai? Thoda simple samjhao.",O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0349,"Doctor, Doctor, right/left chest side me pani ya fluid hai ky? jaldi batao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,high
+OPENI_0350,"Doctor, Kya rprt me pneumonia ya infxn ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0351,"Doctor, Dil ka size bada dikh raha hai kya? Thoda simple samjhao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0352,"Doctor, Report me koi acute issue nahi hai kya? Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0353,"Please explain: Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. Dil se related issue ka doubt bhi hai. jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0354,"Kya rprt me pneumonia ya infection ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0355,"Doctor, Doctor, right/left chest side me pani ya fluid hai ky? jaldi batao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,high
+OPENI_0356,Kya report me pneumonia ya infection ka sign hai? Thoda simple samjhao.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0357,Dil ka size bada dikh raha hai kya? Thoda simple samjhao.,O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0358,"Doctor, Report me koi acute issue nahi hai kya? Cough fever ke symptoms bhi chal rahe hai.",O004,No acute cardiopulmonary abnormality detected.,low
+OPENI_0359,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0360,"Kya repot me pneumonia ya infection ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai. jaldi batao.",O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0361,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0362,"Please explain: Doctor, kya report me pneumonia ya infection ka sign hai? jaldi batao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",high
+OPENI_0363,"Please explain: Doctor, Dil ka size bada dikh raha hai kyaa? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0364,repot me koi acute issue nahi hai kya? Cough fever ke symptoms bhi chal rahe hai. Dil se related issue ka doubt bhi hai. Thoda simple samjhao.,O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0365,"Please explain: Doctor, Doctor, right/left chest side me pani ya fluid hai kyaa?",O005,Moderate right pleural effusion with compressive atelectasis.,low
+OPENI_0366,Kya report me pneumonia ya infxn ka sign hai?,O006,Dense right lower lobe consolidation with air bronchograms.,low
+OPENI_0367,"Please explain: Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,low
+OPENI_0368,Please explain: kyaa report me pneumonia ya infection ka sign hai?,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",low
+OPENI_0369,Dil ka size bada dikh raha hai kyaa? Cough fever ke symptoms bhi chal rahe hai.,O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0370,Please explain: report me koi acute issue nahi hai kya?,O004,No acute cardiopulmonary abnormality detected.,low
+OPENI_0371,"Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. Heart beat fast lag rahi hai, chest pressure bhi hai. jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0372,"Please explain: Doctor, Kya report me pneumonia ya infection ka sign hai? Thoda simple samjhao.",O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0373,"Doctor, right/left chest side me pani ya fluid hai kyaa?",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,low
+OPENI_0374,Kya rprt me pneumonia ya infec ka sign hai? jaldi batao.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",high
+OPENI_0375,Please explain: Dil ka size bada dikh raha hai ky? Thoda simple samjhao.,O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0376,"Doctor, repot me koi acute issue nahi hai kyaa? Mujhe khansi aur bukhar bhi hai. Dil se related issue ka doubt bhi hai.",O004,No acute cardiopulmonary abnormality detected.,low
+OPENI_0377,"Doctor, right/left chest side me pani ya fluid hai kya? Heart beat fast lag rahi hai, chest pressure bhi hai.",O005,Moderate right pleural effusion with compressive atelectasis.,low
+OPENI_0378,"Kya report me pneumonia ya infection ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai.",O006,Dense right lower lobe consolidation with air bronchograms.,low
+OPENI_0379,"Doctor, right/left chest side me pani ya fluid hai kyaa? Heart beat fast lag rahi hai, chest pressure bhi hai. jaldi batao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,high
+OPENI_0380,"Doctor, kya report me pneumonia ya infection ka sign hai?",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",low
+OPENI_0381,Dil ka size bada dikh raha hai kya? Cough fever ke symptoms bhi chal rahe hai.,O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0382,"Doctor, Report me koi acute issue nahi hai kya? Thoda simple samjhao.",O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0383,"Doctor, Doctor, right/left chest side me pani ya fluid hai kyaa? Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0384,kya report me pneumonia ya infection ka sign hai? Thoda simple samjhao.,O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0385,"Doctor, right/left chest side me pani ya fluid hai ky? Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0386,ky report me pneumonia ya infection ka sign hai? jaldi batao.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",high
+OPENI_0387,Dil ka size bada dikh raha hai kya? Mujhe khansi aur bukhar bhi hai. jaldi batao.,O003,Mild cardiomegaly with pulmonary vascular congestion.,high
+OPENI_0388,Report me koi acute issue nahi hai ky? Dil se related issue ka doubt bhi hai. jaldi batao.,O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0389,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0390,"Doctor, kyaa report me pneumonia ya infection ka sign hai? Dil se related issue ka doubt bhi hai. Thoda simple samjhao.",O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0391,"Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0392,Kya report me pneumonia ya infection ka sign hai? jaldi batao.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",high
+OPENI_0393,"Doctor, Dil ka size bada dikh raha hai kya? Mujhe khansi aur bukhar bhi hai.",O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0394,rprt me koi acute issue nahi hai kya? Mujhe khansi aur bukhar bhi hai.,O004,No acute cardiopulmonary abnormality detected.,low
+OPENI_0395,"Please explain: Doctor, right/left chest side me pani ya fluid hai kyaa? Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0396,Please explain: Kya repot me pneumonia ya infection ka sign hai? Dil se related issue ka doubt bhi hai.,O006,Dense right lower lobe consolidation with air bronchograms.,low
+OPENI_0397,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0398,"Doctor, Kya report me pneumonia ya infection ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0399,"Doctor, Dil ka size bada dikh raha hai ky?",O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0400,"Doctor, report me koi acute issue nahi hai kya? Thoda simple samjhao.",O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0401,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0402,Kya repot me pneumonia ya infection ka sign hai? jaldi batao.,O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0403,"Please explain: Doctor, right/left chest side me pani ya fluid hai kya? Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0404,"Doctor, ky report me pneumonia ya infection ka sign hai? Dil se related issue ka doubt bhi hai. Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0405,Dil ka size bada dikh raha hai kya? Cough fever ke symptoms bhi chal rahe hai. jaldi batao.,O003,Mild cardiomegaly with pulmonary vascular congestion.,high
+OPENI_0406,report me koi acute issue nahi hai kya? jaldi batao.,O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0407,"Doctor, right/left chest side me pani ya fluid hai kyaa? Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0408,"Doctor, kya report me pneumonia ya infection ka sign hai?",O006,Dense right lower lobe consolidation with air bronchograms.,low
+OPENI_0409,"Doctor, Doctor, right/left chest side me pani ya fluid hai ky?",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,low
+OPENI_0410,"Doctor, Kya report me pneumonia ya infection ka sign hai? Dil se related issue ka doubt bhi hai.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",low
+OPENI_0411,Dil ka size bada dikh raha hai kyaa? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.,O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0412,"Please explain: Doctor, Report me koi acute issue nahi hai kya?",O004,No acute cardiopulmonary abnormality detected.,low
+OPENI_0413,"Please explain: Doctor, Doctor, right/left chest side me pani ya fluid hai kya? jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0414,Please explain: kyaa report me pneumonia ya infection ka sign hai? jaldi batao.,O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0415,"Doctor, Doctor, right/left chest side me pani ya fluid hai ky? Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0416,Please explain: Kya report me pneumonia ya infection ka sign hai?,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",low
+OPENI_0417,"Please explain: Doctor, Dil ka size bada dikh raha hai kyaa? Cough fever ke symptoms bhi chal rahe hai. jaldi batao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,high
+OPENI_0418,repot me koi acute issue nahi hai kya? Mujhe khansi aur bukhar bhi hai.,O004,No acute cardiopulmonary abnormality detected.,low
+OPENI_0419,"Please explain: Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0420,"Doctor, kya report me pneumonia ya infection ka sign hai? Thoda simple samjhao.",O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0421,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0422,kyaa repot me pneumonia ya infec ka sign hai?,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",low
+OPENI_0423,Dil ka size bada dikh raha hai kya? Thoda simple samjhao.,O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0424,"Doctor, Report me koi acute issue nahi hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0425,"Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0426,"Please explain: Doctor, kyaa report me pneumonia ya infec ka sign hai?",O006,Dense right lower lobe consolidation with air bronchograms.,low
+OPENI_0427,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. Dil se related issue ka doubt bhi hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0428,"Doctor, Kya report me pneumonia ya infection ka sign hai? Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0429,"Doctor, Dil ka size bada dikh raha hai kya? Mujhe khansi aur bukhar bhi hai. jaldi batao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,high
+OPENI_0430,rprt me koi acute issue nahi hai kya?,O004,No acute cardiopulmonary abnormality detected.,low
+OPENI_0431,"Doctor, Doctor, right/left chest side me pani ya fluid hai kyaa? Mujhe khansi aur bukhar bhi hai. Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0432,"Doctor, Kya report me pneumonia ya infection ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai.",O006,Dense right lower lobe consolidation with air bronchograms.,low
+OPENI_0433,"Please explain: Doctor, right/left chest side me pani ya fluid hai kya?",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,low
+OPENI_0434,Please explain: ky report me pneumonia ya infection ka sign hai? jaldi batao.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",high
+OPENI_0435,Dil ka size bada dikh raha hai kya? Thoda simple samjhao.,O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0436,"Doctor, Report me koi acute issue nahi hai kya? jaldi batao.",O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0437,"Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0438,kyaa report me pneumonia ya infection ka sign hai? Dil se related issue ka doubt bhi hai. jaldi batao.,O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0439,"Please explain: Doctor, Doctor, right/left chest side me pani ya fluid hai kyaa? Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0440,"Doctor, Kya rprt me pneumonia ya infection ka sign hai? jaldi batao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",high
+OPENI_0441,"Doctor, Dil ka size bada dikh raha hai ky? Cough fever ke symptoms bhi chal rahe hai.",O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0442,Report me koi acute issue nahi hai kya? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.,O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0443,"Please explain: Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai. Dil se related issue ka doubt bhi hai. Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0444,"Doctor, Kya rprt me pneumonia ya infection ka sign hai? jaldi batao.",O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0445,"Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0446,"kya report me pneumonia ya infection ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",low
+OPENI_0447,"Please explain: Doctor, Dil ka size bada dikh raha hai kya?",O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0448,Report me koi acute issue nahi hai ky? jaldi batao.,O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0449,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai. jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0450,"Please explain: Doctor, kyaa report me pneumonia ya infection ka sign hai? jaldi batao.",O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0451,"Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. jaldi batao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,high
+OPENI_0452,"Doctor, Kya rprt me pneumonia ya infection ka sign hai? Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0453,Dil ka size bada dikh raha hai kya? Mujhe khansi aur bukhar bhi hai. jaldi batao.,O003,Mild cardiomegaly with pulmonary vascular congestion.,high
+OPENI_0454,"rprt me koi acute issue nahi hai kya? Mujhe khansi aur bukhar bhi hai. Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0455,"Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai.",O005,Moderate right pleural effusion with compressive atelectasis.,low
+OPENI_0456,"Doctor, kya report me pneumonia ya infec ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0457,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? jaldi batao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,high
+OPENI_0458,"Kya report me pneumonia ya infection ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",low
+OPENI_0459,Please explain: Dil ka size bada dikh raha hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.,O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0460,"repot me koi acute issue nahi hai kya? Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0461,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0462,kyaa report me pneumonia ya infection ka sign hai? jaldi batao.,O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0463,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0464,Kya report me pneumonia ya infection ka sign hai? Dil se related issue ka doubt bhi hai.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",low
+OPENI_0465,"Doctor, Dil ka size bada dikh raha hai kyaa? Mujhe khansi aur bukhar bhi hai. jaldi batao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,high
+OPENI_0466,Please explain: Report me koi acute issue nahi hai kya? Cough fever ke symptoms bhi chal rahe hai. jaldi batao.,O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0467,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0468,Kya repot me pneumonia ya infection ka sign hai? Thoda simple samjhao.,O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0469,"Please explain: Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai. jaldi batao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,high
+OPENI_0470,Please explain: Kya report me pneumonia ya infection ka sign hai? jaldi batao.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",high
+OPENI_0471,"Doctor, Dil ka size bada dikh raha hai kya?",O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0472,Report me koi acute issue nahi hai kya?,O004,No acute cardiopulmonary abnormality detected.,low
+OPENI_0473,"Please explain: Doctor, right/left chest side me pani ya fluid hai ky? Mujhe khansi aur bukhar bhi hai. Dil se related issue ka doubt bhi hai. Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0474,"Please explain: Doctor, kya rprt me pneumonia ya infxn ka sign hai? Dil se related issue ka doubt bhi hai. Thoda simple samjhao.",O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0475,"Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0476,"Please explain: Doctor, kya report me pneumonia ya infection ka sign hai? Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0477,"Doctor, Dil ka size bada dikh raha hai kya? Cough fever ke symptoms bhi chal rahe hai.",O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0478,report me koi acute issue nahi hai kya? Dil se related issue ka doubt bhi hai. jaldi batao.,O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0479,"Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0480,"Kya rprt me pneumonia ya infection ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai.",O006,Dense right lower lobe consolidation with air bronchograms.,low
+OPENI_0481,"Doctor, Doctor, right/left chest side me pani ya fluid hai ky? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0482,"Doctor, Kya rprt me pneumonia ya infection ka sign hai? Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0483,"Doctor, Dil ka size bada dikh raha hai kyaa? Cough fever ke symptoms bhi chal rahe hai.",O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0484,"Doctor, repot me koi acute issue nahi hai kya? Heart beat fast lag rahi hai, chest pressure bhi hai.",O004,No acute cardiopulmonary abnormality detected.,low
+OPENI_0485,"Please explain: Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Dil se related issue ka doubt bhi hai. jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0486,"Please explain: Doctor, Kya report me pneumonia ya infec ka sign hai? Thoda simple samjhao.",O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0487,"Please explain: Doctor, right/left chest side me pani ya fluid hai kya? jaldi batao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,high
+OPENI_0488,"Please explain: Doctor, Kya rprt me pneumonia ya infxn ka sign hai? Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0489,"Doctor, Dil ka size bada dikh raha hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0490,Report me koi acute issue nahi hai kya? Thoda simple samjhao.,O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0491,"Doctor, right/left chest side me pani ya fluid hai kya? Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0492,"Doctor, kyaa report me pneumonia ya infxn ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai. jaldi batao.",O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0493,"Please explain: Doctor, right/left chest side me pani ya fluid hai kyaa? Cough fever ke symptoms bhi chal rahe hai.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,low
+OPENI_0494,"Doctor, Kya rprt me pneumonia ya infection ka sign hai? Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0495,"Doctor, Dil ka size bada dikh raha hai kya? Thoda simple samjhao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0496,repot me koi acute issue nahi hai kya? jaldi batao.,O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0497,"Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. Dil se related issue ka doubt bhi hai. Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0498,"Doctor, kya report me pneumonia ya infection ka sign hai? Dil se related issue ka doubt bhi hai. Thoda simple samjhao.",O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0499,"Doctor, Doctor, right/left chest side me pani ya fluid hai kyaa? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0500,ky report me pneumonia ya infection ka sign hai?,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",low
+OPENI_0501,"Doctor, Dil ka size bada dikh raha hai kya? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0502,Report me koi acute issue nahi hai kya? Dil se related issue ka doubt bhi hai. jaldi batao.,O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0503,"Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0504,kyaa report me pneumonia ya infection ka sign hai? jaldi batao.,O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0505,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. Dil se related issue ka doubt bhi hai.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,low
+OPENI_0506,kya report me pneumonia ya infec ka sign hai? Dil se related issue ka doubt bhi hai. Thoda simple samjhao.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0507,"Doctor, Dil ka size bada dikh raha hai kya? Thoda simple samjhao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0508,Please explain: Report me koi acute issue nahi hai kya? Thoda simple samjhao.,O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0509,"Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai.",O005,Moderate right pleural effusion with compressive atelectasis.,low
+OPENI_0510,"Please explain: Doctor, Kya report me pneumonia ya infxn ka sign hai? jaldi batao.",O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0511,"Please explain: Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0512,"Doctor, Kya repot me pneumonia ya infection ka sign hai? jaldi batao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",high
+OPENI_0513,Dil ka size bada dikh raha hai kya? Thoda simple samjhao.,O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0514,Please explain: report me koi acute issue nahi hai ky? Thoda simple samjhao.,O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0515,"Doctor, Doctor, right/left chest side me pani ya fluid hai ky? jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0516,"Doctor, kyaa report me pneumonia ya infection ka sign hai?",O006,Dense right lower lobe consolidation with air bronchograms.,low
+OPENI_0517,"Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. jaldi batao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,high
+OPENI_0518,"Doctor, Kya report me pneumonia ya infection ka sign hai? Dil se related issue ka doubt bhi hai. jaldi batao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",high
+OPENI_0519,Dil ka size bada dikh raha hai ky? Cough fever ke symptoms bhi chal rahe hai.,O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0520,"Report me koi acute issue nahi hai kya? Heart beat fast lag rahi hai, chest pressure bhi hai. jaldi batao.",O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0521,"Doctor, Doctor, right/left chest side me pani ya fluid hai kyaa? jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0522,Please explain: Kya report me pneumonia ya infection ka sign hai? Thoda simple samjhao.,O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0523,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. jaldi batao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,high
+OPENI_0524,Kya report me pneumonia ya infection ka sign hai? Thoda simple samjhao.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0525,Please explain: Dil ka size bada dikh raha hai kya? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.,O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0526,Report me koi acute issue nahi hai kya? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.,O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0527,"Doctor, Doctor, right/left chest side me pani ya fluid hai kyaa?",O005,Moderate right pleural effusion with compressive atelectasis.,low
+OPENI_0528,ky report me pneumonia ya infection ka sign hai? jaldi batao.,O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0529,"Please explain: Doctor, Doctor, right/left chest side me pani ya fluid hai kya?",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,low
+OPENI_0530,"Doctor, Kya report me pneumonia ya infection ka sign hai? Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0531,"Doctor, Dil ka size bada dikh raha hai kya? Cough fever ke symptoms bhi chal rahe hai. jaldi batao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,high
+OPENI_0532,report me koi acute issue nahi hai kya?,O004,No acute cardiopulmonary abnormality detected.,low
+OPENI_0533,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai. Dil se related issue ka doubt bhi hai. Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0534,"Doctor, Kya report me pneumonia ya infection ka sign hai? jaldi batao.",O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0535,"Doctor, right/left chest side me pani ya fluid hai ky? Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0536,"Doctor, Kya repot me pneumonia ya infxn ka sign hai? Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0537,"Doctor, Dil ka size bada dikh raha hai kya? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0538,"Please explain: Doctor, Report me koi acute issue nahi hai kyaa? Cough fever ke symptoms bhi chal rahe hai. jaldi batao.",O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0539,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai. Dil se related issue ka doubt bhi hai. Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0540,Kya rprt me pneumonia ya infection ka sign hai? Thoda simple samjhao.,O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0541,"Please explain: Doctor, Doctor, right/left chest side me pani ya fluid hai ky? Cough fever ke symptoms bhi chal rahe hai.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,low
+OPENI_0542,"Doctor, Kya report me pneumonia ya infxn ka sign hai? Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0543,Dil ka size bada dikh raha hai kya? Cough fever ke symptoms bhi chal rahe hai.,O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0544,"Doctor, report me koi acute issue nahi hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0545,"Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai. Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0546,"Please explain: Doctor, Kya report me pneumonia ya infection ka sign hai?",O006,Dense right lower lobe consolidation with air bronchograms.,low
+OPENI_0547,"Please explain: Doctor, right/left chest side me pani ya fluid hai kya? Dil se related issue ka doubt bhi hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0548,kyaa report me pneumonia ya infxn ka sign hai? Dil se related issue ka doubt bhi hai. jaldi batao.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",high
+OPENI_0549,Dil ka size bada dikh raha hai ky? Mujhe khansi aur bukhar bhi hai. jaldi batao.,O003,Mild cardiomegaly with pulmonary vascular congestion.,high
+OPENI_0550,"Doctor, Report me koi acute issue nahi hai kyaa? jaldi batao.",O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0551,"Doctor, right/left chest side me pani ya fluid hai kya? Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0552,Kya report me pneumonia ya infection ka sign hai? Thoda simple samjhao.,O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0553,"Doctor, right/left chest side me pani ya fluid hai kya? Dil se related issue ka doubt bhi hai.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,low
+OPENI_0554,"Doctor, Kya repot me pneumonia ya infection ka sign hai? Dil se related issue ka doubt bhi hai.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",low
+OPENI_0555,Please explain: Dil ka size bada dikh raha hai kya? Thoda simple samjhao.,O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0556,Report me koi acute issue nahi hai kya? Mujhe khansi aur bukhar bhi hai. jaldi batao.,O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0557,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0558,"Doctor, Kya report me pneumonia ya infection ka sign hai? Thoda simple samjhao.",O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0559,"Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0560,"Doctor, kya report me pneumonia ya infection ka sign hai? jaldi batao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",high
+OPENI_0561,Dil ka size bada dikh raha hai kya? Cough fever ke symptoms bhi chal rahe hai.,O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0562,Please explain: rprt me koi acute issue nahi hai kya? Cough fever ke symptoms bhi chal rahe hai.,O004,No acute cardiopulmonary abnormality detected.,low
+OPENI_0563,"Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai.",O005,Moderate right pleural effusion with compressive atelectasis.,low
+OPENI_0564,"Doctor, Kya repot me pneumonia ya infection ka sign hai? Thoda simple samjhao.",O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0565,"Doctor, right/left chest side me pani ya fluid hai kyaa? Mujhe khansi aur bukhar bhi hai. jaldi batao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,high
+OPENI_0566,kyaa report me pneumonia ya infection ka sign hai?,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",low
+OPENI_0567,"Doctor, Dil ka size bada dikh raha hai kyaa? jaldi batao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,high
+OPENI_0568,"Doctor, Report me koi acute issue nahi hai kya? Heart beat fast lag rahi hai, chest pressure bhi hai.",O004,No acute cardiopulmonary abnormality detected.,low
+OPENI_0569,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai.",O005,Moderate right pleural effusion with compressive atelectasis.,low
+OPENI_0570,Kya repot me pneumonia ya infection ka sign hai? Thoda simple samjhao.,O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0571,"Doctor, right/left chest side me pani ya fluid hai kya? Heart beat fast lag rahi hai, chest pressure bhi hai. jaldi batao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,high
+OPENI_0572,"Doctor, Kya report me pneumonia ya infection ka sign hai? Dil se related issue ka doubt bhi hai. Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0573,"Doctor, Dil ka size bada dikh raha hai kyaa? Mujhe khansi aur bukhar bhi hai. jaldi batao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,high
+OPENI_0574,"Doctor, Report me koi acute issue nahi hai kya?",O004,No acute cardiopulmonary abnormality detected.,low
+OPENI_0575,"Doctor, right/left chest side me pani ya fluid hai kya? Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0576,"Doctor, kyaa report me pneumonia ya infection ka sign hai? jaldi batao.",O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0577,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Dil se related issue ka doubt bhi hai.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,low
+OPENI_0578,"Doctor, Kya repot me pneumonia ya infection ka sign hai? jaldi batao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",high
+OPENI_0579,Dil ka size bada dikh raha hai kya? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.,O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0580,"Doctor, Report me koi acute issue nahi hai ky? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.",O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0581,"Doctor, right/left chest side me pani ya fluid hai kya? Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0582,kya report me pneumonia ya infxn ka sign hai?,O006,Dense right lower lobe consolidation with air bronchograms.,low
+OPENI_0583,"Doctor, Doctor, right/left chest side me pani ya fluid hai ky? Cough fever ke symptoms bhi chal rahe hai. Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0584,Please explain: Kya report me pneumonia ya infection ka sign hai? Thoda simple samjhao.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0585,"Doctor, Dil ka size bada dikh raha hai kya? Cough fever ke symptoms bhi chal rahe hai.",O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0586,Report me koi acute issue nahi hai kya? Mujhe khansi aur bukhar bhi hai. jaldi batao.,O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0587,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai. Heart beat fast lag rahi hai, chest pressure bhi hai.",O005,Moderate right pleural effusion with compressive atelectasis.,low
+OPENI_0588,"Doctor, kyaa report me pneumonia ya infection ka sign hai? jaldi batao.",O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0589,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0590,Kya report me pneumonia ya infection ka sign hai? Thoda simple samjhao.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0591,"Doctor, Dil ka size bada dikh raha hai kyaa? Thoda simple samjhao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0592,report me koi acute issue nahi hai kyaa? Thoda simple samjhao.,O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0593,"Doctor, Doctor, right/left chest side me pani ya fluid hai ky? jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0594,Please explain: Kya report me pneumonia ya infection ka sign hai? jaldi batao.,O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0595,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0596,Please explain: Kya report me pneumonia ya infec ka sign hai?,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",low
+OPENI_0597,Dil ka size bada dikh raha hai kya? Cough fever ke symptoms bhi chal rahe hai.,O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0598,Report me koi acute issue nahi hai kyaa? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.,O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0599,"Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai. jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0600,Kya repot me pneumonia ya infec ka sign hai? jaldi batao.,O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0601,"Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0602,Kya report me pneumonia ya infec ka sign hai? Thoda simple samjhao.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0603,"Doctor, Dil ka size bada dikh raha hai kya? Thoda simple samjhao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0604,"Please explain: Doctor, Report me koi acute issue nahi hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0605,"Doctor, right/left chest side me pani ya fluid hai kya? Heart beat fast lag rahi hai, chest pressure bhi hai. jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0606,ky repot me pneumonia ya infection ka sign hai? Thoda simple samjhao.,O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0607,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,low
+OPENI_0608,"Please explain: Doctor, Kya report me pneumonia ya infection ka sign hai?",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",low
+OPENI_0609,"Doctor, Dil ka size bada dikh raha hai kya?",O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0610,"Report me koi acute issue nahi hai kya? Mujhe khansi aur bukhar bhi hai. Heart beat fast lag rahi hai, chest pressure bhi hai. jaldi batao.",O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0611,"Doctor, right/left chest side me pani ya fluid hai kyaa? Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0612,"Kya report me pneumonia ya infection ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai.",O006,Dense right lower lobe consolidation with air bronchograms.,low
+OPENI_0613,"Please explain: Doctor, Doctor, right/left chest side me pani ya fluid hai ky? Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0614,"Please explain: Kya repot me pneumonia ya infection ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0615,"Please explain: Doctor, Dil ka size bada dikh raha hai kya? Thoda simple samjhao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0616,report me koi acute issue nahi hai kyaa? Thoda simple samjhao.,O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0617,"Doctor, right/left chest side me pani ya fluid hai kya?",O005,Moderate right pleural effusion with compressive atelectasis.,low
+OPENI_0618,Please explain: Kya report me pneumonia ya infection ka sign hai? jaldi batao.,O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0619,"Doctor, right/left chest side me pani ya fluid hai kya? Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0620,"Doctor, Kya report me pneumonia ya infection ka sign hai? jaldi batao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",high
+OPENI_0621,"Doctor, Dil ka size bada dikh raha hai kya? Thoda simple samjhao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0622,"Please explain: Doctor, Report me koi acute issue nahi hai kya? Mujhe khansi aur bukhar bhi hai.",O004,No acute cardiopulmonary abnormality detected.,low
+OPENI_0623,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0624,"Please explain: Doctor, kyaa report me pneumonia ya infection ka sign hai?",O006,Dense right lower lobe consolidation with air bronchograms.,low
+OPENI_0625,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. Dil se related issue ka doubt bhi hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0626,"Doctor, Kya repot me pneumonia ya infection ka sign hai? jaldi batao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",high
+OPENI_0627,"Doctor, Dil ka size bada dikh raha hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0628,"Doctor, Report me koi acute issue nahi hai kya? jaldi batao.",O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0629,"Doctor, right/left chest side me pani ya fluid hai ky? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0630,ky report me pneumonia ya infec ka sign hai? jaldi batao.,O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0631,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. jaldi batao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,high
+OPENI_0632,kya report me pneumonia ya infection ka sign hai? jaldi batao.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",high
+OPENI_0633,Dil ka size bada dikh raha hai kya? jaldi batao.,O003,Mild cardiomegaly with pulmonary vascular congestion.,high
+OPENI_0634,"Doctor, Report me koi acute issue nahi hai kya? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.",O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0635,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Heart beat fast lag rahi hai, chest pressure bhi hai. jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0636,"Doctor, Kya report me pneumonia ya infection ka sign hai? jaldi batao.",O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0637,"Please explain: Doctor, right/left chest side me pani ya fluid hai kya? Heart beat fast lag rahi hai, chest pressure bhi hai. jaldi batao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,high
+OPENI_0638,Kya report me pneumonia ya infec ka sign hai? Dil se related issue ka doubt bhi hai.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",low
+OPENI_0639,Dil ka size bada dikh raha hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.,O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0640,"Please explain: Report me koi acute issue nahi hai kya? Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0641,"Please explain: Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Heart beat fast lag rahi hai, chest pressure bhi hai. jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0642,"Doctor, Kya report me pneumonia ya infec ka sign hai? jaldi batao.",O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0643,"Please explain: Doctor, Doctor, right/left chest side me pani ya fluid hai kyaa?",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,low
+OPENI_0644,kya repot me pneumonia ya infection ka sign hai? Thoda simple samjhao.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0645,Dil ka size bada dikh raha hai kya? Cough fever ke symptoms bhi chal rahe hai.,O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0646,"Doctor, Report me koi acute issue nahi hai kya? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.",O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0647,"Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. Dil se related issue ka doubt bhi hai. jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0648,"Please explain: Doctor, Kya report me pneumonia ya infection ka sign hai? Thoda simple samjhao.",O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0649,"Doctor, Doctor, right/left chest side me pani ya fluid hai ky? jaldi batao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,high
+OPENI_0650,kyaa rprt me pneumonia ya infection ka sign hai? Thoda simple samjhao.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0651,"Doctor, Dil ka size bada dikh raha hai ky? Cough fever ke symptoms bhi chal rahe hai.",O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0652,"Doctor, repot me koi acute issue nahi hai kya? Thoda simple samjhao.",O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0653,"Please explain: Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. Dil se related issue ka doubt bhi hai. jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0654,Kya report me pneumonia ya infection ka sign hai? Dil se related issue ka doubt bhi hai. jaldi batao.,O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0655,"Doctor, Doctor, right/left chest side me pani ya fluid hai ky?",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,low
+OPENI_0656,"Doctor, Kya report me pneumonia ya infection ka sign hai? Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0657,Dil ka size bada dikh raha hai kya? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.,O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0658,Report me koi acute issue nahi hai ky? Dil se related issue ka doubt bhi hai.,O004,No acute cardiopulmonary abnormality detected.,low
+OPENI_0659,"Please explain: Doctor, right/left chest side me pani ya fluid hai kyaa? Mujhe khansi aur bukhar bhi hai. Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0660,"Please explain: Doctor, Kya repot me pneumonia ya infection ka sign hai? jaldi batao.",O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0661,"Please explain: Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai. Dil se related issue ka doubt bhi hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0662,"Please explain: Kya report me pneumonia ya infec ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",low
+OPENI_0663,"Doctor, Dil ka size bada dikh raha hai kya?",O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0664,"Please explain: Doctor, repot me koi acute issue nahi hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0665,"Doctor, Doctor, right/left chest side me pani ya fluid hai kyaa? Cough fever ke symptoms bhi chal rahe hai. Dil se related issue ka doubt bhi hai. Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0666,"Doctor, Kya repot me pneumonia ya infection ka sign hai? Thoda simple samjhao.",O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0667,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,low
+OPENI_0668,"kyaa repot me pneumonia ya infec ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai. jaldi batao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",high
+OPENI_0669,Dil ka size bada dikh raha hai kya? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.,O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0670,"Doctor, Report me koi acute issue nahi hai kya? Dil se related issue ka doubt bhi hai. jaldi batao.",O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0671,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. Heart beat fast lag rahi hai, chest pressure bhi hai. jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0672,"Doctor, ky report me pneumonia ya infection ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0673,"Doctor, right/left chest side me pani ya fluid hai ky? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0674,Kya report me pneumonia ya infection ka sign hai? Thoda simple samjhao.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0675,Dil ka size bada dikh raha hai kya?,O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0676,"Please explain: Doctor, repot me koi acute issue nahi hai kya? Mujhe khansi aur bukhar bhi hai. Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0677,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Dil se related issue ka doubt bhi hai.",O005,Moderate right pleural effusion with compressive atelectasis.,low
+OPENI_0678,Please explain: Kya report me pneumonia ya infection ka sign hai? Dil se related issue ka doubt bhi hai. jaldi batao.,O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0679,"Please explain: Doctor, right/left chest side me pani ya fluid hai kya? Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0680,Kya report me pneumonia ya infxn ka sign hai?,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",low
+OPENI_0681,"Doctor, Dil ka size bada dikh raha hai ky? Mujhe khansi aur bukhar bhi hai. jaldi batao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,high
+OPENI_0682,Report me koi acute issue nahi hai kya? Cough fever ke symptoms bhi chal rahe hai.,O004,No acute cardiopulmonary abnormality detected.,low
+OPENI_0683,"Doctor, Doctor, right/left chest side me pani ya fluid hai ky? Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0684,"Doctor, Kya report me pneumonia ya infection ka sign hai? jaldi batao.",O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0685,"Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0686,"Doctor, kya report me pneumonia ya infec ka sign hai? jaldi batao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",high
+OPENI_0687,Please explain: Dil ka size bada dikh raha hai kya? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.,O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0688,"Doctor, rprt me koi acute issue nahi hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0689,"Please explain: Doctor, Doctor, right/left chest side me pani ya fluid hai ky? Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0690,"Please explain: Doctor, Kya report me pneumonia ya infection ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai.",O006,Dense right lower lobe consolidation with air bronchograms.,low
+OPENI_0691,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0692,"Please explain: Doctor, Kya report me pneumonia ya infec ka sign hai? Dil se related issue ka doubt bhi hai. Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0693,Dil ka size bada dikh raha hai kya?,O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0694,"Report me koi acute issue nahi hai kya? Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0695,"Please explain: Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0696,Kya report me pneumonia ya infection ka sign hai? jaldi batao.,O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0697,"Doctor, right/left chest side me pani ya fluid hai kya?",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,low
+OPENI_0698,"Doctor, Kya report me pneumonia ya infec ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0699,Dil ka size bada dikh raha hai kya? Thoda simple samjhao.,O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0700,Report me koi acute issue nahi hai kya? Cough fever ke symptoms bhi chal rahe hai. jaldi batao.,O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0701,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Dil se related issue ka doubt bhi hai. jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0702,Please explain: ky report me pneumonia ya infection ka sign hai? Dil se related issue ka doubt bhi hai. jaldi batao.,O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0703,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai. jaldi batao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,high
+OPENI_0704,ky rprt me pneumonia ya infxn ka sign hai? jaldi batao.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",high
+OPENI_0705,"Please explain: Doctor, Dil ka size bada dikh raha hai kya? Thoda simple samjhao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0706,"Doctor, Report me koi acute issue nahi hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0707,"Doctor, Doctor, right/left chest side me pani ya fluid hai kyaa? Cough fever ke symptoms bhi chal rahe hai. jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0708,"Doctor, ky report me pneumonia ya infection ka sign hai? jaldi batao.",O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0709,"Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0710,Kya report me pneumonia ya infxn ka sign hai? jaldi batao.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",high
+OPENI_0711,"Doctor, Dil ka size bada dikh raha hai kya? Thoda simple samjhao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0712,"Doctor, Report me koi acute issue nahi hai ky? Heart beat fast lag rahi hai, chest pressure bhi hai. jaldi batao.",O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0713,"Doctor, Doctor, right/left chest side me pani ya fluid hai ky? Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0714,"Doctor, Kya rprt me pneumonia ya infxn ka sign hai?",O006,Dense right lower lobe consolidation with air bronchograms.,low
+OPENI_0715,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0716,"Please explain: Doctor, kyaa rprt me pneumonia ya infec ka sign hai? Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0717,Please explain: Dil ka size bada dikh raha hai kya? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.,O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0718,Report me koi acute issue nahi hai kya? Thoda simple samjhao.,O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0719,"Please explain: Doctor, Doctor, right/left chest side me pani ya fluid hai kyaa? Cough fever ke symptoms bhi chal rahe hai. Heart beat fast lag rahi hai, chest pressure bhi hai. jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0720,"Doctor, Kya repot me pneumonia ya infection ka sign hai? Thoda simple samjhao.",O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0721,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya?",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,low
+OPENI_0722,kya report me pneumonia ya infection ka sign hai?,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",low
+OPENI_0723,Dil ka size bada dikh raha hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.,O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0724,"Doctor, Report me koi acute issue nahi hai kya? Cough fever ke symptoms bhi chal rahe hai.",O004,No acute cardiopulmonary abnormality detected.,low
+OPENI_0725,"Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai. Dil se related issue ka doubt bhi hai. Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0726,Kya report me pneumonia ya infection ka sign hai? Thoda simple samjhao.,O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0727,"Doctor, Doctor, right/left chest side me pani ya fluid hai ky? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0728,kya repot me pneumonia ya infection ka sign hai? Thoda simple samjhao.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0729,"Doctor, Dil ka size bada dikh raha hai kya? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0730,Please explain: Report me koi acute issue nahi hai kya? Dil se related issue ka doubt bhi hai.,O004,No acute cardiopulmonary abnormality detected.,low
+OPENI_0731,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0732,"Doctor, Kya report me pneumonia ya infection ka sign hai? Dil se related issue ka doubt bhi hai.",O006,Dense right lower lobe consolidation with air bronchograms.,low
+OPENI_0733,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya?",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,low
+OPENI_0734,"Doctor, kyaa report me pneumonia ya infec ka sign hai? Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0735,Dil ka size bada dikh raha hai kya? Thoda simple samjhao.,O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0736,rprt me koi acute issue nahi hai ky? Cough fever ke symptoms bhi chal rahe hai.,O004,No acute cardiopulmonary abnormality detected.,low
+OPENI_0737,"Doctor, right/left chest side me pani ya fluid hai kya?",O005,Moderate right pleural effusion with compressive atelectasis.,low
+OPENI_0738,kyaa report me pneumonia ya infection ka sign hai? jaldi batao.,O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0739,"Doctor, right/left chest side me pani ya fluid hai kyaa? Mujhe khansi aur bukhar bhi hai. Heart beat fast lag rahi hai, chest pressure bhi hai.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,low
+OPENI_0740,"Please explain: Doctor, Kya report me pneumonia ya infec ka sign hai?",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",low
+OPENI_0741,"Doctor, Dil ka size bada dikh raha hai kya? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0742,"Please explain: Doctor, Report me koi acute issue nahi hai kya? jaldi batao.",O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0743,"Doctor, right/left chest side me pani ya fluid hai kya? jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0744,Kya repot me pneumonia ya infection ka sign hai? Thoda simple samjhao.,O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0745,"Doctor, right/left chest side me pani ya fluid hai ky? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0746,"Please explain: Doctor, Kya report me pneumonia ya infection ka sign hai? Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0747,Dil ka size bada dikh raha hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.,O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0748,repot me koi acute issue nahi hai kyaa? Cough fever ke symptoms bhi chal rahe hai. Dil se related issue ka doubt bhi hai. jaldi batao.,O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0749,"Doctor, Doctor, right/left chest side me pani ya fluid hai kyaa? Cough fever ke symptoms bhi chal rahe hai. Dil se related issue ka doubt bhi hai. Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0750,"Doctor, kyaa rprt me pneumonia ya infection ka sign hai? jaldi batao.",O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0751,"Doctor, right/left chest side me pani ya fluid hai kya? Heart beat fast lag rahi hai, chest pressure bhi hai.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,low
+OPENI_0752,"Doctor, Kya rprt me pneumonia ya infection ka sign hai? Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0753,"Doctor, Dil ka size bada dikh raha hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0754,Please explain: Report me koi acute issue nahi hai kya?,O004,No acute cardiopulmonary abnormality detected.,low
+OPENI_0755,"Doctor, right/left chest side me pani ya fluid hai ky? Cough fever ke symptoms bhi chal rahe hai.",O005,Moderate right pleural effusion with compressive atelectasis.,low
+OPENI_0756,"Doctor, kyaa repot me pneumonia ya infection ka sign hai?",O006,Dense right lower lobe consolidation with air bronchograms.,low
+OPENI_0757,"Doctor, right/left chest side me pani ya fluid hai kya? Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0758,"Doctor, Kya report me pneumonia ya infection ka sign hai? Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0759,"Doctor, Dil ka size bada dikh raha hai kya?",O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0760,"report me koi acute issue nahi hai kya? Heart beat fast lag rahi hai, chest pressure bhi hai.",O004,No acute cardiopulmonary abnormality detected.,low
+OPENI_0761,"Doctor, Doctor, right/left chest side me pani ya fluid hai ky? Dil se related issue ka doubt bhi hai.",O005,Moderate right pleural effusion with compressive atelectasis.,low
+OPENI_0762,Kya report me pneumonia ya infection ka sign hai? Thoda simple samjhao.,O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0763,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0764,kyaa report me pneumonia ya infection ka sign hai? Thoda simple samjhao.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0765,"Please explain: Doctor, Dil ka size bada dikh raha hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0766,"Doctor, Report me koi acute issue nahi hai kya? Cough fever ke symptoms bhi chal rahe hai. jaldi batao.",O004,No acute cardiopulmonary abnormality detected.,high
+OPENI_0767,"Doctor, right/left chest side me pani ya fluid hai kyaa? jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0768,"Doctor, Kya report me pneumonia ya infection ka sign hai?",O006,Dense right lower lobe consolidation with air bronchograms.,low
+OPENI_0769,"Please explain: Doctor, Doctor, right/left chest side me pani ya fluid hai ky? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0770,Please explain: Kya report me pneumonia ya infxn ka sign hai? jaldi batao.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",high
+OPENI_0771,"Doctor, Dil ka size bada dikh raha hai kya? Thoda simple samjhao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0772,"Please explain: Report me koi acute issue nahi hai kya? Cough fever ke symptoms bhi chal rahe hai. Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0773,"Please explain: Doctor, Doctor, right/left chest side me pani ya fluid hai kyaa? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0774,"Doctor, Kya report me pneumonia ya infec ka sign hai? jaldi batao.",O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0775,"Please explain: Doctor, Doctor, right/left chest side me pani ya fluid hai ky?",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,low
+OPENI_0776,"Doctor, Kya report me pneumonia ya infection ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0777,"Doctor, Dil ka size bada dikh raha hai ky? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0778,"Doctor, report me koi acute issue nahi hai kya? Dil se related issue ka doubt bhi hai. Thoda simple samjhao.",O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0779,"Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0780,Kya report me pneumonia ya infection ka sign hai? Dil se related issue ka doubt bhi hai. jaldi batao.,O006,Dense right lower lobe consolidation with air bronchograms.,high
+OPENI_0781,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai. jaldi batao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,high
+OPENI_0782,Kya repot me pneumonia ya infec ka sign hai? Dil se related issue ka doubt bhi hai. Thoda simple samjhao.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0783,"Doctor, Dil ka size bada dikh raha hai kya? Cough fever ke symptoms bhi chal rahe hai.",O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+OPENI_0784,"Doctor, Report me koi acute issue nahi hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0785,"Doctor, right/left chest side me pani ya fluid hai ky? Heart beat fast lag rahi hai, chest pressure bhi hai.",O005,Moderate right pleural effusion with compressive atelectasis.,low
+OPENI_0786,Kya repot me pneumonia ya infection ka sign hai?,O006,Dense right lower lobe consolidation with air bronchograms.,low
+OPENI_0787,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? jaldi batao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,high
+OPENI_0788,Kya report me pneumonia ya infec ka sign hai? Thoda simple samjhao.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0789,"Please explain: Doctor, Dil ka size bada dikh raha hai kya? Cough fever ke symptoms bhi chal rahe hai. Thoda simple samjhao.",O003,Mild cardiomegaly with pulmonary vascular congestion.,medium
+OPENI_0790,Report me koi acute issue nahi hai kya? Cough fever ke symptoms bhi chal rahe hai.,O004,No acute cardiopulmonary abnormality detected.,low
+OPENI_0791,"Doctor, Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.",O005,Moderate right pleural effusion with compressive atelectasis.,medium
+OPENI_0792,"Please explain: Kya report me pneumonia ya infection ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai.",O006,Dense right lower lobe consolidation with air bronchograms.,low
+OPENI_0793,"Please explain: Doctor, right/left chest side me pani ya fluid hai kya? Cough fever ke symptoms bhi chal rahe hai. Dil se related issue ka doubt bhi hai. jaldi batao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,high
+OPENI_0794,Please explain: Kya report me pneumonia ya infection ka sign hai? Thoda simple samjhao.,O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",medium
+OPENI_0795,Dil ka size bada dikh raha hai kya? Cough fever ke symptoms bhi chal rahe hai. jaldi batao.,O003,Mild cardiomegaly with pulmonary vascular congestion.,high
+OPENI_0796,report me koi acute issue nahi hai kya? Mujhe khansi aur bukhar bhi hai. Thoda simple samjhao.,O004,No acute cardiopulmonary abnormality detected.,medium
+OPENI_0797,"Doctor, right/left chest side me pani ya fluid hai kya? Dil se related issue ka doubt bhi hai. jaldi batao.",O005,Moderate right pleural effusion with compressive atelectasis.,high
+OPENI_0798,"Doctor, Kya report me pneumonia ya infection ka sign hai? Heart beat fast lag rahi hai, chest pressure bhi hai. Thoda simple samjhao.",O006,Dense right lower lobe consolidation with air bronchograms.,medium
+OPENI_0799,"Please explain: Doctor, right/left chest side me pani ya fluid hai kya? Mujhe khansi aur bukhar bhi hai. Dil se related issue ka doubt bhi hai. Thoda simple samjhao.",O001,Right-sided pleural effusion is present. Heart size is within normal limits.,medium
+OPENI_0800,"Doctor, kyaa report me pneumonia ya infection ka sign hai?",O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",low

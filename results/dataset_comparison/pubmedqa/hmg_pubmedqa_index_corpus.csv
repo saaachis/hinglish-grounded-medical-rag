@@ -1,0 +1,819 @@
+sample_id,query_hinglish,report_id,report_text,cmi_bucket
+PUBMEDQA_0001,Is medical evidence ka short interpretation do.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,low
+PUBMEDQA_0002,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0003,kyaa study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0004,Kya evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0005,Please explain: Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0006,Please explain: ky study me treatment effective dikhaya gaya hai? jaldi batao.,P006,Moderate evidence quality supports short-term efficacy.,high
+PUBMEDQA_0007,Please explain: Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0008,Please explain: Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0009,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0010,kyaa evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0011,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P005,No clear association was observed between intervention and primary endpoint.,high
+PUBMEDQA_0012,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0013,Please explain: Is medical evidence ka short interpretation do. jaldi batao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,high
+PUBMEDQA_0014,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0015,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0016,kya evidence conclusive nahi hai? jaldi batao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,high
+PUBMEDQA_0017,Please explain: Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0018,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0019,Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0020,Is treatment ka clear benefit hai ya nahi?,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,low
+PUBMEDQA_0021,Please explain: kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0022,Kya evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0023,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0024,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P006,Moderate evidence quality supports short-term efficacy.,high
+PUBMEDQA_0025,Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0026,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0027,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0028,Please explain: Kya evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0029,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0030,kyaa study me treatment effective dikhaya gaya hai? jaldi batao.,P006,Moderate evidence quality supports short-term efficacy.,high
+PUBMEDQA_0031,Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0032,Is treatment ka clear benefit hai ya nahi?,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,low
+PUBMEDQA_0033,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0034,ky evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0035,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0036,kyaa study me treatment effective dikhaya gaya hai?,P006,Moderate evidence quality supports short-term efficacy.,low
+PUBMEDQA_0037,Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0038,Is treatment ka clear benefit hai ya nahi?,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,low
+PUBMEDQA_0039,ky study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0040,Kya evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0041,Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0042,kyaa study me treatment effective dikhaya gaya hai? jaldi batao.,P006,Moderate evidence quality supports short-term efficacy.,high
+PUBMEDQA_0043,Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0044,Is treatment ka clear benefit hai ya nahi?,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,low
+PUBMEDQA_0045,ky study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0046,ky evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0047,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0048,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0049,Please explain: Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0050,Please explain: Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0051,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0052,Kya evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0053,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P005,No clear association was observed between intervention and primary endpoint.,high
+PUBMEDQA_0054,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0055,Is medical evidence ka short interpretation do.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,low
+PUBMEDQA_0056,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0057,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0058,Kya evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0059,Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0060,kya study me treatment effective dikhaya gaya hai?,P006,Moderate evidence quality supports short-term efficacy.,low
+PUBMEDQA_0061,Is medical evidence ka short interpretation do.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,low
+PUBMEDQA_0062,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0063,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0064,kya evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0065,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0066,Please explain: Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0067,Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0068,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0069,ky study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0070,Kya evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0071,Please explain: Is treatment ka clear benefit hai ya nahi? jaldi batao.,P005,No clear association was observed between intervention and primary endpoint.,high
+PUBMEDQA_0072,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P006,Moderate evidence quality supports short-term efficacy.,high
+PUBMEDQA_0073,Is medical evidence ka short interpretation do. jaldi batao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,high
+PUBMEDQA_0074,Please explain: Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0075,Please explain: kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0076,Kya evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0077,Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0078,Kya study me treatment effective dikhaya gaya hai?,P006,Moderate evidence quality supports short-term efficacy.,low
+PUBMEDQA_0079,Please explain: Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0080,Is treatment ka clear benefit hai ya nahi?,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,low
+PUBMEDQA_0081,kya study me treatment effective dikhaya gaya hai?,P003,Study reports improved symptom control with combination therapy.,low
+PUBMEDQA_0082,Please explain: kyaa evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0083,Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0084,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0085,Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0086,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0087,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0088,Kya evidence conclusive nahi hai? jaldi batao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,high
+PUBMEDQA_0089,Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0090,Please explain: Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0091,Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0092,Please explain: Is treatment ka clear benefit hai ya nahi?,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,low
+PUBMEDQA_0093,Please explain: kyaa study me treatment effective dikhaya gaya hai?,P003,Study reports improved symptom control with combination therapy.,low
+PUBMEDQA_0094,Kya evidence conclusive nahi hai? jaldi batao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,high
+PUBMEDQA_0095,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P005,No clear association was observed between intervention and primary endpoint.,high
+PUBMEDQA_0096,kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0097,Is medical evidence ka short interpretation do.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,low
+PUBMEDQA_0098,Please explain: Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0099,Please explain: Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0100,ky evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0101,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P005,No clear association was observed between intervention and primary endpoint.,high
+PUBMEDQA_0102,Kya study me treatment effective dikhaya gaya hai?,P006,Moderate evidence quality supports short-term efficacy.,low
+PUBMEDQA_0103,Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0104,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0105,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0106,Kya evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0107,Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0108,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0109,Is medical evidence ka short interpretation do. jaldi batao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,high
+PUBMEDQA_0110,Is treatment ka clear benefit hai ya nahi?,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,low
+PUBMEDQA_0111,Kya study me treatment effective dikhaya gaya hai?,P003,Study reports improved symptom control with combination therapy.,low
+PUBMEDQA_0112,Please explain: ky evidence conclusive nahi hai? jaldi batao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,high
+PUBMEDQA_0113,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0114,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P006,Moderate evidence quality supports short-term efficacy.,high
+PUBMEDQA_0115,Is medical evidence ka short interpretation do. jaldi batao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,high
+PUBMEDQA_0116,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0117,Please explain: ky study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0118,Please explain: Kya evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0119,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0120,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P006,Moderate evidence quality supports short-term efficacy.,high
+PUBMEDQA_0121,Is medical evidence ka short interpretation do.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,low
+PUBMEDQA_0122,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0123,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0124,Kya evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0125,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P005,No clear association was observed between intervention and primary endpoint.,high
+PUBMEDQA_0126,Kya study me treatment effective dikhaya gaya hai?,P006,Moderate evidence quality supports short-term efficacy.,low
+PUBMEDQA_0127,Is medical evidence ka short interpretation do.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,low
+PUBMEDQA_0128,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0129,Please explain: Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0130,Kya evidence conclusive nahi hai? jaldi batao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,high
+PUBMEDQA_0131,Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0132,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0133,Is medical evidence ka short interpretation do. jaldi batao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,high
+PUBMEDQA_0134,Please explain: Is treatment ka clear benefit hai ya nahi?,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,low
+PUBMEDQA_0135,Please explain: Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0136,Kya evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0137,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P005,No clear association was observed between intervention and primary endpoint.,high
+PUBMEDQA_0138,Please explain: kya study me treatment effective dikhaya gaya hai? jaldi batao.,P006,Moderate evidence quality supports short-term efficacy.,high
+PUBMEDQA_0139,Please explain: Is medical evidence ka short interpretation do. jaldi batao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,high
+PUBMEDQA_0140,Is treatment ka clear benefit hai ya nahi?,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,low
+PUBMEDQA_0141,Kya study me treatment effective dikhaya gaya hai?,P003,Study reports improved symptom control with combination therapy.,low
+PUBMEDQA_0142,Kya evidence conclusive nahi hai? jaldi batao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,high
+PUBMEDQA_0143,Please explain: Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0144,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P006,Moderate evidence quality supports short-term efficacy.,high
+PUBMEDQA_0145,Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0146,Please explain: Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0147,Please explain: Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0148,Please explain: Kya evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0149,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0150,Please explain: ky study me treatment effective dikhaya gaya hai?,P006,Moderate evidence quality supports short-term efficacy.,low
+PUBMEDQA_0151,Is medical evidence ka short interpretation do. jaldi batao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,high
+PUBMEDQA_0152,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0153,ky study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0154,kyaa evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0155,Please explain: Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0156,kya study me treatment effective dikhaya gaya hai? jaldi batao.,P006,Moderate evidence quality supports short-term efficacy.,high
+PUBMEDQA_0157,Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0158,Please explain: Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0159,Please explain: kyaa study me treatment effective dikhaya gaya hai?,P003,Study reports improved symptom control with combination therapy.,low
+PUBMEDQA_0160,Kya evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0161,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P005,No clear association was observed between intervention and primary endpoint.,high
+PUBMEDQA_0162,Please explain: Kya study me treatment effective dikhaya gaya hai?,P006,Moderate evidence quality supports short-term efficacy.,low
+PUBMEDQA_0163,Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0164,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0165,kya study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0166,ky evidence conclusive nahi hai? jaldi batao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,high
+PUBMEDQA_0167,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0168,Please explain: Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0169,Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0170,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0171,Please explain: Kya study me treatment effective dikhaya gaya hai?,P003,Study reports improved symptom control with combination therapy.,low
+PUBMEDQA_0172,ky evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0173,Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0174,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0175,Is medical evidence ka short interpretation do.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,low
+PUBMEDQA_0176,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0177,Please explain: kyaa study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0178,ky evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0179,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P005,No clear association was observed between intervention and primary endpoint.,high
+PUBMEDQA_0180,kyaa study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0181,Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0182,Is treatment ka clear benefit hai ya nahi?,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,low
+PUBMEDQA_0183,kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0184,Please explain: kyaa evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0185,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0186,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P006,Moderate evidence quality supports short-term efficacy.,high
+PUBMEDQA_0187,Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0188,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0189,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0190,Kya evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0191,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P005,No clear association was observed between intervention and primary endpoint.,high
+PUBMEDQA_0192,Please explain: Kya study me treatment effective dikhaya gaya hai?,P006,Moderate evidence quality supports short-term efficacy.,low
+PUBMEDQA_0193,Please explain: Is medical evidence ka short interpretation do. jaldi batao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,high
+PUBMEDQA_0194,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0195,Please explain: kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0196,Kya evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0197,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P005,No clear association was observed between intervention and primary endpoint.,high
+PUBMEDQA_0198,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0199,Is medical evidence ka short interpretation do. jaldi batao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,high
+PUBMEDQA_0200,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0201,kya study me treatment effective dikhaya gaya hai?,P003,Study reports improved symptom control with combination therapy.,low
+PUBMEDQA_0202,kyaa evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0203,Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0204,Please explain: kyaa study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0205,Please explain: Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0206,Please explain: Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0207,Kya study me treatment effective dikhaya gaya hai?,P003,Study reports improved symptom control with combination therapy.,low
+PUBMEDQA_0208,kyaa evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0209,Please explain: Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0210,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0211,Please explain: Is medical evidence ka short interpretation do.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,low
+PUBMEDQA_0212,Please explain: Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0213,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0214,kyaa evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0215,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0216,kya study me treatment effective dikhaya gaya hai?,P006,Moderate evidence quality supports short-term efficacy.,low
+PUBMEDQA_0217,Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0218,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0219,Kya study me treatment effective dikhaya gaya hai?,P003,Study reports improved symptom control with combination therapy.,low
+PUBMEDQA_0220,Please explain: Kya evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0221,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P005,No clear association was observed between intervention and primary endpoint.,high
+PUBMEDQA_0222,kyaa study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0223,Is medical evidence ka short interpretation do.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,low
+PUBMEDQA_0224,Is treatment ka clear benefit hai ya nahi?,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,low
+PUBMEDQA_0225,Kya study me treatment effective dikhaya gaya hai?,P003,Study reports improved symptom control with combination therapy.,low
+PUBMEDQA_0226,Kya evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0227,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0228,Kya study me treatment effective dikhaya gaya hai?,P006,Moderate evidence quality supports short-term efficacy.,low
+PUBMEDQA_0229,Please explain: Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0230,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0231,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0232,Kya evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0233,Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0234,kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0235,Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0236,Is treatment ka clear benefit hai ya nahi?,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,low
+PUBMEDQA_0237,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0238,Kya evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0239,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P005,No clear association was observed between intervention and primary endpoint.,high
+PUBMEDQA_0240,Kya study me treatment effective dikhaya gaya hai?,P006,Moderate evidence quality supports short-term efficacy.,low
+PUBMEDQA_0241,Please explain: Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0242,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0243,Please explain: Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0244,Kya evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0245,Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0246,ky study me treatment effective dikhaya gaya hai?,P006,Moderate evidence quality supports short-term efficacy.,low
+PUBMEDQA_0247,Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0248,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0249,kya study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0250,Please explain: Kya evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0251,Please explain: Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0252,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P006,Moderate evidence quality supports short-term efficacy.,high
+PUBMEDQA_0253,Please explain: Is medical evidence ka short interpretation do.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,low
+PUBMEDQA_0254,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0255,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0256,Kya evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0257,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0258,kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0259,Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0260,Is treatment ka clear benefit hai ya nahi?,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,low
+PUBMEDQA_0261,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0262,Please explain: Kya evidence conclusive nahi hai? jaldi batao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,high
+PUBMEDQA_0263,Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0264,Kya study me treatment effective dikhaya gaya hai?,P006,Moderate evidence quality supports short-term efficacy.,low
+PUBMEDQA_0265,Is medical evidence ka short interpretation do. jaldi batao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,high
+PUBMEDQA_0266,Is treatment ka clear benefit hai ya nahi?,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,low
+PUBMEDQA_0267,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0268,Kya evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0269,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0270,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P006,Moderate evidence quality supports short-term efficacy.,high
+PUBMEDQA_0271,Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0272,Is treatment ka clear benefit hai ya nahi?,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,low
+PUBMEDQA_0273,Please explain: Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0274,Kya evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0275,Please explain: Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0276,Kya study me treatment effective dikhaya gaya hai?,P006,Moderate evidence quality supports short-term efficacy.,low
+PUBMEDQA_0277,Please explain: Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0278,Please explain: Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0279,Please explain: kyaa study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0280,Please explain: Kya evidence conclusive nahi hai? jaldi batao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,high
+PUBMEDQA_0281,Please explain: Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0282,Please explain: Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0283,Please explain: Is medical evidence ka short interpretation do.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,low
+PUBMEDQA_0284,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0285,Please explain: Kya study me treatment effective dikhaya gaya hai?,P003,Study reports improved symptom control with combination therapy.,low
+PUBMEDQA_0286,kyaa evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0287,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0288,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0289,Is medical evidence ka short interpretation do. jaldi batao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,high
+PUBMEDQA_0290,Is treatment ka clear benefit hai ya nahi?,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,low
+PUBMEDQA_0291,Kya study me treatment effective dikhaya gaya hai?,P003,Study reports improved symptom control with combination therapy.,low
+PUBMEDQA_0292,Kya evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0293,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0294,kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0295,Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0296,Please explain: Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0297,Please explain: kyaa study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0298,Please explain: Kya evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0299,Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0300,kyaa study me treatment effective dikhaya gaya hai?,P006,Moderate evidence quality supports short-term efficacy.,low
+PUBMEDQA_0301,Please explain: Is medical evidence ka short interpretation do. jaldi batao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,high
+PUBMEDQA_0302,Is treatment ka clear benefit hai ya nahi?,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,low
+PUBMEDQA_0303,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0304,Kya evidence conclusive nahi hai? jaldi batao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,high
+PUBMEDQA_0305,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0306,kyaa study me treatment effective dikhaya gaya hai? jaldi batao.,P006,Moderate evidence quality supports short-term efficacy.,high
+PUBMEDQA_0307,Please explain: Is medical evidence ka short interpretation do. jaldi batao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,high
+PUBMEDQA_0308,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0309,Please explain: kyaa study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0310,kya evidence conclusive nahi hai? jaldi batao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,high
+PUBMEDQA_0311,Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0312,Please explain: Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0313,Please explain: Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0314,Is treatment ka clear benefit hai ya nahi?,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,low
+PUBMEDQA_0315,kyaa study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0316,Kya evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0317,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0318,kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0319,Is medical evidence ka short interpretation do.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,low
+PUBMEDQA_0320,Please explain: Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0321,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0322,Kya evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0323,Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0324,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P006,Moderate evidence quality supports short-term efficacy.,high
+PUBMEDQA_0325,Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0326,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0327,kyaa study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0328,kyaa evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0329,Please explain: Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0330,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0331,Is medical evidence ka short interpretation do. jaldi batao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,high
+PUBMEDQA_0332,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0333,Kya study me treatment effective dikhaya gaya hai?,P003,Study reports improved symptom control with combination therapy.,low
+PUBMEDQA_0334,Kya evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0335,Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0336,kyaa study me treatment effective dikhaya gaya hai?,P006,Moderate evidence quality supports short-term efficacy.,low
+PUBMEDQA_0337,Please explain: Is medical evidence ka short interpretation do. jaldi batao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,high
+PUBMEDQA_0338,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0339,Please explain: kya study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0340,Kya evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0341,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0342,kyaa study me treatment effective dikhaya gaya hai?,P006,Moderate evidence quality supports short-term efficacy.,low
+PUBMEDQA_0343,Please explain: Is medical evidence ka short interpretation do. jaldi batao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,high
+PUBMEDQA_0344,Please explain: Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0345,ky study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0346,Please explain: Kya evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0347,Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0348,kya study me treatment effective dikhaya gaya hai? jaldi batao.,P006,Moderate evidence quality supports short-term efficacy.,high
+PUBMEDQA_0349,Is medical evidence ka short interpretation do.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,low
+PUBMEDQA_0350,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0351,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0352,Please explain: Kya evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0353,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0354,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0355,Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0356,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0357,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0358,Please explain: Kya evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0359,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0360,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P006,Moderate evidence quality supports short-term efficacy.,high
+PUBMEDQA_0361,Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0362,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0363,Kya study me treatment effective dikhaya gaya hai?,P003,Study reports improved symptom control with combination therapy.,low
+PUBMEDQA_0364,kya evidence conclusive nahi hai? jaldi batao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,high
+PUBMEDQA_0365,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0366,kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0367,Is medical evidence ka short interpretation do.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,low
+PUBMEDQA_0368,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0369,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0370,ky evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0371,Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0372,Please explain: kya study me treatment effective dikhaya gaya hai?,P006,Moderate evidence quality supports short-term efficacy.,low
+PUBMEDQA_0373,Please explain: Is medical evidence ka short interpretation do.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,low
+PUBMEDQA_0374,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0375,ky study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0376,Kya evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0377,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0378,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0379,Please explain: Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0380,Is treatment ka clear benefit hai ya nahi?,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,low
+PUBMEDQA_0381,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0382,kyaa evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0383,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0384,Kya study me treatment effective dikhaya gaya hai?,P006,Moderate evidence quality supports short-term efficacy.,low
+PUBMEDQA_0385,Is medical evidence ka short interpretation do.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,low
+PUBMEDQA_0386,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0387,Please explain: ky study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0388,ky evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0389,Please explain: Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0390,ky study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0391,Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0392,Is treatment ka clear benefit hai ya nahi?,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,low
+PUBMEDQA_0393,kyaa study me treatment effective dikhaya gaya hai?,P003,Study reports improved symptom control with combination therapy.,low
+PUBMEDQA_0394,Please explain: kyaa evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0395,Please explain: Is treatment ka clear benefit hai ya nahi? jaldi batao.,P005,No clear association was observed between intervention and primary endpoint.,high
+PUBMEDQA_0396,kyaa study me treatment effective dikhaya gaya hai? jaldi batao.,P006,Moderate evidence quality supports short-term efficacy.,high
+PUBMEDQA_0397,Is medical evidence ka short interpretation do.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,low
+PUBMEDQA_0398,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0399,ky study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0400,ky evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0401,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0402,Kya study me treatment effective dikhaya gaya hai?,P006,Moderate evidence quality supports short-term efficacy.,low
+PUBMEDQA_0403,Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0404,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0405,Please explain: kya study me treatment effective dikhaya gaya hai?,P003,Study reports improved symptom control with combination therapy.,low
+PUBMEDQA_0406,Please explain: kya evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0407,Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0408,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0409,Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0410,Is treatment ka clear benefit hai ya nahi?,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,low
+PUBMEDQA_0411,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0412,Kya evidence conclusive nahi hai? jaldi batao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,high
+PUBMEDQA_0413,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P005,No clear association was observed between intervention and primary endpoint.,high
+PUBMEDQA_0414,kyaa study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0415,Please explain: Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0416,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0417,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0418,ky evidence conclusive nahi hai? jaldi batao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,high
+PUBMEDQA_0419,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0420,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P006,Moderate evidence quality supports short-term efficacy.,high
+PUBMEDQA_0421,Please explain: Is medical evidence ka short interpretation do. jaldi batao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,high
+PUBMEDQA_0422,Please explain: Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0423,kya study me treatment effective dikhaya gaya hai?,P003,Study reports improved symptom control with combination therapy.,low
+PUBMEDQA_0424,Please explain: Kya evidence conclusive nahi hai? jaldi batao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,high
+PUBMEDQA_0425,Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0426,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P006,Moderate evidence quality supports short-term efficacy.,high
+PUBMEDQA_0427,Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0428,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0429,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0430,ky evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0431,Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0432,Please explain: Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0433,Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0434,Is treatment ka clear benefit hai ya nahi?,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,low
+PUBMEDQA_0435,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0436,Kya evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0437,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P005,No clear association was observed between intervention and primary endpoint.,high
+PUBMEDQA_0438,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0439,Is medical evidence ka short interpretation do. jaldi batao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,high
+PUBMEDQA_0440,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0441,Kya study me treatment effective dikhaya gaya hai?,P003,Study reports improved symptom control with combination therapy.,low
+PUBMEDQA_0442,Kya evidence conclusive nahi hai? jaldi batao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,high
+PUBMEDQA_0443,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P005,No clear association was observed between intervention and primary endpoint.,high
+PUBMEDQA_0444,ky study me treatment effective dikhaya gaya hai?,P006,Moderate evidence quality supports short-term efficacy.,low
+PUBMEDQA_0445,Is medical evidence ka short interpretation do. jaldi batao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,high
+PUBMEDQA_0446,Please explain: Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0447,Please explain: Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0448,Please explain: Kya evidence conclusive nahi hai? jaldi batao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,high
+PUBMEDQA_0449,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0450,kyaa study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0451,Is medical evidence ka short interpretation do. jaldi batao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,high
+PUBMEDQA_0452,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0453,kyaa study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0454,kyaa evidence conclusive nahi hai? jaldi batao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,high
+PUBMEDQA_0455,Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0456,kyaa study me treatment effective dikhaya gaya hai? jaldi batao.,P006,Moderate evidence quality supports short-term efficacy.,high
+PUBMEDQA_0457,Please explain: Is medical evidence ka short interpretation do.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,low
+PUBMEDQA_0458,Is treatment ka clear benefit hai ya nahi?,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,low
+PUBMEDQA_0459,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0460,Kya evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0461,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0462,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P006,Moderate evidence quality supports short-term efficacy.,high
+PUBMEDQA_0463,Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0464,Please explain: Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0465,kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0466,Please explain: Kya evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0467,Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0468,Kya study me treatment effective dikhaya gaya hai?,P006,Moderate evidence quality supports short-term efficacy.,low
+PUBMEDQA_0469,Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0470,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0471,kya study me treatment effective dikhaya gaya hai?,P003,Study reports improved symptom control with combination therapy.,low
+PUBMEDQA_0472,Please explain: Kya evidence conclusive nahi hai? jaldi batao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,high
+PUBMEDQA_0473,Please explain: Is treatment ka clear benefit hai ya nahi? jaldi batao.,P005,No clear association was observed between intervention and primary endpoint.,high
+PUBMEDQA_0474,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P006,Moderate evidence quality supports short-term efficacy.,high
+PUBMEDQA_0475,Is medical evidence ka short interpretation do. jaldi batao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,high
+PUBMEDQA_0476,Is treatment ka clear benefit hai ya nahi?,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,low
+PUBMEDQA_0477,kya study me treatment effective dikhaya gaya hai?,P003,Study reports improved symptom control with combination therapy.,low
+PUBMEDQA_0478,Kya evidence conclusive nahi hai? jaldi batao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,high
+PUBMEDQA_0479,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0480,Kya study me treatment effective dikhaya gaya hai?,P006,Moderate evidence quality supports short-term efficacy.,low
+PUBMEDQA_0481,Please explain: Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0482,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0483,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0484,Kya evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0485,Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0486,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0487,Please explain: Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0488,Please explain: Is treatment ka clear benefit hai ya nahi?,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,low
+PUBMEDQA_0489,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0490,Kya evidence conclusive nahi hai? jaldi batao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,high
+PUBMEDQA_0491,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0492,Kya study me treatment effective dikhaya gaya hai?,P006,Moderate evidence quality supports short-term efficacy.,low
+PUBMEDQA_0493,Please explain: Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0494,Is treatment ka clear benefit hai ya nahi?,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,low
+PUBMEDQA_0495,kya study me treatment effective dikhaya gaya hai?,P003,Study reports improved symptom control with combination therapy.,low
+PUBMEDQA_0496,Please explain: ky evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0497,Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0498,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P006,Moderate evidence quality supports short-term efficacy.,high
+PUBMEDQA_0499,Is medical evidence ka short interpretation do.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,low
+PUBMEDQA_0500,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0501,kya study me treatment effective dikhaya gaya hai?,P003,Study reports improved symptom control with combination therapy.,low
+PUBMEDQA_0502,Please explain: Kya evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0503,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P005,No clear association was observed between intervention and primary endpoint.,high
+PUBMEDQA_0504,ky study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0505,Please explain: Is medical evidence ka short interpretation do. jaldi batao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,high
+PUBMEDQA_0506,Is treatment ka clear benefit hai ya nahi?,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,low
+PUBMEDQA_0507,ky study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0508,Please explain: Kya evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0509,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0510,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P006,Moderate evidence quality supports short-term efficacy.,high
+PUBMEDQA_0511,Is medical evidence ka short interpretation do.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,low
+PUBMEDQA_0512,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0513,kyaa study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0514,Kya evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0515,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0516,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0517,Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0518,Please explain: Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0519,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0520,Kya evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0521,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P005,No clear association was observed between intervention and primary endpoint.,high
+PUBMEDQA_0522,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0523,Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0524,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0525,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0526,Kya evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0527,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0528,kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0529,Is medical evidence ka short interpretation do. jaldi batao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,high
+PUBMEDQA_0530,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0531,kyaa study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0532,Kya evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0533,Please explain: Is treatment ka clear benefit hai ya nahi? jaldi batao.,P005,No clear association was observed between intervention and primary endpoint.,high
+PUBMEDQA_0534,Please explain: Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P006,Moderate evidence quality supports short-term efficacy.,high
+PUBMEDQA_0535,Please explain: Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0536,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0537,kyaa study me treatment effective dikhaya gaya hai?,P003,Study reports improved symptom control with combination therapy.,low
+PUBMEDQA_0538,Kya evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0539,Please explain: Is treatment ka clear benefit hai ya nahi? jaldi batao.,P005,No clear association was observed between intervention and primary endpoint.,high
+PUBMEDQA_0540,kyaa study me treatment effective dikhaya gaya hai? jaldi batao.,P006,Moderate evidence quality supports short-term efficacy.,high
+PUBMEDQA_0541,Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0542,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0543,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0544,Kya evidence conclusive nahi hai? jaldi batao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,high
+PUBMEDQA_0545,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0546,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P006,Moderate evidence quality supports short-term efficacy.,high
+PUBMEDQA_0547,Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0548,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0549,Kya study me treatment effective dikhaya gaya hai?,P003,Study reports improved symptom control with combination therapy.,low
+PUBMEDQA_0550,kyaa evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0551,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0552,Please explain: kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0553,Is medical evidence ka short interpretation do.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,low
+PUBMEDQA_0554,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0555,Kya study me treatment effective dikhaya gaya hai?,P003,Study reports improved symptom control with combination therapy.,low
+PUBMEDQA_0556,Please explain: Kya evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0557,Please explain: Is treatment ka clear benefit hai ya nahi? jaldi batao.,P005,No clear association was observed between intervention and primary endpoint.,high
+PUBMEDQA_0558,ky study me treatment effective dikhaya gaya hai?,P006,Moderate evidence quality supports short-term efficacy.,low
+PUBMEDQA_0559,Please explain: Is medical evidence ka short interpretation do.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,low
+PUBMEDQA_0560,Is treatment ka clear benefit hai ya nahi?,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,low
+PUBMEDQA_0561,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0562,Kya evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0563,Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0564,ky study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0565,Is medical evidence ka short interpretation do.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,low
+PUBMEDQA_0566,Please explain: Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0567,Kya study me treatment effective dikhaya gaya hai?,P003,Study reports improved symptom control with combination therapy.,low
+PUBMEDQA_0568,kyaa evidence conclusive nahi hai? jaldi batao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,high
+PUBMEDQA_0569,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0570,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0571,Is medical evidence ka short interpretation do. jaldi batao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,high
+PUBMEDQA_0572,Please explain: Is treatment ka clear benefit hai ya nahi?,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,low
+PUBMEDQA_0573,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0574,kya evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0575,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0576,Please explain: Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0577,Please explain: Is medical evidence ka short interpretation do.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,low
+PUBMEDQA_0578,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0579,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0580,kya evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0581,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0582,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P006,Moderate evidence quality supports short-term efficacy.,high
+PUBMEDQA_0583,Is medical evidence ka short interpretation do.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,low
+PUBMEDQA_0584,Is treatment ka clear benefit hai ya nahi?,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,low
+PUBMEDQA_0585,Please explain: kyaa study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0586,Kya evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0587,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P005,No clear association was observed between intervention and primary endpoint.,high
+PUBMEDQA_0588,Please explain: ky study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0589,Is medical evidence ka short interpretation do.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,low
+PUBMEDQA_0590,Please explain: Is treatment ka clear benefit hai ya nahi?,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,low
+PUBMEDQA_0591,Kya study me treatment effective dikhaya gaya hai?,P003,Study reports improved symptom control with combination therapy.,low
+PUBMEDQA_0592,Please explain: ky evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0593,Please explain: Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0594,Kya study me treatment effective dikhaya gaya hai?,P006,Moderate evidence quality supports short-term efficacy.,low
+PUBMEDQA_0595,Please explain: Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0596,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0597,Please explain: Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0598,Kya evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0599,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0600,Please explain: Kya study me treatment effective dikhaya gaya hai?,P006,Moderate evidence quality supports short-term efficacy.,low
+PUBMEDQA_0601,Is medical evidence ka short interpretation do. jaldi batao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,high
+PUBMEDQA_0602,Is treatment ka clear benefit hai ya nahi?,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,low
+PUBMEDQA_0603,Please explain: Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0604,Please explain: kyaa evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0605,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P005,No clear association was observed between intervention and primary endpoint.,high
+PUBMEDQA_0606,kyaa study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0607,Please explain: Is medical evidence ka short interpretation do. jaldi batao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,high
+PUBMEDQA_0608,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0609,Please explain: ky study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0610,Please explain: kyaa evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0611,Please explain: Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0612,Kya study me treatment effective dikhaya gaya hai?,P006,Moderate evidence quality supports short-term efficacy.,low
+PUBMEDQA_0613,Please explain: Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0614,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0615,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0616,Please explain: ky evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0617,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P005,No clear association was observed between intervention and primary endpoint.,high
+PUBMEDQA_0618,Kya study me treatment effective dikhaya gaya hai?,P006,Moderate evidence quality supports short-term efficacy.,low
+PUBMEDQA_0619,Is medical evidence ka short interpretation do. jaldi batao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,high
+PUBMEDQA_0620,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0621,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0622,kyaa evidence conclusive nahi hai? jaldi batao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,high
+PUBMEDQA_0623,Please explain: Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0624,Kya study me treatment effective dikhaya gaya hai?,P006,Moderate evidence quality supports short-term efficacy.,low
+PUBMEDQA_0625,Please explain: Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0626,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0627,kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0628,Kya evidence conclusive nahi hai? jaldi batao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,high
+PUBMEDQA_0629,Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0630,Please explain: Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0631,Is medical evidence ka short interpretation do.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,low
+PUBMEDQA_0632,Is treatment ka clear benefit hai ya nahi?,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,low
+PUBMEDQA_0633,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0634,Kya evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0635,Please explain: Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0636,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0637,Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0638,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0639,kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0640,Kya evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0641,Please explain: Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0642,Please explain: Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0643,Please explain: Is medical evidence ka short interpretation do.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,low
+PUBMEDQA_0644,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0645,kya study me treatment effective dikhaya gaya hai?,P003,Study reports improved symptom control with combination therapy.,low
+PUBMEDQA_0646,Please explain: ky evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0647,Please explain: Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0648,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P006,Moderate evidence quality supports short-term efficacy.,high
+PUBMEDQA_0649,Is medical evidence ka short interpretation do. jaldi batao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,high
+PUBMEDQA_0650,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0651,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0652,Kya evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0653,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0654,Kya study me treatment effective dikhaya gaya hai?,P006,Moderate evidence quality supports short-term efficacy.,low
+PUBMEDQA_0655,Is medical evidence ka short interpretation do. jaldi batao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,high
+PUBMEDQA_0656,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0657,kya study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0658,Please explain: Kya evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0659,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0660,kya study me treatment effective dikhaya gaya hai?,P006,Moderate evidence quality supports short-term efficacy.,low
+PUBMEDQA_0661,Is medical evidence ka short interpretation do.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,low
+PUBMEDQA_0662,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0663,Please explain: kyaa study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0664,Kya evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0665,Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0666,Please explain: kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0667,Is medical evidence ka short interpretation do.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,low
+PUBMEDQA_0668,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0669,Please explain: kyaa study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0670,Please explain: Kya evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0671,Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0672,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P006,Moderate evidence quality supports short-term efficacy.,high
+PUBMEDQA_0673,Please explain: Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0674,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0675,Please explain: Kya study me treatment effective dikhaya gaya hai?,P003,Study reports improved symptom control with combination therapy.,low
+PUBMEDQA_0676,Kya evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0677,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0678,Please explain: Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0679,Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0680,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0681,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0682,Kya evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0683,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P005,No clear association was observed between intervention and primary endpoint.,high
+PUBMEDQA_0684,Please explain: Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P006,Moderate evidence quality supports short-term efficacy.,high
+PUBMEDQA_0685,Is medical evidence ka short interpretation do.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,low
+PUBMEDQA_0686,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0687,Please explain: Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0688,kya evidence conclusive nahi hai? jaldi batao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,high
+PUBMEDQA_0689,Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0690,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P006,Moderate evidence quality supports short-term efficacy.,high
+PUBMEDQA_0691,Is medical evidence ka short interpretation do.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,low
+PUBMEDQA_0692,Please explain: Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0693,Please explain: Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0694,ky evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0695,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0696,kyaa study me treatment effective dikhaya gaya hai?,P006,Moderate evidence quality supports short-term efficacy.,low
+PUBMEDQA_0697,Is medical evidence ka short interpretation do. jaldi batao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,high
+PUBMEDQA_0698,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0699,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0700,Please explain: Kya evidence conclusive nahi hai? jaldi batao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,high
+PUBMEDQA_0701,Please explain: Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0702,Please explain: kyaa study me treatment effective dikhaya gaya hai? jaldi batao.,P006,Moderate evidence quality supports short-term efficacy.,high
+PUBMEDQA_0703,Please explain: Is medical evidence ka short interpretation do.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,low
+PUBMEDQA_0704,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0705,Please explain: ky study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0706,Kya evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0707,Please explain: Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0708,Kya study me treatment effective dikhaya gaya hai?,P006,Moderate evidence quality supports short-term efficacy.,low
+PUBMEDQA_0709,Is medical evidence ka short interpretation do. jaldi batao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,high
+PUBMEDQA_0710,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0711,kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0712,Kya evidence conclusive nahi hai? jaldi batao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,high
+PUBMEDQA_0713,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P005,No clear association was observed between intervention and primary endpoint.,high
+PUBMEDQA_0714,Please explain: Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P006,Moderate evidence quality supports short-term efficacy.,high
+PUBMEDQA_0715,Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0716,Please explain: Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0717,Please explain: kya study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0718,Please explain: kyaa evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0719,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0720,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P006,Moderate evidence quality supports short-term efficacy.,high
+PUBMEDQA_0721,Is medical evidence ka short interpretation do.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,low
+PUBMEDQA_0722,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0723,Kya study me treatment effective dikhaya gaya hai?,P003,Study reports improved symptom control with combination therapy.,low
+PUBMEDQA_0724,Kya evidence conclusive nahi hai? jaldi batao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,high
+PUBMEDQA_0725,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0726,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0727,Is medical evidence ka short interpretation do. jaldi batao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,high
+PUBMEDQA_0728,Please explain: Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0729,Please explain: kyaa study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0730,Kya evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0731,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0732,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0733,Please explain: Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0734,Is treatment ka clear benefit hai ya nahi?,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,low
+PUBMEDQA_0735,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0736,Kya evidence conclusive nahi hai? jaldi batao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,high
+PUBMEDQA_0737,Please explain: Is treatment ka clear benefit hai ya nahi? jaldi batao.,P005,No clear association was observed between intervention and primary endpoint.,high
+PUBMEDQA_0738,Kya study me treatment effective dikhaya gaya hai?,P006,Moderate evidence quality supports short-term efficacy.,low
+PUBMEDQA_0739,Is medical evidence ka short interpretation do. jaldi batao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,high
+PUBMEDQA_0740,Is treatment ka clear benefit hai ya nahi?,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,low
+PUBMEDQA_0741,Please explain: kya study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0742,Kya evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0743,Please explain: Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0744,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0745,Is medical evidence ka short interpretation do.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,low
+PUBMEDQA_0746,Is treatment ka clear benefit hai ya nahi?,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,low
+PUBMEDQA_0747,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0748,Kya evidence conclusive nahi hai? jaldi batao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,high
+PUBMEDQA_0749,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P005,No clear association was observed between intervention and primary endpoint.,high
+PUBMEDQA_0750,Please explain: Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0751,Is medical evidence ka short interpretation do. jaldi batao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,high
+PUBMEDQA_0752,Please explain: Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0753,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0754,Please explain: kya evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0755,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P005,No clear association was observed between intervention and primary endpoint.,high
+PUBMEDQA_0756,ky study me treatment effective dikhaya gaya hai?,P006,Moderate evidence quality supports short-term efficacy.,low
+PUBMEDQA_0757,Is medical evidence ka short interpretation do. jaldi batao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,high
+PUBMEDQA_0758,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0759,Please explain: Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0760,Please explain: Kya evidence conclusive nahi hai?,P004,Findings are inconclusive due to small sample size and study heterogeneity.,low
+PUBMEDQA_0761,Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0762,Kya study me treatment effective dikhaya gaya hai?,P006,Moderate evidence quality supports short-term efficacy.,low
+PUBMEDQA_0763,Is medical evidence ka short interpretation do.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,low
+PUBMEDQA_0764,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0765,kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0766,Kya evidence conclusive nahi hai? jaldi batao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,high
+PUBMEDQA_0767,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0768,kyaa study me treatment effective dikhaya gaya hai? jaldi batao.,P006,Moderate evidence quality supports short-term efficacy.,high
+PUBMEDQA_0769,Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0770,Is treatment ka clear benefit hai ya nahi?,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,low
+PUBMEDQA_0771,Kya study me treatment effective dikhaya gaya hai?,P003,Study reports improved symptom control with combination therapy.,low
+PUBMEDQA_0772,Kya evidence conclusive nahi hai? jaldi batao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,high
+PUBMEDQA_0773,Please explain: Is treatment ka clear benefit hai ya nahi? jaldi batao.,P005,No clear association was observed between intervention and primary endpoint.,high
+PUBMEDQA_0774,Kya study me treatment effective dikhaya gaya hai?,P006,Moderate evidence quality supports short-term efficacy.,low
+PUBMEDQA_0775,Please explain: Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0776,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0777,Kya study me treatment effective dikhaya gaya hai? jaldi batao.,P003,Study reports improved symptom control with combination therapy.,high
+PUBMEDQA_0778,Kya evidence conclusive nahi hai? jaldi batao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,high
+PUBMEDQA_0779,Please explain: Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0780,kya study me treatment effective dikhaya gaya hai? jaldi batao.,P006,Moderate evidence quality supports short-term efficacy.,high
+PUBMEDQA_0781,Please explain: Is medical evidence ka short interpretation do. jaldi batao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,high
+PUBMEDQA_0782,Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,medium
+PUBMEDQA_0783,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0784,kyaa evidence conclusive nahi hai? jaldi batao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,high
+PUBMEDQA_0785,Please explain: Is treatment ka clear benefit hai ya nahi? Thoda simple samjhao.,P005,No clear association was observed between intervention and primary endpoint.,medium
+PUBMEDQA_0786,ky study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P006,Moderate evidence quality supports short-term efficacy.,medium
+PUBMEDQA_0787,Is medical evidence ka short interpretation do. jaldi batao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,high
+PUBMEDQA_0788,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0789,Kya study me treatment effective dikhaya gaya hai? Thoda simple samjhao.,P003,Study reports improved symptom control with combination therapy.,medium
+PUBMEDQA_0790,Kya evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0791,Is treatment ka clear benefit hai ya nahi?,P005,No clear association was observed between intervention and primary endpoint.,low
+PUBMEDQA_0792,Please explain: Kya study me treatment effective dikhaya gaya hai?,P006,Moderate evidence quality supports short-term efficacy.,low
+PUBMEDQA_0793,Is medical evidence ka short interpretation do. jaldi batao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,high
+PUBMEDQA_0794,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+PUBMEDQA_0795,Kya study me treatment effective dikhaya gaya hai?,P003,Study reports improved symptom control with combination therapy.,low
+PUBMEDQA_0796,ky evidence conclusive nahi hai? Thoda simple samjhao.,P004,Findings are inconclusive due to small sample size and study heterogeneity.,medium
+PUBMEDQA_0797,Please explain: Is treatment ka clear benefit hai ya nahi? jaldi batao.,P005,No clear association was observed between intervention and primary endpoint.,high
+PUBMEDQA_0798,ky study me treatment effective dikhaya gaya hai?,P006,Moderate evidence quality supports short-term efficacy.,low
+PUBMEDQA_0799,Is medical evidence ka short interpretation do. Thoda simple samjhao.,P001,Evidence suggests corticosteroids can reduce inflammation in selected cases.,medium
+PUBMEDQA_0800,Is treatment ka clear benefit hai ya nahi? jaldi batao.,P002,Meta-analysis indicates no significant mortality benefit in this cohort.,high
+D_openi_000,distractor,D_O001,Right-sided pleural effusion is present. Heart size is within normal limits.,low
+D_openi_001,distractor,D_O006,Dense right lower lobe consolidation with air bronchograms.,low
+D_openi_002,distractor,D_O003,Mild cardiomegaly with pulmonary vascular congestion.,low
+D_openi_003,distractor,D_O004,No acute cardiopulmonary abnormality detected.,low
+D_openi_004,distractor,D_O002,"Left lower lobe consolidation is noted, suspicious for pneumonia.",low
+D_openi_005,distractor,D_O005,Moderate right pleural effusion with compressive atelectasis.,low
+D_mmcqsd_000,distractor,D_M001,Skin erythema over forearm with mild edema; no abscess formation.,low
+D_mmcqsd_001,distractor,D_M002,Otitis externa signs with canal edema; tympanic membrane intact.,low
+D_mmcqsd_002,distractor,D_M004,Mild sinus mucosal thickening without fluid level.,low
+D_mmcqsd_003,distractor,D_M003,Conjunctival congestion with watery discharge; no corneal ulcer.,low
+D_mmcqsd_004,distractor,D_M005,"Localized soft tissue swelling around ankle, no fracture line seen.",low
+D_mmcqsd_005,distractor,D_M006,No acute abnormality detected in provided clinical image summary.,low
+D_mmed_bench_000,distractor,D_B003,Ophthalmic finding: retinal edema with exudates; no detachment.,low
+D_mmed_bench_001,distractor,D_B002,Pathology-like description notes inflammatory infiltrate without malignancy.,low
+D_mmed_bench_002,distractor,D_B004,Radiology QA context indicates bilateral patchy opacities suggestive of infection.,low
+D_mmed_bench_003,distractor,D_B005,Distractor context: normal variant anatomy without acute pathology.,low
+D_mmed_bench_004,distractor,D_B001,Chest image shows right pleural effusion with basal atelectatic change.,low
+D_mmed_bench_005,distractor,D_B006,Cardiac silhouette mildly enlarged with vascular prominence.,low
