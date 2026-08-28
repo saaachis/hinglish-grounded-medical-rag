@@ -119,7 +119,10 @@ knowing before you read older documents.
 
 ## 5. Repository state
 
-- **Branch** `saachi-hardening`, pushed. `main` contains all earlier work.
+- **Branch** `saachi-hardening`, pushed — **this is the branch to work from.** It is
+  ahead of `main` and holds every fix, result, figure, the draft and the
+  bibliography. Start from it rather than from `main`:
+  `git fetch origin && git checkout saachi-hardening`
 - **Tests**: 44 passing, 0 errors (two had errored since the first commit — pytest
   was collecting `hypothesis.py`'s `test_*` helpers as tests).
 - **Reproducibility**: `python -m src.analysis.reproduce_all` regenerates every
@@ -149,12 +152,31 @@ knowing before you read older documents.
 
 | # | Task | Owner | Notes |
 |---|---|---|---|
-| 1 | **Related Work + citations** | — | The largest gap. Papers are in `research-work/papers/`. The draft marks where they go |
+| 1 | **Related Work prose** | — | Citations are now supplied — see below. Only the prose is left |
 | 2 | Library versions and compute in §4.3 | — | `pip freeze` for torch, sentence-transformers, faiss-cpu, scipy |
 | 3 | Zenodo deposit → DOI | — | Required by the template's Data availability. ~380 MB |
 | 4 | Repository URL + release tag | — | For Code availability |
 | 5 | Acknowledgements | — | Supervisors, institution |
 | 6 | Read the draft end to end | **both** | Every `[TO COMPLETE]` marker is a decision for you |
+
+### The bibliography is done
+
+`research-paper/references.bib` holds nine entries read straight out of the PDFs in
+`research-work/papers/` — authors, venue, year and page ranges taken from the papers
+themselves rather than recalled. Seven standard method citations (LaBSE, MuRIL, BM25,
+RRF, FAISS, multilingual-E5, MultiCaRe) sit in a separate section marked `VERIFY`,
+because those were written from general knowledge and their page ranges and author
+lists have not been checked.
+
+Three things the filenames get wrong, so check these before citing:
+
+- The dataset is **MMCQS**, not "MMCQSD" as this repo calls it throughout, and it is
+  introduced by **MedSumm** (Ghosh et al., 2024, arXiv:2401.01596). That is the most
+  important citation in the paper — it is the source of every Hinglish query.
+- **LLaVA-Med is NeurIPS 2023** (Datasets and Benchmarks track), not 2024.
+- **Fact-Aware Multimodal Retrieval Augmentation is NAACL 2025**, not EMNLP 2024.
+
+---
 
 ### One decision only the two of you can make
 
