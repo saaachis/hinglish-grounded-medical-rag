@@ -129,5 +129,12 @@ app:
 future_work:
   - "QLoRA / DPO fine-tuning of the generator"
   - "Multimodal retrieval (BioMedCLIP over MMCQSD images)"
-  - "H03 evidence provenance — PubMedQA is only 2.1% on-topic for these conditions"
+  # H03 is NO LONGER future work. It was run on four topically matched,
+  # equal-sized corpora (n = 160) and is reported in Sect. 5.5 of the paper:
+  # evidence provenance significantly changes REFUSAL (Cochran's Q = 9.09,
+  # p = 0.028). Only the answer-quality half remains open, and it is a power
+  # problem, not an unrun experiment.
+  - "H03 answer quality — measured but underpowered: only 13 of 160 queries were
+     scoreable under all four evidence conditions, because refusal rates run
+     76-88%. Needs a lower-refusal prompt rather than more queries."
   - "Clinician validation of the concept lexicon"
