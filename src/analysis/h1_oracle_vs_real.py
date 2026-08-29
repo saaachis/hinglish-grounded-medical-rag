@@ -21,6 +21,7 @@ No API calls. Writes results/h1_real_retrieval/.
 
 from __future__ import annotations
 
+import argparse
 import logging
 from pathlib import Path
 
@@ -31,6 +32,10 @@ from scipy import stats
 logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s")
 logger = logging.getLogger(__name__)
 
+# Defaults preserve the original behaviour. They are overridable because the
+# gpt-oss-120b run writes to results/h1_real_120b/, and its report was left
+# stale at n=256 while the scored file grew to n=467 -- a committed report that
+# contradicted the manuscript. Always regenerate after adding generations.
 SCORED = Path("results/h1_real_retrieval/h1_real_scored.csv")
 OUT = Path("results/h1_real_retrieval")
 
@@ -59,7 +64,14 @@ def paired(df: pd.DataFrame, a: str, b: str) -> dict:
 
 
 def main() -> None:
-    df = pd.read_csv(SCORED)
+    ap = argparse.ArgumentParser(description="H1 oracle vs real retrieval")
+    ap.add_argument("--scored", type=Path, default=SCORED, help="scored CSV to analyse")
+    ap.add_argument("--out", type=Path, default=OUT, help="directory for report + stats")
+    args = ap.parse_args()
+    scored, out_dir = args.scored, args.out
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    df = pd.read_csv(scored)
     n = len(df)
     logger.info("Loaded %d rows (model=%s, top_k=%s)", n, df["model"].iloc[0], df["top_k"].iloc[0])
 
@@ -126,8 +138,9 @@ def main() -> None:
     L += ["", f"Retrieval top-1 correct: **{df.retrieval_top1_correct.mean():.1%}** · "
           f"any of top-k correct: **{df.retrieval_any_correct.mean():.1%}**", ""]
 
-    pd.DataFrame(rows).to_csv(OUT / "h1_oracle_vs_real_stats.csv", index=False)
-    (OUT / "h1_oracle_vs_real_report.md").write_text("\n".join(L), encoding="utf-8")
+    pd.DataFrame(rows).to_csv(out_dir / "h1_oracle_vs_real_stats.csv", index=False)
+    (out_dir / "h1_oracle_vs_real_report.md").write_text("\n".join(L), encoding="utf-8")
+    logger.info("Wrote %s", out_dir / "h1_oracle_vs_real_report.md")
     print("\n".join(L))
 
 
