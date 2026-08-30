@@ -123,3 +123,8 @@ research-paper/draft/*.bbl
 research-paper/draft/*.blg
 research-paper/draft/*.spl
 research-paper/draft/*.toc
+
+# ---------- Zenodo staging (large derived artifacts, uploaded manually) ----------
+zenodo-upload/**
+!zenodo-upload/
+!zenodo-upload/README.md

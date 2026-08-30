@@ -1,0 +1,14 @@
+building TF-IDF over 10,000 full case texts ...
+  vocab: 200000
+
+Q1_hinglish:  n=3015
+  rows with max similarity == 0 (top-1 arbitrary): 9  (0.3%)
+  rows with a TIE at the top score               : 204  (6.8%)
+  -> up to 204 queries could flip top-1 between runs
+  argsort repeated in-process identical: True
+
+Q2_english:  n=3015
+  rows with max similarity == 0 (top-1 arbitrary): 0  (0.0%)
+  rows with a TIE at the top score               : 272  (9.0%)
+  -> up to 272 queries could flip top-1 between runs
+  argsort repeated in-process identical: True
