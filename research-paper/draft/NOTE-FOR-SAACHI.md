@@ -32,7 +32,7 @@ after that surgery and it's byte-identical, so nothing was disturbed.
 
 ---
 
-## 🔴 Red flag 1 — the hybrid retrieval result may not reproduce
+## 🔴 Red flag — the hybrid retrieval result may not reproduce
 
 **In plain terms.** Table 1 says all three retrieval systems get significantly
 worse on Hinglish. When I re-ran the pipeline from scratch, two of the three came
@@ -74,35 +74,27 @@ regenerated, so it isn't a small edit this close to the deadline. Your call.
 
 ---
 
-## 🟠 Red flag 2 — the review policy is still unconfirmed
+## Which file to submit
 
-I could not determine whether ICCSDI 2026 is double-blind. The conference site is
-JavaScript-rendered and every fetch returned only the deadline banner, never the
-author guidelines. **Please check the Microsoft CMT submission form** — it usually
-states the review model on the track description.
+The call for papers doesn't specify a review model, so this is our choice rather
+than a requirement. Both versions are ready and identical in content:
 
-This decides which file we submit, so it matters:
+- **`ICCSDI2026_final_named.docx`** — full author block, cites the Zenodo DOI and
+  the repository URL. The sensible default when anonymity isn't asked for.
+- **`ICCSDI2026_final_anonymised.docx`** — author block, affiliation, emails,
+  acknowledgements, repository URL and Zenodo DOI all withheld. Keep it in reserve
+  in case a reviewer or the chair asks for a blinded copy.
 
-- **Single-blind / not blind →** `ICCSDI2026_final_named.docx`
-- **Double-blind →** `ICCSDI2026_final_anonymised.docx`
-
-**One thing to be careful about if it is double-blind.** The Zenodo record carries
-both our names. That's why the anonymised draft deliberately does *not* cite the
-DOI — it says the DOI is withheld for review — and why the GitHub URL is withheld
-too. Citing either would deanonymise us in one click. Worth knowing that a
-determined reviewer could still search Zenodo for the title and find it; if the
-conference is strict, consider making the Zenodo record restricted until after
-decisions.
-
-The anonymised file was scrubbed at the package level, not just the visible text.
-The emails and repo URL had survived my first pass as **hyperlink relationship
-targets** — invisible in Word, but plainly readable to anyone who unzips the file.
-It now scans clean for all twelve identifying terms in both the text and the raw
-XML.
+Worth knowing about the anonymised file: the emails and repository URL had survived
+my first anonymisation pass as **hyperlink relationship targets** — invisible in
+Word, but plainly readable to anyone who unzips the `.docx`. That's fixed; it now
+scans clean for all twelve identifying terms in both the visible text and the raw
+XML. It also deliberately omits the Zenodo DOI, since that record carries both our
+names and citing it would undo the anonymisation in one click.
 
 ---
 
-## 🟡 Minor things, already fixed
+## Minor things, already fixed
 
 - The paper's truncation figures were only ever recorded in a docstring, never
   computed by any script. I re-measured them: case narratives are **median 300
@@ -121,8 +113,7 @@ XML.
 
 ## Still open for you
 
-1. **Confirm the review policy** and pick the matching file.
-2. **Decide on the hybrid claim** (leave as-is, or soften Sect. 5.1).
-3. **Run the manuscript through Turnitin** via the institutional account. I can't
+1. **Decide on the hybrid claim** — leave Sect. 5.1 as-is, or soften it.
+2. **Run the manuscript through Turnitin** via the institutional account. I can't
    produce a similarity or AI-detection score — those are proprietary systems, and
    any number I gave you would be invented.
