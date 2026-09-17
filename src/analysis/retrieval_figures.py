@@ -134,12 +134,49 @@ def fig_penalty(tests: pd.DataFrame) -> None:
     plt.close(fig)
 
 
+
+def fig_penalty_by_depth(depth: pd.DataFrame) -> None:
+    """The code-mixing penalty at every rank cutoff, per system.
+
+    Recall@1 alone understates the asymmetry: BM25's penalty GROWS with depth
+    while the dense system's stays flat, so a single cutoff hides the mechanism.
+    """
+    ks = [1, 3, 5, 10]
+    order = ["BM25-full", "TFIDF-full", "Hybrid-RRF", "LaBSE-passages"]
+    colours = {"BM25-full": "#eb6834", "TFIDF-full": "#f0a07a",
+               "Hybrid-RRF": "#2a78d6", "LaBSE-passages": "#7fb2ea"}
+
+    fig, ax = plt.subplots(figsize=(6.6, 3.6))
+    for sysname in order:
+        d = depth[depth.system == sysname].set_index("metric")
+        y = [d.loc[f"success@{k}", "penalty"] for k in ks]
+        lo = [d.loc[f"success@{k}", "ci_lo"] for k in ks]
+        hi = [d.loc[f"success@{k}", "ci_hi"] for k in ks]
+        ax.plot(ks, y, "-o", color=colours[sysname], lw=2, ms=5,
+                label=LABELS.get(sysname, sysname), zorder=3)
+        ax.fill_between(ks, lo, hi, color=colours[sysname], alpha=0.15, lw=0, zorder=2)
+
+    ax.axhline(0, color=FLOOR, lw=1.1, ls=(0, (5, 3)), zorder=1)
+    ax.set_xticks(ks)
+    ax.set_xlabel("rank cutoff k")
+    ax.set_ylabel("Success@k lost to code-mixing\n(English − Hinglish, 95% CI)")
+    ax.set_title("The code-mixing penalty at every depth")
+    ax.legend(frameon=False, fontsize=8.5, loc="upper left")
+    fig.tight_layout()
+    for ext in ("png", "pdf"):
+        fig.savefig(OUT / f"fig3_penalty_by_depth.{ext}", dpi=200)
+    plt.close(fig)
+
+
 def main() -> None:
     metrics = pd.read_csv(SRC / "retrieval_v2_metrics.csv")
     tests = pd.read_csv(SRC / "h4_v2_tests.csv")
     OUT.mkdir(parents=True, exist_ok=True)
     fig_table1(metrics)
     fig_penalty(tests)
+    depth_path = SRC / "h4_v2_tests_by_depth.csv"
+    if depth_path.exists():
+        fig_penalty_by_depth(pd.read_csv(depth_path))
     logger.info("wrote %s", ", ".join(sorted(p.name for p in OUT.iterdir())))
 
 
