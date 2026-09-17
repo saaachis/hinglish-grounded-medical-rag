@@ -57,7 +57,10 @@ LABELS = {
 
 
 def fig_table1(metrics: pd.DataFrame) -> None:
-    piv = metrics.pivot(index="system", columns="variant", values="recall@1")
+    # retrieval_v2 renamed recall@1 -> success@1 (it is a hit rate, not recall);
+    # accept either so older result files still plot.
+    col = "success@1" if "success@1" in metrics.columns else "recall@1"
+    piv = metrics.pivot(index="system", columns="variant", values=col)
     order = piv.sort_values("Q1_hinglish", ascending=False).index.tolist()
     x = np.arange(len(order))
     w = 0.36
@@ -81,7 +84,7 @@ def fig_table1(metrics: pd.DataFrame) -> None:
 
     ax.set_xticks(x)
     ax.set_xticklabels([LABELS.get(s, s) for s in order])
-    ax.set_ylabel("Recall@1")
+    ax.set_ylabel("Success@1 (hit rate)")
     ax.set_ylim(0, max(max(q1), max(q2)) * 1.22)
     ax.legend(frameon=False, fontsize=8.5, loc="upper right")
     ax.set_title("Retrieval quality by system and query language",
@@ -111,7 +114,7 @@ def fig_penalty(tests: pd.DataFrame) -> None:
     ax.axvline(0, color=MUTED, lw=1, ls=(0, (4, 3)))
     ax.set_yticks(range(len(t)))
     ax.set_yticklabels([LABELS.get(s, s).replace("\n", " ") for s in t.system])
-    ax.set_xlabel("Recall@1 lost to code-mixing  (English − Hinglish, 95% CI)")
+    ax.set_xlabel("Success@1 lost to code-mixing  (English − Hinglish, 95% CI)")
     ax.set_xlim(-0.008, t.ci_hi.max() * 1.42)
     ax.set_title("Lexical retrieval is far more damaged by code-mixing than dense",
                  fontsize=11, loc="left", color=INK, pad=8)
