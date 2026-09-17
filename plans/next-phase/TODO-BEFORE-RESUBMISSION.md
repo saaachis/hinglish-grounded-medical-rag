@@ -3,6 +3,13 @@
 **Paper:** ICCSDI 2026 #216 · Minor Revision · **deadline 19 September 2026**
 **Branch:** `review-revisions`
 **Code status:** finished. Everything below is writing, formatting and administration.
+**Revised manuscript:** `research-paper/research paper - devika jonjale & saachi shinde - REVISED.docx`
+(built by `research-paper/apply_revision.py` from the submitted file; every change is
+colour-coded and carries a comment — yellow = correction, green = new for reviewers,
+turquoise = reworded/renamed; comments beginning ACTION or CHECK need a decision from you).
+Preview: `research-paper/draft/REVISED-preview.pdf`. Items 1.1–1.8 and 2.1–2.13, 2.16 are
+applied in that file; 2.14–2.15 are applied in condensed form (labelled intro beats,
+positioning Table 1). Still yours: 4.1–4.7, the response letter, and proofreading.
 
 Companion documents:
 - `REVIEW-RESPONSE-PLAN.md` — what each reviewer asked for, and why
