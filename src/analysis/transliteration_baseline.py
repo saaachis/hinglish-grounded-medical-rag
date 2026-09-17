@@ -42,7 +42,11 @@ import pandas as pd
 from src.analysis.cmi import build_english_vocab
 from src.analysis.h4_retrieval import bootstrap_delta, mcnemar, strip_caption
 from src.analysis.hinglish_devanagari import coverage, transliterate_text
-from src.evaluation.retrieval_metrics import rank_metrics, success_at_k
+from scipy import stats
+
+from src.evaluation.retrieval_metrics import (
+    ndcg_binary, rank_metrics, reciprocal_rank, success_at_k,
+)
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s")
 logger = logging.getLogger(__name__)
@@ -176,6 +180,13 @@ def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     res.to_csv(OUT / "translit_metrics.csv", index=False)
 
+    # "At chance" must be judged against the floor FOR THAT DEPTH: with ~600
+    # relevant cases in 10,000, the chance of hitting one rises steeply with k,
+    # so comparing Success@10 to the rank-1 floor of 0.0626 would look impressive
+    # and mean nothing.
+    prevalence = n_relevant / len(meta)
+    floors = {k: float((1 - (1 - prevalence) ** k).mean()) for k in (1, 5, 10)}
+
     tests = []
     for label in MODELS:
         for a_name, b_name in [("romanised", "devanagari"), ("devanagari", "english"),
@@ -185,16 +196,29 @@ def main() -> None:
             _, _, p = mcnemar(a, b)
             lo, hi = bootstrap_delta(b, a)
             tests.append({"system": label, "comparison": f"{b_name} - {a_name}",
+                          "metric": "success@1",
                           "delta_success@1": b.mean() - a.mean(), "ci_lo": lo, "ci_hi": hi,
                           "mcnemar_p": p, "n": len(pairs)})
+            # Rank-sensitive metrics: a shift too small to move the top-1 hit rate
+            # can still reorder the list, so test those too rather than reading
+            # the means and guessing.
+            for metric, fn in (("MRR@10", lambda h: reciprocal_rank(h, TOP_K)),
+                               ("nDCG@10", lambda h: ndcg_binary(h, n_relevant, TOP_K))):
+                x, y = fn(hits[(label, a_name)]), fn(hits[(label, b_name)])
+                d = y - x
+                wp = float(stats.wilcoxon(d).pvalue) if np.any(d != 0) else 1.0
+                lo2, hi2 = bootstrap_delta(y, x)
+                tests.append({"system": label, "comparison": f"{b_name} - {a_name}",
+                              "metric": metric, "delta_success@1": float(d.mean()),
+                              "ci_lo": lo2, "ci_hi": hi2, "mcnemar_p": wp, "n": len(pairs)})
     tdf = pd.DataFrame(tests)
     tdf.to_csv(OUT / "translit_tests.csv", index=False)
-    write_report(res, tdf, xlit_source, variants, len(pairs))
+    write_report(res, tdf, xlit_source, variants, len(pairs), floors)
 
 
 def write_report(res: pd.DataFrame, tests: pd.DataFrame, xlit_source: str,
-                 variants: dict[str, list[str]], n: int) -> None:
-    floor = 0.0626
+                 variants: dict[str, list[str]], n: int, floors: dict[int, float]) -> None:
+    floor = floors[1]
     m = res.set_index(["system", "query"])
     L = ["# Transliteration-aware retrieval baseline", "",
          f"n = {n} queries. CPU only, no API calls.", "",
@@ -211,11 +235,15 @@ def write_report(res: pd.DataFrame, tests: pd.DataFrame, xlit_source: str,
     for _, r in res.iterrows():
         L.append(f"| `{r.system}` | {r['query']} | {r['success@1']:.4f} | {r['success@5']:.4f} | "
                  f"{r['success@10']:.4f} | {r['MRR@10']:.4f} | {r['nDCG@10']:.4f} |")
-    L += [f"| *random floor* | — | *{floor}* | | | | |", "",
-          "## Paired tests on Success@1 (exact McNemar, bootstrap CI)", "",
-          "| System | Comparison | Delta | 95% CI | p |", "|---|---|---:|---|---:|"]
+    L += [f"| *random floor (depth-adjusted)* | — | *{floors[1]:.4f}* | *{floors[5]:.4f}* | "
+          f"*{floors[10]:.4f}* | | |", "",
+          "The floor rises with k: with ~600 relevant cases in 10,000 a random ranker hits one",
+          f"{floors[10]:.1%} of the time by rank 10. MuRIL on romanised input tracks that floor at",
+          "every depth, which is what \"at chance\" means here.", "",
+          "## Paired tests (Success@1: exact McNemar; MRR/nDCG: Wilcoxon; CIs bootstrap)", "",
+          "| System | Comparison | Metric | Delta | 95% CI | p |", "|---|---|---|---:|---|---:|"]
     for _, r in tests.iterrows():
-        L.append(f"| `{r.system}` | {r.comparison} | **{r['delta_success@1']:+.4f}** | "
+        L.append(f"| `{r.system}` | {r.comparison} | {r.metric} | **{r['delta_success@1']:+.4f}** | "
                  f"[{r.ci_lo:+.4f}, {r.ci_hi:+.4f}] | {r.mcnemar_p:.3g} |")
 
     rom = float(m.loc[("MuRIL", "romanised"), "success@1"])
@@ -223,9 +251,12 @@ def write_report(res: pd.DataFrame, tests: pd.DataFrame, xlit_source: str,
     eng = float(m.loc[("MuRIL", "english"), "success@1"])
     gap = eng - rom
     recovered = (dev - rom) / gap if gap > 0 else float("nan")
-    p_dev = float(tests.query("comparison == 'devanagari - romanised'").mcnemar_p.iloc[0])
+    dev_tests = tests[(tests.comparison == 'devanagari - romanised')]
+    p_dev = float(dev_tests[dev_tests.metric == 'success@1'].mcnemar_p.iloc[0])
+    p_dev_ndcg = float(dev_tests[dev_tests.metric == 'nDCG@10'].mcnemar_p.iloc[0])
+    d_dev_ndcg = float(dev_tests[dev_tests.metric == 'nDCG@10']['delta_success@1'].iloc[0])
     L += ["", "## Reading", "",
-          f"- Romanised {rom:.4f} (floor {floor}) -> Devanagari {dev:.4f} -> English {eng:.4f}.",
+          f"- Romanised {rom:.4f} (floor {floor:.4f}) -> Devanagari {dev:.4f} -> English {eng:.4f}.",
           (f"- Transliteration recovers **{recovered:.1%}** of the romanised-to-English gap "
            f"(McNemar p = {p_dev:.3g})." if np.isfinite(recovered) else
            f"- There is no romanised-to-English gap to recover on this index "
@@ -247,17 +278,44 @@ def write_report(res: pd.DataFrame, tests: pd.DataFrame, xlit_source: str,
                 L += ["> **DO NOT USE THESE NUMBERS.** The English arm does not reproduce the",
                       "> published MuRIL result, so the fault is in this pipeline, not in the",
                       "> transliteration. Check the embedding cache and re-run.", ""]
-    if p_dev < 0.05 and dev > rom:
-        L += ["**The script-mismatch mechanism is supported.** Giving MuRIL the same content in",
-              "its own script significantly improves retrieval, so the paper can report this as a",
-              "tested result rather than a motivated hypothesis.", ""]
+    L += [f"- On nDCG@10 the same comparison moves {d_dev_ndcg:+.4f} (p = {p_dev_ndcg:.3g}).", ""]
+    # Significance and magnitude answer different questions. A reliable but tiny
+    # recovery means script mismatch is real and NOT the binding constraint, and
+    # saying only "significant" would overstate it in exactly the way this paper
+    # spends its length warning against.
+    reliable = (p_dev < 0.05 or p_dev_ndcg < 0.05) and dev > rom
+    if reliable and np.isfinite(recovered) and recovered >= 0.5:
+        L += ["**Script mismatch is the main mechanism.** Transliteration recovers most of the",
+              "romanised-to-English gap, so the paper can report it as a tested result.", ""]
+    elif reliable:
+        L += [f"**Script mismatch is real but secondary.** Transliteration gives a small, reliable",
+              f"improvement (nDCG@10 {d_dev_ndcg:+.4f}, p = {p_dev_ndcg:.3g}) and recovers only",
+              f"**{recovered:.1%}** of the romanised-to-English gap; the Success@1 change is not",
+              f"significant on its own (p = {p_dev:.3g}). Writing the query in MuRIL's script",
+              "therefore does not restore its English performance.", "",
+              "Two readings remain open, and the paper should give both:",
+              "1. Script is not the binding constraint -- the encoder's Hindi representations are",
+              "   themselves weaker than its English ones on this clinical content.",
+              "2. The transliteration is imperfect (a hand-verified lexicon plus rules, not a",
+              "   trained transliterator), so this is a LOWER bound on what script conversion",
+              "   could achieve.",
+              "",
+              "Either way the practical advice is unchanged and now tested rather than asserted:",
+              "transliterating romanised input into an Indic encoder's script is not a substitute",
+              "for a cross-lingual encoder.", ""]
     else:
         L += ["**The mechanism is NOT supported by this test.** Either the script is not the",
               "binding constraint, or the transliteration is too approximate to carry the",
-              "content. With a rule-based transliteration the second cannot be excluded, so",
+              "content. With an approximate transliteration the second cannot be excluded, so",
               "report the result as inconclusive and keep the mechanism claim as a hypothesis.", ""]
     (OUT / "translit_report.md").write_text("\n".join(L), encoding="utf-8")
-    print("\n".join(L))
+    # The report contains Devanagari; a cp1252 console cannot print it, and that
+    # must not fail a run whose output is already safely on disk.
+    try:
+        print("\n".join(L))
+    except UnicodeEncodeError:
+        logger.info("wrote %s (console cannot display Devanagari)",
+                    OUT / "translit_report.md")
 
 
 if __name__ == "__main__":

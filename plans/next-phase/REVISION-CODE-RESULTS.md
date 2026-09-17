@@ -187,27 +187,61 @@ scoreable pairs for 80% power.
 
 ---
 
-## 6. Annotation sheets are ready for you  ← your task
+## 6. Lexicon validation without annotators (R3.4, R1.c, R1.d)
 
-`results/annotation/` — generated, blinded, and shuffled:
+Human annotation was ruled out for this revision, so the extractor is validated
+automatically instead. `python -m src.analysis.lexicon_validation`
+→ `results/lexicon_validation/lexicon_validation_report.md`
 
-| File | Rows | What it gives |
-|---|---:|---|
-| `annotation_sheet_A_annotator[AB].csv` | 120 | extractor precision/recall vs human labels; a reference-free quality score |
-| `annotation_sheet_B_annotator[AB].csv` | 240 | clinical relevance 0/1/2 for the top-3 retrieved cases |
-| `README.md` | — | labelling instructions |
-| `concept_vocabulary.csv` | 26 | the lexicon, for the `missed_concepts` column |
+### 6.1 What the 26 concepts can represent at all
 
-Then: `python -m src.evaluation.annotation_agreement`
+| Quantity | Value |
+|---|---:|
+| References containing ≥1 lexicon concept | 98.3% |
+| Evidence texts containing ≥1 concept | 95.7% |
+| Mean concepts per reference | 2.76 |
+| **References with exactly one concept** | **13.9%** |
 
-**This single effort answers four reviewer points** (R3.4, R1.b, R1.c, R1.d).
-Sheet A is stratified by arm and code-mixing tertile with the arm hidden; sheet B
-hides system and language. Two people must label **independently** or the κ is
-meaningless.
+A reference carrying one concept gives precision and recall almost no events, which
+is the mechanical reason absolute scores are unstable and paired deltas are not.
 
-If you can get a clinician for 2–3 hours, their copy is the one that lets you
-write "clinician-validated". Without one, report author agreement and keep
-clinician validation as a limitation — do **not** write "clinically validated".
+The frequent uncovered terms are mostly **misspellings in the MMCQS image captions**
+(`itichy`, `rasied`, `buldge`, `multuiple`). The unbiased reference is free text
+typed by annotators, so part of its low scores is the reference's own noise — worth
+one sentence in §6.1.
+
+### 6.2 Agreement with an independent reader  ⚠ this one qualifies H₀₁
+
+An independent model (`qwen/qwen3.8-27b`, a different family from either generator)
+labelled the same 120 answers against the same 26-concept vocabulary.
+
+| Quantity | Value |
+|---|---:|
+| Extractor precision vs judge | **0.412** |
+| Extractor recall vs judge | 0.686 |
+| Cohen's κ (per-concept decisions) | **0.494** (moderate) |
+| Agreed / extractor-only / judge-only | 70 / 100 / 32 |
+
+**The bias is arm-dependent, so it does not cancel in the paired difference:**
+
+| Arm | precision vs judge | recall |
+|---|---:|---:|
+| grounded | 0.480 | 0.655 |
+| zero-shot | **0.358** | 0.723 |
+
+`factual_support` is (answer concepts found in the reference) / (answer concepts),
+so a spuriously extracted concept enlarges the denominator and **depresses** the
+score. The extractor over-attributes more in the zero-shot arm, which depresses
+the zero-shot arm more and therefore **inflates the measured grounding benefit**.
+
+Part of H₀₁'s effect may be an extraction artefact, and the direction favours the
+reported result. **Say this in §6.1 yourselves.** It is the same species of finding
+as the rest of the paper's instrument audit, and it is far better volunteered than
+discovered by a reader.
+
+> This is automatic cross-validation, **not** clinical validation. The phrase
+> "clinician-validated" must not appear. The annotation tooling remains in the
+> repository unused, ready for the journal extension.
 
 ---
 
