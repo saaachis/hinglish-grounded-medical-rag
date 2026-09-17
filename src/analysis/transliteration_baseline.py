@@ -16,17 +16,13 @@ If script mismatch is the mechanism, `devanagari` must move away from the random
 floor and toward `english`. If it does not, the paper's mechanism claim is not
 supported and must be weakened.
 
-Transliteration source, in order of preference:
-
-1.  ``data/processed/queries_devanagari.csv`` -- produced by AI4Bharat IndicXlit
-    (a trained transliteration model) in an isolated environment, via
-    ``--write-transliteration``. Preferred.
-2.  A rule-based ITRANS mapping with word-final schwa restoration. This is an
-    APPROXIMATION: it cannot distinguish dental from retroflex stops or short
-    from long vowels in informal romanisation ("bukhar" -> बुखर, not बुखार).
-    Any recovery it produces is therefore a LOWER BOUND on what a trained
-    transliterator would achieve, and a null result under it is inconclusive
-    rather than evidence against the mechanism. The report says which was used.
+Transliteration comes from `src.analysis.hinglish_devanagari`: a hand-verified
+lexicon of the most frequent romanised Hindi tokens (~87% of Hindi token
+occurrences) with ITRANS rules for the tail. AI4Bharat IndicXlit, the trained
+alternative, cannot be installed here -- it requires fairseq, which does not
+build on Python 3.12 -- so the mapping is imperfect on the rule-handled tail and
+any recovery it produces is a LOWER BOUND on what a trained transliterator would
+achieve. A cached `data/processed/queries_devanagari.csv` overrides it if present.
 
 English words inside the code-mixed query ("skin", "doctor") are left in Latin
 script: transliterating them would corrupt content MuRIL can already read.
@@ -45,6 +41,7 @@ import pandas as pd
 
 from src.analysis.cmi import build_english_vocab
 from src.analysis.h4_retrieval import bootstrap_delta, mcnemar, strip_caption
+from src.analysis.hinglish_devanagari import coverage, transliterate_text
 from src.evaluation.retrieval_metrics import rank_metrics, success_at_k
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s")
@@ -60,36 +57,29 @@ MODELS = {"MuRIL": "google/muril-base-cased"}
 MAX_DOC_WORDS = 200      # matched to h4_baselines.py, so numbers are comparable
 MAX_SEQ = 128
 TOP_K = 10
-VIRAMA = "्"
-
-
-def rule_based_devanagari(text: str, english_vocab: set[str]) -> str:
-    """ITRANS transliteration of the non-English tokens, with final schwa restored."""
-    from indic_transliteration import sanscript
-    from indic_transliteration.sanscript import transliterate
-
-    out = []
-    for tok in str(text).split():
-        core = "".join(ch for ch in tok.lower() if ch.isalpha())
-        if not core or core in english_vocab:
-            out.append(tok)
-            continue
-        d = transliterate(core, sanscript.ITRANS, sanscript.DEVANAGARI)
-        out.append(d[:-1] if d.endswith(VIRAMA) else d)
-    return " ".join(out)
+MAX_CHARS = 1500      # queries are clipped before encoding; 128 tokens is far less anyway
+ENCODE_CHUNK = 250    # checkpoint interval, so a crash says which chunk failed
 
 
 def load_transliteration(pairs: pd.DataFrame) -> tuple[list[str], str]:
+    """Devanagari forms of the Hinglish queries, plus a description of their provenance."""
     if XLIT_CSV.exists():
         x = pd.read_csv(XLIT_CSV)
         if len(x) == len(pairs) and "devanagari" in x.columns:
-            logger.info("using IndicXlit transliteration from %s", XLIT_CSV)
-            return x.devanagari.astype(str).tolist(), "IndicXlit (trained model)"
+            logger.info("using transliteration cached in %s", XLIT_CSV)
+            return x.devanagari.astype(str).tolist(), "cached in data/processed/queries_devanagari.csv"
         logger.warning("%s exists but does not match the pairs file; ignoring", XLIT_CSV)
-    logger.info("falling back to rule-based ITRANS transliteration")
+
     vocab = build_english_vocab()
-    return ([rule_based_devanagari(t, vocab) for t in pairs.hinglish_query.astype(str)],
-            "rule-based ITRANS + final-schwa restoration (approximate; lower bound)")
+    texts = pairs.hinglish_query.astype(str).tolist()
+    cov = coverage(texts, vocab)
+    logger.info("transliteration coverage: lexicon %.1f%% of Hindi tokens, rules %.1f%% of all tokens",
+                100 * cov["lexicon_share_of_hindi"], 100 * cov["rules_share"])
+    out = [transliterate_text(t, vocab)[0] for t in texts]
+    source = (f"hand-verified lexicon ({100 * cov['lexicon_share_of_hindi']:.0f}% of Hindi tokens) "
+              f"+ ITRANS rules for the remainder; English tokens left in Latin script "
+              f"({100 * cov['english_share']:.0f}% of tokens)")
+    return out, source
 
 
 def encode(model, texts: list[str], tag: str) -> np.ndarray:
@@ -101,9 +91,29 @@ def encode(model, texts: list[str], tag: str) -> np.ndarray:
             logger.info("cache hit: %s", tag)
             return emb
     logger.info("encoding %s (%d texts) ...", tag, len(texts))
-    emb = np.asarray(model.encode(texts, batch_size=32, show_progress_bar=False,
-                                  normalize_embeddings=True), dtype=np.float32)
+    # Encode in logged chunks, with each chunk checkpointed. A full-corpus call
+    # died twice without a traceback (a native-level crash gives no Python error),
+    # which left no way to tell which input caused it. MMCQS queries also run much
+    # longer than the 200-word documents, so they are clipped first -- anything
+    # past the 128-token limit is discarded by the model regardless.
+    part = path.with_suffix(".partial.npy")
+    clipped = [str(t)[:MAX_CHARS] if str(t).strip() else "." for t in texts]
+    done: list[np.ndarray] = []
+    if part.exists():
+        prev = np.load(part)
+        if prev.shape[0] <= len(clipped):
+            done = [prev]
+            logger.info("  resuming %s from %d rows", tag, prev.shape[0])
+    start = sum(d.shape[0] for d in done)
+    for i in range(start, len(clipped), ENCODE_CHUNK):
+        batch = clipped[i:i + ENCODE_CHUNK]
+        done.append(np.asarray(model.encode(batch, batch_size=8, show_progress_bar=False,
+                                            normalize_embeddings=True), dtype=np.float32))
+        np.save(part, np.vstack(done))
+        logger.info("  %s %d/%d", tag, min(i + ENCODE_CHUNK, len(clipped)), len(clipped))
+    emb = np.vstack(done)
     np.save(path, emb)
+    part.unlink(missing_ok=True)
     return emb
 
 
