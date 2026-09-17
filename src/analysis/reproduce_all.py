@@ -84,6 +84,28 @@ STAGES: list[tuple[str, str, list[str], str]] = [
      ["data/faiss_index/evidence.index", "data/faiss_index/evidence_metadata.csv"],
      "results/h4_retrieval/h4_baselines.csv — BM25/TF-IDF/e5/MuRIL on the flat index"),
 
+    # ---- added for the ICCSDI revision (reviewer-requested analyses) ----
+    ("h2-prespecified", "src.analysis.h2_prespecified_test",
+     ["results/combined_h1h2/combined_scored.csv"],
+     "results/h2_per_arm/h2_prespecified_test.md — H02 under its planned interaction test (R3.3)"),
+
+    ("h3-power", "src.analysis.h3_power",
+     ["results/h3_provenance/h3_scored.csv"],
+     "results/h3_provenance/h3_power.md — what a powered provenance run would cost (R3.6)"),
+
+    ("transliteration-baseline", "src.analysis.transliteration_baseline",
+     ["data/faiss_index/evidence_metadata.csv",
+      "data/processed/mmcqsd_multicare_paired.csv"],
+     "results/translit_baseline/ — MuRIL on romanised vs Devanagari vs English (R1)"),
+
+    ("annotation-sheets", "src.evaluation.annotation_sample",
+     ["results/combined_h1h2/combined_scored.csv"],
+     "results/annotation/ — blinded human-annotation sheets (R3.4, R1.b-d)"),
+
+    ("annotation-agreement", "src.evaluation.annotation_agreement",
+     ["results/annotation/annotation_sheet_A_annotatorA.csv"],
+     "results/annotation/annotation_report.md — extractor vs human, kappa (R3.4)"),
+
     ("h3-corpora", "src.analysis.h3_build_corpora",
      ["data/processed/multicare_filtered.csv", "data/processed/pubmedqa_records.csv",
       "data/processed/mmedbench_questions.csv"],
@@ -102,6 +124,15 @@ NOT_REPRODUCIBLE: list[tuple[str, str]] = [
      "each issues thousands of live API calls (~1,200 tokens apiece) and is "
      "rate-limited to ~27/min across four keys. Run them directly; they "
      "checkpoint every 10 rows and resume."),
+    ("translate-then-retrieve baseline",
+     "src.analysis.translation_baseline issues one LLM call per query to translate "
+     "it into English (Reviewer 2's existing-method comparison). Translations are "
+     "checkpointed to results/translation_baseline/translations.csv and the "
+     "retrieval half re-runs from them offline, but the translations themselves "
+     "need API access. Run it directly; it resumes."),
+    ("human annotation labels",
+     "results/annotation/ sheets are generated here, but the judgments are made by "
+     "people. annotation-agreement scores whatever has been filled in."),
     ("passage embeddings + rebuild_index_full",
      "~3h of CPU encoding for 41,746 passages. Cached under data/passage_index/; "
      "rebuild with `python -m src.analysis.retrieval_v2` if the cache is absent."),
