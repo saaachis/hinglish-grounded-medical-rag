@@ -284,18 +284,27 @@ class RotatingGroq:
             self.i = (self.i + 1) % len(self.keys)
             self.client = self._Groq(api_key=self.keys[self.i])
 
-    def chat(self, system: str, user: str) -> str:
+    def chat(self, system: str, user: str, **overrides) -> str:
+        """One completion, rotating keys on quota errors.
+
+        `overrides` go straight to the API call. Reasoning models count their
+        hidden reasoning against `max_tokens`, so a budget that fits the answer
+        can still return EMPTY content once the model thinks for a while -- that
+        silently produced 55% empty translations before it was traced. Callers
+        whose output must never be truncated should raise `max_tokens`.
+        """
         self._advance()
+        params = {"max_tokens": 300, "temperature": 0.3, **overrides}
         for _ in range(MAX_RETRIES * max(1, len(self.keys))):
             try:
                 r = self.client.chat.completions.create(
                     model=MODEL,
                     messages=[{"role": "system", "content": system},
                               {"role": "user", "content": user}],
-                    max_tokens=300, temperature=0.3,
+                    **params,
                 )
                 self.last_success = time.time()
-                return r.choices[0].message.content.strip()
+                return (r.choices[0].message.content or "").strip()
             except Exception as e:
                 msg = str(e).lower()
                 if any(t in msg for t in ("rate", "quota", "limit", "429", "insufficient")):

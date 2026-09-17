@@ -96,7 +96,10 @@ def translate(sample: pd.DataFrame, model: str) -> pd.DataFrame:
         client = groqmod.RotatingGroq(groqmod.load_keys())
         logger.info("translating %d queries with %s", len(todo), model)
         for i, r in enumerate(todo, 1):
-            out = clean(client.chat(SYSTEM, str(r.hinglish_query)))
+            # Reasoning tokens count against max_tokens, so a small budget returns
+            # empty content on longer queries. 1500 leaves room for both.
+            out = clean(client.chat(SYSTEM, str(r.hinglish_query),
+                                    max_tokens=1500, reasoning_effort="low"))
             if out.startswith("[QUOTA_EXHAUSTED"):
                 logger.error("quota exhausted after %d new translations -- "
                              "re-run later to resume", i - 1)

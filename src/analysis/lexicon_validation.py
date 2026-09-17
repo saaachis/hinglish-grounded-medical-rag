@@ -213,7 +213,7 @@ def build_sample(n: int) -> pd.DataFrame:
 def main() -> None:
     ap = argparse.ArgumentParser(description="Validate the concept extractor without annotators")
     ap.add_argument("--n", type=int, default=120, help="answers to judge")
-    ap.add_argument("--model", default="llama-3.3-70b-versatile",
+    ap.add_argument("--model", default="qwen/qwen3.8-27b",
                     help="judge model; use one NOT used elsewhere today (per-model daily quota)")
     ap.add_argument("--coverage-only", action="store_true")
     args = ap.parse_args()
@@ -312,6 +312,36 @@ def write_report(stats, uncovered, detail, tp, fp, fn, ext_labels, judge_labels,
               "| Concept and direction | Count |", "|---|---:|"]
         for name, cnt in per_concept.most_common(12):
             L.append(f"| {name} | {cnt} |")
+        # Per-arm agreement decides whether the paired H01 delta is biased. A
+        # bias that is equal in both arms cancels in a within-query difference;
+        # one that differs by arm does not.
+        L += ["", "### Agreement by arm — does the bias cancel in the paired delta?", "",
+              "| Arm | n | agreed | extractor only | judge only | precision | recall |",
+              "|---|---:|---:|---:|---:|---:|---:|"]
+        arm_prec = {}
+        for arm, g in detail.groupby("arm"):
+            atp, afp, afn = int(g.agree.sum()), int(g.extractor_only.sum()), int(g.judge_only.sum())
+            ap = atp / (atp + afp) if atp + afp else float("nan")
+            ar = atp / (atp + afn) if atp + afn else float("nan")
+            arm_prec[arm] = ap
+            L.append(f"| {arm} | {len(g)} | {atp} | {afp} | {afn} | {ap:.3f} | {ar:.3f} |")
+        if {"grounded", "zero_shot"} <= set(arm_prec):
+            gap = arm_prec["grounded"] - arm_prec["zero_shot"]
+            L += ["", f"The extractor's precision against the judge differs by arm "
+                  f"({arm_prec['grounded']:.3f} grounded vs {arm_prec['zero_shot']:.3f} zero-shot, "
+                  f"gap {gap:+.3f}), so **the bias does not cancel in the paired difference**.", ""]
+            if gap > 0:
+                L += ["Direction matters. `factual_support` is |answer concepts in reference| /",
+                      "|answer concepts|, so a spurious extra concept inflates the denominator and",
+                      "DEPRESSES the score. The extractor over-attributes more in the zero-shot arm,",
+                      "which depresses the zero-shot score more than the grounded one and therefore",
+                      "**inflates the measured grounding benefit**. Part of H01's effect may be an",
+                      "extraction artefact; the direction of the bias favours the reported result, so",
+                      "the paper must say so rather than leave it for a reader to find.", ""]
+            else:
+                L += ["The bias runs against the reported grounding benefit, so the effect is if",
+                      "anything understated by the extractor.", ""]
+
         verdict = ("substantial" if k >= 0.6 else "moderate" if k >= 0.4 else
                    "fair" if k >= 0.2 else "poor")
         L += ["", f"Agreement is **{verdict}** (kappa = {k:.3f}). ",

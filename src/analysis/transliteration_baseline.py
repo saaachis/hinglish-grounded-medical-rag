@@ -86,10 +86,18 @@ def encode(model, texts: list[str], tag: str) -> np.ndarray:
     EMB_CACHE.mkdir(parents=True, exist_ok=True)
     path = EMB_CACHE / f"{tag}.npy"
     if path.exists():
-        emb = np.load(path)
-        if emb.shape[0] == len(texts):
-            logger.info("cache hit: %s", tag)
-            return emb
+        # A cache file can be truncated or half-written if a previous run died or
+        # two runs raced. Validate before trusting it: a corrupt file here silently
+        # produced retrieval BELOW the random floor rather than an error.
+        try:
+            emb = np.load(path)
+            if emb.ndim == 2 and emb.dtype.kind == "f" and emb.shape[0] == len(texts):
+                logger.info("cache hit: %s", tag)
+                return emb
+            logger.warning("cache %s is unusable (shape %s, dtype %s) -- re-encoding",
+                           tag, emb.shape, emb.dtype)
+        except Exception as e:
+            logger.warning("cache %s unreadable (%s) -- re-encoding", tag, type(e).__name__)
     logger.info("encoding %s (%d texts) ...", tag, len(texts))
     # Encode in logged chunks, with each chunk checkpointed. A full-corpus call
     # died twice without a traceback (a native-level crash gives no Python error),
@@ -218,8 +226,27 @@ def write_report(res: pd.DataFrame, tests: pd.DataFrame, xlit_source: str,
     p_dev = float(tests.query("comparison == 'devanagari - romanised'").mcnemar_p.iloc[0])
     L += ["", "## Reading", "",
           f"- Romanised {rom:.4f} (floor {floor}) -> Devanagari {dev:.4f} -> English {eng:.4f}.",
-          f"- Transliteration recovers **{recovered:.1%}** of the romanised-to-English gap "
-          f"(McNemar p = {p_dev:.3g}).", ""]
+          (f"- Transliteration recovers **{recovered:.1%}** of the romanised-to-English gap "
+           f"(McNemar p = {p_dev:.3g})." if np.isfinite(recovered) else
+           f"- There is no romanised-to-English gap to recover on this index "
+           f"(English {eng:.4f} <= romanised {rom:.4f}), so the recovery fraction is undefined."), ""]
+
+    # Sanity gate: this script must reproduce the MuRIL numbers the paper already
+    # reports from h4_baselines.py, or something in THIS pipeline is wrong and the
+    # Devanagari comparison means nothing.
+    ref = Path("results/h4_retrieval/h4_baselines.csv")
+    if ref.exists():
+        b = pd.read_csv(ref)
+        r = b[(b.system == "MuRIL") & (b.variant == "Q2_english_question")]
+        if not r.empty:
+            published = float(r["recall@1"].iloc[0])
+            drift = abs(published - eng)
+            L += [f"- **Sanity check:** MuRIL on English scores {eng:.4f} here against "
+                  f"{published:.4f} in `h4_baselines.csv` (drift {drift:.4f}).", ""]
+            if drift > 0.02:
+                L += ["> **DO NOT USE THESE NUMBERS.** The English arm does not reproduce the",
+                      "> published MuRIL result, so the fault is in this pipeline, not in the",
+                      "> transliteration. Check the embedding cache and re-run.", ""]
     if p_dev < 0.05 and dev > rom:
         L += ["**The script-mismatch mechanism is supported.** Giving MuRIL the same content in",
               "its own script significantly improves retrieval, so the paper can report this as a",

@@ -52,4 +52,52 @@ text most affected, since it is a short free-text caption.
 
 ## Part 2 — agreement with an independent LLM reader
 
-_Not run. Use `python -m src.analysis.lexicon_validation` with API access._
+Judge: `qwen/qwen3.8-27b`, 120 answers.
+
+| Quantity | Value |
+|---|---:|
+| Extractor precision vs judge | 0.412 |
+| Extractor recall vs judge | 0.686 |
+| Extractor F1 vs judge | 0.515 |
+| Cohen's kappa (per-concept decisions) | 0.494 |
+| Concepts agreed / extractor-only / judge-only | 70 / 100 / 32 |
+
+### Where they disagree most
+
+| Concept and direction | Count |
+|---|---:|
+| infection (extractor only) | 16 |
+| pain (judge only) | 14 |
+| erythema (extractor only) | 10 |
+| pruritus (extractor only) | 10 |
+| swelling (judge only) | 8 |
+| rash (extractor only) | 8 |
+| dermatitis (extractor only) | 7 |
+| malignancy (extractor only) | 6 |
+| allergy (extractor only) | 6 |
+| mass (extractor only) | 6 |
+| pain (extractor only) | 5 |
+| fungal (extractor only) | 5 |
+
+### Agreement by arm — does the bias cancel in the paired delta?
+
+| Arm | n | agreed | extractor only | judge only | precision | recall |
+|---|---:|---:|---:|---:|---:|---:|
+| grounded | 60 | 36 | 39 | 19 | 0.480 | 0.655 |
+| zero_shot | 60 | 34 | 61 | 13 | 0.358 | 0.723 |
+
+The extractor's precision against the judge differs by arm (0.480 grounded vs 0.358 zero-shot, gap +0.122), so **the bias does not cancel in the paired difference**.
+
+Direction matters. `factual_support` is |answer concepts in reference| /
+|answer concepts|, so a spurious extra concept inflates the denominator and
+DEPRESSES the score. The extractor over-attributes more in the zero-shot arm,
+which depresses the zero-shot score more than the grounded one and therefore
+**inflates the measured grounding benefit**. Part of H01's effect may be an
+extraction artefact; the direction of the bias favours the reported result, so
+the paper must say so rather than leave it for a reader to find.
+
+
+Agreement is **moderate** (kappa = 0.494). 
+An extractor-only disagreement is a likely false positive (a mention the answer
+did not assert); a judge-only disagreement is a likely miss (wording the regexes
+do not cover). Report both numbers in Sect. 6.1 next to the lexicon limitation.
