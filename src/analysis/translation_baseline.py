@@ -136,6 +136,44 @@ def _save(done: dict[int, str]) -> None:
         TRANSLATIONS, index=False, encoding="utf-8")
 
 
+def query_diagnostics(variants: dict[str, list[str]], docs: list[str]) -> pd.DataFrame:
+    """Why the three query forms retrieve differently, in measurable terms.
+
+    A lexical ranker scores a query by the corpus-IDF of the terms it shares with
+    a document, so three things decide its fate: how many of its tokens the corpus
+    knows at all, how specific those tokens are, and how many extra tokens dilute
+    them. Reporting these makes the retrieval differences mechanical rather than
+    mysterious -- and exposes that the three forms are not the same KIND of text.
+    """
+    import math
+    from collections import Counter
+
+    from src.evaluation.concept_lexicon import POSITIVE_CONCEPTS, extract_concepts
+
+    tokenised = [tokenize(d) for d in docs]
+    df: Counter[str] = Counter()
+    for d in tokenised:
+        df.update(set(d))
+    n = len(tokenised)
+    idf = {w: math.log(1 + (n - c + 0.5) / (c + 0.5)) for w, c in df.items()}
+
+    rows = []
+    for name, texts in variants.items():
+        words, concepts, in_corpus, mean_idf = [], [], [], []
+        for t in texts:
+            tk = tokenize(t)
+            words.append(len(tk))
+            concepts.append(len(extract_concepts(str(t)) & set(POSITIVE_CONCEPTS)))
+            known = [w for w in tk if w in idf]
+            in_corpus.append(len(known) / max(1, len(tk)))
+            mean_idf.append(float(np.mean([idf[w] for w in known])) if known else 0.0)
+        rows.append({"query": name, "mean_words": float(np.mean(words)),
+                     "mean_lexicon_concepts": float(np.mean(concepts)),
+                     "tokens_known_to_corpus": float(np.mean(in_corpus)),
+                     "mean_idf_of_known_tokens": float(np.mean(mean_idf))})
+    return pd.DataFrame(rows)
+
+
 def rrf(*rankings: np.ndarray, top_k: int = TOP_K) -> np.ndarray:
     n = rankings[0].shape[0]
     fused = np.full((n, top_k), -1, dtype=np.int64)
@@ -232,10 +270,13 @@ def main() -> None:
                           "mcnemar_p": p, "n": len(sample)})
     tdf = pd.DataFrame(tests)
     tdf.to_csv(OUT / "translation_tests.csv", index=False)
-    write_report(res, tdf, sample, args.model)
+    diag = query_diagnostics(variants, docs)
+    diag.to_csv(OUT / "query_diagnostics.csv", index=False)
+    write_report(res, tdf, sample, args.model, diag)
 
 
-def write_report(res: pd.DataFrame, tests: pd.DataFrame, sample: pd.DataFrame, model: str) -> None:
+def write_report(res: pd.DataFrame, tests: pd.DataFrame, sample: pd.DataFrame,
+                 model: str, diag: pd.DataFrame) -> None:
     m = res.set_index(["system", "query"])
     L = ["# Translate-then-retrieve baseline", "",
          f"n = {len(sample)} queries (stratified by condition group). Translator: `{model}`.", "",
@@ -258,22 +299,55 @@ def write_report(res: pd.DataFrame, tests: pd.DataFrame, sample: pd.DataFrame, m
         L.append(f"| `{r.system}` | {r.comparison} | **{r['delta_success@1']:+.4f}** | "
                  f"[{r.ci_lo:+.4f}, {r.ci_hi:+.4f}] | {r.mcnemar_p:.3g} |")
 
-    L += ["", "## Recovery of the code-mixing penalty", "",
-          "| System | Hinglish | Translated | English | Gap recovered by translation |",
-          "|---|---:|---:|---:|---:|"]
+    L += ["", "## Does translation recover the penalty?", "",
+          "| System | Hinglish | Translated | English (gold) |", "|---|---:|---:|---:|"]
     for sysname in res.system.unique():
         hi = float(m.loc[(sysname, "hinglish"), "success@1"])
         tr = float(m.loc[(sysname, "translated"), "success@1"])
         en = float(m.loc[(sysname, "english"), "success@1"])
-        rec = (tr - hi) / (en - hi) if en > hi else float("nan")
-        L.append(f"| `{sysname}` | {hi:.4f} | {tr:.4f} | {en:.4f} | "
-                 f"{'n/a' if not np.isfinite(rec) else f'{rec:.1%}'} |")
-    L += ["", "Translation costs one LLM call per query, adds that model's latency to every search,",
-          "and inherits its availability -- the same hosted-model dependency this paper reports as a",
-          "reproducibility hazard. A cross-lingual encoder costs nothing extra at query time.",
-          "Whether the recovered accuracy is worth that is the trade-off practitioners face.", ""]
+        L.append(f"| `{sysname}` | {hi:.4f} | {tr:.4f} | {en:.4f} |")
+
+    dense_tr = float(m.loc[("LaBSE-passages", "translated"), "success@1"])
+    dense_hi = float(m.loc[("LaBSE-passages", "hinglish"), "success@1"])
+    L += ["", f"**Only the dense system benefits.** For LaBSE, translating helps "
+          f"({dense_tr:.4f} vs {dense_hi:.4f}). For BM25 and TF-IDF, translation makes retrieval "
+          "markedly WORSE than leaving the query code-mixed.", "",
+          "## Why -- and what it says about the paper's own English baseline", "",
+          "The three query forms are not the same kind of text:", "",
+          "| Query form | mean words | lexicon concepts | tokens known to the corpus | mean IDF of those tokens |",
+          "|---|---:|---:|---:|---:|"]
+    for _, r in diag.iterrows():
+        L.append(f"| {r['query']} | {r.mean_words:.1f} | {r.mean_lexicon_concepts:.2f} | "
+                 f"{r.tokens_known_to_corpus:.1%} | {r.mean_idf_of_known_tokens:.2f} |")
+
+    L += ["", "Two things follow, and the second matters for H04.", "",
+          "**1. Code-mixing incidentally filters stopwords.** Under half of a Hinglish query's",
+          "tokens exist in the English corpus at all, but the ones that survive are rare and",
+          "specific (high IDF): the Hindi carries the grammar and the English carries the clinical",
+          "content. A fluent English translation restores the function words, which are common,",
+          "low-IDF and shared by every case report, so they dilute the query. That is why lexical",
+          "retrieval gets WORSE after translation while the dense system improves.", "",
+          "**2. The paper's English arm is a summary, not a translation.** The gold English",
+          "question averages ~21 words against ~97 for a faithful translation of the same query.",
+          "It is a short, clinician-style condensation written with knowledge of the case, much",
+          "closer to the register of the case reports themselves. The measured code-mixing penalty",
+          "therefore compares a patient narrative against a clinical summary, and conflates",
+          "language with **conciseness and register**.", "",
+          "This does not overturn H04 -- the penalty holds across every system and every depth, and",
+          "the MuRIL script result is independent of it -- but the estimate is an upper bound on",
+          "the language effect alone, and the paper should say so. The translate-then-retrieve arm",
+          "is the cleaner language-only comparison, because it holds length and register fixed:",
+          "against it, dense retrieval improves and lexical retrieval does not.", "",
+          "## Cost", "",
+          "Translation adds one LLM call per query, its latency to every search, and its",
+          "availability as a dependency -- the same hosted-model hazard this paper reports",
+          "elsewhere. A cross-lingual encoder costs nothing extra at query time and, on this",
+          "evidence, retrieves at least as well.", ""]
     (OUT / "translation_report.md").write_text("\n".join(L), encoding="utf-8")
-    print("\n".join(L))
+    try:
+        print("\n".join(L))
+    except UnicodeEncodeError:
+        logger.info("wrote %s", OUT / "translation_report.md")
 
 
 if __name__ == "__main__":

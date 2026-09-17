@@ -32,6 +32,8 @@ claims against the committed results.
 | 1.4 | §5.3 | Name the generator in "grounding trades recall for precision": it is **gpt-oss-120b**; the llama arm moves the opposite way (+0.0774) | 5 min |
 | 1.5 | §1, §4 | **"pre-registered" → "pre-specified"** everywhere; cite commit `0917322` (9 Feb 2026) with its GitHub URL; state that **H₀₄ was added later** | 20 min |
 | 1.6 | §4.2 (new short para) | Add the five **deviations from the planned analysis** — copy from `results/prespecification_record.md` | 20 min |
+| 1.7 | Abstract, §3.1, §4.1, §5.1 | **"gold human translations" → "gold English summaries".** MMCQS supplies clinician-style *summaries* (~21 words) not translations (~97 words). The current wording misdescribes the data | 20 min |
+| 1.8 | §5.1, §6.1 | Add the consequence: the penalty compares a patient narrative against a clinical summary, so it is an **upper bound on the language effect**, conflating language with conciseness and register. The translate-then-retrieve arm is the cleaner language-only comparison | 30 min |
 
 ---
 

@@ -183,7 +183,91 @@ scoreable pairs for 80% power.
 
 ## 5. Transliteration and translation baselines (R1, R2)
 
-*(Filled in when the two runs finish — see §8.)*
+### 5.1 The script-mismatch mechanism, finally tested (R1)
+
+`python -m src.analysis.transliteration_baseline` → `results/translit_baseline/`
+
+The paper says MuRIL fails through *script* mismatch and then admits the remedy
+"is a hypothesis the study motivates but does not test". It is now tested: the
+same MuRIL index, queried three ways.
+
+| MuRIL query form | S@1 | S@5 | S@10 | MRR@10 | nDCG@10 |
+|---|---:|---:|---:|---:|---:|
+| romanised (deployed) | 0.0640 | 0.2985 | 0.5174 | 0.1704 | 0.0705 |
+| **Devanagari** | **0.0716** | 0.3274 | 0.5396 | 0.1852 | 0.0782 |
+| English | 0.1821 | 0.5108 | 0.7111 | 0.3224 | 0.1496 |
+| *random floor (depth-adjusted)* | *0.0626* | *0.2755* | *0.4739* | — | — |
+
+| Comparison | Metric | Δ | 95% CI | p |
+|---|---|---:|---|---:|
+| Devanagari − romanised | S@1 | +0.0076 | [−0.0046, +0.0196] | 0.242 |
+| Devanagari − romanised | MRR@10 | +0.0148 | [+0.0030, +0.0264] | 0.0096 |
+| Devanagari − romanised | nDCG@10 | +0.0077 | [+0.0039, +0.0115] | 0.0008 |
+
+**Script mismatch is real but secondary.** Transliteration helps reliably on
+rank-sensitive metrics, but recovers only **6.5%** of the romanised-to-English
+gap, and S@1 alone is not significant. Writing the query in MuRIL's own script
+does not restore its English performance.
+
+Two readings stay open and the paper should give both: either script is not the
+binding constraint, or the hand-built transliteration (verified lexicon + rules;
+IndicXlit will not install on Python 3.12) is too approximate — so this is a
+**lower bound**.
+
+The depth-adjusted floor matters: with ~600 relevant cases in 10,000, a random
+ranker hits one 47.4% of the time by rank 10. MuRIL on romanised input tracks
+that floor at every depth, which is what "at chance" means.
+
+> An earlier run of this produced retrieval *below* the random floor because a
+> half-written embedding cache was read back as garbage. The script now validates
+> caches and carries a sanity gate against the published MuRIL English figure; it
+> reproduces 0.1821 exactly. **Do not report numbers from a run whose gate fails.**
+
+### 5.2 Translate-then-retrieve (R2) — and a caveat for H₀₄
+
+`python -m src.analysis.translation_baseline --n 500` → `results/translation_baseline/`
+
+500 stratified queries translated to English by gpt-oss-120b, then retrieved with
+the same four systems.
+
+| System | Hinglish | Translated | English (gold) |
+|---|---:|---:|---:|
+| LaBSE (passages) | 0.1220 | **0.1680** | 0.1460 |
+| BM25 | 0.1080 | **0.0240** | 0.1960 |
+| TF-IDF | 0.0880 | 0.0300 | 0.1480 |
+| Hybrid (RRF) | 0.1840 | 0.1200 | 0.2020 |
+
+**Only dense retrieval benefits from translation.** For LaBSE it helps
+(+0.046, p = 0.040); for BM25 it is catastrophic (−0.084, p = 5.7×10⁻⁸) — worse
+than leaving the query code-mixed.
+
+The mechanism is measurable:
+
+| Query form | mean words | lexicon concepts | tokens known to corpus | mean IDF of those |
+|---|---:|---:|---:|---:|
+| hinglish | 109.5 | 1.15 | **46.9%** | **5.22** |
+| translated | 96.8 | 2.10 | 99.4% | 2.28 |
+| english (gold) | **21.5** | 1.73 | 99.3% | 1.98 |
+
+**Finding 1 — code-mixing incidentally filters stopwords.** Fewer than half a
+Hinglish query's tokens exist in the English corpus, but the survivors are rare
+and specific (IDF 5.22 vs 2.28): Hindi carries the grammar, English carries the
+clinical content. Translation restores the function words, which every case
+report shares, diluting the query. Hence lexical retrieval gets worse.
+
+**Finding 2 — ⚠ the paper's English arm is a summary, not a translation.** The
+gold English question averages **21 words** against **97** for a faithful
+translation of the same query. It is a short clinician-style condensation written
+with knowledge of the case, much closer to the case reports' own register. So the
+measured code-mixing penalty compares *a patient narrative against a clinical
+summary*, conflating language with **conciseness and register**.
+
+This does **not** overturn H₀₄: the penalty holds across every system and depth
+(28/28), and the MuRIL script result is independent of it. But the estimate is an
+**upper bound on the language effect alone**, and the abstract's phrase "gold
+human translations of the same questions" is inaccurate — MMCQS supplies
+*summaries*. Both need fixing, and the translate-then-retrieve arm is the cleaner
+language-only comparison because it holds length and register fixed.
 
 ---
 
